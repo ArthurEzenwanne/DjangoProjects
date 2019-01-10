@@ -4,7 +4,7 @@
 }
 
 input[name=message] {
-    width: 80%;
+    width: 50%;
 }
 
 .navbar {
@@ -33,4 +33,9 @@ input[name=message] {
 .body-content {
     padding: 5px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.message_list th,td {
+    text-align: left;
+    padding-right: 15px;
 }

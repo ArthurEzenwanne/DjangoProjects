@@ -1,8 +1,28 @@
 from django.shortcuts import render
 from catalog.models import Book, Author, BookInstance, Genre, Language
 from django.views import generic
-# Create your views here.
+from django.contrib.auth.mixins import LoginRequiredMixin
+# from django.contrib.auth.decorators import login_required
 
+# Create your views here.
+# With function-based views, the easiest way to restrict access to your 
+# functions is to apply the login_required decorator to your view function
+
+# With class-based views, the easiest way to restrict access to your 
+# functions is to derive from LoginRequiredMixin
+
+# from django.contrib.auth.mixins import LoginRequiredMixin
+# class MyView(LoginRequiredMixin, View):
+
+# You can also specify an alternative location to redirect the user to if they are not 
+# authenticated (login_url), and a URL parameter name instead of "next" to insert 
+# the current absolute path (redirect_field_name).
+
+# class MyView(LoginRequiredMixin, View):
+#     login_url = '/login/'
+#     redirect_field_name = 'redirect_to'
+
+# @login_required         # Indicates login is required to view this view
 def index(request):
     """View function for home page of site."""
 
@@ -75,4 +95,13 @@ class AuthorListView(generic.ListView):
 
 class AuthorDetailView(generic.DetailView):
     """Generic class view for viewing individual authors in the database."""
-    model = Author    
+    model = Author
+
+class LoanedBooksByUserListView(LoginRequiredMixin, generic.ListView):
+    """Generic class-based view listing books on loan to current user."""
+    model = BookInstance
+    template_name ='catalog/bookinstance_list_borrowed_user.html'
+    paginate_by = 10
+    
+    def get_queryset(self):
+        return BookInstance.objects.filter(borrower=self.request.user).filter(status__exact='o').order_by('due_back')    

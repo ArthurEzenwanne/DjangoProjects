@@ -1,8 +1,16 @@
-from django.shortcuts import render
-from catalog.models import Book, Author, BookInstance, Genre, Language
+import datetime
+
+from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin
-# from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, permission_required
+from django.http import HttpResponseRedirect
+from django.urls import reverse, reverse_lazy
+from django.utils.translation import ugettext_lazy as _
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+
+from catalog.models import Book, Author, BookInstance, Genre, Language
+from catalog.forms import RenewBookForm, RenewBookModelForm         # Note that RenewBookForm is no longer needed
 
 # Create your views here.
 # With function-based views, the easiest way to restrict access to your 
@@ -124,4 +132,62 @@ class AllLoanedBooksNewListView(LoginRequiredMixin, generic.ListView):
     paginate_by = 10
     
     def get_queryset(self):
-        return BookInstance.objects.filter(status__exact='o').order_by('due_back')                 
+        return BookInstance.objects.filter(status__exact='o').order_by('due_back')
+
+@permission_required('catalog.can_mark_returned')
+def renew_book_librarian(request, pk):
+    book_instance = get_object_or_404(BookInstance, pk=pk)
+
+    # If this is a POST request then process the Form data
+    if request.method == 'POST':
+
+        # Create a form instance and populate it with data from the request (binding):
+        form = RenewBookModelForm(request.POST)
+
+        # Check if the form is valid:
+        if form.is_valid():
+            # process the data in form.cleaned_data as required 
+            # (here we just write it to the model due_back field)
+            book_instance.due_back = form.cleaned_data['due_back']
+            book_instance.save()
+
+            # redirect to a new URL:
+            return HttpResponseRedirect(reverse('all-borrowed') )
+
+    # If this is a GET (or any other method) create the default form.
+    else:
+        proposed_renewal_date = datetime.date.today() + datetime.timedelta(weeks=3)
+        form = RenewBookModelForm(initial={'due_back': proposed_renewal_date})
+
+    context = {
+        'form': form,
+        'book_instance': book_instance,
+    }
+
+    return render(request, 'catalog/book_renew_librarian.html', context)
+
+class AuthorCreate(CreateView):
+    model = Author
+    fields = '__all__'
+    initial = {'date_of_death': '05/01/2018'}
+
+class AuthorUpdate(UpdateView):
+    model = Author
+    fields = ['first_name', 'last_name', 'date_of_birth', 'date_of_death']
+
+class AuthorDelete(DeleteView):
+    model = Author
+    success_url = reverse_lazy('authors')
+
+class BookCreate(CreateView):
+    model = Book
+    fields = '__all__'
+    #initial = {'date_of_death': '05/01/2018'}
+
+class BookUpdate(UpdateView):
+    model = Book
+    #fields = ['first_name', 'last_name', 'date_of_birth', 'date_of_death']
+
+class BookDelete(DeleteView):
+    model = Book
+    success_url = reverse_lazy('books')    

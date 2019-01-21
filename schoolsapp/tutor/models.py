@@ -9,6 +9,7 @@ class Tutor(models.Model):
     email_address = models.EmailField(max_length=100, primary_key=True)
     phone_num = models.IntegerField()
     years_of_experience = models.IntegerField(default=0)
+    username = models.CharField(max_length=50, unique=True)
 
     # class Meta:
     #     ordering = ['last_name', 'first_name']

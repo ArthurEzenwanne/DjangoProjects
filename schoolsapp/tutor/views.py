@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views import generic
 
 from tutor.models import Tutor, Experience, Education
@@ -26,3 +26,7 @@ class TutorListView(generic.ListView):
 class TutorDetailView(generic.DetailView):
     """Class based detailed view for Tutor model."""
     model = Tutor        
+
+def tutor_detail_view(request, username):
+    tutor = get_object_or_404(Tutor, username=username)
+    return render(request, 'tutor/tutor_detail.html', context={'tutor': tutor})    

@@ -3,5 +3,5 @@
 {% block content %}
     <h1>Tutor: {{ tutor }}</h1>
 
-    <p><strong>Tutor:</strong> <a href="{% url 'tutor-detail' tutor.pk %}">{{ tutor }}</a></p>          
+    <p><strong>Tutor:</strong> <a href="{% url 'tutor-detail' tutor.username %}">{{ tutor }}</a></p>          
 {% endblock %}

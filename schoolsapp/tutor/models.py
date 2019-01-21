@@ -4,7 +4,6 @@ from django.urls import reverse
 
 class Tutor(models.Model):
     """Model representing a tutor."""
-    id = models.IntegerField(unique=True)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     email_address = models.EmailField(max_length=100, primary_key=True)
@@ -24,7 +23,6 @@ class Tutor(models.Model):
 
 class Experience(models.Model):
     """Model representing a tutor's experience."""
-    id = models.IntegerField(primary_key=True)
     tutor = models.ForeignKey(Tutor, on_delete=models.CASCADE)
     #email_address = models.EmailField(null=False, blank=False, max_length=100, primary_key=True)
     organization_one = models.CharField(max_length=100, null=True, blank=True)
@@ -42,7 +40,6 @@ class Experience(models.Model):
 
 class Education(models.Model):
     """Model representing a tutor's education."""
-    id = models.IntegerField(primary_key=True)
     tutor = models.ForeignKey(Tutor, on_delete=models.CASCADE)
     #email_address = models.EmailField(null=False, blank=False, max_length=100, primary_key=True)
     institution_one = models.CharField(max_length=100, null=True, blank=True)

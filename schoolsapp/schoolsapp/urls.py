@@ -20,6 +20,6 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('tutor/', include('tutor.urls')),
+    # path('tutors/', include('tutor.urls')),
     path('', include('tutor.urls'))     # This is the start page config. Set it to our landing page
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

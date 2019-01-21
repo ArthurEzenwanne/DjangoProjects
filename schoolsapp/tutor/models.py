@@ -16,7 +16,8 @@ class Tutor(models.Model):
     
     def get_absolute_url(self):
         """Returns the url to access a particular tutor instance."""
-        return reverse('tutor-detail', args=[str(self.id)])
+        # return reverse('tutor-detail', args=[str(self.email_address)])
+        return reverse('tutor-detail', args=[str(self.username)])
 
     def __str__(self):
         """String for representing the Model object."""

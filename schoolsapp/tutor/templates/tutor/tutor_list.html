@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Tutor List</h1>
+    {% if tutor_list %}
+        <ul>
+            {% for tutor in tutor_list %}
+                <li><a href="{{ tutor.get_absolute_url }}">{{ tutor }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+    <p>There are no tutors in this site.</p>
+    {% endif %}       
+{% endblock %}

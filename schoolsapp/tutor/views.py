@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views import generic
 
 from tutor.models import Tutor, Experience, Education
 
@@ -17,3 +18,11 @@ def index(request):
 
     # Render the HTML template index.html with the data in the context variable
     return render(request, 'index.html', context=context)
+
+class TutorListView(generic.ListView):
+    """Class based list view for Tutor model."""
+    model = Tutor
+
+class TutorDetailView(generic.DetailView):
+    """Class based detailed view for Tutor model."""
+    model = Tutor        

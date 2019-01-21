@@ -7,7 +7,7 @@ class Tutor(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     email_address = models.EmailField(max_length=100, primary_key=True)
-    phone_num = models.IntegerField()
+    phone_num = models.CharField(max_length=15)
     years_of_experience = models.IntegerField(default=0)
     username = models.CharField(max_length=50, unique=True)
 

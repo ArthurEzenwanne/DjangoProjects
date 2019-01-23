@@ -39,9 +39,9 @@ class TutorAdmin(admin.ModelAdmin):
 # Register the Admin classes for Experience using the decorator
 @admin.register(Experience)
 class ExperienceAdmin(admin.ModelAdmin):
-    list_display = ('tutor', 'organization_one', 'job_position_one')
+    list_display = ('tutor', 'organization', 'job_position')
     
 # Register the Admin classes for Education using the decorator
 @admin.register(Education)
 class EducationAdmin(admin.ModelAdmin):
-    list_display = ('tutor', 'institution_one', 'qualification_one')        
+    list_display = ('tutor', 'institution', 'qualification')        

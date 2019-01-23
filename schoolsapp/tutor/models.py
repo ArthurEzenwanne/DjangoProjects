@@ -26,30 +26,48 @@ class Tutor(models.Model):
 class Experience(models.Model):
     """Model representing a tutor's experience."""
     tutor = models.ForeignKey(Tutor, on_delete=models.CASCADE)
-    #email_address = models.EmailField(null=False, blank=False, max_length=100, primary_key=True)
-    organization_one = models.CharField(max_length=100, null=True, blank=True)
-    job_position_one = models.CharField(max_length=100, null=True, blank=True)
-    location_one = models.CharField(max_length=100, null=True, blank=True)
-    start_date_one = models.DateField(null=True, blank=True)
-    end_date_one = models.DateField(null=True, blank=True)
-    reponsibility_one = models.CharField(max_length=1000, null=True, blank=True)
-    awards_one = models.CharField(max_length=1000, null=True, blank=True)
-    specialization_one = models.CharField(max_length=100, null=True, blank=True)
+    organization = models.CharField(max_length=100, null=True, blank=True)
+    job_position = models.CharField(max_length=100, null=True, blank=True) 
+    location = models.CharField(max_length=100, null=True, blank=True)
+    start_date = models.DateField(null=True, blank=True)
+    end_date = models.DateField(null=True, blank=True)
+    reponsibility = models.CharField(max_length=1000, null=True, blank=True)
+    awards = models.CharField(max_length=1000, null=True, blank=True)
+    specialization = models.CharField(max_length=100, null=True, blank=True)
+
+    # tutor.experience_set.create(
+    #     organization='org1',
+    #     position='position1',
+    # )
+    # tutor.experience_set.create(
+    #     organization='org2',
+    #     position='position2',
+    # )
+    # tutor.experience_set.create(
+    #     organization='org3',
+    #     position='position3',
+    # ) 
+    # This is to be used in dynamically creating the experiences for each signed in tutor #
+    # So we could have a new tutor 'Ada' ceating new  experiences as #
+    # Ada.experience_set.create (
+    #   organization='any organizational input user inputs',
+    #   position='any position input user inputs',
+    #   )#        
 
     def __str__(self):
         """String for representing the Model object."""
-        return f'{self.first_name} {self.last_name}'        
+        return f'{self.first_name} {self.last_name}'
 
 class Education(models.Model):
     """Model representing a tutor's education."""
     tutor = models.ForeignKey(Tutor, on_delete=models.CASCADE)
     #email_address = models.EmailField(null=False, blank=False, max_length=100, primary_key=True)
-    institution_one = models.CharField(max_length=100, null=True, blank=True)
-    course_one = models.CharField(max_length=100, null=True, blank=True)
-    qualification_one = models.CharField(max_length=50, null=True, blank=True)
-    start_date_one = models.DateField(null=True, blank=True)
-    end_date_one = models.DateField(null=True, blank=True)
-    awards_one = models.CharField(max_length=1000, null=True, blank=True)
+    institution = models.CharField(max_length=100, null=True, blank=True)
+    course = models.CharField(max_length=100, null=True, blank=True)
+    qualification = models.CharField(max_length=50, null=True, blank=True)
+    start_date = models.DateField(null=True, blank=True)
+    end_date = models.DateField(null=True, blank=True)
+    awards = models.CharField(max_length=1000, null=True, blank=True)
 
     def __str__(self):
         """String for representing the Model object."""

@@ -1,14 +1,32 @@
-{% extends "generic_search_list.html" %}
+{% extends "search_generic.html" %}
 
 {% block content %}
-    <h1>Tutor List</h1>
-    {% if tutor_list %}
-        <ul>
-            {% for tutor in tutor_list %}
-                <li><a href="{{ tutor.get_absolute_url }}">{{ tutor }}</a></li>
-            {% endfor %}
-        </ul>
+    {% if school_list %}
+        {% for school in school_list %}
+            <div class="spons-jobs-list">
+                <div class="col-sm-2 pad-hide">
+                    <div class="job-img">
+                        <img src="images/job-img.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-sm-7 pad-hide job-des">
+                    <div class="job-detail">
+                        <h5><a href="{{ school.get_absolute_url }}">{{ school }}</a></h5>
+                        <h6><i class="fa fa-university" aria-hidden="true"></i> {{ school.motto }}</h6>
+                        <p><i class="fa fa-graduation-cap" aria-hidden="true"></i> {{ school.description }}</p>
+                    </div>
+                </div>
+                <div class="col-sm-3 pad-hide">
+                    <div class="job-add">
+                        <h5>Premium</h5>
+                        <p><i class="fa fa-map-marker" aria-hidden="true"></i> {{ school.lga }},
+                            <br/>{{ school.state }}, {{ school.country }}
+                        </p>   
+                    </div>
+                </div>
+            </div>  
+        {% endfor %}        
     {% else %}
-    <p>There are no tutors in this site.</p>
-    {% endif %}       
+        <p>There are no tutors in this site.</p>
+    {% endif %}      
 {% endblock %}

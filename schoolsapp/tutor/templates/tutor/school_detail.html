@@ -1,0 +1,65 @@
+{% extends "dashboard.html" %}
+
+{% block content %}
+    <div class="">
+        <div class="bord-box">
+            <div class="lable-top-sec">
+                <h5>Basic Info</h5>
+            </div>
+            <div class="from-top-sec">
+                <form>
+                    <div class="col-sm-7">
+                        <div class="from-group">
+                            <label>Institution Name</label>
+                            <input type="text" value="{{ school.name }}" disabled> 
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label>motto</label>
+                            <input type="text" class="txt-align" value="{{ school.motto }}" disabled>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label class="txt-lable">Distinctive Description/Mission</label>
+                            <textarea value="{{ school.description }}" disabled></textarea>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="contact-detail-from col-sm-12">
+                    <h5>contact detail</h5>                                            
+                    <div class="form-group">
+                        <label>email</label>
+                        <input type="text" value="{{ school.email_address }}" disabled>
+                    </div>
+                </div>
+                <div class="location-detail-from col-sm-12">
+                    <h5>LOCATION DETAILS</h5>
+                    <div class="col-sm-6 form-group col-pad-rm">
+                        <label>state</label>
+                        <input type="text" value="{{ school.state }}" disabled>
+                    </div>
+                    <div class="col-sm-6 form-group col-pad-rm">
+                        <label>lga</label>
+                        <input type="text" value="{{ school.lga }}" disabled>
+                    </div>
+                    <div class="col-sm-6 form-group col-pad-rm">
+                        <label>City</label>
+                        <input type="text" value="{{ school.city }}" disabled>
+                    </div>                    
+                    <div class="col-sm-6 form-group col-pad-rm">
+                        <label>Town</label>
+                        <input type="text" value="{{ school.town }}" disabled>
+                    </div>
+                    <div class="col-sm-6 form-group col-pad-rm">
+                        <label>Street Address</label>
+                        <input type="text" value="{{ school.street }}" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+{% endblock %}

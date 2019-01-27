@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% block title %}<title></title><title>Dashboard | Schools</title>{% endblock %}
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        {% load static %}
+        <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+        <link href="{% static 'css/form.css' %}" rel="stylesheet">
+        <link href="{% static 'css/innerpage.css' %}" rel="stylesheet">
+        <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+        <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="pull-left tel-set"><img src="images/tell-icon.png"><a href="tel:+2349090587701">+2349090587701</a></div>
+                    <div class="pull-right mail-set"><img src="images/mail-icon.png"><a href="mailto:enquire@schoolsconn.com">enquire@schoolsconn.com</a></div>
+                </div>                    
+            </div>
+        </header>
+        <div class="inner-navbar">
+            <div class="container">
+                <div class="row">
+                    <div class="inner-navbar-left">
+                        <img src="images/logo.png" class="img-responsive" alt="">
+                    </div>
+                    <div class="inner-bavbar-right">
+                        <div class="ib-serch">
+                            <input type="text" placeholder="Serch here...">
+                            <button>Search</button>
+                        </div>
+                        <div class="notification">
+                            <a href="#"> <img src="images/notifucation-icon.png" class="img-responsive" alt="noti">
+                                <span>12</span></a>
+                        </div>
+                        <div class="profile-drop">
+                            <img src="images/profile-icon.png" alt="prpic">
+                            <div class="dropdown">
+                                <button class="dropbtn">Pitter smith</button>
+                                <div class="dropdown-content">
+                                    <a href="#">Pitter smith</a>
+                                    <a href="#">John polad</a>
+                                    <a href="#">pitter smith</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="inner-banner">
+            <div class="banner-block">
+                <img src="images/dash-banner.png" class="img-responsive" alt="inb">
+            </div>
+            <div class="banner-cam">
+                <!-- <a href=""><img src="images/camera-icon.png" alt="camera"></a> -->
+                <button class="file-upload">            
+                    <input type="file" class="file-input"><img src="images/camera-icon.png">
+                </button>
+            </div>
+        </div>
+
+        <div class="profile-sec">
+            <div class="container">
+                <div class="row">
+                    <div class="pro-box">
+                        <div class="profile-box">
+                            <img src="images/profileman.jpg" class="img-responsive" alt="proman">
+                        </div>
+                        <div class="carousel-caption-inner">
+                            <h1>Pitter Smith</h1>
+                            <p>Lorem Ipsum is simply dummy text</p>
+                        </div>
+                        <button class="file-upload">            
+                            <input type="file" class="file-input"><img src="images/camera-icon.png">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="inner-midle">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3 pad-hide1 res-md-12">
+                        <div class="side-inner-menu">
+                            <div class="lable-top-sec">
+                                <h5>Profle</h5>
+                            </div>                          
+                        </div>
+                    </div>
+                    <div class="col-sm-9 res-md-12">
+                        <div class="row">
+                            {% block content %}
+                                <!-- default content text (typically empty) -->
+                            {% endblock %}                            
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </section>
+
+        <!-----footer section----->
+        <footer class="footer-sec">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-links">
+                        <h4>About us</h4>
+                        <div class="footer-link-brd"></div>
+                        <ul>
+                            <li><a href="#">What We Do</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Achieve more</h4>
+                        <div class="footer-link-brd"></div>
+                        <ul>
+                            <li><a href="#">Find Schools</a></li>
+                            <li><a href="#">Find Tutor</a></li>
+                            <li><a href="#">Find Resources</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Partner with us</h4>
+                        <div class="footer-link-brd"></div>
+                        <ul>
+                            <li><a href="#">Create your School</a></li>
+                            <li><a href="#">Become a Tutor</a></li>
+                            <li><a href="#">Write for Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links f-connect">
+                        <h4>Let’s Connect With You</h4>
+                        <div class="footer-link-brd"></div>
+                        <ul class="ft-last">
+                            <li><img src="images/tell-icon.png"><a href="tel:23-456-7890">23-456-7890</a></li>
+                            <li><img src="images/mail-icon.png"><a href="mailto:enquire@schoolsconn.com">enquire@schoolsconn.com</a></li>
+                        </ul>
+                        <div class="social-icon">
+                            <ul>
+                                <li><a href="#"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a></li> 
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="footer-bottom">
+                        <p>© 2017 SchoolsConn. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-----footer section----->
+
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
+        <script src="js/bootstrap.js" type="text/javascript"></script>
+        <script src="js/jquery-2.1.0.min.js" type="text/javascript"></script>
+    </body>
+</html>

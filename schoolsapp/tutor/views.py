@@ -30,3 +30,11 @@ class TutorDetailView(generic.DetailView):
 def tutor_detail_view(request, username):
     tutor = get_object_or_404(Tutor, username=username)
     return render(request, 'tutor/tutor_detail.html', context={'tutor': tutor})    
+
+def school_detail_view(request, slug):
+    school = get_object_or_404(school, slug=slug)
+    return render(request, 'school/school_detail.html', context={'school': school})       
+
+class SchoolListView(generic.ListView):
+    """Class based list view for School model."""
+    model = School

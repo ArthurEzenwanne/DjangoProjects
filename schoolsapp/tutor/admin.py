@@ -1,12 +1,13 @@
 from django.contrib import admin
 
-from tutor.models import Tutor, Education, Experience
+from tutor.models import Tutor, Education, Experience, School
 
 # Register your models here.
 
 # admin.site.register(Tutor)
 # admin.site.register(Education)
 # admin.site.register(Experience)
+admin.site.register(School)
 
 class EducationInline(admin.StackedInline):
     model = Education

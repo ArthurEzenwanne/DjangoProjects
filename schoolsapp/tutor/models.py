@@ -72,3 +72,27 @@ class Education(models.Model):
     def __str__(self):
         """String for representing the Model object."""
         return f'{self.first_name} {self.last_name}'          
+
+class School(models.Model):
+    """Model representing a school."""
+    email_address = models.EmailField(max_length=100, primary_key=True)
+    name = models.CharField(max_length=100)
+    motto = models.CharField(max_length=1000)
+    description = models.CharField(max_length=1000)
+    slug = models.CharField(max_length=120, unique=True)
+
+    country = models.CharField(max_length=100, default='Nigeria')
+    state = models.CharField(max_length=100)
+    lga = models.CharField(max_length=100)
+    city = models.CharField(max_length=100, null=True, blank=True)
+    town = models.CharField(max_length=100, null=True, blank=True)
+    street = models.CharField(max_length=100)
+
+    def get_absolute_url(self):
+        """Returns the url to access a particular school instance."""
+        # return reverse('tutor-detail', args=[str(self.email_address)])
+        return reverse('school-detail', args=[str(self.slug)])
+
+    def __str__(self):
+        """String for representing the Model object."""
+        return f'{self.name}'

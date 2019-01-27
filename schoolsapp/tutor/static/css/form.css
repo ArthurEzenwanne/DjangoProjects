@@ -1,0 +1,711 @@
+.bord-box {border:  1px solid #efefef; margin-bottom: 20px;}
+.bord-box1 {border:  1px solid #efefef; margin-bottom: 20px;}
+.bord-box2 {border:  1px solid #efefef; margin-bottom: 20px;}
+.bord-box3 {border:  1px solid #efefef; margin-bottom: 20px;}
+.bord-box4 {border:  1px solid #efefef; margin-bottom: 20px;padding: 5px;}
+.form-dashbox{border: 1px solid #ddd;height: auto;margin-bottom: 10px;}
+.form-dashbox-sec{border: 0px solid #ddd;height: 140px;margin-bottom: 10px;}
+.form-dashbox-right{border: 1px solid #ddd;margin-bottom: 10px;}
+.lable-top-sec{background: #0fa46c;padding: 10px;}
+.lable-top-sec h5{color: #fff;font-size: 18px;text-transform: capitalize;font-family: 'MontserratRegular';margin-top: 0px;margin-bottom: 0px;text-transform: uppercase;}
+.from-top-sec{padding: 10px;}
+.txt-align{margin-left: 81px;}
+.txt-lable{width: 16%;}
+.from-top-sec form label
+{
+    /*    width: 25%;*/
+    margin-right: 30px;
+    font-size: 15px;
+    color: #848484;
+    text-transform: capitalize;
+    font-family: 'MontserratLight';
+}
+.from-top-sec form input[type=text]
+{
+    font-size: 14px;
+    padding: 5px 15px;
+    width: 60%;
+    color: #848484;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+    font-family: 'MontserratLight';
+    vertical-align: text-top;
+}
+.motto input[type=text]
+{
+    font-size: 14px;
+    padding: 5px 15px;
+    width: 100%;
+    color: #848484;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+    font-family: 'MontserratLight';
+    vertical-align: text-top;
+}
+
+.chk-sec input[type=checkbox]
+{
+    margin: 0px 5px 3px 10px;
+    vertical-align: middle;
+}
+.chk-sec span
+{ font-family: 'MontserratLight'; color: #848484;font-size: 15px;}
+.from-top-sec form textarea 
+{
+    resize: none;
+    width: 60%;
+    height: 100px;
+    vertical-align: middle;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-family: 'MontserratLight';
+}
+.contact-detail-from{margin-top: 15px;margin-bottom: 15px;}
+.contact-detail-from h5{
+    color: #848484;
+    font-size: 18px;
+    text-transform: capitalize;
+    font-family: 'MontserratRegular';margin-top: 0px;margin-bottom: 15px;text-transform: uppercase;}
+.contact-detail-from label
+{
+    width: 20%;
+    font-size: 15px;
+    color: #848484;
+    text-transform: capitalize;
+    font-family: 'MontserratLight';
+}
+.contact-detail-from input[type=text]
+{
+    font-size: 14px;
+    padding: 5px 15px;
+    width: 40%;
+    color: #848484;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+    font-family: 'MontserratLight';
+    vertical-align: text-top;
+}
+.location-detail-from{margin-top: 15px;margin-bottom: 15px;}
+.location-detail-from h5{
+    color: #848484;
+    font-size: 18px;
+    text-transform: capitalize;
+    font-family: 'MontserratRegular';margin-top: 0px;margin-bottom: 15px;text-transform: uppercase;}
+.location-detail-from label
+{
+    width: 40%;
+    font-size: 15px;
+    color: #848484;
+    text-transform: capitalize;
+    font-family: 'MontserratLight';
+}
+.area-box label
+{
+    width: 30%;
+    font-size: 15px;
+    color: #848484;
+    text-transform: capitalize;
+    font-family: 'MontserratLight';
+}
+.txt1-lable{width: 19%!important;}
+
+.location-detail-from select
+{
+    font-size: 14px;
+    padding: 5px;
+    width: 58%;
+    color: #848484;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+    font-family: 'MontserratLight';
+    vertical-align: text-top;
+}
+.location-detail-from input[type=text]
+{
+    font-size: 14px;
+    padding: 5px 15px;
+    width: 58%;
+    color: #848484;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+    font-family: 'MontserratLight';
+    vertical-align: text-top;
+}
+.location-detail-from textarea
+{
+    font-size: 14px;
+    padding: 10px;
+    width: 80%;
+    height: 100px;
+    color: #848484;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+    font-family: 'MontserratLight';
+    vertical-align: middle;
+}
+.btn-group-sec{float: right;margin-right: 17px;}
+.btn-group-sec button
+{
+    width: 100px;
+    height: 35px;
+    font-size: 15px;
+    color: #fff;
+    border: 0px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-family: 'MontserratLight';
+    letter-spacing: 1px;
+    background-color:#0fa46c;
+}
+.btn-group-sec button:hover{background-color:#365046;}
+.add-info{padding: 10px;}
+
+.add-info label
+{
+    width: 20%;
+    font-size: 15px;
+    color: #848484;
+    text-transform: capitalize;
+    font-family: 'MontserratLight';
+}
+
+.add-info select
+{
+    font-size: 14px;
+    padding: 5px;
+    width: 20%;
+    color: #848484;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+    font-family: 'MontserratLight';
+    vertical-align: text-top;
+}
+.add-info textarea
+{
+    font-size: 14px;
+    padding: 10px;
+    width: 41%;
+    height: 100px;
+    color: #848484;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+    font-family: 'MontserratLight';
+    vertical-align: text-top;
+}
+
+.school-cer{margin-top: 15px;margin-bottom: 15px;} 
+.school-cer h5{
+    color: #848484;
+    font-size: 18px;
+    text-transform: capitalize;
+    font-family: 'MontserratRegular';margin-top: 0px;margin-botto: 15px;text-transform: uppercase;}
+.school-cer h5 span{font-size: 14px;text-transform: capitalize;}
+.school-cer input[type=checkbox]
+{
+    margin: 0px 15px 3px 5px;
+    vertical-align: middle;
+}
+.school-cer span
+{font-family: 'MontserratLight'; color: #848484;font-size: 15px;}
+.school-cer > .det-for p
+{ font-family: 'MontserratLight'; color: #000;font-size: 15px;text-align: justify;}
+
+.det-for-check input[type=checkbox]
+{
+    margin: 0px 5px 3px 10px;
+    vertical-align: middle;
+}
+.det-for-check span
+{ font-family: 'MontserratLight'; color: #848484;font-size: 15px;}
+.det-for-check select
+{
+    font-size: 14px;
+    padding: 5px;
+    width: 30%;
+    color: #848484;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+    font-family: 'MontserratLight';
+    vertical-align: middle;
+}
+.det-for-check span{font-family: 'MontserratLight'; color: #848484;font-size: 12px;}
+.chekbx{width: 30%;float: left;}
+
+.add-off label{width: 58%;}
+.add-off input[type=checkbox]
+{
+    font-size: 14px;
+    padding: 5px 15px;
+    color: #848484;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+    font-family: 'MontserratLight';
+    vertical-align: middle;
+}
+.add-off span
+{
+    margin: 0px 13px 0px 0px;
+    vertical-align: middle;
+    text-transform: capitalize;
+}
+.add-info1 label{width: 38%;}
+.add-info1 input[type=text]
+{
+    width: 40%;
+    font-size: 14px;
+    padding: 5px 15px;
+    color: #848484;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+    font-family: 'MontserratLight';
+}
+.upl-box{border: 1px solid #ccc;border-radius: 4px;height: 160px;margin-bottom: 5px;}
+.upload-btn{position: relative;}
+.upload-btn button
+{
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 30px;
+    color: #fff;
+    background-color: #0fa46c;
+    border: 0px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    text-transform: capitalize;
+}
+.upload-btn input[type=file]
+{
+    position: relative;
+    z-index: 999;
+    width: 100%;
+    opacity: 0;
+}
+
+.upl-btn-group
+{
+    margin-bottom: 20px;
+    float: right;
+    margin-top: 40px;
+}
+.upl-btn-group button
+{
+    width: 80px;
+    height: 35px;
+    font-size: 15px;
+    color: #fff;
+    border: 0px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-family: 'MontserratLight';
+    letter-spacing: 1px;
+    background-color:#0fa46c;
+}
+.upl-btn-group button:hover{background-color:#365046;}
+
+
+
+.upload-box{
+    padding: 10px 10px 10px 27px;
+    display: table;
+    width: 100%;
+}
+.school-cer .col-sm-9.col-pad-rm {
+    padding-left: 0;
+}
+.upload-btn1{position: relative;float: left;}
+.upload-section label
+{
+    float: left;
+    width: 20%;
+    font-size: 15px;
+    color: #848484;
+    text-transform: capitalize;
+    font-family: 'MontserratLight';
+}
+.upload-btn1 button
+{
+    position: absolute;
+    top: 0px;
+    width: 50%;
+    height: 30px;
+    color: #fff;
+    background-color: #0fa46c;
+    border: 0px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    text-transform: capitalize;
+}
+.upload-btn1 input[type=file]
+{
+    position: relative;
+    z-index: 999;
+    width: 100%;
+    opacity: 0;
+}
+
+
+.massege-box p
+{ font-family: 'MontserratLight'; color: #000;font-size: 15px;text-align: justify;}
+
+.form-dashbox-detail{padding: 10px;}
+.form-dashbox-detail p{font-family: 'MontserratLight'; color: #000;font-size: 15px; }
+
+.upload-pic
+{
+    /*    border: 1px solid #ccc;*/
+    border-radius: 5px;
+    width: 40%;
+    float: left;
+}
+.upload-pic-det label
+{
+    /*    float: left;
+        width: 20%;*/
+    margin-left: 5px;
+    font-size: 12px;
+    color: #848484;
+    text-transform: capitalize;
+    font-family: 'MontserratLight';
+}
+
+.upload-pic-det p
+{
+    /*    float: left;
+        width: 20%;*/
+    margin-left: 5px;
+    font-size: 12px;
+    color: #848484;
+    text-transform: capitalize;
+    font-family: 'MontserratLight';
+}
+.upload-pic-det span
+{
+    font-size: 12px;
+    color: #848484;
+    text-transform: capitalize;
+    font-family: 'MontserratLight';
+}
+
+.upload-btn-bom{position: relative;float: right;width: 43%;}
+.upload-btn-bom button
+{
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 33px;
+    color: #fff;
+    background-color: #0fa46c;
+    border: 0px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    text-transform: capitalize;
+}
+.upload-btn-bom input[type=file]
+{
+    position: relative;
+    z-index: 999;
+    width: 100%;
+    opacity: 0;
+}
+.psd-rm{padding-left: 0px;}
+.row-cust {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.massbx:nth-child(even){background-color: #f1f1f1;}
+.massbx img
+{
+    margin-top: 12px;
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin-right: 15px;
+    vertical-align: middle;
+}
+.massbx
+{
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    height: 125px;
+}
+.massbx:last-child{border-bottom: none;}
+.massbx a h5
+{
+    font-size: 20px;
+    color: #007dbb;
+    margin-top: 0px;
+    text-transform: capitalize;
+    font-family: 'MontserratRegular';
+}
+.massbx a p
+{
+    font-size: 16px;
+    color: #ddd;
+    text-align: justify;
+    font-family: 'MontserratLight';
+}
+.date-sec p{float: right;color: #333;font-family: 'MontserratRegular';font-style:italic;}
+.massbx a h5:hover{text-decoration: none;}
+.msg-box{padding: 20px;background-color: #f1f1f1;height: 260px;}
+.msg-box textarea
+{
+    width: 100%;
+    height: 180px;
+    font-size: 17px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    font-family: 'MontserratLight';
+    outline: none;
+}
+.msg-box button
+{
+    margin-top: 10px;
+    float: right;
+    width: 100px;
+    height: 35px;
+    background: #0fa46c;
+    color: #fff;
+    font-size: 17px;
+    font-family: 'MontserratLight';
+    border: 0px solid greenyellow;
+    border-radius: 5px;
+    outline: greenyellow;
+    text-transform: uppercase;
+}
+
+.review-box{padding: 10px;border-bottom: 1px solid #ccc;height: 130px;}
+
+.review-box h4
+{
+    font-size: 24px;
+    font-family: 'MontserratLight';
+    font-weight: 600;
+    color: #333;
+    text-transform: capitalize;
+}
+.review-box p{float: left;color: orange;font-size: 25px;font-weight: 600;margin-right: 5px;font-family: 'MontserratLight';margin-top: -5px;}
+.review-box img
+{
+    width: 132px;
+    float: left;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.review-box span
+{
+    font-size: 15px;
+    margin-top: 5px;
+    font-family: 'MontserratLight';
+    font-weight: 600;
+    color: #ccc;
+    text-transform: capitalize;
+}
+.rv-img{width: 10%;height: 130px;float: left;}
+.rv-img img{width: 60px;}
+.reviewrat-box{padding: 10px;border-bottom: 1px solid #ccc;}
+.ratrv-box{height: auto;border: 1px solid #ccc;}
+.rat-msg p img{width: 132px;}
+.rat-msg h4
+{
+    font-size: 21px;
+    font-family: 'MontserratLight';
+    font-weight: 600;
+    color: #333;
+    text-transform: capitalize;
+}
+.rat-msg span
+{
+    font-size: 15px;
+    font-family: 'MontserratLight';
+    font-weight: 600;
+    color: #ccc;
+    text-transform: capitalize;
+}
+.rat-msg p
+{
+    font-size: 16px;
+    font-family: 'MontserratLight';
+    color: #333;
+    text-align: justify;
+}
+.write-rv h5
+{
+    text-align: center;
+    font-size: 25px;
+    font-family: 'MontserratLight';
+    font-weight: 600;
+    color: orange;
+    margin-bottom: 2em;
+}
+.write-rv{padding: 10px;}
+.write-rv span{font-size: 17px;font-family: 'MontserratLight';text-transform: capitalize;font-weight: 600;color: #0fa46c;}
+.write-rv img{width: 160px;margin-left: 30px;}
+.rtv-form{margin-top: 2em;margin-bottom: 1em;}
+.rtv-form label{width: 100%;font-family: 'MontserratLight';font-size: 18px;color: #0fa46c;}
+.rtv-form input[type=text]
+{
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 5px 15px;
+    height: 35px;
+    border-radius: 5px;
+}
+.rtv-form textarea
+{
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    height: 100px;
+    border-radius: 5px; 
+}
+.rtv-form input[type=submit]
+{
+    width: 110px;
+    border: 1px solid #ccc;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #0fa46c;
+    font-family: 'MontserratLight';font-size: 18px;color: #fff;
+    outline: none;
+}
+
+
+.school-cer .det-for label{   
+    margin-right: 15px;
+    width: auto;  
+    font-weight: normal;
+    font-size: 15px;
+}
+.school-cer label input[type=checkbox] {
+    margin: 0px 6px 3px 5px;
+}
+.lbl-area textarea{width: 100% !important;}
+.cur-lbl label{
+    margin-right: 15px;
+    width: auto;
+    font-weight: normal;
+    font-size: 15px;
+
+}
+.lbl-area label{
+    width: auto;
+    margin-top: 20px;
+}
+.location-detail-from .col-sm-6.form-group.col-pad-rm, .location-detail-from .col-sm-12 {
+    padding-left: 0;
+}
+.form-dashbox-right .form-dashbox {
+    border: 0px solid #ddd;
+}
+
+
+/*<!!!!!!!-------Responsive css------6---!!!!!>*/
+
+@media (max-width:1199px)
+{
+    .from-top-sec form label {margin-right: 0px;}
+    /*    .bord-box1 {height: 1610px;}
+        .bord-box {height: 881px;}*/
+    /*    .form-dashbox-right {height: 222px;}*/
+    .form-dashbox-sec {height: 180px;}
+    .from-top-sec form input[type=text] {width: 100%}
+    .txt-align {margin-left: 0px;}
+    .from-top-sec form textarea {width: 100%}
+    .upl-btn-group button {width: 62px;font-size: 13px;}
+}
+@media (max-width:997px)
+{
+    .from-top-sec form input[type=text] {width: 100%;margin-bottom: 10px;}
+    .from-top-sec form textarea {width: 100%;}
+    .bord-box {margin-bottom: 10px;}
+    .bord-box1 {margin-bottom: 10px;}
+    /*    .bord-box3 {height: auto;}*/
+    .upl-btn-group button {width: 65px;height: 33px;}
+    .bord-box4 {border: none;padding: 0px;}
+    .upload-pic {width: 110px;float: none;}
+    /*    .form-dashbox-right {height: 289px;}*/
+    .upload-btn-bom {float: none;width: 220px;}
+    .form-dashbox-sec {height: auto;}
+    .form-dashbox-detail {margin-bottom: 10px;}
+    .upload-pic-det{margin-top: 20px;}
+    .upload-pic-det > .form-group{margin-bottom: 0px;}
+
+}
+@media (max-width:767px)
+{
+    .psd-rm {padding-left: 0px;padding-right: 0px;}
+    /*    .bord-box {height:auto;}
+        .bord-box1 {height:auto;}
+        .bord-box2 {height: auto;}*/
+    .btn-group-sec {float: none;}
+    .upl-btn-group {float: none;margin-top: 20px;margin-bottom: 10px;     padding-left: 28px;}
+    .res-upd{width: 190px;}
+    .upl-box {height: 150px;margin-bottom: 5px;}
+    .lable-top-sec h5 {font-size: 15px;}
+    .from-top-sec form label {margin-right: 20px;font-size: 13px;}
+    .contact-detail-from label {font-size: 13px;width: 100%;}
+    .contact-detail-from h5 {font-size: 16px;}
+    .location-detail-from h5 {font-size: 16px;}
+    .location-detail-from label {width: 100%;}
+    .area-box label {width: 100%;}
+    location-detail-from label {font-size: 13px;}
+    .contact-detail-from input[type=text] {width: 100%;}
+    .location-detail-from select {width: 100%;}
+    .location-detail-from input[type=text]{width: 100%;}
+    .location-detail-from textarea {width: 100%;}
+    .col-pad-rm{padding-left: 0px;padding-right: 0px;}
+    .add-info label {width: 100%;}
+    .add-info textarea {width: 100%;}
+    .school-cer h5 {font-size: 16px;}
+    .school-cer h5 span {font-size: 12px;}
+    .add-info1 input[type=text] {width: 100%;}
+    .chekbx {width: 40%;}
+    .add-info label {font-size: 13px;} 
+    .upload-section label {width: 100%;float: none;}
+    .upload-btn1 button {width: 100%;}
+    .form-group {margin-bottom: 10px;}
+    .massbx{height: auto;}
+    .date-sec p{float: none;}
+    .massbx a h5{font-size: 17px;}
+    .review-box h4 {font-size: 24px;}
+    .review-box p {font-size: 19px;margin-top: -1px;}
+    .review-box img {width: 118px;}
+    .review-box span {font-size: 13px;}
+    .rat-msg h4 {font-size: 23px;}
+    .rat-msg span {font-size: 13px;}
+    .rat-msg p img {width: 110px;}
+    .rat-msg p{font-size: 14px;}
+    .write-rv h5 {font-size: 21px;margin-bottom: 1em;}
+    .rtv-form textarea {width: 100%;}
+    .rtv-form input[type=text]{width: 100%;}
+    .rv-img img {width: 42px;margin-top: 10px;}
+    .review-box {height: auto;}
+    .upload-btn-bom button {width: 50%;height: 34px;}
+}
+@media (max-width:608px)
+{
+    .upl-btn-group {float: none;margin-top: 20px;margin-bottom: 20px;}
+    .school-cer > .det-for p {font-size: 13px;}
+    .add-info select {width: 100%;}
+    .upload-pic-det{margin-top: 20px;}
+}
+@media (max-width:467px)
+{
+    .chekbx {width: 100%;}
+    .det-for-check select {width: 100%}
+    .rv-img {height: 146px;}
+    .rat-msg p {font-size: 13px;}
+}

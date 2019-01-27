@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        {% block title %}<title></title><title>Dashboard | Schools</title>{% endblock %}
+        {% block title %}<title>Dashboard | Schools</title>{% endblock %}
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -17,8 +17,8 @@
         <header class="header">
             <div class="container">
                 <div class="row">
-                    <div class="pull-left tel-set"><img src="images/tell-icon.png"><a href="tel:+2349090587701">+2349090587701</a></div>
-                    <div class="pull-right mail-set"><img src="images/mail-icon.png"><a href="mailto:enquire@schoolsconn.com">enquire@schoolsconn.com</a></div>
+                    <div class="pull-left tel-set"><img src="{% static 'images/tell-icon.png' %}"><a href="tel:+2349090587701">+2349090587701</a></div>
+                    <div class="pull-right mail-set"><img src="{% static 'images/mail-icon.png' %}"><a href="mailto:enquire@schoolsconn.com">enquire@schoolsconn.com</a></div>
                 </div>                    
             </div>
         </header>

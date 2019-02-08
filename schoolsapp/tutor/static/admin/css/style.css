@@ -1,0 +1,976 @@
+/*
+Theme Name: 
+Theme URI: 
+Author: 
+Author URI: 
+Description: 
+Version: 1.0
+License: GPL v2 or later
+License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+Tags: left-sidebar, custom-menu, featured-images, post-formats
+Text Domain: 
+*/
+/*
+|----------------------------------------------------------------------------
+| CSS INDEX
+|----------------------------------------------------------------------------
+	1.0 - General Styles
+		1.1 - Alignments
+		1.2 - Galleries
+		1.3 - Fixed margin
+		1.4 - Fixed padding
+		1.5 - Fixed Button Style
+		1.6 - page header
+	2.0 - Main navbar
+	3.0 - Banner
+	4.0 - Intro Section
+	5.0 - call to action
+	6.0 - Service Section
+*/
+body {
+  font-size: 14px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Lato", sans-serif;
+  color: #707070;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  text-rendering: optimizeLegibility;
+  background: #f4f8fa; }
+
+h1 {
+  font-size: 36px;
+  line-height: 40px;
+  font-weight: 400; }
+
+h2 {
+  font-size: 34px;
+  line-height: 40px;
+  font-weight: 400; }
+
+h3 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 400; }
+
+h4 {
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 400; }
+
+h5 {
+  font-size: 16px;
+  line-height: 32px;
+  font-weight: 400; }
+
+p {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #707070; }
+
+a {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: #707070;
+  text-decoration: none; }
+
+a:hover {
+  text-decoration: none; }
+
+.border-top-0 {
+  border-top: 0 !important; }
+
+/* --------------------------------------------------
+    lcd header style
+----------------------------------------------------- */
+.lcd-header-area {
+  left: 0;
+  right: 0;
+  z-index: 1002;
+  background: #fff;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+
+.merge-header {
+  margin-right: 300px; }
+
+.fixed-top {
+  -webkit-box-shadow: 1px 0 3px rgba(0, 0, 0, 0.15);
+  box-shadow: 1px 0 3px rgba(0, 0, 0, 0.15); }
+
+.navbar.lcd-navbar {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+
+.lcd-merge-left .navbar.lcd-navbar {
+  left: 80px; }
+
+/*** header logo area style ***/
+.lcd-brand {
+  background: #1580c8;
+  height: 90px;
+  /*--sidebar toggle---*/ }
+  .lcd-brand a.logo {
+    color: #2e2e2e;
+    float: left;
+    margin: 20px 0 0 25px;
+    font-size: 24px;
+    color: #ffffff; }
+    .lcd-brand a.logo img {
+      margin-right: 3px; }
+    .lcd-brand a.logo span {
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out; }
+  .lcd-brand a.logo:hover,
+  .lcd-brand a.logo:focus {
+    text-decoration: none;
+    outline: none; }
+  .lcd-brand .lcd-sidebar-toggle-box {
+    float: left;
+    line-height: 90px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    position: absolute;
+    right: -15px;
+    display: inline-block;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer; }
+  .lcd-brand .lcd-sidebar-toggle-box span {
+    font-size: 16px;
+    width: 32px;
+    height: 32px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 32px; }
+
+/*** header sitebar style ***/
+#lcd-sidebar {
+  height: 100%;
+  position: fixed;
+  background: #ffffff;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  z-index: 999; }
+
+#lcd-sidebar ul li {
+  position: relative;
+  border-top: 1px solid #f6f6f6;
+  list-style: none; }
+
+.lcd-leftside-navigation {
+  height: 100%;
+  width: 100%;
+  overflow: hidden; }
+  .lcd-leftside-navigation .lcd-leftside-navigation-s {
+    height: 100%;
+    width: 106%;
+    overflow: scroll; }
+  .lcd-leftside-navigation .lcd-sidebar-profile {
+    padding-top: 34px; }
+    .lcd-leftside-navigation .lcd-sidebar-profile img {
+      height: 73px;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out; }
+    .lcd-leftside-navigation .lcd-sidebar-profile .name {
+      font-size: 20px;
+      font-family: "Quicksand", sans-serif;
+      color: #707070;
+      font-weight: 600;
+      padding-bottom: 20px;
+      padding-top: 4px; }
+    .lcd-leftside-navigation .lcd-sidebar-profile .profile-details {
+      overflow: hidden;
+      border-top: 1px solid #eeeeee;
+      border-bottom: 1px solid #eeeeee; }
+      .lcd-leftside-navigation .lcd-sidebar-profile .profile-details .followers {
+        width: 50%;
+        float: left;
+        display: inline-block;
+        text-align: center;
+        font-family: "Lato", sans-serif;
+        font-size: 12px;
+        color: #707070;
+        font-weight: 400;
+        border-right: 1px solid #eeeeee;
+        height: 50px;
+        line-height: 50px;
+        cursor: pointer;
+        padding: 0; }
+      .lcd-leftside-navigation .lcd-sidebar-profile .profile-details .following {
+        width: 50%;
+        float: left;
+        display: inline-block;
+        text-align: center;
+        font-family: "Lato", sans-serif;
+        font-size: 12px;
+        color: #707070;
+        font-weight: 400;
+        height: 50px;
+        line-height: 50px;
+        cursor: pointer;
+        padding: 0; }
+      .lcd-leftside-navigation .lcd-sidebar-profile .profile-details span {
+        height: 50px;
+        line-height: 50px;
+        color: #1580c8;
+        float: none;
+        padding-left: 3px; }
+  .lcd-leftside-navigation ul.lcd-sidebar-menu {
+    margin: 0;
+    padding: 0; }
+  .lcd-leftside-navigation ul.lcd-sidebar-menu li ul.sub {
+    padding: 0 20px 0 23px;
+    margin-left: 35px; }
+  .lcd-leftside-navigation ul.lcd-sidebar-menu li a span.menu-text {
+    float: inherit; }
+  .lcd-leftside-navigation ul.lcd-sidebar-menu li a span {
+    display: inline-block;
+    float: right;
+    line-height: 42px; }
+  .lcd-leftside-navigation ul.lcd-sidebar-menu li a {
+    color: #707070;
+    text-decoration: none;
+    display: block;
+    height: 44px;
+    padding: 0 20px 0 25px;
+    line-height: 42px;
+    font-size: 14px;
+    outline: none;
+    font-family: "Lato", sans-serif;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+  .lcd-leftside-navigation ul.lcd-sidebar-menu li a.active,
+  .lcd-leftside-navigation ul.lcd-sidebar-menu li a:hover,
+  .lcd-leftside-navigation ul.lcd-sidebar-menu li a:focus {
+    color: #707070;
+    display: block;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+  .lcd-leftside-navigation ul.lcd-sidebar-menu li a i {
+    padding-right: 10px; }
+  .lcd-leftside-navigation ul.lcd-sidebar-menu li a:hover i, .lcd-leftside-navigation ul.lcd-sidebar-menu li a:focus i {
+    color: #707070; }
+  .lcd-leftside-navigation ul.lcd-sidebar-menu li a span.fa {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease; }
+  .lcd-leftside-navigation ul.lcd-sidebar-menu li a.active span.fa {
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg); }
+  .lcd-leftside-navigation #sidebar > ul > li > ul.sub {
+    display: none; }
+  .lcd-leftside-navigation #sidebar .sub-menu > .sub li a {
+    padding-left: 46px; }
+  .lcd-leftside-navigation #sidebar > ul > li.active > ul.sub, .lcd-leftside-navigation #sidebar > ul > li > ul.sub > li > a {
+    display: block; }
+  .lcd-leftside-navigation ul.lcd-sidebar-menu li ul.sub li {
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    border: 0 !important; }
+  .lcd-leftside-navigation ul.lcd-sidebar-menu li ul.sub li a {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    color: #707070; }
+  .lcd-leftside-navigation ul.lcd-sidebar-menu li ul.sub li a:hover,
+  .lcd-leftside-navigation ul.lcd-sidebar-menu li ul.sub li.active a {
+    color: #707070;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+  .lcd-leftside-navigation ul.lcd-sidebar-menu li {
+    border-top: 1px solid rgba(255, 255, 255, 0.05); }
+  .lcd-leftside-navigation ul.lcd-sidebar-menu li.sub-menu {
+    line-height: 15px; }
+  .lcd-leftside-navigation ul.lcd-sidebar-menu ul.sub li {
+    border-bottom: none; }
+
+.lcd-hide-left-bar {
+  margin-left: 0px !important;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  width: 85px !important; }
+
+.lcd-merge-left {
+  margin-left: 85px !important; }
+
+/*---*/
+.nav-collapse.collapse {
+  display: inline; }
+
+@media all and (max-width: 992px) {
+  .navbar.lcd-navbar {
+    display: inline-block; }
+    .navbar.lcd-navbar .navbar-toggler {
+      float: right;
+      margin-top: 25px;
+      margin-right: 0; }
+    .navbar.lcd-navbar .login-side .navbar-nav {
+      display: -webkit-inline-box;
+      padding-top: 0;
+      padding-bottom: 0;
+      float: right; }
+      .navbar.lcd-navbar .login-side .navbar-nav .btn-transparent {
+        margin-top: 0 !important; } }
+
+@media all and (min-width: 992px) {
+  #lcd-sidebar {
+    width: 300px; }
+  .navbar.lcd-navbar {
+    left: 299px; }
+  .navbar.lcd-hide-nav-bar {
+    left: 84px; }
+  .lcd-leftside-navigation ul.lcd-sidebar-menu li a i,
+  .lcd-leftside-navigation ul.lcd-sidebar-menu li a span,
+  .lcd-leftside-navigation .lcd-sidebar-profile .profile-details,
+  .lcd-leftside-navigation .lcd-sidebar-profile .name {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+  .lcd-hide-left-bar .lcd-leftside-navigation ul.lcd-sidebar-menu li a span,
+  .lcd-hide-left-bar .lcd-leftside-navigation .lcd-sidebar-profile .profile-details {
+    display: none; }
+  .lcd-hide-left-bar .lcd-leftside-navigation .lcd-sidebar-profile .name {
+    font-size: 0;
+    padding: 0;
+    line-height: 0; }
+  .lcd-hide-left-bar .lcd-leftside-navigation .lcd-sidebar-profile {
+    margin-bottom: 35px; }
+  .lcd-hide-left-bar .lcd-leftside-navigation .lcd-sidebar-profile img {
+    height: 45px; }
+  .lcd-hide-left-bar .lcd-leftside-navigation ul.lcd-sidebar-menu li a {
+    text-align: center; }
+  .lcd-hide-left-bar .lcd-leftside-navigation ul.lcd-sidebar-menu li a i {
+    font-size: 18px;
+    text-align: center; }
+  .lcd-hide-left-bar .lcd-brand a.logo span {
+    visibility: hidden;
+    opacity: 0;
+    font-size: 0px; } }
+
+@media all and (max-width: 992px) {
+  #lcd-sidebar {
+    width: 85px; }
+  .navbar.lcd-navbar {
+    left: 80px; }
+  .lcd-leftside-navigation ul.lcd-sidebar-menu li a i,
+  .lcd-leftside-navigation ul.lcd-sidebar-menu li a span,
+  .lcd-leftside-navigation .lcd-sidebar-profile .profile-details,
+  .lcd-leftside-navigation .lcd-sidebar-profile .name {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+  .lcd-leftside-navigation ul.lcd-sidebar-menu li a span,
+  .lcd-leftside-navigation .lcd-sidebar-profile .profile-details,
+  .lcd-leftside-navigation .lcd-sidebar-profile .name {
+    display: none; }
+  .lcd-leftside-navigation .lcd-sidebar-profile {
+    margin-bottom: 35px; }
+  .lcd-leftside-navigation .lcd-sidebar-profile img {
+    height: 45px; }
+  .lcd-leftside-navigation ul.lcd-sidebar-menu li a {
+    text-align: center; }
+  .lcd-leftside-navigation ul.lcd-sidebar-menu li a i {
+    font-size: 18px;
+    text-align: center; }
+  .lcd-brand a.logo span {
+    visibility: hidden;
+    opacity: 0;
+    font-size: 0px; }
+  .navbar.lcd-navbar .login-side .navbar-nav li .btn-transparent {
+    color: #ffffff; }
+  #lcd-sidebar.lcd-hide-left-bar {
+    width: 300px !important; }
+  .lcd-hide-left-bar .lcd-leftside-navigation ul.lcd-sidebar-menu li a span,
+  .lcd-hide-left-bar .lcd-leftside-navigation .lcd-sidebar-profile .profile-details,
+  .lcd-hide-left-bar .lcd-leftside-navigation .lcd-sidebar-profile .name {
+    display: block; }
+  .lcd-hide-left-bar .lcd-leftside-navigation .lcd-sidebar-profile {
+    margin-bottom: auto; }
+  .lcd-hide-left-bar .lcd-leftside-navigation .lcd-sidebar-profile img {
+    height: auto; }
+  .lcd-hide-left-bar .lcd-leftside-navigation ul.lcd-sidebar-menu li a {
+    text-align: inherit; }
+  .lcd-hide-left-bar .lcd-leftside-navigation ul.lcd-sidebar-menu li a i {
+    font-size: 18px;
+    text-align: center;
+    text-align: left;
+    float: left;
+    line-height: 45px; }
+  .lcd-leftside-navigation ul.lcd-sidebar-menu li a span.menu-text {
+    float: left; }
+  .lcd-hide-left-bar .lcd-brand a.logo span {
+    visibility: visible;
+    opacity: 1;
+    font-size: inherit; }
+  .lcd-navbar ul.navbar-nav li.has-menu-item-megamenu > a.slicknav .icon:before,
+  .lcd-navbar ul.navbar-nav li.has-menu-item-submenu > a.slicknav .icon:before {
+    width: 16px !important;
+    background: #000 !important;
+    margin-bottom: -9px !important; }
+  .lcd-navbar ul.navbar-nav li.has-menu-item-megamenu > a.slicknav .icon:after,
+  .lcd-navbar ul.navbar-nav li.has-menu-item-submenu > a.slicknav .icon:after {
+    margin-left: 7px !important;
+    height: 16px !important;
+    background: #000 !important; } }
+
+@media all and (max-width: 767px) {
+  #lcd-sidebar.lcd-hide-left-bar {
+    width: 250px !important; }
+  .navbar.lcd-navbar {
+    left: 75px; }
+  #lcd-sidebar {
+    width: 80px; }
+  #lcd-main-content {
+    margin-left: 80px !important; }
+  .navbar.lcd-navbar {
+    padding-right: 15px; }
+  .lcd-brand a.logo {
+    margin: 20px 0 0 15px; }
+  .lcd-brand .lcd-sidebar-toggle-box {
+    right: -7px; }
+  .lcd-brand .lcd-sidebar-toggle-box span {
+    background: #1580c8; }
+  .navbar.lcd-navbar .login-side .navbar-nav li .btn-transparent {
+    padding: 2px 15px;
+    font-size: 12px; }
+  .navbar.lcd-navbar .login-side .navbar-nav li {
+    padding: 0 5px; }
+  .login-side img {
+    height: 35px; }
+  .navbar.lcd-navbar .navbar-toggler {
+    margin-top: 28px !important;
+    height: 36px;
+    width: 36px;
+    margin-left: 4px; }
+  .navbar.lcd-navbar .navbar-toggler .line {
+    width: 17px;
+    margin: 3px auto; }
+  .navbar.lcd-navbar button.navbar-toggler[aria-expanded="true"] .line:nth-child(1) {
+    -webkit-transform: translateY(4px) rotate(45deg);
+    -ms-transform: translateY(4px) rotate(45deg);
+    transform: translateY(4px) rotate(45deg); }
+  #lcd-panel-review {
+    margin: 0 0 0 25px !important; }
+  .lcd-panel-review-section .lcd-chart-list-head {
+    padding: 35px 40px 40px 25px !important;
+    display: inline-block; } }
+
+/*main content*/
+#lcd-main-content {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden; }
+
+.lcd-main-content-area {
+  display: inline-block;
+  margin-top: 90px;
+  padding: 15px;
+  width: 100%; }
+
+@media all and (min-width: 992px) {
+  #lcd-main-content {
+    margin-left: 300px; } }
+
+@media all and (max-width: 992px) {
+  #lcd-main-content {
+    margin-left: 85px; } }
+
+.lcd-border-b {
+  border-bottom: 1px solid #ebebeb; }
+
+.lcd-border-r {
+  border-right: 1px solid #ebebeb; }
+
+.lcd-nopadding-r {
+  padding-right: 0px; }
+
+.lcd-nopadding {
+  padding: 0 0 0 0; }
+
+/*---------------------------------------------
+|	Dashboard panel review style 
+----------------------------------------------*/
+.lcd-pending-header {
+  padding: 20px 25px 20px 25px;
+  margin-bottom: 40px; }
+  .lcd-pending-header h2 {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 600;
+    font-family: "Quicksand", sans-serif;
+    color: #707070;
+    margin: 0px; }
+
+/*---------------------------------------------
+|	Dashboard panel review style 
+----------------------------------------------*/
+/* panel review single common class */
+.lcd-panel-review-section {
+  border-radius: 5px;
+  background: #ffffff; }
+
+.lcd-panel-review-single.style1 .lcd-panel-review-body i {
+  color: #ff6262; }
+
+.lcd-panel-review-single.style1 .lcd-panel-review-body span {
+  background-color: rgba(0, 255, 0, 0.102); }
+
+.lcd-panel-review-single.style2 .lcd-panel-review-body i {
+  color: #a468ff; }
+
+.lcd-panel-review-single.style2 .lcd-panel-review-body span {
+  background-color: rgba(255, 0, 0, 0.102); }
+
+.lcd-panel-review-single.style3 .lcd-panel-review-body i {
+  color: #68bdff; }
+
+.lcd-panel-review-single.style3 .lcd-panel-review-body span {
+  background-color: rgba(234, 0, 255, 0.102); }
+
+.lcd-panel-review-single.style4 .lcd-panel-review-body i {
+  color: #fbaf5d; }
+
+.lcd-panel-review-single.style4 .lcd-panel-review-body span {
+  background-color: rgba(21, 128, 199, 0.102); }
+
+.lcd-panel-review-single {
+  margin-bottom: 30px;
+  padding: 20px 25px;
+  background: #ffffff;
+  border-radius: 4px; }
+  .lcd-panel-review-single .lcd-panel-review-head {
+    margin-bottom: 22px; }
+    .lcd-panel-review-single .lcd-panel-review-head h6 {
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 600;
+      font-family: "Quicksand", sans-serif;
+      margin: 0px;
+      color: #707070; }
+    .lcd-panel-review-single .lcd-panel-review-head i {
+      line-height: 24px;
+      font-size: 15px;
+      color: #1580c8; }
+  .lcd-panel-review-single .lcd-panel-review-body i {
+    line-height: 24px;
+    font-size: 35px; }
+  .lcd-panel-review-single .lcd-panel-review-body span {
+    line-height: 24px;
+    font-size: 14px;
+    color: #707070;
+    border-radius: 50px;
+    font-family: "Lato", sans-serif;
+    height: 25px;
+    padding: 0px 18px;
+    letter-spacing: 1px; }
+
+.lcd-panel-review-single {
+  padding: 20px 25px;
+  background: #ffffff;
+  border-radius: 4px; }
+  .lcd-panel-review-single .lcd-panel-review-head {
+    margin-bottom: 22px; }
+    .lcd-panel-review-single .lcd-panel-review-head h6 {
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 600;
+      font-family: "Quicksand", sans-serif;
+      margin: 0px;
+      color: #707070; }
+    .lcd-panel-review-single .lcd-panel-review-head i {
+      line-height: 24px;
+      font-size: 15px;
+      color: #1580c8; }
+  .lcd-panel-review-single .lcd-panel-review-body i {
+    line-height: 24px;
+    font-size: 35px; }
+  .lcd-panel-review-single .lcd-panel-review-body span {
+    line-height: 24px;
+    font-size: 14px;
+    color: #707070;
+    border-radius: 50px;
+    font-family: "Lato", sans-serif;
+    height: 25px;
+    padding: 0px 18px;
+    letter-spacing: 1px; }
+
+@media all and (max-width: 767px) {
+  .lcd-panel-review-single .lcd-panel-review-head h6 {
+    font-size: 14px;
+    line-height: 24px; } }
+
+/* Recent activities sidebar style */
+.lcd-recent-activities {
+  padding: 35px 40px 7px 25px; }
+  .lcd-recent-activities .lcd-recent-activities-head {
+    margin-bottom: 22px; }
+    .lcd-recent-activities .lcd-recent-activities-head h5 {
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 600;
+      font-family: "Quicksand", sans-serif;
+      margin: 0px;
+      color: #707070; }
+      .lcd-recent-activities .lcd-recent-activities-head h5 i {
+        margin-right: 12px;
+        font-size: 16px;
+        color: #1580c8; }
+  .lcd-recent-activities .lcd-recent-activities-body {
+    margin-bottom: 28px; }
+    .lcd-recent-activities .lcd-recent-activities-body img {
+      margin-right: 20px; }
+    .lcd-recent-activities .lcd-recent-activities-body .media-body h6 {
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 400;
+      font-family: "Lato", sans-serif;
+      color: #000;
+      margin: 0; }
+      .lcd-recent-activities .lcd-recent-activities-body .media-body h6 span {
+        font-size: 14px;
+        line-height: 24px;
+        font-family: "Lato", sans-serif;
+        color: #707070; }
+    .lcd-recent-activities .lcd-recent-activities-body .media-body p {
+      font-size: 12px;
+      line-height: 24px;
+      font-family: "Lato", sans-serif;
+      color: #a1a1a1;
+      margin: 0; }
+
+/*---------------------------------------------
+|	Dashboard Panding list style 
+----------------------------------------------*/
+.lcd-pending-details {
+  padding: 10px 25px 10px 20px;
+  border: 1px solid #ebebeb;
+  margin: 0px 30px 20px 25px; }
+  .lcd-pending-details .lcd-pending-details-info {
+    padding: 10px; }
+    .lcd-pending-details .lcd-pending-details-info img {
+      margin-right: 20px;
+      border-radius: 3px; }
+    .lcd-pending-details .lcd-pending-details-info .lcd-pending-details-content h4 {
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 500;
+      font-family: "Quicksand", sans-serif;
+      color: #707070;
+      margin: 0 0 5px 0; }
+    .lcd-pending-details .lcd-pending-details-info .lcd-pending-details-content ul {
+      padding: 0;
+      margin: 0; }
+      .lcd-pending-details .lcd-pending-details-info .lcd-pending-details-content ul li {
+        list-style: none;
+        float: left;
+        margin-right: 15px;
+        font-size: 12px; }
+        .lcd-pending-details .lcd-pending-details-info .lcd-pending-details-content ul li a {
+          text-decoration: none;
+          font-size: 12px; }
+        .lcd-pending-details .lcd-pending-details-info .lcd-pending-details-content ul li i {
+          margin-right: 5px;
+          font-size: 12px; }
+  .lcd-pending-details .lcd-pending-details-btn {
+    margin: 0 13px 0px 0; }
+    .lcd-pending-details .lcd-pending-details-btn ul {
+      padding: 0;
+      margin: 0; }
+      .lcd-pending-details .lcd-pending-details-btn ul li {
+        list-style: none;
+        float: right;
+        margin: 0 0 10px 20px;
+        font-size: 12px; }
+        .lcd-pending-details .lcd-pending-details-btn ul li:first-child {
+          margin-right: 0; }
+        .lcd-pending-details .lcd-pending-details-btn ul li a {
+          text-decoration: none;
+          font-size: 14px;
+          font-family: "Lato", sans-serif;
+          line-height: 32px;
+          font-weight: 400;
+          padding: 1px 15px;
+          display: inline-block;
+          border-radius: 3px; }
+        .lcd-pending-details .lcd-pending-details-btn ul li i {
+          margin-right: 5px;
+          font-size: 12px; }
+
+.lcd-white-btn {
+  border: 1px solid #1580c7;
+  color: #1580c8;
+  background: none; }
+  .lcd-white-btn:hover {
+    color: #1580c8; }
+
+.lcd-green-btn {
+  border: 1px solid #159f6e;
+  color: #ffffff;
+  background: #159f6e; }
+  .lcd-green-btn:hover {
+    color: #ffffff; }
+
+.lcd-blue-btn {
+  border: 1px solid #1580c8;
+  color: #ffffff;
+  background: #1580c8; }
+  .lcd-blue-btn:hover {
+    color: #ffffff; }
+
+.lcd-red-btn {
+  border: 1px solid #ff4c4c;
+  color: #ff4c4c;
+  background: none; }
+  .lcd-red-btn:hover {
+    color: #ff4c4c; }
+
+@media all and (max-width: 1600px) {
+  .lcd-pending-details .lcd-pending-details-btn {
+    margin: 0 3px 0px 0;
+    float: right;
+    width: 100%; }
+  .lcd-pending-details .lcd-pending-details-btn ul li {
+    margin: 0 0 10px 7px; } }
+
+@media all and (max-width: 1024px) {
+  .lcd-nopadding-r {
+    padding-right: 15px; }
+  .lcd-pending-details {
+    margin: 0px 25px 20px 25px; }
+    .lcd-pending-details .lcd-pending-details-btn {
+      margin: 0;
+      float: left;
+      width: auto; }
+      .lcd-pending-details .lcd-pending-details-btn ul li {
+        margin: 0 0 10px 7px; }
+        .lcd-pending-details .lcd-pending-details-btn ul li a {
+          font-size: 13px;
+          padding: 0px 10px; }
+    .lcd-pending-details .lcd-pending-details-info {
+      padding: 5px 0px 5px 10px;
+      margin-bottom: 10px; }
+      .lcd-pending-details .lcd-pending-details-info .lcd-pending-details-content ul li {
+        margin-right: 11px; }
+        .lcd-pending-details .lcd-pending-details-info .lcd-pending-details-content ul li i {
+          margin-right: 2px; }
+  .lcd-recent-activities {
+    padding: 35px 25px 7px 25px; }
+    .lcd-recent-activities .lcd-recent-activities-head {
+      border-bottom: 1px solid #ebebeb;
+      padding: 0 0px 20px 0; } }
+
+@media all and (max-width: 767px) {
+  .lcd-pending-details {
+    margin: 0px 10px 20px 10px; }
+    .lcd-pending-details .lcd-pending-details-btn {
+      margin-top: 5px; }
+      .lcd-pending-details .lcd-pending-details-btn ul li {
+        float: left; }
+        .lcd-pending-details .lcd-pending-details-btn ul li a {
+          font-size: 11px;
+          padding: 0px 8px; }
+    .lcd-pending-details .lcd-pending-details-info {
+      display: inherit !important; }
+      .lcd-pending-details .lcd-pending-details-info img {
+        margin-bottom: 10px; }
+      .lcd-pending-details .lcd-pending-details-info h4 {
+        margin-bottom: 10px;
+        font-size: 14px !important;
+        line-height: 22px !important; }
+      .lcd-pending-details .lcd-pending-details-info ul li {
+        margin-bottom: 8px; } }
+
+/*---------------------------------------------
+|	Profile style 
+----------------------------------------------*/
+.lcd-profile-section {
+  background: #fff;
+  padding: 18px 25px 35px 25px;
+  border-radius: 3px; }
+
+.lcd-profile-notice-area {
+  background: #ffffff;
+  border-radius: 3px;
+  margin-bottom: 30px; }
+  .lcd-profile-notice-area p {
+    line-height: 24px;
+    font-size: 14px;
+    color: #707070;
+    font-family: "Lato", sans-serif;
+    padding: 23px 30px;
+    font-weight: 500;
+    margin: 0; }
+    .lcd-profile-notice-area p i {
+      margin-right: 20px;
+      font-size: 17px;
+      line-height: 24px;
+      color: #1580c8; }
+
+.lcd-profile-basic-info-area h5 {
+  line-height: 24px;
+  font-size: 16px;
+  color: #707070;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  margin: 10px 0 20px 0; }
+  .lcd-profile-basic-info-area h5 span {
+    margin-right: 10px;
+    font-size: 19px;
+    line-height: 20px;
+    color: #1580c8;
+    text-align: center; }
+  .lcd-profile-basic-info-area h5 i {
+    margin-right: 10px;
+    font-size: 13px;
+    line-height: 20px;
+    color: #1580c8;
+    height: 20px;
+    border: 1px solid #1580c8;
+    text-align: center;
+    border-radius: 50px;
+    width: 20px; }
+
+.lcd-profile-basic-info-area .lcd-profile-basic-info {
+  display: block;
+  margin-bottom: 17px; }
+  .lcd-profile-basic-info-area .lcd-profile-basic-info .lcd-profile-basic-info-title {
+    display: block;
+    color: #707070;
+    font-size: 12px;
+    line-height: 24px;
+    font-weight: 500;
+    font-family: "Quicksand", sans-serif;
+    margin-bottom: 8px;
+    cursor: pointer; }
+  .lcd-profile-basic-info-area .lcd-profile-basic-info .lcd-profile-basic-info-input {
+    color: #707070;
+    font-family: "Lato", sans-serif;
+    width: 100%;
+    height: 45px;
+    line-height: 24px;
+    font-size: 14px;
+    border-radius: 2px;
+    border: 1px solid #f4f8fa;
+    padding: 14px 20px; }
+    .lcd-profile-basic-info-area .lcd-profile-basic-info .lcd-profile-basic-info-input:focus {
+      outline: none; }
+  .lcd-profile-basic-info-area .lcd-profile-basic-info .lcd-profile-basic-info-textarea {
+    color: #707070;
+    font-family: "Lato", sans-serif;
+    width: 100%;
+    line-height: 24px;
+    font-size: 14px;
+    border-radius: 2px;
+    border: 1px solid #f4f8fa;
+    padding: 14px 20px; }
+    .lcd-profile-basic-info-area .lcd-profile-basic-info .lcd-profile-basic-info-textarea:focus {
+      outline: none; }
+
+.lcd-profile-basic-info-btn {
+  color: #ffffff;
+  font-family: "Lato", sans-serif;
+  width: 100%;
+  line-height: 24px;
+  font-size: 16px;
+  border-radius: 2px;
+  border: 1px solid #f4f8fa;
+  padding: 20px;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  background: #1580c8;
+  margin-top: 7px;
+  border: 1px solid #1580c8;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s; }
+  .lcd-profile-basic-info-btn:hover {
+    background: #2d9ce6;
+    color: #ffffff;
+    text-decoration: none;
+    border: 1px solid #2d9ce6; }
+
+/*---------------------------------------------
+|	Profile style 
+----------------------------------------------*/
+.lcd-panel-review-section {
+  background: #ffffff; }
+  .lcd-panel-review-section .lcd-chart-list-head {
+    padding: 35px 40px 40px 40px; }
+    .lcd-panel-review-section .lcd-chart-list-head ul {
+      margin: 0;
+      padding: 0; }
+      .lcd-panel-review-section .lcd-chart-list-head ul li {
+        list-style: none;
+        float: left;
+        margin-right: 40px; }
+        .lcd-panel-review-section .lcd-chart-list-head ul li a {
+          font-weight: 400;
+          font-family: "Lato", sans-serif;
+          font-size: 14px;
+          line-height: 24px; }
+          .lcd-panel-review-section .lcd-chart-list-head ul li a i {
+            margin-right: 10px; }
+
+.lcd-fcb {
+  color: #1580c8; }
+  .lcd-fcb:hover {
+    color: #1580c8; }
+
+.lcd-fcg {
+  color: #00d27a; }
+  .lcd-fcg:hover {
+    color: #00d27a; }
+
+.lcd-fcr {
+  color: #ff2626; }
+  .lcd-fcr:hover {
+    color: #ff2626; }
+
+.lcd-fch {
+  color: #9e5eff; }
+  .lcd-fch:hover {
+    color: #9e5eff; }
+
+.lcd-fco {
+  color: #ffa508; }
+  .lcd-fco:hover {
+    color: #ffa508; }
+
+#lcd-panel-review {
+  margin: 40px 0 0 40px; }

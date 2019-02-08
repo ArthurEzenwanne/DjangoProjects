@@ -1,0 +1,60 @@
+body {
+  font-size: 14px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: $font-lato;
+  color: $color-gray;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  text-rendering:optimizeLegibility;
+  background: $color-blue-light;
+}
+
+h1 {
+  font-size: 36px;
+  line-height: 40px;
+  font-weight: 400;
+}
+h2 {
+  font-size: 34px;
+  line-height: 40px;
+  font-weight: 400;
+}
+h3 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 400;
+}
+h4 {
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 400;
+}
+h5 {
+  font-size: 16px;
+  line-height: 32px;
+  font-weight: 400;
+}
+p {
+  font-family: $font-lato;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: $color-gray;
+}
+a {
+  font-family: $font-lato;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: $color-gray;
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: none;
+}
+.border-top-0 {
+  border-top: 0 !important;
+}

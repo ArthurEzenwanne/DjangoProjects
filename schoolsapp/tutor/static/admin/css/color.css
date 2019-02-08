@@ -1,0 +1,20 @@
+/**** variable ****/
+/**** color css ****/
+.lcd-brand,
+.navbar.lcd-navbar,
+.lcd-profile-basic-info-btn,
+.lcd-profile-basic-info-btn:hover,
+.navbar.lcd-navbar .navbar-toggler .line,
+.widget.smm-widget-list .thumb .lc-h-btn a {
+  background: #f75d91; }
+
+.navbar.lcd-navbar .login-side .btn-transparent:hover {
+  color: #f75d91 !important; }
+
+.lcd-profile-basic-info-btn,
+.lcd-profile-basic-info-btn:hover {
+  border-color: #f75d91; }
+
+@media all and (max-width: 991px) {
+  .navbar.lcd-navbar .navbar-toggler {
+    background: #ffffff; } }

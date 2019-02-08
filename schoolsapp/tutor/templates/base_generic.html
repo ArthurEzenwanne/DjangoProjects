@@ -58,10 +58,11 @@
             </div>
         </nav>
         <!-- LC navbar end -->
-        {% block content %}
-            <!-- default content text (typically empty) -->
-        {% endblock %}
 
+        {% block content %}
+        <!-- default content text (typically empty) -->
+        {% endblock %}
+        
         <!-- start footer-section -->
         <footer class="lc-footer-section">
             <div class="container">
@@ -170,7 +171,8 @@
                                 <li><a href="{% url 'index' %}"><i class="fa fa-facebook"></i></a></li>
                                 <li><a href="{% url 'index' %}"><i class="fa fa-twitter"></i></a></li>
                                 <li><a href="{% url 'index' %}"><i class="fa fa-instagram"></i></a></li>
-                                <li><a href="{% url 'index' %}"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -225,8 +227,8 @@
         <script src="{% static 'assets/js/rellax.min.js' %}"></script>
     
         <!-- google map -->
-        <script src="{% static 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAmiJjq5DIg_K9fv6RE72OY__p9jz0YTMI' %}"></script>
-        <script src="assets/js/leaflet-google.js' %}"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmiJjq5DIg_K9fv6RE72OY__p9jz0YTMI"></script>
+        <script src="{% static 'assets/js/leaflet-google.js' %}"></script>
     
         <!-- custom js -->
         <script src="{% static 'js/map.js' %}"></script>

@@ -1,6 +1,265 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
+    <!-- Add additional CSS in static file -->
+    
+    {% load static %}
+
+    <!-- banner start -->
+    <div class="lc-banner lc-banner-two bg-two rellax" data-rellax-speed="-5">
+        <div class="container">
+            <div class="row justify-content-center rellax" data-rellax-speed="3">
+                <div class="col-xl-10 col-lg-11 text-center">
+                    <h2 class="entry-title1">Everything in One Place</h2>
+                    <h5 class="entry-title2">Let's uncover the best Schools, Tutors, Vendors and Resources nearest to you.</h5>
+                </div>
+                <div class="col-12">
+                    <div class="lc-main-search-tab">
+                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="pills-school-tab" data-toggle="pill" href="#pills-school" role="tab" aria-controls="pills-school" aria-selected="true"><i class="fa fa-map-o"></i>Schools</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-tutor-tab" data-toggle="pill" href="#pills-tutor" role="tab" aria-controls="pills-tutor" aria-selected="false"><i class="fa fa-calendar-plus-o"></i>Tutors</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-vendor-tab" data-toggle="pill" href="#pills-vendor" role="tab" aria-controls="pills-vendor" aria-selected="false"><i class="fa fa-calendar-plus-o"></i>Vendors</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-school" role="tabpanel" aria-labelledby="pills-school-tab">
+                                <!-- schools dropdown search form start -->
+                                <form class="lc-main-search" method="GET">
+                                    <div class="lc-main-search-field">
+                                        <input type="text" class="form-control" placeholder="Keyword Eg: Single Girls College">
+                                    </div>
+                                    <div class="lc-search-location">
+                                        <input type="text" class="form-control" placeholder="Location Eg: Ogudu GRA">
+                                    </div>
+                                    <div class="lg-mulitsearch-cat">
+                                        <div class="styled-input">            
+                                            <input id="category_search" class="form-control" placeholder="Category Eg: Tutors" type="text" value="Schools" />
+                                            <ul class="category-dropdown">
+                                                <li><a href="#schools">Schools</a></li>
+                                                <li><a href="#tutors">Tutors</a></li>
+                                                <li><a href="#vendors">Vendors</a></li>
+                                                <li><a href="#resources">Resources</a></li>
+                                            </ul> 
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-default"><i class="fa fa-search"></i> Search</button>
+                                    <div class="fix"></div>
+                                </form>
+                                <!-- End schools dropdown search form -->
+                            </div>
+                            <div class="tab-pane fade" id="pills-tutor" role="tabpanel" aria-labelledby="pills-tutor-tab">
+                                <!-- tutor dropdown search form start -->
+                                <form class="lc-main-search" method="GET">
+                                    <div class="lc-main-search-field">
+                                        <input type="text" class="form-control" placeholder="Keyword Eg: Female Math Instructor">
+                                    </div>
+                                    <div class="lc-search-location">
+                                        <input type="text" class="form-control" placeholder="Location Eg: Ogudu GRA">
+                                    </div>
+                                    <div class="lg-mulitsearch-cat">
+                                        <div class="styled-input">            
+                                            <input id="category_search_two" class="form-control" placeholder="Category Eg: Tutors" type="text" value="Tutors" />
+                                            <ul class="category-dropdown">
+                                                <li><a href="#schools">Schools</a></li>
+                                                <li><a href="#tutors">Tutors</a></li>
+                                                <li><a href="#vendors">Vendors</a></li>
+                                                <li><a href="#resources">Resources</a></li>
+                                            </ul> 
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-default"><i class="fa fa-search"></i> Search</button>
+                                    <div class="fix"></div>
+                                </form>
+                                <!-- End dropdown search form -->
+                            </div>
+                            <div class="tab-pane fade" id="pills-vendor" role="tabpanel" aria-labelledby="pills-vendor-tab">
+                                <!-- vendor dropdown search form start -->
+                                <form class="lc-main-search" method="GET">
+                                    <div class="lc-main-search-field">
+                                        <input type="text" class="form-control" placeholder="Keyword Eg: Bills Vendors">
+                                    </div>
+                                    <div class="lc-search-location">
+                                        <input type="text" class="form-control" placeholder="Location Eg: Ogudu GRA">
+                                    </div>
+                                    <div class="lg-mulitsearch-cat">
+                                        <div class="styled-input">            
+                                            <input id="category_search_three" class="form-control" placeholder="Category Eg: Tutors" type="text" value="Vendors" />
+                                            <ul class="category-dropdown">
+                                                <li><a href="#schools">Schools</a></li>
+                                                <li><a href="#tutors">Tutors</a></li>
+                                                <li><a href="#vendors">Vendors</a></li>
+                                                <li><a href="#resources">Resources</a></li>
+                                            </ul> 
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-default"><i class="fa fa-search"></i> Search</button>
+                                    <div class="fix"></div>
+                                </form>
+                                <!-- End vendor dropdown search form -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-7 col-lg-8 col-12 text-center">
+                    <div class="lc-cat-browse lc-cat-browse-two">
+                        <a href="#" class="cat-single wow animated fadeIn" data-wow-duration="0.1s" data-wow-delay="0.1s">
+                            <img src="{% static 'images/icon/banner_cat_01.png' %}" alt="icon">
+                            <span>Night Life</span>
+                        </a>
+                        <a href="#" class="cat-single wow animated fadeIn" data-wow-duration="0.2s" data-wow-delay="0.2s">
+                            <img src="{% static 'images/icon/05.png' %}" alt="icon">
+                            <span>Hotels</span>
+                        </a>
+                        <a href="#" class="cat-single wow animated fadeIn" data-wow-duration="0.3s" data-wow-delay="0.3s">
+                            <img src="{% static 'images/icon/06.png' %}" alt="icon">
+                            <span>Restaurant</span>
+                        </a>
+                        <a href="#" class="cat-single wow animated fadeIn" data-wow-duration="0.4s" data-wow-delay="0.4s">
+                            <img src="{% static 'images/icon/07.png' %}" alt="icon">
+                            <span>Shopping</span>
+                        </a>                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner end -->
+
+    <!-- start feature section -->
+    <div class="section lc-feature-listing bg-gray pd-default">
+        <div class="container">
+            <div class="row justify-content-center">
+                <!-- section title -->
+                <div class="col-12">
+                    <div class="lc-section-title">
+                        <h1 class="entry-title">Featured Listing</h1>
+                        <div class="shadow-text">Listings</div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+                        <a class="btn btn-listing" href="#">All Listing</a>
+                    </div>
+                </div>
+                <!-- single listing -->
+                <div class="col-12 col-lg-4 col-md-6 wow animated fadeIn" data-wow-duration="0.1s" data-wow-delay="0.1s">
+                    <div class="lc-listing-single" data-lat="43.64701" data-lng="-79.39425" data-maptype="gm" data-marker="images/marker/spa.png">
+                        <div class="entry-thumb">
+                            <img class="img-thumbnail" src="{% static 'images/features/01.png' %}"  alt="img">
+                            <span class="btn-close">Close</span>
+                            <div class="entry-thumb-content">
+                                <span class="rating">
+                                    <i class="fa fa-star"></i>5.0 
+                                    <span class="count">(54)</span>
+                                </span>
+                                <span class="float-right">
+                                    <i class="fa fa-bookmark-o"></i>
+                                    <a class="btn btn-primary" data-toggle="modal" data-target=".lc-listing-modal">
+                                    <span><i class="fa fa-eye"></i></span>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="entry-content">
+                            <div class="media">
+                                <img src="{% static 'images/author/01.png' %}" alt="img">
+                                <div class="media-body">
+                                    <h4><a class="title" href="#">Kennedy Space Center</a></h4>
+                                    <span><i class="fa fa-bed"></i><a href="#">Hotel</a></span>
+                                    <span><i class="fa fa-map-marker"></i><a href="#">Hilton, New Jersey</a></span>
+                                </div>
+                            </div>
+                            <p>Lorem ipsum dolor sit amet, consctetur pising elit, sed eiusmod tempor incididunt labore et dolore magna aliqua.</p>                            
+                        </div>
+                        <div class="entry-footer">
+                            <span>$150 - $750</span>
+                            <span class="right">+44 20 7336</span>
+                        </div>
+                    </div>
+                </div>               
+                <!-- /. single listing -->
+
+                <!-- single listing -->
+                <div class="col-12 col-lg-4 col-md-6 wow animated fadeIn" data-wow-duration="0.2s" data-wow-delay="0.2s">
+                    <div class="lc-listing-single" data-lat="-37.8210922667" data-lng="175.2209316333" data-maptype="gm" data-marker="images/marker/resturent.png">
+                        <div class="entry-thumb">
+                            <img class="img-thumbnail" src="{% static 'images/features/02.png' %}"  alt="img">
+                            <span class="btn-close">Open</span>
+                            <div class="entry-thumb-content">
+                                <span class="rating">
+                                    <i class="fa fa-star"></i>4.9 
+                                    <span class="count">(79)</span>
+                                </span>
+                                <span class="float-right">
+                                    <i class="fa fa-bookmark-o"></i>
+                                    <a class="btn btn-primary" data-toggle="modal" data-target=".lc-listing-modal">
+                                    <span><i class="fa fa-eye"></i></span>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="entry-content">
+                            <div class="media">
+                                <img src="{% static 'images/author/02.png' %}" alt="img">
+                                <div class="media-body">
+                                    <h4><a class="title" href="#">The Burger House</a></h4>
+                                    <span><i class="fa fa-cutlery"></i><a href="#">Restaurent</a></span>
+                                    <span><i class="fa fa-map-marker"></i><a href="#">New Jersey</a></span>
+                                </div>
+                            </div>
+                            <p>Lorem ipsum dolor sit amet, consctetur pising elit, sed eiusmod tempor incididunt labore et dolore magna aliqua.</p>                            
+                        </div>
+                        <div class="entry-footer">
+                            <span>$10 - $200</span>
+                            <span class="right">+44 20 7336</span>
+                        </div>
+                    </div>
+                </div>               
+                <!-- /. single listing -->
+
+                <!-- single listing -->
+                <div class="col-12 col-lg-4 col-md-6 wow animated fadeIn" data-wow-duration="0.3s" data-wow-delay="0.3s">
+                    <div class="lc-listing-single" data-lat="-37.8210881833" data-lng="175.2215004833" data-maptype="gm" data-marker="images/marker/vintage.png">
+                        <div class="entry-thumb">
+                            <img class="img-thumbnail" src="{% static 'images/features/03.png' %}"  alt="img">
+                            <span class="btn-close">Open</span>
+                            <div class="entry-thumb-content">
+                                <span class="rating">
+                                    <i class="fa fa-star"></i>4.9 
+                                    <span class="count">(79)</span>
+                                </span>
+                                <span class="float-right">
+                                    <i class="fa fa-bookmark-o"></i>
+                                    <a class="btn btn-primary" data-toggle="modal" data-target=".lc-listing-modal">
+                                    <span><i class="fa fa-eye"></i></span>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="entry-content">
+                            <div class="media">
+                                <img src="{% static 'images/author/03.png' %}" alt="img">
+                                <div class="media-body">
+                                    <h4><a class="title" href="#">Vintage</a></h4>
+                                    <span><i class="fa fa-glass"></i><a href="#">Night Life</a></span>
+                                    <span><i class="fa fa-map-marker"></i><a href="#">New Jersey</a></span>
+                                </div>
+                            </div>
+                            <p>Lorem ipsum dolor sit amet, consctetur pising elit, sed eiusmod tempor incididunt labore et dolore magna aliqua.</p>                            
+                        </div>
+                        <div class="entry-footer">
+                            <span>$25 - $575</span>
+                            <span class="right">+44 20 7336</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- /. single listing -->
+            </div>
+        </div>
+    </div>
+    <!-- end feature section -->
 
 
     <h1>SchoolsApp Home</h1>

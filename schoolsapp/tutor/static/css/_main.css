@@ -4822,7 +4822,8 @@ a {
 
 /* image active transition */
 .swiper-slide img {
-  -webkit-transition: opacity 1s,  -webkit-transform 1s;
+  -webkit-transition: opacity 1s, 
+ -webkit-transform 1s;
   -webkit-transition: opacity 1s, -webkit-transform 1s;
   transition: opacity 1s, -webkit-transform 1s;
   -o-transition: opacity 1s, transform 1s;
@@ -7647,7 +7648,9 @@ a {
       .lc-copy-right .social-area li a:hover i.fa-google-plus {
         color: #db4437; }
       .lc-copy-right .social-area li a:hover i.fa-tumblr {
-        color: #35465d; }
+        color: #35465d; }        
+      .lc-copy-right .social-area li a:hover i.fa-linkedin {
+        color: #00a0dc; }
   .lc-copy-right.lc-copy-right-2 {
     padding: 22px 0 6px 0; }
 

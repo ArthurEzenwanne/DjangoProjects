@@ -24,6 +24,10 @@
         <link rel="stylesheet" href="{% static 'assets/css/select2.min.css' %}">
         <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}"> 
         
+        <!-- Optional CSS -->
+        <link rel="stylesheet" href="{% static 'assets/css/swiper.min.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/fancybox.min.css' %}">   
+        
         <!-- fonts -->
         <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900%7cQuicksand:300,400,500,700" rel="stylesheet">
         
@@ -128,7 +132,25 @@
                                             <li><a href="{% url 'index' %}">Sign Up</a></li>
                                             <li><a href="{% url 'index' %}">My Account</a></li>
                                             <li><a href="{% url 'index' %}">Add Listing</a></li>
-                                            <li><a href="{% url 'index' %}">Price Table</a></li>
+                                        </ul> 
+                                        <ul>
+                                            <li><a href="{% url 'index' %}">Privacy Policy</a></li>
+                                            <li><a href="{% url 'index' %}">F.A.Q</a></li>
+                                            <li><a href="{% url 'index' %}">Our Pertners</a></li>
+                                            <li><a href="{% url 'index' %}">Contact</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <div class="widget widget_links">
+                                        <div class="widget-title">
+                                            <h4 class="title">Useful Links</h4>
+                                        </div>
+                                        <ul class="ul-link">
+                                            <li><a href="{% url 'index' %}">Sign in</a></li>
+                                            <li><a href="{% url 'index' %}">Sign Up</a></li>
+                                            <li><a href="{% url 'index' %}">My Account</a></li>
+                                            <li><a href="{% url 'index' %}">Add Listing</a></li>
                                         </ul> 
                                         <ul>
                                             <li><a href="{% url 'index' %}">Privacy Policy</a></li>
@@ -149,7 +171,7 @@
                             <ul>
                                 <li><a href="{% url 'index' %}"><i class="fa fa-map-marker"></i>20 Maple Avenue, San Pedro, CA 90731</a></li>
                                 <li><a href="{% url 'index' %}"><i class="fa fa-envelope-o"></i>suport@listera.com</a></li>
-                                <li><a href="{% url 'index' %}"><i class="fa fa-fax"></i>+1-212-9876543</a></li>
+                                <li><a href="{% url 'index' %}"><i class="fa fa-whatsapp"></i>+1-212-9876543</a></li>
                                 <li><a href="{% url 'index' %}"><i class="fa fa-phone"></i>(526) 236-895-4732</a></li>
                                 <li><a href="{% url 'index' %}"><i class="fa fa-skype"></i>example.skype</a></li>
                             </ul>
@@ -225,7 +247,13 @@
         <script src="{% static 'assets/js/imageuploadify.js' %}"></script>
         <script src="{% static 'assets/js/rangeslider.min.js' %}"></script>
         <script src="{% static 'assets/js/rellax.min.js' %}"></script>
-    
+
+        <!-- Optional Optional JavaScript -->
+        <script src="{% static 'assets/js/jquery.easing.min.js' %}"></script>
+        <script src="{% static 'assets/js/scrolling-nav.js' %}"></script>
+        <script src="{% static 'assets/js/swiper.min.js' %}"></script>
+        <script src="{% static 'assets/js/fancybox.min.js' %}"></script>
+   
         <!-- google map -->
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmiJjq5DIg_K9fv6RE72OY__p9jz0YTMI"></script>
         <script src="{% static 'assets/js/leaflet-google.js' %}"></script>

@@ -1,4 +1,56 @@
 {% extends "base_generic.html" %}
+{% load static %}
+
+{% block navigation %}
+
+    <nav id="lcnavbar" class="navbar lc-navbar style-two fixed-top navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand main-logo" href="{% url 'index' %}"><img src="{% static 'images/logo.png' %}" alt="logo"></a>
+            <a class="navbar-brand mobile-logo" href="{% url 'index' %}"><img src="{% static 'images/logo.png' %}" alt="logo"> SchoolsApp</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
+            <div class="collapse navbar-collapse lc-menu" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <!-- dropdown search form start -->
+                        <form class="lc-main-search" style="float:left;" method="GET">
+                            <div class="lc-main-search-field">
+                                <input type="text" class="form-control" placeholder="What are you looking for">
+                            </div>
+                            <div class="lc-search-location">
+                                <input type="text" class="form-control" placeholder="Location">
+                            </div>
+                            <div class="lg-mulitsearch-cat">
+                                <div class="styled-input">            
+                                    <input id="category_search" class="form-control" placeholder="Category Eg: Tutors" type="text" value="Schools" />
+                                    <ul class="category-dropdown">
+                                        <li><a href="#schools">Schools</a></li>
+                                        <li><a href="#tutors">Tutors</a></li>
+                                        <li><a href="#vendors">Vendors</a></li>
+                                        <li><a href="#resources">Resources</a></li>
+                                    </ul> 
+                                </div>
+                            </div>
+                            <button class="btn btn-default"><i class="fa fa-search"></i> Search</button>
+                            <div class="fix"></div>
+                        </form>
+                        <!-- End dropdown search form -->
+                    </li>          
+                    <!-- end Mega menu -->
+                </ul>   
+            </div>
+            <div class="login-side">
+                <ul class="navbar-nav ml-auto">
+                    <li><a href="login-blue.html"><i class="fa fa-sign-in"></i>Log in</a></li>
+                    <li><a class="btn btn-transparent ml-3" href="gm-add-listing-blue.html">+ Add Listing</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+{% endblock %}
 
 {% block content %}
     {% if school_list %}

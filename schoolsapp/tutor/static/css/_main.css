@@ -4190,13 +4190,15 @@ a {
   margin-top: 92px; }
   .lc-search-map-section .lc-search-map {
     position: fixed;
-    width: 50%;
+    /* width: 50%; */
+    width: 100%;
     height: 100vh;
     float: left;
     background: #f2f2f2; }
   .lc-search-map-section .lc-search-map-content {
     position: relative;
-    width: 50%;
+    /* width: 50%; */
+    width: 100%;
     float: right; }
     .lc-search-map-section .lc-search-map-content .lc-range-slider-wrap {
       margin-right: 0 !important;

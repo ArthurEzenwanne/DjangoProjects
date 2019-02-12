@@ -56,8 +56,8 @@
                         <div class="media lc-author-des-wrap">
                             <img class="mr-4" src="{% static 'images/author/16.png' %}" alt="img">
                             <div class="media-body mt-1">
-                                <h1 class="author-title"><span>The Burger House <i class="fa fa-check-circle"></i></span></h1>
-                                <p>Best Burger and Dinner Food Ever</p>
+                                <h1 class="author-title"><span>{{ school }} <i class="fa fa-check-circle"></i></span></h1>
+                                <p>{{ school.motto }}</p>
                             </div>
                         </div>
                         <div class="lc-listing-details-list-meta">
@@ -68,8 +68,7 @@
                                 <li><i class="fa fa-star-o"></i><a class="js-scroll-trigger" href="#lc-details-reviews">Reviews</a></li>
                             </ul>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequntur magni dolores eos qui ratione voluptatem sequi nesciuntadipisci velit tempora incidunt.</p>
+                        <p>{{ school.description }}</p>
                         <div class="lc-special-things border-bottom pt-2">
                             <ul>
                                 <li>

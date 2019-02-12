@@ -1,8 +1,7 @@
 {% extends "base_generic.html" %}
-{% load static %}
 
 {% block navigation %}
-
+{% load static %}
     <nav id="lcnavbar" class="navbar lc-navbar style-two fixed-top navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand main-logo" href="{% url 'index' %}"><img src="{% static 'images/logo.png' %}" alt="logo"></a>
@@ -53,32 +52,214 @@
 {% endblock %}
 
 {% block content %}
-    {% if school_list %}
-        {% for school in school_list %}
-            <div class="spons-jobs-list">
-                <div class="col-sm-2 pad-hide">
-                    <div class="job-img">
-                        <img src="images/job-img.jpg" alt="">
+{% load static %}
+    <div class="lc-search-map-section">            
+        <div class="lc-search-map-content">
+            <div class="lc-search-map-content-details">
+                <div class="row">
+                    <div class="col-lg-3 col-12">
+                        <div class="widget widget-author-contact">
+                            <div class="media">
+                                <div class="media-body">
+                                    <span>Hosted by</span>
+                                    <h5><a href="#">Pascal Beckmann</a></h5>
+                                </div>
+                                <img src="{% static 'images/author/16.png' %}" alt="img">
+                            </div>
+                            <div class="lc-comments-form">
+                                <form>
+                                    <div class="contact-form">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                    <input class="input name-email left" placeholder="Full Name" type="text" name="name">
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                    <input class="input name-email right" placeholder="Email Address" type="email" name="email">
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                    <input class="input name-email right" placeholder="Mobile Number" type="email" name="email">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <textarea class="form-control message" placeholder="Message" rows="3" required data-error="Your message"></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-blue-2 ripple">Send Message</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                        <ul class="lc-all-filter">
+                            <li><a class="lc-common-btn" href="#"><i class="fa fa-clock-o"></i>Open Now</a></li>
+                            <li><a class="lc-common-btn" href="#"><i class="fa fa-map-marker"></i>Near Me</a></li>
+                            <li><button class="lc-search-more-filter-btn lc-common-btn"><i class="fa fa-sliders"></i>More Filter</button></li>
+                            <li class="search-layout float-right">
+                                <a class="lc-search-grid active" href="#"><i class="fa fa-th-large"></i></a>
+                                <a class="lc-search-list" href="#"><i class="fa fa-list"></i></a>
+                            </li>
+                        </ul>
+                        <div class="lc-search-morefilter-area">
+                            <ul class="lc-all-filter">
+                                <li class="">
+                                    <label class="radio-filter">
+                                        <input type="radio">
+                                        <span>Event Search</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="radio-filter">
+                                        <input type="radio">
+                                        <span>Place Search</span>
+                                    </label>
+                                </li>
+                                <li><a class="lc-common-btn" href="#"><i class="fa fa-clock-o"></i>Open Now</a></li>
+                                <li>
+                                    <div class="lc-select-input-field">
+                                        <select name="state">
+                                            <option >Restaurant</option>
+                                            <option >Hotels</option>
+                                            <option >Shopping</option>
+                                            <option >Coffee</option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li><a class="lc-common-btn" href="#"><i class="fa fa-cc-mastercard"></i>Price</a></li>
+                                <li>
+                                    <div class="lc-select-input-field">
+                                        <select name="state">
+                                            <option >By Kilometer</option>
+                                            <option >Hotels</option>
+                                            <option >Shopping</option>
+                                            <option >Coffee</option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li><a class="lc-search-more-filter  lc-common-btn" href="#"><i class="fa fa-map-marker"></i>Near Me</a></li>
+                                <li class="lc-range-slider-wrap">
+                                    <div class="lc-range-slider">
+                                        <input type="range">
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="lc-advance-filter">
+                                <ul>
+                                    <li>
+                                        <label>
+                                            <input type="checkbox">
+                                            <span>Accepts Credit Cards</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="checkbox">
+                                            <span >Wheelchair Accessible</span> 
+                                        </label>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <label>
+                                            <input type="checkbox">
+                                            <span>Smoking Allowed</span> 
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="checkbox">
+                                            <span>Parking Street</span> 
+                                        </label>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <label>
+                                            <input type="checkbox">
+                                            <span>Bike Parking</span> 
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="checkbox">
+                                            <span>Wireless Internet</span> 
+                                        </label>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <label>
+                                            <input type="checkbox">
+                                            <span>Hostels</span> 
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row mt-1">
+                            {% if school_list %}
+                                {% for school in school_list %}
+                                    <!-- single listing -->
+                                    <div class="col-12 col-lg-4 col-md-4 wow animated fadeIn" data-wow-duration="0.1s" data-wow-delay="0.1s">
+                                        <div class="lc-listing-single" data-postid="14" data-lat="-37.8210922667" data-lng="175.2209316333" data-maptype="gm"  data-marker="images/marker/resturent.png">
+                                            <div class="entry-thumb">
+                                                <img class="img-thumbnail" src="{% static 'images/features/07.png' %}"  alt="img">
+                                                <span class="btn-close">{{ school.state }}</span>
+                                                <div class="entry-thumb-content">
+                                                    <span class="rating">
+                                                        <i class="fa fa-star"></i>4.9 
+                                                        <span class="count">(79)</span>
+                                                    </span>
+                                                    <span class="float-right">
+                                                        <i class="fa fa-bookmark-o"></i>
+                                                        <a class="btn btn-primary" data-toggle="modal" data-target=".lc-listing-modal">
+                                                            <span><i class="fa fa-eye"></i></span>
+                                                        </a>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="entry-content">
+                                                <div class="media">
+                                                    <img src="{% static 'images/author/02.png' %}" alt="img">
+                                                    <div class="media-body">
+                                                        <h4><a class="title" href="{{ school.get_absolute_url }}">{{ school }}</a></h4>
+                                                        <span><i class="fa fa-cutlery"></i><a href="#">{{ school.motto }}</a></span>
+                                                        <span><i class="fa fa-map-marker"></i><a href="#">{{ school.state }}, {{ school.country }}</a></span>
+                                                    </div>
+                                                </div>
+                                                <p>{{ school.description }}</p>                            
+                                            </div>
+                                            <div class="entry-footer">
+                                                <span>$10 - $200</span>
+                                                <span class="right">+44 20 7336</span>
+                                            </div>
+                                        </div>
+                                    </div>               
+                                    <!-- /. single listing -->
+                                {% endfor %}        
+                            {% else %}
+                                <p>There are no schools yet in this region.</p>
+                            {% endif %} 
+                        </div>  
                     </div>
                 </div>
-                <div class="col-sm-7 pad-hide job-des">
-                    <div class="job-detail">
-                        <h5><a href="{{ school.get_absolute_url }}">{{ school }}</a></h5>
-                        <h6><i class="fa fa-university" aria-hidden="true"></i> {{ school.motto }}</h6>
-                        <p><i class="fa fa-graduation-cap" aria-hidden="true"></i> {{ school.description }}</p>
-                    </div>
-                </div>
-                <div class="col-sm-3 pad-hide">
-                    <div class="job-add">
-                        <h5>Premium</h5>
-                        <p><i class="fa fa-map-marker" aria-hidden="true"></i> {{ school.lga }},
-                            <br/>{{ school.state }}, {{ school.country }}
-                        </p>   
-                    </div>
-                </div>
-            </div>  
-        {% endfor %}        
-    {% else %}
-        <p>There are no schools yet in this region.</p>
-    {% endif %}      
+            </div>
+        </div>
+    </div>             
+{% endblock %}
+
+{% block footer %}
+    <!-- start footer-section -->    
+    <div class="lc-copy-right lc-copy-right-2">
+        <div class="copyright text-center">
+            <p>© Copyright 2019 ThemeLayer. All rights reserved</p>
+        </div>
+        <a href="#" id="lc-toTop" class="lc-to-top"><i class="fa fa-angle-up"></i></a>
+    </div>
+    <!-- end footer-section -->
 {% endblock %}

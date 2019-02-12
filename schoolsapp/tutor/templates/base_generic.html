@@ -48,7 +48,7 @@
                 </button>
                 <div class="collapse navbar-collapse lc-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-5">
-                        <li class="nav-item"><a href="{% url 'index' %}">Find Schools</a></li> 
+                        <li class="nav-item"><a href="{% url 'schools' %}">Find Schools</a></li> 
                         <li class="nav-item"><a href="{% url 'index' %}">Find Tutors</a></li>   
                         <li class="nav-item"><a href="{% url 'index' %}">Find Vendors</a></li>
                         <li class="nav-item"><a href="{% url 'index' %}">Find Resources</a></li>
@@ -69,6 +69,7 @@
         <!-- default content text (typically empty) -->
         {% endblock %}
         
+        {% block footer %}
         <!-- start footer-section -->
         <footer class="lc-footer-section">
             <div class="container">
@@ -205,6 +206,7 @@
             <a href="#" id="lc-toTop" class="lc-to-top"><i class="fa fa-angle-up"></i></a>
         </footer>
         <!-- end footer-section -->
+        {% endblock %}
     
         <!-- popup content for all listing -->
         <div class="modal fade lc-listing-modal" tabindex="-1" role="dialog" data-backdrop="true">

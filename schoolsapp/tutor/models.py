@@ -1,5 +1,9 @@
+import datetime
+from datetime import date
 from django.db import models
 from django.urls import reverse
+from django.template.defaultfilters import slugify
+
 # Create your models here.
 
 class Tutor(models.Model):
@@ -76,10 +80,9 @@ class Education(models.Model):
 class School(models.Model):
     """Model representing a school."""
     email_address = models.EmailField(max_length=100, primary_key=True)
-    name = models.CharField(max_length=100)
-    motto = models.CharField(max_length=1000)
+    name = models.CharField(max_length=100, unique=True)
+    motto = models.CharField(max_length=1000, blank=True)
     description = models.CharField(max_length=1000)
-    slug = models.CharField(max_length=120, unique=True)
 
     country = models.CharField(max_length=100, default='Nigeria')
     state = models.CharField(max_length=100)
@@ -87,6 +90,16 @@ class School(models.Model):
     city = models.CharField(max_length=100, null=True, blank=True)
     town = models.CharField(max_length=100, null=True, blank=True)
     street = models.CharField(max_length=100)
+
+    #telephone = models.CharField(max_length=17, unique=True, blank=True)
+    telephone = models.CharField(max_length=17, blank=True, default='+2349090587701')
+    approval_number = models.CharField(max_length=11, default='Awaiting')
+    contact_person = models.CharField(max_length=100, default='Not Available')
+    school_type = models.CharField(max_length=50, default='Nursery')
+    approved_exams = models.CharField(max_length=50, default='NCEE')
+    founded_date = models.DateField(null=True, blank=True, default=date.today)
+
+    slug = models.SlugField(max_length=128, unique=True)
 
     def get_absolute_url(self):
         """Returns the url to access a particular school instance."""

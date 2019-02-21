@@ -68,6 +68,26 @@
         {% block content %}
         <!-- default content text (typically empty) -->
         {% endblock %}
+
+        {% block pagination %}
+            {% if is_paginated %}
+                <nav class="lc-page-navigation">
+                    <ul class="pagination">
+                        {% if page_obj.has_previous %}
+                            <li class="pagination-arrow"><a href="{{ request.path }}?page={{ page_obj.previous_page_number }}"><i class="fa fa-angle-double-left"></i></a></li>
+                            <li class="pagination-arrow"><a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">{{ page_obj.previous_page }}</a></li>
+                            <li class="pagination-arrow"><a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">{{ page_obj.previous_page }}</a></li>
+                        {% endif %}
+                        <li><a class="active" href="#">{{ page_obj.number }}</a></li>
+                        {% if page_obj.has_next %}
+                            <li class="pagination-arrow"><a href="{{ request.path }}?page={{ page_obj.next_page_number }}"><i class="fa fa-angle-double-right"></i></a></li>
+                            <li class="pagination-arrow"><a href="{{ request.path }}?page={{ page_obj.next_page_number }}">{{ page_obj.next_page }}</a></li>
+                            <li class="pagination-arrow"><a href="{{ request.path }}?page={{ page_obj.next_page_number }}">{{ page_obj.next_page }}</a></li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            {% endif %}
+        {% endblock %} 
         
         {% block footer %}
         <!-- start footer-section -->

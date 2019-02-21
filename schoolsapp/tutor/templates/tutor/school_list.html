@@ -209,7 +209,7 @@
                                         <div class="lc-listing-single" data-postid="14" data-lat="-37.8210922667" data-lng="175.2209316333" data-maptype="gm"  data-marker="images/marker/resturent.png">
                                             <div class="entry-thumb">
                                                 <img class="img-thumbnail" src="{% static 'images/features/07.png' %}"  alt="img">
-                                                <span class="btn-close">{{ school.state }}</span>
+                                                <span class="btn-close">{{ school.lga }}</span>
                                                 <div class="entry-thumb-content">
                                                     <span class="rating">
                                                         <i class="fa fa-star"></i>4.9 
@@ -232,7 +232,7 @@
                                                         <span><i class="fa fa-map-marker"></i><a href="#">{{ school.state }}, {{ school.country }}</a></span>
                                                     </div>
                                                 </div>
-                                                <p>{{ school.description }}</p>                            
+                                                <p>{{ school.description|truncatechars:140 }}</p>                            
                                             </div>
                                             <div class="entry-footer">
                                                 <span>$10 - $200</span>

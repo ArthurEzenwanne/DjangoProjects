@@ -38,3 +38,4 @@ def school_detail_view(request, slug):
 class SchoolListView(generic.ListView):
     """Class based list view for School model."""
     model = School
+    paginate_by = 30

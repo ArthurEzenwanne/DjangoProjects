@@ -1,0 +1,32 @@
+// Color
+$mega-color-white: #ffffff;
+$mega-color-border: #f0f0f0;
+$mega-color-gray: #808080;
+$mega-color-black: #2c3e50;
+$mega-color-blue: #1580c7;
+$mega-color-black-2: #222222;
+$color-blue: #1580c7;
+
+
+// font
+$font-poppins : 'Quicksand', sans-serif;
+$font-lato: 'Lato', sans-serif;
+
+// mixings
+@mixin animation($effect, $time, $type) {
+	   -moz-animation: $effect $time $type;
+	-webkit-animation: $effect $time $type;
+			animation: $effect $time $type;
+}
+@mixin transition($effect, $time, $type) {
+	   -moz-transition: $effect $time $type;
+	-webkit-transition: $effect $time $type;
+			transition: $effect $time $type;
+}
+
+@mixin transform($value){
+	-ms-transform: $value; /* IE 9 */
+-webkit-transform: $value; /* Safari 3-8 */
+		transform: $value;
+}
+

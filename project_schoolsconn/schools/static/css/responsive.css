@@ -1,0 +1,169 @@
+@media (max-width:1199px)
+{
+    .ib-serch input[type=text] {width: 280px;height: 33px;font-size: 14px;}
+    .ib-serch button {width: 83px;height: 33px;font-size: 14px;}
+    .pro-box > .file-upload {left: 15%;margin-top: 19%;}
+    .left-part {margin-bottom: 0em!important;}
+    .spon-info input[type=submit] {margin-top: 10px;}
+}
+
+@media (max-width:991px)
+{
+    .ib-serch input[type=text] {width: 180px;height: 33px;font-size: 13px;}
+    .ib-serch button {width: 68px;height: 33px;font-size: 12px;}
+    .ib-serch {margin-right: 15px;}
+    .notification {margin-right: 15px;}
+    .profile-drop select {width: 100px;font-size: 14px;}
+    .pro-box > .file-upload {left: 13%;margin-top: 18%;}
+    .pro-box > .file-upload img{width: 35px;}
+    .profile-box {margin-top: -10em;}
+    .carousel-caption-inner {bottom: 1em;}
+    .carousel-caption-inner h1 {font-size: 30px;}
+    .carousel-caption-inner p {font-size: 18px;}
+    .banner-block img {height: 330px;}
+    .smart-top h4 {margin-top: 8px;margin-left: 9px;font-size: 18px;}
+    .post-top h4 {margin-top: 8px;margin-left: 20px;font-size: 18px;}
+    smart-filt-info label {font-size: 13px;}
+    .smart-filt-info form input[type=submit] {font-size: 15px;}
+    .chek-sec input[type="checkbox"] {margin: 2px 5px 7px 4px;width: 18px;height: 20px;}
+    .res-md-12{width: 100%;}
+    .pad-hide1 {padding-left: 15px;}
+    .post-blog {margin-bottom: 40px;}
+    .adds-box {
+
+        float: left;
+        margin: 10px 10px;
+    }
+    .side-inner-menu > .tab a, .side-dpd {
+        display: table;
+        float: left;
+        color: #848484;
+        text-align: left;
+        padding: 11px 24px;
+        text-decoration: none;
+        transition: 0.3s;
+        font-size: 16px;
+        font-family: 'MontserratLight';
+        letter-spacing: 1px;
+        border-bottom: 0 solid #ddd;
+    }
+    .side-dpd {
+        padding: 9px 24px;
+    }
+    .side-inner-menu > .tab {
+        overflow: hidden;
+        border-top: 0;
+        background-color: #f1f1f1;
+        float: left;
+    }
+    .pad-hide1 {
+        padding-left: 15px;
+        margin-bottom: 10px;
+        display: table;
+    }
+    .side-dpd .dropdown-content {
+        right: 0;
+    }
+    .side-inner-menu > .tab {
+        background-color: transparent;
+
+    }
+    .side-dpd {
+        background-color: transparent;
+    }
+
+
+}
+
+@media (max-width:767px)
+{
+    .inner-navbar {height: auto;}
+    .inner-navbar-left {float: none;}
+    .inner-bavbar-right {float: none;padding-top: 15px;margin: auto;display: table;}
+    .inner-navbar-left img{width: 40%;margin: auto;display: table;}
+    .banner-block img {height: 200px;}
+    .banner-cam > .file-upload img{width: 30px;}
+    .pro-box > .file-upload img {width: 26px;}
+    .carousel-caption-inner h1 {font-size: 23px;}
+    .carousel-caption-inner p {font-size: 15px;}
+    .inner-midle {margin-top: 1em;margin-bottom: 0em;}
+    .side-inner-menu ul li {text-align: center;}
+    .post-top ul li {padding: 2px 11px 1px 10px;}
+    .post-top ul li a {font-size: 17px;}
+    .post-box button {font-size: 15px;width: 89px;height: 34px;}
+    .post-top h3 {margin-top: 9px;font-size: 22px;}
+    .post-box-tab2 h5 {font-size: 19px;}
+    .post-blog {margin-bottom: 35px;}
+    .job-img img {margin-top: 0px;}
+    .spons-jobs-list {height: 329px;}
+    .job-add {padding-left: 9px;text-align: justify;}
+    .job-des {border-right: none;}
+    .profile-box {margin-top: -10em;margin-left: 15px;}
+    .time-items li {
+        padding: 100px 0 0 0;
+        position: relative;
+        margin-bottom: 20px;
+    }
+}
+@media (max-width:568px)
+{
+    .profile-sec {height: 50px;}
+    .profile-box {margin-top: -7em;}
+    .pro-box > .file-upload {left: 11%;margin-top: 17%;}
+    .carousel-caption-inner h1 {font-size: 20px;}
+    .carousel-caption-inner p {font-size: 13px;}
+    .post-top ul li {padding: 0px 9px 1px 5px;height: 24px;font-size: 14px;}
+    .post-top {height: 46px;}
+    .blog-name h5 {font-size: 15px;}
+    .blog-name p {font-size: 13px;}
+    .blogs-pic img {width: 20%;}
+    .blogs-top {margin-bottom: 5em;}
+    .text-box p {font-size: 14px;}
+    .post-top h3 {margin-top: 3px;margin-left: 11px;font-size: 20px;}
+    .post-box-tab2 h5 {font-size: 16px;}
+    .tab2-form form label {font-size: 15px;}
+    .tab2-form > .form2 label {width: 25%;font-size: 15px;}
+    .tab2-form > .form3 > .st-check label {width: 30%;font-size: 15px;}
+    .tab2-form > .form3 label {width: 19%;font-size: 15px;}
+    .tab2-form > .form3 > .st-check {font-size: 15px;}
+    .tab2-form form input[type=text] {font-size: 14px;}
+    .tab2-form > .form2 input[type=text] {font-size: 14px;}
+    .tab2-form > .form3 input[type=text] {font-size: 14px;}
+    .upload-admin > .file-upload p {font-size: 9px;}
+    .post-top h4 {margin-top: 3px;margin-left: 12px;font-size: 18px;}
+    .spon-info select {width: 100%;}
+    .spon-info input[type=text] {width: 100%;margin-top: 10px;}
+    .playicon img {left: 38%;top: 34%;bottom: 0%;width: 14%;}
+    .time-items {
+        padding: 100px 0 0 0;
+        position: relative;
+        margin-bottom: 20px;
+    }
+}
+@media (max-width:467px)
+{
+    .notification {float: none;display: table;margin: auto;padding-top: 6px;}
+    .profile-drop {float: none;margin: auto;display: table;padding-top: 10px;}
+    .ib-serch input[type=text] {width: 180px;height: 26px;font-size: 12px;padding: 13px;}
+    .ib-serch button {width: 68px;height: 27px;font-size: 11px;}
+    .banner-block img {height: 150px;}
+    .pro-box > .file-upload {left: 12%;margin-top: 14%;}
+    .pro-box > .file-upload img {width: 18px;}
+    .carousel-caption-inner {bottom: 2em;left: 27%;padding-top: 0px;padding-bottom: 0px;}
+    .carousel-caption-inner h1 {font-size: 18px;margin-bottom: 5px;}
+    .carousel-caption-inner p {font-size: 12px;}
+    .profile-box {margin-top: -6em;}
+    .profile-sec {height: 20px;}
+    .upload-admin {float: none;margin-top: 0em;}
+    .tab2-form > .form3 > .st-check label {width: 100%;font-size: 15px;}
+    .tab2-form form label {width: 100%;}
+    .tab2-form > .form2 label {width: 100%;}
+    .tab2-form > .form3 label {width: 100%;}
+    .tab2-form form input[type=text] {width: 100%;}
+    .tab2-form > .form2 input[type=text] {width: 100%;}
+    .tab2-form > .form3 input[type=text] {width: 100%;}
+    .spons-jobs-list {height: 383px;}
+    .side-inner-menu > .tab a, .side-dpd {
+        padding: 9px 9px;
+    }
+}

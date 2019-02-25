@@ -37,12 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    
     # The following apps are required:
     'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+
+    'schools.apps.SchoolsConfig',
 ]
 
 SITE_ID = 1
@@ -62,7 +64,7 @@ ROOT_URLCONF = 'schoolsconn.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -142,7 +144,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Africa/Lagos'
 
 USE_I18N = True
 
@@ -155,4 +157,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-#LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/'

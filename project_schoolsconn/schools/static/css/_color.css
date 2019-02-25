@@ -1,0 +1,213 @@
+/**** variable ****/
+/**** color css ****/
+.btn-blue:hover {
+  color: #f5f1f1; }
+
+.pricing-single .btn-white-blue:hover,
+.pricing-single:hover .btn-white-blue,
+.pricing-single.pricing-single-active .btn-white-blue {
+  color: #ffffff !important; }
+
+.lc-section-title .btn-listing {
+  background: #f7f1f6; }
+
+.lc-section-title .shadow-text {
+  color: rgba(61, 1, 21, 0.07); }
+
+.btn-blue,
+.lc-to-top,
+.btn-white-blue:hover,
+.widget-average-rating,
+.lc-cta-submit-listing,
+.lc-main-search button,
+.pulse-video .btn-video,
+.lc-testimonial-carousel,
+.lc-main-search .form .btn,
+.navbar.lc-navbar.style-two,
+.navbar.lc-navbar.style-two,
+.lc-comments-form .btn-blue-2,
+.widget-tags .tag-list a:hover,
+.lc-navbar-xone-fixed.fixed-top,
+.lc-add-new-business-hour-handler,
+.pricing-single:hover .price-title,
+.lc-report-model form button.submit,
+.lc-blog-details .blockquote:before,
+.lc-login-tab .tab-content .btn-login,
+.pricing-single:hover .btn-white-blue,
+.widget.smm-widget-list .thumb .lc-h-btn a,
+.lc-page-title ol.breadcrumb-btn li:hover,
+.lc-page-navigation .pagination li a:hover,
+.lc-page-title ol.breadcrumb-btn li.active,
+.lc-page-navigation .pagination li a.active,
+.lc-switch-btn .switch input:checked + .slider,
+.lc-claim-model-wrap .modal-body button.btn-close,
+.lc-listing-modal .modal-content .lc-button-close,
+.lc-testimonial-carousel .owl-dots .owl-dot.active,
+.pricing-single.pricing-single-active .price-title,
+.pricing-single.pricing-single-active .btn-white-blue,
+.lc-testimonial-carousel-two .owl-dots .owl-dot.active,
+.widget-contact .user-contact .social-contact ul li a i,
+.lc-login-tab .nav-tabs .nav-item .nav-link.active:after,
+.widget-contact-form .contact-form .form-group .btn-blue-2,
+.lc-search-map .leaflet-pane a.leaflet-popup-close-button,
+.single-review .media .media-body .report-area .dropdown-menu,
+.lc-subscribtion .input-group .input-group-append .input-group-text,
+.single-review .media .media-body .report-area .dropdown-menu:after,
+.lc-city-listing .entry-thumb .entry-content .entry-author .author-list li,
+.lc-search-map-section .lc-search-map-content .lc-range-slider .rangeslider--horizontal .rangeslider__handle,
+.select2-container--listingcity-banner-multi-search .select2-results__option.select2-results__option--highlighted,
+.lc-search-map-section .lc-search-map-content .lc-range-slider .rangeslider--horizontal .rangeslider__handle:after {
+  background: #f75d91 !important; }
+
+.widget-report .claim a,
+.widget-report .report a,
+.lc-comment-check .left:hover,
+.lc-comment-check .right:hover,
+.lc-call-to-action-2 .btn-blue,
+.pricing-single .btn-white-blue,
+.lc-cta-submit-listing .btn-white,
+.pricing-single .pricing-single-cat,
+.lc-main-search .input-group-2:after,
+.lc-user-sign-in .media .media-body p a,
+.widget-catagory .catagory-items li a i,
+.lc-main-search .lc-search-location:before,
+.lc-contact-area .social-area li a:hover i,
+.lc-listing-details-list-meta ul li a:hover,
+.lc-listing-details-list-meta ul li:hover i,
+.lc-blog-post-share .post-share li a:hover,
+.lc-comments-area .media .media-body a.reply,
+.lc-login-tab .tab-content .forget-pass:hover,
+.lc-login-tab .nav-tabs .nav-item .nav-link i,
+.lc-contact-area .social-contact .media:hover i,
+.team-single .team-details .social-area li a:hover,
+.lc-multiple-img-upload-details .imageuploadify-images-list .btn,
+.lc-author-area .media .media-body .author-social li a:hover,
+.lc-search-map-content-details .lc-all-filter .search-layout a:hover,
+.lc-search-map-content-details .lc-all-filter .search-layout a:active,
+.lc-search-map-content-details .lc-all-filter .search-layout a:focus,
+.lc-search-map-content-details .lc-all-filter .lc-search-more-filter-btn:hover,
+.lc-search-map-content-details .lc-all-filter .lc-search-more-filter-btn:active,
+.lc-search-map-content-details .lc-all-filter .lc-search-more-filter-btn:focus,
+.lc-search-map-section .lc-search-map-content .lc-search-map-content-details .lc-common-btn:active,
+.lc-search-map-section .lc-search-map-content .lc-search-map-content-details .lc-common-btn:hover {
+  color: #f75d91 !important; }
+
+.lc-banner-home3 .lc-main-search-wrap,
+.lc-add-listing-tinymce .mce-flow-layout,
+.intro-single .icon,
+.lc-banner .lc-cat-browse a.cat-single,
+.widget-area .widget_feed .feed-thumb li .thumb:after {
+  background: rgba(247, 93, 145, 0.3); }
+
+.widget-contact .user-contact .social-contact ul li a i:hover {
+  background: rgba(247, 93, 145, 0.7) !important; }
+
+.lc-banner-home3 .lc-main-search-wrap,
+.lc-banner .lc-cat-browse a.cat-single:hover {
+  background: rgba(247, 93, 145, 0.5); }
+
+.pricing-single:hover .table-price,
+.pricing-single.pricing-single-active .table-price {
+  background: #f86395; }
+
+.lc-call-to-action-2 .btn-blue {
+  background: #ffffff !important; }
+
+.widget-contact,
+.bg-single::before,
+.lc-add-review-form,
+.widget-contact-form,
+.lc-add-listing-input,
+.widget-author-contact,
+.widget-statistic span i,
+.lc-comments-form .input,
+.lc-report-model form input,
+.lc-report-model form textarea,
+.lc-comments-form .message,
+.lc-add-listing-input:focus,
+.lc-add-listing-input:hover,
+.lc-add-listing-input:active,
+.lc-multiple-img-upload-details,
+.lc-contact-wrap .lc-comments-form,
+.lc-select-input-field .select2-selection,
+.lc-login-tab .tab-content .tab-pane .form-control {
+  background: rgba(247, 93, 145, 0.06); }
+
+.imageuploadify,
+.lc-report-model form input,
+.lc-report-model form textarea,
+.lc-listing-detaits-section .lc-add-listing-input,
+.lc-listing-detaits-section .lc-select-input-field .select2-selection,
+.lc-blog-details-section .lc-comments-form .input,
+.lc-blog-details-section .lc-comments-form .message {
+  border-color: rgba(247, 93, 145, 0.09); }
+
+.lc-comment-check .left:hover,
+.lc-comment-check .right:hover,
+.widget-tags .tag-list a:hover,
+.pricing-single .btn-white-blue,
+.team-single:hover .thumbnail img,
+.lc-report-model form button.submit,
+.lc-page-navigation .pagination li a:hover,
+.lc-page-navigation .pagination li a.active,
+.lc-page-title ol.breadcrumb-btn li.active,
+.lc-page-title ol.breadcrumb-btn li:hover,
+.single-review .media .media-body .report-area .dropdown-menu,
+.lc-multiple-img-upload-details .imageuploadify-images-list .btn,
+.lc-search-map-content-details .lc-all-filter .search-layout a:hover,
+.lc-search-map-content-details .lc-all-filter .search-layout a:active,
+.lc-search-map-content-details .lc-all-filter .search-layout a:focus,
+.lc-search-map .leaflet-pane a.leaflet-popup-close-button {
+  border-color: #f75d91 !important; }
+
+.lc-search-map-section .lc-search-map-content .lc-range-slider .rangeslider--horizontal .rangeslider__handle:before {
+  border-top: 5px solid #f75d91; }
+
+.lc-add-listing-tinymce .mce-flow-layout {
+  background: rgba(247, 93, 145, 0.06) !important; }
+
+.lc-contact-area {
+  background-image: url(../images/pink/contact.jpg); }
+
+.navbar.lc-navbar .login-side .navbar-nav li .btn-transparent {
+  border: 1px solid #ffffff; }
+
+.navbar.lc-navbar .login-side .navbar-nav li .btn-transparent:hover {
+  color: #f75d91;
+  border-color: #ffffff;
+  background-color: #ffffff; }
+
+.btn-map-scroll,
+.btn-map-scroll:hover,
+.btn-map-scroll.enabled:hover {
+  background-color: #f75d91 !important;
+  border-color: #f75d91;
+  color: #ffffff !important; }
+
+.btn-map-scroll.enabled {
+  color: #f75d91 !important;
+  background-color: #ffffff !important;
+  border-color: #f75d91; }
+
+.lc-add-review-form .rating label:hover:before {
+  color: #f75d91 !important; }
+
+.lc-comments-form .btn-blue-2:hover,
+.lc-section-title .btn-listing:hover,
+.lc-login-tab .tab-content .btn-login:hover,
+.pricing-single.pricing-single-active .btn-white-blue:hover,
+.widget-contact-form .contact-form .form-group .btn-blue-2:hover,
+.lc-listing-detaits-section .lc-section-title .btn-listing:hover,
+.lc-multiple-img-upload-details .imageuploadify-images-list .btn:hover {
+  color: #ffffff !important;
+  background-color: #f75d91 !important; }
+
+@media all and (max-width: 991px) {
+  .navbar.lc-navbar.style-two, .navbar.lc-navbar.style-two {
+    background: #ffffff !important; }
+  .lc-navbar .navbar-toggler {
+    background-color: #f75d91 !important; }
+  .lc-navbar-xone-fixed.fixed-top {
+    background-color: #ffffff !important; }
+  .navbar.lc-navbar .login-side .navbar-nav li .btn-transparent {
+    border-color: #f75d91; } }

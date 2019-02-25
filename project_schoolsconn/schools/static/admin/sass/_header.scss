@@ -1,0 +1,459 @@
+/* --------------------------------------------------
+    lcd header style
+----------------------------------------------------- */
+.lcd-header-area {
+    left: 0;
+    right: 0;
+    z-index: 1002;
+    background: #fff;
+    @include transition(all, .3s, ease-in-out);
+}
+.merge-header {
+    margin-right:300px;
+}
+.fixed-top {
+    box-shadow:1px 0 3px rgba(0,0,0,.15);
+}
+.navbar.lcd-navbar {
+    @include transition(all, .3s, ease-in-out);
+}
+.lcd-merge-left {
+    .navbar.lcd-navbar {
+        left: 80px;
+    }
+}
+
+/*** header logo area style ***/
+.lcd-brand {
+    background: $color-blue;
+    height: 90px;
+    a.logo {
+        color:#2e2e2e;
+        float:left;
+        margin:20px 0 0 25px;
+        font-size: 24px;
+        color: $color-white;
+        img {
+            margin-right: 3px;
+        }
+        span {
+            @include transition(all, .3s, ease-in-out);
+        }
+    }
+    a.logo:hover,
+    a.logo:focus {
+        text-decoration:none;
+        outline:none;
+    }    
+    /*--sidebar toggle---*/
+    .lcd-sidebar-toggle-box {
+        float:left;
+        line-height: 90px;
+        border-radius:50%;
+        -webkit-border-radius:50%;
+        position:absolute;
+        right: -15px;
+        display: inline-block;
+        @include transition(all, .3s, ease-in-out);
+        cursor: pointer;
+    }
+    .lcd-sidebar-toggle-box span {
+        font-size: 16px;
+        width:32px;
+        height:32px;
+        color: $color-white;
+        text-align: center;
+        line-height: 32px;
+    }
+}
+
+
+
+/*** header sitebar style ***/
+#lcd-sidebar {
+    height: 100%;
+    position: fixed;
+    background: $color-white;
+    @include transition(all, .3s, ease-in-out);
+    z-index: 999;
+}
+#lcd-sidebar ul li {
+    position: relative;
+    border-top: 1px solid $color-blue-light2;
+    list-style: none;
+}
+.lcd-leftside-navigation {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    .lcd-leftside-navigation-s {
+        height: 100%;
+        width: 106%;
+        overflow: scroll;
+    }
+    .lcd-sidebar-profile {
+        padding-top: 34px;
+        img {
+            height: 73px;
+            @include transition(all, .3s, ease-in-out);
+
+        }
+        .name {
+            font-size: 20px;
+            font-family: $font-quicksand;
+            color: $color-gray;
+            font-weight: 600;
+            padding-bottom: 20px;
+            padding-top: 4px;
+        }
+        .profile-details {
+            overflow: hidden;
+            border-top: 1px solid $color-gray2;
+            border-bottom: 1px solid $color-gray2;
+            .followers {
+                width: 50%;
+                float: left;
+                display: inline-block;
+                text-align: center;
+                font-family: $font-lato;
+                font-size: 12px;
+                color: $color-gray;
+                font-weight: 400;  
+                border-right: 1px solid $color-gray2; 
+                height: 50px;
+                line-height: 50px;  
+                cursor: pointer;
+                padding: 0;           
+            }
+            .following {
+                width: 50%;
+                float: left;
+                display: inline-block;
+                text-align: center;
+                font-family: $font-lato;
+                font-size: 12px;
+                color: $color-gray;
+                font-weight: 400;
+                height: 50px;
+                line-height: 50px;
+                cursor: pointer;
+                padding: 0;
+            }
+            span {
+                height: 50px;
+                line-height: 50px;
+                color: $color-blue;
+                float: none;
+                padding-left: 3px;
+            }
+        }
+        
+    }
+    ul.lcd-sidebar-menu {
+        margin: 0;
+        padding: 0;
+    }
+    ul.lcd-sidebar-menu li ul.sub {
+        padding: 0 20px 0 23px;
+        margin-left: 35px;
+    }
+    ul.lcd-sidebar-menu li a span.menu-text {
+        float: inherit;
+    }
+    ul.lcd-sidebar-menu li a span {
+        display:inline-block;
+        float: right;
+        line-height: 42px;
+    }
+    ul.lcd-sidebar-menu li a {
+        color: $color-gray;
+        text-decoration: none;
+        display: block;
+        height: 44px;
+        padding: 0 20px 0 25px;
+        line-height: 42px;
+        font-size: 14px;
+        outline: none;
+        font-family: $font-lato;
+        @include transition(all, .3s, ease-in-out);
+    }
+    ul.lcd-sidebar-menu li a.active,
+    ul.lcd-sidebar-menu li a:hover,
+    ul.lcd-sidebar-menu li a:focus {
+        color: $color-gray;
+        display: block;
+        @include transition(all, .3s, ease-in-out);
+    }
+    ul.lcd-sidebar-menu li a i {
+        padding-right: 10px;
+    }
+    ul.lcd-sidebar-menu li a:hover i,ul.lcd-sidebar-menu li a:focus i {
+        color: $color-gray;
+    }
+    ul.lcd-sidebar-menu li a span.fa {
+        @include transition(all, .5s, ease);
+    }
+    ul.lcd-sidebar-menu li a.active span.fa {
+        transform: rotate(90deg);
+    }
+
+    #sidebar>ul>li>ul.sub {
+        display:none;
+    }
+    #sidebar .sub-menu>.sub li a {
+        padding-left:46px;
+    }
+    #sidebar>ul>li.active>ul.sub,#sidebar>ul>li>ul.sub>li>a {
+        display:block;
+    }
+    ul.lcd-sidebar-menu li ul.sub li {
+        margin-bottom:0;
+        margin-left:0;
+        margin-right:0;
+        border: 0 !important;
+    }
+    ul.lcd-sidebar-menu li ul.sub li a {
+        @include transition(all, .3s, ease);
+        color: $color-gray;
+    }
+    ul.lcd-sidebar-menu li ul.sub li a:hover,
+    ul.lcd-sidebar-menu li ul.sub li.active a {
+        color: $color-gray;
+        @include transition(all, .3s, ease);
+    }
+    ul.lcd-sidebar-menu li {
+        border-top:1px solid rgba(255,255,255,0.05);
+    }
+    ul.lcd-sidebar-menu li.sub-menu {
+        line-height:15px;
+    }
+    ul.lcd-sidebar-menu ul.sub li {
+        border-bottom:none;
+    }
+}
+.lcd-hide-left-bar {
+    margin-left: 0px !important;
+    @include transition(all, .3s, ease-in-out);
+    width: 85px !important;
+}
+.lcd-merge-left {
+    margin-left: 85px !important;
+}
+/*---*/
+.nav-collapse.collapse {
+    display:inline;
+}
+
+@media all and (max-width: 992px) {
+    .navbar.lcd-navbar {
+        display: inline-block;
+        .navbar-toggler {
+            float: right;
+            margin-top: 25px;
+            margin-right: 0;
+        }
+        .login-side { 
+            .navbar-nav {
+                display: -webkit-inline-box;
+                padding-top: 0;
+                padding-bottom: 0;
+                float: right;
+                .btn-transparent {
+                    margin-top: 0 !important;
+                }
+            }
+        }
+    }
+}
+@media all and (min-width: 992px){
+    #lcd-sidebar {
+        width: 300px;
+    }
+    .navbar.lcd-navbar {
+        left: 299px;
+    }
+    .navbar.lcd-hide-nav-bar {
+        left: 84px;
+    }
+    .lcd-leftside-navigation ul.lcd-sidebar-menu li a i,
+    .lcd-leftside-navigation ul.lcd-sidebar-menu li a span,
+    .lcd-leftside-navigation .lcd-sidebar-profile .profile-details,
+    .lcd-leftside-navigation .lcd-sidebar-profile .name {
+        @include transition(all, .3s, ease-in-out);
+    }
+    .lcd-hide-left-bar .lcd-leftside-navigation ul.lcd-sidebar-menu li a span,
+    .lcd-hide-left-bar .lcd-leftside-navigation .lcd-sidebar-profile .profile-details {
+        display: none;
+    }
+    .lcd-hide-left-bar .lcd-leftside-navigation .lcd-sidebar-profile .name {
+        font-size: 0;
+        padding: 0;
+        line-height: 0;
+    }
+    .lcd-hide-left-bar .lcd-leftside-navigation .lcd-sidebar-profile {
+        margin-bottom: 35px;
+    }
+    .lcd-hide-left-bar .lcd-leftside-navigation .lcd-sidebar-profile img {
+        height: 45px;
+    }
+    .lcd-hide-left-bar .lcd-leftside-navigation ul.lcd-sidebar-menu li a {
+        text-align: center;
+    }
+    .lcd-hide-left-bar .lcd-leftside-navigation ul.lcd-sidebar-menu li a i {
+        font-size: 18px;
+        text-align: center;
+    }
+    .lcd-hide-left-bar .lcd-brand a.logo span {
+        visibility: hidden;
+        opacity: 0;
+        font-size: 0px;
+    }
+}
+
+@media all and (max-width: 992px){
+    #lcd-sidebar {
+        width: 85px;
+    }
+    .navbar.lcd-navbar {
+        left: 80px;
+    }
+    .lcd-leftside-navigation ul.lcd-sidebar-menu li a i,
+    .lcd-leftside-navigation ul.lcd-sidebar-menu li a span,
+    .lcd-leftside-navigation .lcd-sidebar-profile .profile-details,
+    .lcd-leftside-navigation .lcd-sidebar-profile .name {
+        @include transition(all, .3s, ease-in-out);
+    }
+    .lcd-leftside-navigation ul.lcd-sidebar-menu li a span,
+    .lcd-leftside-navigation .lcd-sidebar-profile .profile-details,
+    .lcd-leftside-navigation .lcd-sidebar-profile .name {
+        display: none;
+    }
+    .lcd-leftside-navigation .lcd-sidebar-profile {
+        margin-bottom: 35px;
+    }
+    .lcd-leftside-navigation .lcd-sidebar-profile img {
+        height: 45px;
+    }
+    .lcd-leftside-navigation ul.lcd-sidebar-menu li a {
+        text-align: center;
+    }
+    .lcd-leftside-navigation ul.lcd-sidebar-menu li a i {
+        font-size: 18px;
+        text-align: center;
+    }
+    .lcd-brand a.logo span {
+        visibility: hidden;
+        opacity: 0;
+        font-size: 0px;
+    }
+    .navbar.lcd-navbar .login-side .navbar-nav li .btn-transparent {
+        color: $color-white;
+    }
+
+
+    #lcd-sidebar.lcd-hide-left-bar {
+        width: 300px !important;
+    }
+    .lcd-hide-left-bar .lcd-leftside-navigation ul.lcd-sidebar-menu li a span,
+    .lcd-hide-left-bar .lcd-leftside-navigation .lcd-sidebar-profile .profile-details,
+    .lcd-hide-left-bar .lcd-leftside-navigation .lcd-sidebar-profile .name {
+        display: block;
+    }
+    .lcd-hide-left-bar .lcd-leftside-navigation .lcd-sidebar-profile {
+        margin-bottom: auto;
+    }
+    .lcd-hide-left-bar .lcd-leftside-navigation .lcd-sidebar-profile img {
+        height: auto;
+    }
+    .lcd-hide-left-bar .lcd-leftside-navigation ul.lcd-sidebar-menu li a {
+        text-align: inherit;
+    }
+    .lcd-hide-left-bar .lcd-leftside-navigation ul.lcd-sidebar-menu li a i {
+        font-size: 18px;
+        text-align: center;
+        text-align: left;
+        float: left;
+        line-height: 45px;
+    }
+    .lcd-leftside-navigation ul.lcd-sidebar-menu li a span.menu-text {
+        float: left;
+    }
+    .lcd-hide-left-bar .lcd-brand a.logo span {
+        visibility: visible;
+        opacity: 1;
+        font-size: inherit;
+    }
+    .lcd-navbar {
+        ul.navbar-nav li.has-menu-item-megamenu > a.slicknav .icon:before,
+        ul.navbar-nav li.has-menu-item-submenu > a.slicknav .icon:before {
+            width: 16px !important;
+            background: $color-black !important;
+            margin-bottom: -9px !important;
+        }
+        ul.navbar-nav li.has-menu-item-megamenu > a.slicknav .icon:after,
+        ul.navbar-nav li.has-menu-item-submenu > a.slicknav .icon:after {
+            margin-left: 7px !important;
+            height: 16px !important;
+            background: $color-black !important;
+        }
+    }
+
+}
+@media all and (max-width: 767px){
+    #lcd-sidebar.lcd-hide-left-bar {
+        width: 250px !important;
+    }
+    .navbar.lcd-navbar {
+        left: 75px;
+    }
+    #lcd-sidebar {
+        width: 80px;
+    }
+    #lcd-main-content {
+        margin-left: 80px !important;
+    }
+    .navbar.lcd-navbar {
+        padding-right: 15px;
+    }
+    .lcd-brand a.logo {
+        margin: 20px 0 0 15px;
+    }
+    .lcd-brand .lcd-sidebar-toggle-box {
+        right: -7px;
+    }
+    .lcd-brand .lcd-sidebar-toggle-box span {
+        background: $color-blue;
+    }
+    .navbar.lcd-navbar .login-side .navbar-nav li .btn-transparent {
+        padding: 2px 15px;
+        font-size: 12px;
+    }
+    .navbar.lcd-navbar .login-side .navbar-nav li {
+        padding: 0 5px;
+    }
+    .login-side img {
+        height: 35px;
+    }
+    .navbar.lcd-navbar .navbar-toggler {
+        margin-top: 28px !important;
+        height: 36px;
+        width: 36px;
+        margin-left: 4px;
+    }
+    .navbar.lcd-navbar .navbar-toggler .line {
+        width: 17px;
+        margin: 3px auto;
+    }
+    .navbar.lcd-navbar button.navbar-toggler[aria-expanded="true"] .line:nth-child(1) {
+        transform: translateY(4px) rotate(45deg);
+    }
+    #lcd-panel-review {
+        margin: 0 0 0 25px !important;
+    }
+    .lcd-panel-review-section .lcd-chart-list-head {
+        padding: 35px 40px 40px 25px !important;
+        display: inline-block;
+    }
+}
+
+

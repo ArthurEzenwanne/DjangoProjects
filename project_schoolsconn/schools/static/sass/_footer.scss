@@ -1,0 +1,313 @@
+/*
+|---------------------------------------------
+| 11.0 - footer-section
+|---------------------------------------------
+*/
+.lc-footer-section {
+	background: $color-steel-blue;
+	padding: 117px 0 0 0;
+	.widget-area {
+		padding-bottom: 0 !important;
+		border-top: 1px solid $color-zambezi;
+		.widget {
+			padding-bottom: 50px;
+		}
+	}
+	.footer-menu {
+		ul {
+			padding-left: 0;
+			li {
+				list-style: none;
+				display: inline-block;
+				a {
+					color: $color-gray-light;
+					@include transition(all, .3s, ease);
+					margin: 0 10px;
+					&:hover {
+						color: $color-white;
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+}
+.lc-footer-section-2 {
+	background: $color-block-5;
+	.footer-logo {
+		margin-bottom: 28px;
+	}
+	.footer-menu {
+	    margin-bottom: 22px;
+	    ul li a {
+	    	color: $color-gray-5;
+	    }
+	}
+	.lc-subscribtion {
+	    border-bottom: 0;
+	    padding-bottom: 28px;
+	    p {
+	    	color: $color-gray-5;
+	    }
+	    .input-group {
+	    	background: $color-white;
+	    	.form-control {
+	    		background: transparent;
+	    		color: $color-gray-5;
+	    		&::placeholder {
+	    			color: $color-gray-5;
+	    		}
+	    	}
+	    }
+	}
+	.lc-copy-right {
+	    background: none;
+	    padding: 0;
+	    .social-area li a {
+			color: $color-gray-5;
+		}
+	}
+	.copyright {
+		border-top: 1px solid $color-zambezi;
+		margin-top: 50px;
+		padding: 35px 0 20px 0;
+		p {
+		    display: inline-block;
+		    font-size: 14px !important;
+		    font-family: $font-lato;
+		    color: $color-gray-5 !important;
+		}
+		ul {
+			display: inline-block;
+			li {
+				color: $color-gray-light;
+				font-size: 14px;
+		    	font-family: $font-lato;
+		    	color: $color-gray-5;
+			}
+		}
+	}
+}
+.lc-subscribtion {
+	padding-bottom: 70px;
+	.title {
+		font-family: $font-quicksand;
+		font-size: 20px;
+		font-weight: 500;
+		line-height: 22px;
+		color: $color-white;
+		margin-bottom: 12px;
+		display: block;
+		text-decoration: none;
+	}
+	p {
+		font-family: $font-lato;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 22px;
+		color: $color-gray-light;
+		margin-bottom: 28px;
+	}
+	.input-group {
+			border-radius: 25px;
+			border: 1px solid $color-arsenic;
+			padding: 3px 4px 3px 15px;
+		.form-control {
+			background: $color-steel-blue;
+			color: $color-gray-light;
+			border: 0;
+			&:focus {
+				box-shadow: none;
+			}
+		}
+		input::-webkit-input-placeholder { 
+		  color: $color-gray-light;
+		  font-size: 14px;
+		  font-family: $font-lato;
+		}
+		input::-moz-placeholder { 
+		  color: $color-gray-light;
+		  font-size: 14px;
+		  font-family: $font-lato;
+		}
+		input:-ms-input-placeholder { 
+		  color: $color-gray-light;
+		  font-size: 14px;
+		  font-family: $font-lato;
+		}
+		input:-moz-placeholder { 
+		  color: $color-gray-light;
+		  font-size: 14px;
+		  font-family: $font-lato;
+		}
+		.input-group-append {
+			margin: 0;
+			.input-group-text {
+				font-family: $font-lato;
+				font-size: 12px;
+			    background: $color-blue;
+			    border: 0;
+			    padding: 9px 32px;
+			    border-radius: 25px;
+			    color: $color-white;
+			    cursor: pointer;
+    			@include transition(all, .3s, ease);
+			    &:hover,
+			    &:active,
+			    &:focus {
+			    	outline: none;
+      				background: rgba(21, 117, 183, 0.8);
+			    }
+			}
+		}
+	}
+}
+
+
+// copyRight //
+.lc-copy-right {
+	background: $color-rock-blue;
+	padding: 37px 0 21px 0;
+	.copyright {
+		p {
+			font-family: $font-lato;
+			font-size: 16px;
+			font-weight: 400;
+			color: $color-gray-light;
+		}
+	}
+	.social-area {
+			display: inline-flex;
+			list-style: none;
+		li {
+			a {	
+				text-decoration: none;
+				color: $color-gray-light;
+				@include transition(all, .3s, ease);
+				i{
+					margin-right: 16px;
+				    font-size: 18px;
+				    @include transition(all, .3s, ease);
+				}
+				&:hover {					
+					i.fa-facebook {
+					    color: $color-facebook;
+					}					
+					i.fa-twitter {
+					    color: $color-twitter;
+					}					
+					i.fa-instagram {
+					    color: $color-instagram;
+					}					
+					i.fa-youtube-play {
+					    color: $color-youtube;
+					}					
+					i.fa-git {
+					    color: $color-black;
+					}					
+					i.fa-dribbble {
+					    color: $color-dribbble;
+					}					
+					i.fa-google-plus {
+					    color: $color-google-plus;
+					}					
+					i.fa-tumblr {
+					    color: $color-tumblr;
+					}					
+					i.fa-linkedin {
+					    color: $color-linkedin;
+					}
+				}				
+			}
+		}
+	}
+	&.lc-copy-right-2 {
+	    padding: 22px 0 6px 0;
+	}
+}
+
+//****** back to top *******//
+.lc-to-top {
+	position: fixed;
+	bottom: -100%;
+	right: 30px;
+	width: 45px;
+	height: 45px;
+	text-align: center;
+	line-height: 44px;
+	font-size: 27px;
+	color: #fff;
+	background: $color-blue;
+	opacity: 1;
+	border-radius: 100%;
+	@include transition(all, 1.2s, ease);
+	z-index: 9999;
+	&:hover {
+      	background: rgba(21, 117, 183, 0.7);
+	}
+}
+.lc-to-top:hover, 
+.lc-to-top:focus {
+	color: #fff;
+}
+.backtop-top-show {
+	bottom: 20px;
+}
+///////////////// responsive-footer-section //////////////////////
+
+
+@media all and (max-width:991px) {
+	.copy-right .copyright p {
+		text-align: center;
+	}
+	.copy-right .social-area {
+		
+	}
+	.vertical-center-row {
+	    text-align: center;
+	}
+	.widget_info {
+	    padding: 28px 0 0px 0;
+	}
+	.lc-footer-section {
+		padding: 98px 0 0 0;
+	}
+	.lc-to-top {
+		position: fixed;
+		width: 40px;
+		height: 40px;
+		line-height: 38px;
+		font-size: 24px;
+	}
+	.lc-footer-section .widget-area .widget.widget_feed {
+		text-align: center;
+	}
+}
+
+@media all and (max-width: 767px) {
+	.lc-footer-section .widget_info ul li a {
+	    font-size: 14px;
+	}
+	.lc-copy-right .copyright p {
+	    font-size: 14px;
+	}
+	.lc-copy-right .social-area li a i {
+	    font-size: 16px;
+	}
+	.lc-to-top {
+		right: 15px;
+	}
+	.backtop-top-show {
+		bottom: 15px;
+	}
+	.lc-footer-section .widget-area .widget.widget_feed {
+	    text-align: left
+	}
+}
+@media all and (max-width: 320px){
+	.widget-area .widget_links .ul-link {
+	    margin-right: 0;
+	    margin-bottom: 0;
+	    width: 100%;
+	}
+}

@@ -4,6 +4,32 @@
     <title>{% block head_title %}{% endblock %}</title>
     {% block extra_head %}
     {% endblock %}
+    <!-- Add additional CSS in static file -->
+    {% load static %}
+    <!-- <link rel="stylesheet" href="{% static 'css/styles.css' %}"> -->
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/ripple.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/line-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/leaflet.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap-select.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/select2.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}"> 
+    
+    <!-- Optional CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/swiper.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/fancybox.min.css' %}">   
+    
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900%7cQuicksand:300,400,500,700" rel="stylesheet">
+    
+    <!-- main css -->
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
   </head>
   <body>
     {% block body %}
@@ -36,5 +62,139 @@
     {% endblock %}
     {% block extra_body %}
     {% endblock %}
+    <footer class="lc-footer-section">
+      <div class="container">
+          <div class="row justify-content-center">
+              <!-- subscribtion -->
+                  <div class="col-12 col-md-10">
+                      <div class="lc-subscribtion text-center">
+                          <h4 class="title">Join Our Newsletter 
+                              <i class="fa fa-paper-plane-o"></i>
+                          </h4> 
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                          <div class="row justify-content-center">
+                              <div class="col-12 col-md-8 col-lg-6">
+                                  <div class="input-group">
+                                      <input type="text" class="form-control" placeholder="Your Email Address" >
+                                      <div class="input-group-append">
+                                          <button type="submit" class="input-group-text">Subscribe</button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              <!-- /.subscribtion -->
+
+              <!-- widget area -->                
+              <div class="col-12">
+                  <div class="widget-area">
+                      <div class="row justify-content-center">
+                          <!-- single widget star -->
+                          <div class="col-12 col-md-6 col-lg-4">
+                              <div class="widget widget_about">
+                                  <a href="{% url 'index' %}">
+                                      <img src="{% static 'images/icon/04.png' %}" alt="logo">
+                                      <span class="widget-title">Listera</span>
+                                  </a>
+                                  <p>Lorem ipsum dolor amet, conectetur the adipisicig elit, sed eiusmod tempor inciddunt labore dolore commodo consequat.</p>
+                                  <!-- Find Us Map Modal -->
+                                  <!-- <div class="lc-launch-map">
+                                     <a href="#lc-widget-popup-location" data-lat="-37.8210819833" data-lng="175.2213903167" data-maptype="gm"  data-marker="{% static 'images/marker/footer.png' %}" class="map widget-about-launch-map" data-toggle="modal">Find Us on Map<i class="fa fa-map-marker"></i></a>
+                                         
+                                      <div id="lc-widget-popup-location" class="modal fade" tabindex="-1" role="dialog" data-backdrop="true">
+                                          <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                                              <div class="modal-content">
+                                                  
+                                                  <button type="button" class="btn lc-button-close" data-dismiss="modal"><i class="la la-close"></i></button>
+                                                  <div class="modal-body">    
+                                                      <div class="lc-popup-map-view"></div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div> -->
+                              </div>
+                          </div>
+                          <div class="col-12 col-md-6 col-lg-4">
+                              <div class="widget widget_links">
+                                  <div class="widget-title">
+                                      <h4 class="title">Useful Links</h4>
+                                  </div>
+                                  <ul class="ul-link">
+                                      <li><a href="{% url 'index' %}">Sign in</a></li>
+                                      <li><a href="{% url 'index' %}">Sign Up</a></li>
+                                      <li><a href="{% url 'index' %}">My Account</a></li>
+                                      <li><a href="{% url 'index' %}">Add Listing</a></li>
+                                  </ul> 
+                                  <ul>
+                                      <li><a href="{% url 'index' %}">Privacy Policy</a></li>
+                                      <li><a href="{% url 'index' %}">F.A.Q</a></li>
+                                      <li><a href="{% url 'index' %}">Our Pertners</a></li>
+                                      <li><a href="{% url 'index' %}">Contact</a></li>
+                                  </ul>
+                              </div>
+                          </div>
+                          <div class="col-12 col-md-6 col-lg-4">
+                              <div class="widget widget_links">
+                                  <div class="widget-title">
+                                      <h4 class="title">Useful Links</h4>
+                                  </div>
+                                  <ul class="ul-link">
+                                      <li><a href="{% url 'index' %}">Sign in</a></li>
+                                      <li><a href="{% url 'index' %}">Sign Up</a></li>
+                                      <li><a href="{% url 'index' %}">My Account</a></li>
+                                      <li><a href="{% url 'index' %}">Add Listing</a></li>
+                                  </ul> 
+                                  <ul>
+                                      <li><a href="{% url 'index' %}">Privacy Policy</a></li>
+                                      <li><a href="{% url 'index' %}">F.A.Q</a></li>
+                                      <li><a href="{% url 'index' %}">Our Pertners</a></li>
+                                      <li><a href="{% url 'index' %}">Contact</a></li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div> <!-- /.row -->
+                  </div>
+              </div>                
+              <!-- /.widget area -->
+
+              <!-- widget info -->
+              <div class="col-12">
+                  <div class="widget widget_info">
+                      <ul>
+                          <li><a href="{% url 'index' %}"><i class="fa fa-map-marker"></i>20 Maple Avenue, San Pedro, CA 90731</a></li>
+                          <li><a href="{% url 'index' %}"><i class="fa fa-envelope-o"></i>suport@listera.com</a></li>
+                          <li><a href="{% url 'index' %}"><i class="fa fa-whatsapp"></i>+1-212-9876543</a></li>
+                          <li><a href="{% url 'index' %}"><i class="fa fa-phone"></i>(526) 236-895-4732</a></li>
+                          <li><a href="{% url 'index' %}"><i class="fa fa-skype"></i>example.skype</a></li>
+                      </ul>
+                  </div> 
+              </div>
+              <!-- /.widget info -->
+          </div>
+      </div>
+      <div class="lc-copy-right">
+          <div class="container">
+              <div class="row vertical-center-row">                    
+                  <div class="col-12 col-lg-5 col-md-12">
+                      <div class="copyright">
+                          <p>© Copyright 2019 SchoolsApp. All rights reserved</p>
+                      </div>
+                  </div>
+                  <div class="col-12 col-md-12 col-lg-3 offset-lg-3">
+                      <ul class="social-area">
+                          <li><a href="{% url 'index' %}"><i class="fa fa-facebook"></i></a></li>
+                          <li><a href="{% url 'index' %}"><i class="fa fa-twitter"></i></a></li>
+                          <li><a href="{% url 'index' %}"><i class="fa fa-instagram"></i></a></li>
+                          <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
+                          <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <a href="#" id="lc-toTop" class="lc-to-top"><i class="fa fa-angle-up"></i></a>
+  </footer>
   </body>
 </html>

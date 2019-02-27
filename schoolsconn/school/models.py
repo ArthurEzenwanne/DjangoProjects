@@ -11,9 +11,7 @@ from multiselectfield import MultiSelectField
 # Create your models here.
 class SchoolsConnBaseUser(AbstractUser):
     '''Model for a custom user.'''
-    phone = models.CharField(max_length=20, null=True, blank=True)  
-    fname = models.CharField(max_length=20, null=True, blank=True) 
-    lname = models.CharField(max_length=20, null=True, blank=True) 
+    phone = models.CharField(max_length=20, null=True, blank=True)
     street = models.CharField(max_length=20, null=True, blank=True) 
     town = models.CharField(max_length=20, null=True, blank=True) 
     lga = models.CharField(max_length=20, null=True, blank=True)
@@ -23,8 +21,10 @@ class SchoolsConnBaseUser(AbstractUser):
 
     def __str__(self):
         """String for representing the Model object."""
-        return f'{self.fname} {self.lname}'
-
+        #return f'{self.first_name} {self.last_name} {self.username} {self.email}'  # this works
+        return f'{self.username}'
+        
+        
 class School(models.Model):
     """Model representing a school."""
     email = models.EmailField(max_length=128)

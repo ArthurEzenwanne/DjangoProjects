@@ -49,16 +49,15 @@
                 <div class="collapse navbar-collapse lc-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-5">
                         <li class="nav-item"><a href="{% url 'account_login' %}">Find Schools</a></li> 
-                        <li class="nav-item"><a href="{% url 'index' %}">Find Tutors</a></li>   
-                        <li class="nav-item"><a href="{% url 'index' %}">Find Vendors</a></li>
+                        <!-- <li class="nav-item"><a href="{% url 'index' %}">Find Tutors</a></li>   
+                        <li class="nav-item"><a href="{% url 'index' %}">Find Vendors</a></li> -->
                         <li class="nav-item"><a href="{% url 'index' %}">Find Resources</a></li>
-                        <li class="nav-item"><a href="{% url 'account_signup' %}">Sign Up</a></li>
                     </ul>   
                 </div>
                 <div class="login-side">
                     <ul class="navbar-nav ml-auto">
-                        <li><a href="{% url 'account_login' %}"><i class="fa fa-sign-in"></i>Log in</a></li>
-                        <li><a class="btn btn-transparent ml-3" href="{% url 'index' %}">+ Add School</a></li>
+                        <li><a class="btn btn-transparent ml-3" href="{% url 'account_login' %}">Login/Signup</a></li>
+                        <li><a class="btn btn-transparent ml-3" href="{% url 'account_signup' %}">+ Add School</a></li>
                     </ul>
                 </div>
             </div>

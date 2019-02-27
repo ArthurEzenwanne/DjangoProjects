@@ -60,9 +60,10 @@ class BasicSchoolInfo(models.Model):
 
     SCHOOL_TYPE_CHOICE = (
         ('c', 'Creche'),
-        ('np', 'Nursery-Primary'),
+        ('n', 'Nursery'),
+        ('p', 'Primary'),
         ('s', 'Secondary'),
-        ('al', 'A-Levels'),
+        ('al', 'A-Levels')
     )
 
     APPROVED_EXAM_CHOICE = (
@@ -75,27 +76,27 @@ class BasicSchoolInfo(models.Model):
         ('toefl', 'TOEFL Exams'),
         ('ielts', 'IELTS Exams'),
         ('alevel', 'A-Levels Exams'),
-        ('igcse', 'IGCSE Exams'),
+        ('igcse', 'IGCSE Exams')
     )
 
     GENDER_CHOICE = (
         ('m', 'Male Only'),
         ('f', 'Female Only'),
-        ('mx', 'Mixed'),
+        ('mx', 'Mixed')
     )
 
     BOARDING_CHOICE = (
         ('fb', 'Full Boarding'),
         ('fd', 'Day Only'),
-        ('bd', 'Day and Boarding'),
+        ('bd', 'Day and Boarding')
     )
 
     approval_number = models.CharField(max_length=11, default='Awaiting')
     admin = models.CharField(max_length=128, default='N/A')
-    school_type = models.CharField(max_length=2, choices=SCHOOL_TYPE_CHOICE, default='np')
-    approved_exams = models.CharField(max_length=6, choices=APPROVED_EXAM_CHOICE, default='ncce')
-    gender = models.CharField(max_length=6, choices=GENDER_CHOICE, default='mixed')
-    boarding = models.CharField(max_length=2, choices=BOARDING_CHOICE, default='bd')
+    school_type = MultiSelectField(choices=SCHOOL_TYPE_CHOICE, default='n') # max_choices not needed - use multi
+    approved_exams = MultiSelectField(choices=APPROVED_EXAM_CHOICE, default='ncce') # max_choices not needed - use multi
+    gender = models.CharField(max_length=2, choices=GENDER_CHOICE, default='mixed') # max_choices is 1 - use default
+    boarding = models.CharField(max_length=2, choices=BOARDING_CHOICE, default='bd') # max_choices is 1 - use default
     founded = models.DateField(default='N/A')
 
     def __str__(self):
@@ -107,23 +108,29 @@ class AdvancedSchoolInfo(models.Model):
     school = models.ForeignKey(School, on_delete=models.CASCADE)
 
     ACTIVITY_CHOICE = (
-        ('c', 'Creche'),
-        ('np', 'Nursery-Primary'),
-        ('s', 'Secondary'),
-        ('al', 'A-Levels'),
+        ('carol', 'Creche'),
+        ('interhousesports', 'Interhouse Sports'),
+        ('culturalday', 'Cultural Day'),
+        ('dance', 'Dance'),
+        ('spellingbees', 'Spelling Bees'),
+        ('debate', 'Debate'),
+        ('quiz', 'Quiz'),        
+        ('swimming', 'Swimming'),
+        ('karate', 'Karate'),
+        ('costumeday', 'Costume Day')
     )
 
     CLUB_CHOICE = (
-        ('bscout', 'National Common Entrance Examinations'),
-        ('gguide', 'State Common Entrance Examinatins'),
-        ('frsc', 'West African Examination Council Exams'),
-        ('music', 'National Examinations Council Exams'),        
-        ('drama', 'Junior West African Examination Council Exams'),
-        ('debate', 'Junior National Examinations Council Exams'),
-        ('press', 'TOEFL Exams'),
-        ('jets', 'IELTS Exams'),
-        ('rcross', 'A-Levels Exams'),
-        ('artscraft', 'IGCSE Exams'),
+        ('bscout', 'Boys Scout'),
+        ('gguide', 'Girls Guide'),
+        ('frsc', 'FRSC Club'),
+        ('music', 'Music Club'),        
+        ('drama', 'Drama Club'),
+        ('debate', 'Debate Club'),
+        ('press', 'Press Club'),
+        ('jets', 'JETS Club'),
+        ('rcross', 'Red Cross'),
+        ('artscraft', 'Arts-Craft Club')
     )
 
     FACILITY_CHOICE = (
@@ -144,12 +151,12 @@ class AdvancedSchoolInfo(models.Model):
         ('musicstudio', 'Music Studio'),
         ('stem', 'STEM'),
         ('homemanagementlab', 'Home Management Lab'),
-        ('languagestudio', 'Language Studio'),
+        ('languagestudio', 'Language Studio')
     )
 
-    school_type = models.CharField(max_length=2, choices=SCHOOL_TYPE_CHOICE, default='np')
-    approved_exams = models.CharField(max_length=6, choices=APPROVED_EXAM_CHOICE, default='ncce')
-    gender = models.CharField(max_length=6, choices=GENDER_CHOICE, default='mixed')
+    activities = MultiSelectField(choices=ACTIVITY_CHOICE, default='debate')
+    clubs = MultiSelectField(choices=CLUB_CHOICE, default='debate')
+    facilities = MultiSelectField(choices=FACILITY_CHOICE, default='playground')
 
     def __str__(self):
         """String for representing the Model object."""

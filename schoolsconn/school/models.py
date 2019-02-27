@@ -3,84 +3,27 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.db import models
 from django.urls import reverse
+from multiselectfield import MultiSelectField
+
+# https://docs.djangoproject.com/en/2.2/ref/contrib/postgres/fields/#django.contrib.postgres.fields.ArrayField
+# Note ArrayFields when using PostGress
 
 # Create your models here.
 class SchoolsConnBaseUser(AbstractUser):
-    '''
-    Model for a custom user
-    '''
-    phone = models.CharField(max_length=20)  
+    '''Model for a custom user.'''
+    phone = models.CharField(max_length=20, null=True, blank=True)  
+    fname = models.CharField(max_length=20, null=True, blank=True) 
+    lname = models.CharField(max_length=20, null=True, blank=True) 
+    street = models.CharField(max_length=20, null=True, blank=True) 
+    town = models.CharField(max_length=20, null=True, blank=True) 
+    lga = models.CharField(max_length=20, null=True, blank=True)
+    state = models.CharField(max_length=20, null=True, blank=True) 
+    country = models.CharField(max_length=20, default='Nigeria') 
+    schools = models.SmallIntegerField(default=0, editable=False, null=True, blank=True)
 
-# class Tutor(models.Model):
-#     """Model representing a tutor."""
-#     first_name = models.CharField(max_length=100)
-#     last_name = models.CharField(max_length=100)
-#     email_address = models.EmailField(max_length=100, primary_key=True)
-#     phone_num = models.CharField(max_length=15)
-#     years_of_experience = models.IntegerField(default=0)
-#     username = models.CharField(max_length=50, unique=True)
-
-#     # class Meta:
-#     #     ordering = ['last_name', 'first_name']
-    
-#     def get_absolute_url(self):
-#         """Returns the url to access a particular tutor instance."""
-#         # return reverse('tutor-detail', args=[str(self.email_address)])
-#         return reverse('tutor-detail', args=[str(self.username)])
-
-#     def __str__(self):
-#         """String for representing the Model object."""
-#         return f'{self.first_name} {self.last_name}'
-
-# class Experience(models.Model):
-#     """Model representing a tutor's experience."""
-#     tutor = models.ForeignKey(Tutor, on_delete=models.CASCADE)
-#     organization = models.CharField(max_length=100, null=True, blank=True)
-#     job_position = models.CharField(max_length=100, null=True, blank=True) 
-#     location = models.CharField(max_length=100, null=True, blank=True)
-#     start_date = models.DateField(null=True, blank=True)
-#     end_date = models.DateField(null=True, blank=True)
-#     reponsibility = models.CharField(max_length=1000, null=True, blank=True)
-#     awards = models.CharField(max_length=1000, null=True, blank=True)
-#     specialization = models.CharField(max_length=100, null=True, blank=True)
-
-#     # tutor.experience_set.create(
-#     #     organization='org1',
-#     #     position='position1',
-#     # )
-#     # tutor.experience_set.create(
-#     #     organization='org2',
-#     #     position='position2',
-#     # )
-#     # tutor.experience_set.create(
-#     #     organization='org3',
-#     #     position='position3',
-#     # ) 
-#     # This is to be used in dynamically creating the experiences for each signed in tutor #
-#     # So we could have a new tutor 'Ada' ceating new  experiences as #
-#     # Ada.experience_set.create (
-#     #   organization='any organizational input user inputs',
-#     #   position='any position input user inputs',
-#     #   )#        
-
-#     def __str__(self):
-#         """String for representing the Model object."""
-#         return f'{self.first_name} {self.last_name}'
-
-# class Education(models.Model):
-#     """Model representing a tutor's education."""
-#     tutor = models.ForeignKey(Tutor, on_delete=models.CASCADE)
-#     #email_address = models.EmailField(null=False, blank=False, max_length=100, primary_key=True)
-#     institution = models.CharField(max_length=100, null=True, blank=True)
-#     course = models.CharField(max_length=100, null=True, blank=True)
-#     qualification = models.CharField(max_length=50, null=True, blank=True)
-#     start_date = models.DateField(null=True, blank=True)
-#     end_date = models.DateField(null=True, blank=True)
-#     awards = models.CharField(max_length=1000, null=True, blank=True)
-
-#     def __str__(self):
-#         """String for representing the Model object."""
-#         return f'{self.first_name} {self.last_name}'          
+    def __str__(self):
+        """String for representing the Model object."""
+        return f'{self.fname} {self.lname}'
 
 class School(models.Model):
     """Model representing a school."""
@@ -88,6 +31,9 @@ class School(models.Model):
     name = models.CharField(max_length=128)
     phone = models.CharField(max_length=15)
     slug = models.SlugField(max_length=128)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+    user = models.ForeignKey(SchoolsConnBaseUser, on_delete=models.CASCADE)
 
     def get_absolute_url(self):
         """Returns the url to access a particular school instance."""
@@ -112,29 +58,33 @@ class BasicSchoolInfo(models.Model):
     town = models.CharField(max_length=50, null=True, blank=True)
     street = models.CharField(max_length=640)
 
-    school_type_choice = (
+    SCHOOL_TYPE_CHOICE = (
         ('c', 'Creche'),
         ('np', 'Nursery-Primary'),
         ('s', 'Secondary'),
         ('al', 'A-Levels'),
     )
 
-    approved_exam_choice = (
+    APPROVED_EXAM_CHOICE = (
         ('ncce', 'National Common Entrance Examinations'),
         ('scce', 'State Common Entrance Examinatins'),
         ('waec', 'West African Examination Council Exams'),
-        ('neco', 'National Examinations Council Exams'),
-        ('tofel', 'TOFEL Exams'),
-        ('ilets', 'ILETS Exams'),
+        ('neco', 'National Examinations Council Exams'),        
+        ('jwaec', 'Junior West African Examination Council Exams'),
+        ('jneco', 'Junior National Examinations Council Exams'),
+        ('toefl', 'TOEFL Exams'),
+        ('ielts', 'IELTS Exams'),
+        ('alevel', 'A-Levels Exams'),
+        ('igcse', 'IGCSE Exams'),
     )
 
-    gender_choice = (
-        ('male', 'Male Only'),
-        ('female', 'Female Only'),
-        ('mixed', 'Mixed'),
+    GENDER_CHOICE = (
+        ('m', 'Male Only'),
+        ('f', 'Female Only'),
+        ('mx', 'Mixed'),
     )
 
-    boarding_choice = (
+    BOARDING_CHOICE = (
         ('fb', 'Full Boarding'),
         ('fd', 'Day Only'),
         ('bd', 'Day and Boarding'),
@@ -142,12 +92,67 @@ class BasicSchoolInfo(models.Model):
 
     approval_number = models.CharField(max_length=11, default='Awaiting')
     admin = models.CharField(max_length=128, default='N/A')
-    school_type = models.CharField(max_length=2, choices=school_type_choice, default='np')
-    approved_exams = models.CharField(max_length=6, choices=approved_exam_choice, default='ncce')
-    gender = models.CharField(max_length=6, choices=gender_choice, default='mixed')
-    boarding = models.CharField(max_length=2, choices=boarding_choice, default='bd')
+    school_type = models.CharField(max_length=2, choices=SCHOOL_TYPE_CHOICE, default='np')
+    approved_exams = models.CharField(max_length=6, choices=APPROVED_EXAM_CHOICE, default='ncce')
+    gender = models.CharField(max_length=6, choices=GENDER_CHOICE, default='mixed')
+    boarding = models.CharField(max_length=2, choices=BOARDING_CHOICE, default='bd')
     founded = models.DateField(default='N/A')
 
     def __str__(self):
         """String for representing the Model object."""
-        return f'{self.name}'
+        return f'{self.school}'
+
+class AdvancedSchoolInfo(models.Model):
+    """Model representing a schools's advanced information."""
+    school = models.ForeignKey(School, on_delete=models.CASCADE)
+
+    ACTIVITY_CHOICE = (
+        ('c', 'Creche'),
+        ('np', 'Nursery-Primary'),
+        ('s', 'Secondary'),
+        ('al', 'A-Levels'),
+    )
+
+    CLUB_CHOICE = (
+        ('bscout', 'National Common Entrance Examinations'),
+        ('gguide', 'State Common Entrance Examinatins'),
+        ('frsc', 'West African Examination Council Exams'),
+        ('music', 'National Examinations Council Exams'),        
+        ('drama', 'Junior West African Examination Council Exams'),
+        ('debate', 'Junior National Examinations Council Exams'),
+        ('press', 'TOEFL Exams'),
+        ('jets', 'IELTS Exams'),
+        ('rcross', 'A-Levels Exams'),
+        ('artscraft', 'IGCSE Exams'),
+    )
+
+    FACILITY_CHOICE = (
+        ('sickbay', 'Sickbay'),
+        ('multipurposehall', 'Multipurpose Hall'),
+        ('sciencelab', 'Science Lab'),
+        ('busservice', 'Bus Service'),
+        ('library', 'Library'),
+        ('playground', 'Playground'),
+        ('sportscomplex', 'Sports Complex'),
+        ('ictcenter', 'ICT Center'),
+        ('artstudio', 'Art Studio'),
+        ('elibrary', 'E-Library'),
+        ('swimmingpool', 'Swimming Pool'),
+        ('orchard', 'Orchard'),
+        ('farmhouse', 'Farmhouse'),
+        ('specialneeds', 'Special Needs Care'),
+        ('musicstudio', 'Music Studio'),
+        ('stem', 'STEM'),
+        ('homemanagementlab', 'Home Management Lab'),
+        ('languagestudio', 'Language Studio'),
+    )
+
+    school_type = models.CharField(max_length=2, choices=SCHOOL_TYPE_CHOICE, default='np')
+    approved_exams = models.CharField(max_length=6, choices=APPROVED_EXAM_CHOICE, default='ncce')
+    gender = models.CharField(max_length=6, choices=GENDER_CHOICE, default='mixed')
+
+    def __str__(self):
+        """String for representing the Model object."""
+        return f'{self.school}'
+
+    

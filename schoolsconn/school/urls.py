@@ -19,4 +19,7 @@ from . import views
 urlpatterns = [
     #path('', include('school.urls')), 
     path('', views.index, name='index'),
+    path('schools/', views.SchoolListView.as_view(), name='schools'),  
+    #path('schools/<pk>', views.SchoolDetailView.as_view(), name='school-detail'), #uses just pk
+    path('schools/<str:slug>', views.SchoolDetailView.as_view(), name='school-detail'), #uses slug 
 ]

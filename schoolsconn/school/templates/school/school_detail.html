@@ -1,0 +1,619 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <!-- Add additional CSS in static file -->
+        
+    {% load static %}
+    
+    <!-- start page title -->
+    <div class="lc-page-title-listing-details">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <!-- swiper slide item-->
+                <a class="swiper-slide" href="{% static 'images/listing-details/1.png' %}" data-fancybox="image">
+                    <img src="{% static 'images/listing-details/1.png' %}" alt="img">
+                </a>
+                <a class="swiper-slide" href="{% static 'images/listing-details/2.png' %}" data-fancybox="image">
+                    <img src="{% static 'images/listing-details/2.png' %}" alt="img">
+                </a>
+                <a class="swiper-slide" href="{% static 'images/listing-details/3.png' %}" data-fancybox="image">
+                    <img src="{% static 'images/listing-details/3.png' %}" alt="img">
+                </a>
+                <a class="swiper-slide" href="{% static 'images/listing-details/4.png' %}" data-fancybox="image">
+                    <img src="{% static 'images/listing-details/4.png' %}" alt="img">
+                </a>
+                <!-- End item swiper-slide -->
+            </div>
+        </div>
+        <div id="lc-details-home" class="lc-page-title text-center lc-page-title-listing-details-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 lc-no-padding">
+                        <nav>
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">The Burger House</a></li>
+                            </ol>
+                            <ol class="breadcrumb-btn">
+                                <li class="active"><a href="#">Add Review</a></li>
+                                <li><a href="#"><i class="fa fa-bookmark-o"></i>Save</a></li>
+                                <li><a href="#"><i class="la la-arrow-right"></i>Share</a></li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end page title -->
+
+    <!-- start listing details section -->
+    <div class="bg-single">
+        <div class="lc-container">
+            <div class="lc-blog-details-section lc-single-page-top100">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="media lc-author-des-wrap">
+                            <img class="mr-4" src="{% static 'images/author/16.png' %}" alt="img">
+                            <div class="media-body mt-1">
+                                <h1 class="author-title"><span>{{ school }} <i class="fa fa-check-circle"></i></span></h1>
+                                <p>{{ school.motto }}</p>
+                            </div>
+                        </div>
+                        <div class="lc-listing-details-list-meta">
+                            <ul>
+                                <li><i class="fa fa-home"></i><a class="js-scroll-trigger" href="#lc-details-home">Home</a></li>
+                                <li><i class="fa fa-picture-o"></i><a class="js-scroll-trigger" href="#lc-details-gallery">Gallery</a></li>
+                                <li><i class="fa fa-money"></i><a class="js-scroll-trigger" href="#lc-details-video">Video</a></li>
+                                <li><i class="fa fa-star-o"></i><a class="js-scroll-trigger" href="#lc-details-reviews">Reviews</a></li>
+                            </ul>
+                        </div>
+                        <p>{{ school.description }}</p>
+                        <div class="lc-special-things border-bottom pt-2">
+                            <ul>
+                                <li>
+                                    <p><i class="fa fa-credit-card"></i>Accepts Credit Cards</p>
+                                    <p><i class="fa fa-motorcycle "></i>Smoking Allowed</p>
+                                </li>
+                                <li>
+                                    <p><i class="fa fa-podcast"></i>Wireless Internet</p>
+                                    <p><i class="fa fa-wheelchair"></i>Wheelchair Accesible</p>
+                                </li>
+                                <li>
+                                    <p><i class="fa fa-car"></i>Parking Sreet</p>
+                                </li>
+                                <li>
+                                    <p><i class="fa fa-magic"></i>Smoking Allowed</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- listing-details gallery and video -->
+                        <div  id="lc-details-gallery" class="lc-listing-details-gallery">
+                            <div class="lc-section-title lc-section-title-2">
+                                <h4 class="entry-title"><i class="fa fa-picture-o"></i>Gallery</h4>
+                            </div>
+                            <!-- listing-details gallery -->
+                            <div class="lc-gallery-slider border-bottom owl-carousel">
+                                <div class="item">
+                                    <a href="{% static 'images/gallery/1.png' %}" data-fancybox="gallery">
+                                        <img src="{% static 'images/gallery/1.png' %}" alt="gallery">
+                                    </a>
+                                </div>
+                                <div class="item">
+                                    <a href="{% static 'images/gallery/2.png' %}" data-fancybox="gallery">
+                                        <img src="{% static 'images/gallery/2.png' %}" alt="gallery">
+                                    </a>
+                                </div>
+                                <div class="item">
+                                    <a href="{% static 'images/gallery/3.png' %}" data-fancybox="gallery">
+                                        <img src="{% static 'images/gallery/3.png' %}" alt="gallery">
+                                    </a>
+                                </div>
+                                <div class="item">
+                                    <a href="{% static 'images/gallery/4.png' %}" data-fancybox="gallery">
+                                        <img src="{% static 'images/gallery/4.png' %}" alt="gallery">
+                                    </a>
+                                </div>
+                                <div class="item">
+                                    <a href="{% static 'images/gallery/1.png' %}" data-fancybox="gallery">
+                                        <img src="{% static 'images/gallery/1.png' %}" alt="gallery">
+                                    </a>
+                                </div>
+                                <div class="item">
+                                    <a href="{% static 'images/gallery/2.png' %}" data-fancybox="gallery">
+                                        <img src="{% static 'images/gallery/2.png' %}" alt="gallery">
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- listing-details video -->
+                            <div id="lc-details-video" class="lc-listing-details-video">
+                                <div class="lc-section-title lc-section-title-2">
+                                    <h4 class="entry-title"><i class="fa fa-video-camera"></i>Video</h4>
+                                </div>
+                                <div class="lc-video-slider border-bottom owl-carousel">
+                                    <div class="item">
+                                        <img src="{% static 'images/video/1.png' %}" alt="video">
+                                        <div class="pulse-video">
+                                            <a class="btn-video play-video" href="https://www.youtube.com/watch?v=XL_3eYx3OVE"><img src="{% static 'images/play.png' %}" alt="play"></a>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="{% static 'images/video/2.png' %}" alt="video">
+                                        <div class="pulse-video">
+                                            <a class="btn-video play-video" href="https://www.youtube.com/watch?v=XL_3eYx3OVE"><img src="{% static 'images/play.png' %}" alt="play"></a>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="{% static 'images/video/3.png' %}" alt="video">
+                                        <div class="pulse-video">
+                                            <a class="btn-video play-video" href="https://www.youtube.com/watch?v=XL_3eYx3OVE"><img src="{% static 'images/play.png' %}" alt="play"></a>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="{% static 'images/video/1.png' %}" alt="video">
+                                        <div class="pulse-video">
+                                            <a class="btn-video play-video" href="https://www.youtube.com/watch?v=XL_3eYx3OVE"><img src="{% static 'images/play.png' %}" alt="play"></a>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="{% static 'images/video/2.png' %}" alt="video">
+                                        <div class="pulse-video">
+                                            <a class="btn-video play-video" href="https://www.youtube.com/watch?v=XL_3eYx3OVE"><img src="{% static 'images/play.png' %}" alt="play"></a>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="{% static 'images/video/3.png' %}" alt="video">
+                                        <div class="pulse-video">
+                                            <a class="btn-video play-video" href="https://www.youtube.com/watch?v=XL_3eYx3OVE"><img src="{% static 'images/play.png' %}" alt="play"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End listing-details gallery -->
+                        <div id="lc-details-reviews" class="lc-review-section">
+                            <div class="lc-section-title lc-section-title-2 border-bottom">
+                                <h4 class="entry-title">01 Review for The Burger House</h4>
+                            </div>
+                            <div class="single-review border-bottom">
+                                <!-- popup content for all listing -->
+                                <div class="modal lc-listing-modal lc-report-model-wrap" tabindex="-1" role="dialog" data-backdrop="true">
+                                    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <!-- close button -->
+                                            <div class="modal-body lc-report-model">    
+                                               <div class="row no-gutters">
+                                                    <div class="col-12">
+                                                        <div class="title border-bottom">
+                                                            REPORT ABUSE
+                                                            <button type="button" class="btn" data-dismiss="modal"><span class="ti ti-close"></span></button>
+                                                        </div>
+                                                        <form action="d">
+                                                            <input type="text" placeholder="Report Subject">
+                                                            <textarea rows="6" placeholder="Report"></textarea>  
+                                                            <button class="submit">Submit</button>  
+                                                            <button data-dismiss="modal">Cancel</button>    
+                                                        </form>
+                                                    </div>
+                                               </div>
+                                           </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.popup content -->
+                                <div class="media">
+                                    <img src="{% static 'images/author/15.png' %}" alt="img">
+                                    <div class="media-body">
+                                        <div class="details">
+                                            <h4>Chadwick Boseman</h4>
+                                            <p>12 May 2019</p>
+                                        </div>
+                                        <span class="report-area">
+                                            <i class="fa fa-star"></i>
+                                            4.9/5
+                                            <span class="dropdown">
+                                              <button class="btn report-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                ...
+                                              </button>
+                                              <span class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-toggle="modal" data-target=".lc-listing-modal">Report Review</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <h5>Awesome Burger, Great Food</h5>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt veritatis, excepturi eos animi praesentium recusandae, id cupiditate ut consequatur fuga ea doloremque quos, nisi cum autem ipsum. Natus, porro ex.</p>
+                                <div class="review-img">
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-4 col-6 review-single-img">
+                                            <a href="{% static 'images/gallery/1.png' %}" data-fancybox="review">
+                                                <img src="{% static 'images/gallery/1.png' %}" alt="gallery">
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-3 col-md-4 col-6 review-single-img">
+                                            <a href="{% static 'images/gallery/2.png' %}" data-fancybox="review">
+                                                <img src="{% static 'images/gallery/2.png' %}" alt="gallery">
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-3 col-md-4 col-6 review-single-img">
+                                            <a href="{% static 'images/gallery/3.png' %}" data-fancybox="review">
+                                                <img src="{% static 'images/gallery/3.png' %}" alt="gallery">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="btn btn-blue"><i class="fa fa-thumbs-o-up"></i>2</a>
+                                <a class="btn btn-green"><i class="fa fa-comments-o"></i>3</a>
+                                <a class="btn btn-yellow"><i class="fa fa-share-alt"></i>5</a>
+                            </div>
+                        </div>
+                        <div class="lc-add-review-form">
+                            <div class="lc-section-title lc-section-title-2 mb-2">
+                                <h4 class="entry-title">Add Review</h4>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-12">
+                                    <div class="rating">
+                                        <p>Your Rating</p>
+                                        <label for="r1" class="check"><input type="checkbox" id="r1" onchange="ratingStar(event)"/><i class="em em-weary"></i></label>
+                                        <label for="r2" class="check"><input type="checkbox" id="r2" onchange="ratingStar(event)"/><i class="em em-worried"></i></label>
+                                        <label for="r3" class="check"><input type="checkbox" id="r3" onchange="ratingStar(event)"/><i class="em em-blush"></i></label>
+                                        <label for="r4" class="check"><input type="checkbox" id="r4" onchange="ratingStar(event)"/><i class="em em-smiley"></i></label>
+                                        <label for="r5" class="check"><input type="checkbox" id="r5" onchange="ratingStar(event)"/><i class="em em-sunglasses"></i></label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group submit-files">
+                                        <a href="#" class="browse-imgs">Upload Images <i class="fa fa-picture-o"></i></a>
+                                        <input type="file">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lc-comments-form">
+                                <form>
+                                    <div class="contact-form">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-12">
+                                                <div class="form-group">
+                                                    <input class="input name-email left" placeholder="Your Name" type="text" name="name" required data-error="Please enter your name">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-12">
+                                                <div class="form-group">
+                                                    <input class="input name-email right" placeholder="Email Address" type="email" name="email" required data-error="Please enter your email">
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                    <input class="input name-email right" placeholder="Review Title" type="email" name="email" required data-error="Please enter your email">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <textarea class="form-control message" placeholder="Your Message" rows="5" required data-error="Your message"></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-blue-2 ripple">Submit Review</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-12">
+                        <div class="lc-sidebar">
+                            <div class="widget widget-average-rating">
+                                <p>Average Rating <i class="fa fa-star"></i> 4.8 (35)</p>
+                            </div>
+                            <div class="widget widget-opening-hour">
+                                <div class="title">
+                                    <span class="icon"><i class="fa fa-clock-o"></i><span>Open</span></span>
+                                    <span class="time">09:00 AM - 05:00 PM</span>
+                                </div>
+                                <div class="hidden-time">
+                                    <ul>
+                                        <li>Monday <span>09:00 AM - 05:00 PM</span></li>
+                                        <li>Tuesday <span>09:00 AM - 05:00 PM</span></li>
+                                        <li>Wednesday <span>09:00 AM - 05:00 PM</span></li>
+                                        <li>Thursday <span>09:00 AM - 05:00 PM</span></li>
+                                        <li>Friday <span>09:00 AM - 05:00 PM</span></li>
+                                        <li>Saturday <span>09:00 AM - 05:00 PM</span></li>
+                                        <li>Sunday <span>09:00 AM - 05:00 PM</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- <div class="widget lc-widget-map">
+                                <div id="lc-listing-details-map"  data-lat="43.64701" data-zoom="14" data-lng="-79.39425" data-maptype="gm" data-marker="images/marker/resturent.png"></div>
+                            </div> -->
+                            <div class="widget lc-widget-map">
+                                <div class="d-flex justify-content-between lc-listing-details-map-title">
+                                    <h6><i class="fa fa-map-o"></i> Location</h6>
+                                    <a href="#">Get Direction</a>
+                                </div>
+                                <div class="lc-listing-details-maps">
+                                    <div id="lc-listing-details-map"  data-lat="43.64701" data-zoom="14" data-lng="-79.39425" data-maptype="gm" data-marker="images/marker/resturent.png"></div>
+                                </div>
+                                <div class="lc-listing-details-map-details">
+                                    <ul>
+                                        <li><a href="#"><i class="fa fa-map-marker"></i> 20 Maple Avenue, San Pedro, CA 90731</a></li>
+                                        <li><a href="#"><i class="fa fa-phone"></i> +1-202-555-0132</a></li>
+                                        <li><a href="#"><i class="fa fa-globe"></i> burgerhouse.com</a></li>
+                                    </ul>
+                                </div>
+                                <div class="widget-contact">
+                                    <ul class="user-contact">
+                                        <li class="social-contact">
+                                            <ul>
+                                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-snapchat-ghost"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div> 
+                            </div>
+                            <div class="widget widget-price-range">                            
+                                <div class="widget-title">
+                                    <h3 class="title">Cost Information</h3>
+                                </div>
+                                <div class="price-range">
+                                    <span class="simptip-movable">
+                                        <span class="active">$$$</span>
+                                        <span class="grayscale">$</span>
+                                    </span>
+                                    <span class="post-price">
+                                        <span class="text">Price Range</span>
+                                        $10 - $30 
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="widget widget-report">                            
+                                <div class="claim">
+                                    <span><i class="fa fa-id-card-o"></i>Own work here?</span>
+                                    <a aria-labelledby="dropdownMenuButton" data-toggle="modal" data-target=".lc-listing-modal22"  href="#">Claim Now !</a>
+                                </div>
+                                <div class="report">
+                                    <span><i class="fa fa-chain-broken"></i>something wrong?</span>
+
+                                    <a aria-labelledby="dropdownMenuButton" data-toggle="modal" data-target=".lc-listing-modal" href="#">Report Now !</a>
+                                </div>
+
+                                <div class="modal lc-listing-modal22 lc-claim-model-wrap" tabindex="-1" role="dialog" data-backdrop="true">
+                                    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <!-- close button -->
+                                            <div class="modal-body"> 
+                                                <button type="button" class="btn btn-close" data-dismiss="modal"><span class="ti ti-close"></span></button>   
+                                                <div class="row no-gutters">
+                                                    <div class="col-12">
+                                                        <div class="lc-claim-area">
+                                                            <div class="thumb">
+                                                                <img src="{% static 'images/claim.png' %}" alt="img">
+                                                            </div>
+                                                            <div class="lc-claim-details">
+                                                                <h3>Claim Your Business</h3>
+                                                                <ul>
+                                                                    <li><i class="fa fa-check-circle-o"></i>Edit listing Information</li>
+                                                                    <li><i class="fa fa-check-circle-o"></i>Promote your listing with ads</li>
+                                                                    <li><i class="fa fa-check-circle-o"></i>Receiving messages from lead.</li>
+                                                                </ul>
+                                                                <div class="lc-comments-form">
+                                                                    <form>
+                                                                        <div class="contact-form">
+                                                                            <div class="row">
+                                                                                <div class="col-lg-6">
+                                                                                    <div class="form-group">
+                                                                                        <input class="input name-email left" placeholder="Full Name" type="text" name="name">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-lg-6">
+                                                                                    <div class="form-group">
+                                                                                        <input class="input name-email right" placeholder="Email Address" type="email" name="email">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <textarea class="form-control message" placeholder="Message" rows="4" required data-error="Your message"></textarea>
+                                                                            </div>
+                                                                            <label class="agree-checkbox">
+                                                                                <input type="checkbox">
+                                                                                <span>Agree About </span>
+                                                                                <span><a href="#">Terms & Condition</a></span>
+                                                                            </label>
+                                                                            <button type="submit" class="btn btn-blue-2 ripple">Send Message</button>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                               </div>
+                                           </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="widget widget-author-contact">
+                                <div class="media">
+                                    <div class="media-body">
+                                        <span>Hosted by</span>
+                                        <h5><a href="#">Pascal Beckmann</a></h5>
+                                    </div>
+                                    <img src="{% static 'images/author/16.png' %}" alt="img">
+                                </div>
+                                <div class="lc-comments-form">
+                                    <form>
+                                        <div class="contact-form">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <input class="input name-email left" placeholder="Full Name" type="text" name="name">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <input class="input name-email right" placeholder="Email Address" type="email" name="email">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <input class="input name-email right" placeholder="Mobile Number" type="email" name="email">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <textarea class="form-control message" placeholder="Message" rows="3" required data-error="Your message"></textarea>
+                                            </div>
+                                            <button type="submit" class="btn btn-blue-2 ripple">Send Message</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="widget widget-statistic">
+                                <div class="widget-title">
+                                    <h3 class="title">Staistic</h3>
+                                </div>
+                                <span><i class="fa fa-eye"></i>3016 Views</span>
+                                <span><i class="fa fa-bookmark-o "></i>108 Saved</span>
+                                <span><i class="fa fa-star-o"></i>154 Rating</span>
+                                <span><i class="fa fa-share"></i>27 Share</span>
+                            </div>          
+                            <div class="widget widget-recent-post">                            
+                                <div class="widget-title">
+                                    <h3 class="title">Related Listing</h3>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <img src="{% static 'images/blog/sidebar/01.png' %}" class="img-fluid" alt="img">
+                                            </div>
+                                            <div class="media-body">
+                                                <h6 class="title"><a href="#">Find Some Best Place</a></h6>
+                                                <div class="post-meta">
+                                                    <span class="tag"><a href="#"><i class="fa fa-bed"></i>Hotel</a></span>
+                                                    <span><i class="fa fa-map-marker"></i>New Jersey</span>
+                                                </div>                           
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>                                    
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <img src="{% static 'images/blog/sidebar/02.png' %}" class="img-fluid" alt="img">
+                                            </div>
+                                            <div class="media-body">
+                                                <h6 class="title"><a href="#">How Safe You Will Be?</a></h6>
+                                                <div class="post-meta">
+                                                    <span class="tag"><a href="#"><i class="fa fa-bed"></i>Hotel</a></span>
+                                                    <span><i class="fa fa-map-marker"></i>New Jersey</span>
+                                                </div>                            
+                                            </div>
+                                        </div> 
+                                    </li>
+                                    <li>                                    
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <img src="{% static 'images/blog/sidebar/03.png' %}" class="img-fluid" alt="img">
+                                            </div>
+                                            <div class="media-body">
+                                                <h6 class="title"><a href="#">Don't Forget Spiritual Life</a></h6>
+                                                <div class="post-meta">
+                                                    <span class="tag"><a href="#"><i class="fa fa-bed"></i>Hotel</a></span>
+                                                    <span><i class="fa fa-map-marker"></i>New Jersey</span>
+                                                </div>                           
+                                            </div>
+                                        </div> 
+                                    </li>
+                                    <li>                                    
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <img src="{% static 'images/blog/sidebar/04.png' %}" class="img-fluid" alt="img">
+                                            </div>
+                                            <div class="media-body">
+                                                <h6 class="title"><a href="#">Five places that made me</a></h6>
+                                                <div class="post-meta">
+                                                    <span class="tag"><a href="#"><i class="fa fa-bed"></i>Hotel</a></span>
+                                                    <span><i class="fa fa-map-marker"></i>New Jersey</span>
+                                                </div>                           
+                                            </div>
+                                        </div> 
+                                    </li>
+                                </ul>
+                            </div>    
+                            <div class="widget widget-tags">
+                                <div class="widget-title">
+                                    <h3 class="title">Tags</h3>
+                                </div>
+                                <div class="tag-list">
+                                    <a href="#">Listing</a>
+                                    <a href="#">Entertainment</a>
+                                    <a href="#">Travelling</a>
+                                    <a href="#">Event</a>
+                                    <a href="#">lifestyle</a>
+                                    <a href="#">Vacation</a>
+                                    <a href="#">Hostel</a>
+                                    <a href="#">Restaurants</a>
+                                    <a href="#">Business</a>
+                                    <a href="#">Portal</a>
+                                </div>
+                            </div>
+                            <div class="widget widget-additional-info">
+                                <div class="widget-title">
+                                    <h3 class="title">Additional Information</h3>
+                                </div>
+                                <div class="toggle-btn"><i class="fa fa-angle-down"></i></div>
+                                <ul class="additional-details">
+                                    <li>
+                                        <span class="title">Take Out:</span>
+                                        <span>Yes</span>
+                                    </li>
+                                    <li>
+                                        <span class="title">Delivery:</span>
+                                        <span>Yes</span>
+                                    </li>
+                                    <li>
+                                        <span class="title">Neutral Restrooms:</span>
+                                        <span>Yes</span>
+                                    </li>
+                                    <li>
+                                        <span class="title">Has Pool Table:</span>
+                                        <span>Yes</span>
+                                    </li>
+                                    <li>
+                                        <span class="title">Waiter Service:</span>
+                                        <span>Yes</span>
+                                    </li>
+                                </ul>
+                                <ul class="additional-details additional-details-hide">
+                                    <li>
+                                        <span class="title">Take Out:</span>
+                                        <span>Yes</span>
+                                    </li>
+                                    <li>
+                                        <span class="title">Delivery:</span>
+                                        <span>Yes</span>
+                                    </li>
+                                    <li>
+                                        <span class="title">Gender Neutral Restrooms:</span>
+                                        <span>Yes</span>
+                                    </li>
+                                    <li>
+                                        <span class="title">Has Pool Table:</span>
+                                        <span>Yes</span>
+                                    </li>
+                                    <li>
+                                        <span class="title">Waiter Service:</span>
+                                        <span>Yes</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+    <!-- end listing details section -->
+
+    <!-- Optional JavaScript -->
+    
+{% endblock %}

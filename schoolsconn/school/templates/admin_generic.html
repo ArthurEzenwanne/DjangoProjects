@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        {% block title %}<title>Schools App</title>{% endblock %}
+
+        <!-- Add additional CSS in static file -->
+        {% load static %}
+        <!-- <link rel="stylesheet" href="{% static 'css/styles.css' %}"> -->
+        
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="{% static 'admin/assets/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'admin/assets/css/font-awesome.min.css' %}">
+        <link rel="stylesheet" href="{% static 'admin/assets/css/themify-icons.css' %}">
+        
+        <!-- fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900%7cQuicksand:300,400,500,700" rel="stylesheet">
+        
+        <!-- main css -->
+        <link rel="stylesheet" href="{% static 'admin/css/mega/_mega.css' %}">
+        <link rel="stylesheet" href="{% static 'admin/css/style.css' %}">
+    </head>
+    <body>
+        <!-- Left Navigation start -->
+        <section class="lcd-header-section">
+            <!--sidebar start-->
+            <aside>
+                <div id="lcd-sidebar" class="nav-collapse">
+                    <!--logo start-->
+                    <div class="lcd-brand">
+                        <a href="{% url 'index' %}" class="logo">
+                            <img src="{% static 'admin/images/logo2.png' %}" alt="img">
+                            <span>Listera</span>
+                        </a>
+                        <div class="lcd-sidebar-toggle-box">
+                            <span class="ti-menu"></span>
+                        </div>
+                    </div>
+                    <!--logo end-->
+                    <!-- sidebar menu start-->
+                    <div class="lcd-leftside-navigation">
+                        <div class="lcd-leftside-navigation-s">
+                            <ul class="lcd-sidebar-menu" id="lcd-nav-accordion">
+                                <li class="text-center border-top-0">
+                                    <div class="lcd-sidebar-profile">
+                                        <img src="{% static 'admin/images/profile-photo.png' %}" alt="photo">
+                                        <h3 class="name">Jonathon Cristy</h3>
+                                        <div class="profile-details">
+                                            <a class="followers">Followers <span>1023</span></a>
+                                            <a class="following">Following <span>103</span></a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="border-top-0">
+                                    <a class="active" href="{% url 'index' %}">
+                                        <i class="fa fa-user-o"></i>
+                                        <span class="menu-text">Profile</span>
+                                    </a>
+                                </li>
+                                <li class="sub-menu">
+                                    <a class="active" href="{% url 'index' %}">
+                                        <i class="fa fa-list-ul"></i>
+                                        <span class="menu-text">Schools</span>
+                                    </a>
+                                </li>
+                                <li class="sub-menu">
+                                    <a class="active" href="{% url 'index' %}">
+                                        <i class="fa fa-envelope-o"></i>
+                                        <span class="menu-text">Messages</span>
+                                    </a>
+                                </li>
+                                <li class="sub-menu">
+                                        <!-- <i class="fa-star-half-full"></i><i class="fa fa-star-half-o"></i> -->
+                                    <a class="active" href="{% url 'index' %}">
+                                        <i class="fa fa-star-half-full"></i>
+                                        <span class="menu-text">Reviews</span>
+                                    </a>
+                                </li>
+                            </ul>            
+                        </div>
+                    </div>
+                    <!-- sidebar menu end-->
+                </div>
+            </aside>
+            <!--sidebar end-->
+        </section>
+        <!-- Left Navigation end -->
+
+        <!-- main content start-->
+        <section id="lcd-main-content">
+            <div class="lcd-main-content-area">
+                <!-- LC navbar -->
+                <nav id="lcdnavbar" class="navbar lcd-navbar fixed-top navbar-expand-lg">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="line"></span>
+                        <span class="line"></span>
+                        <span class="line"></span>
+                    </button>
+                    <div class="collapse navbar-collapse lc-menu" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                            <li class="nav-item has-menu-item-megamenu"><a href="{% url 'index' %}">Home</a>
+                        </li> 
+                        <li class="nav-item has-menu-item-submenu"><a href="#">Listing<i class="fa fa-angle-down"></i></a>
+                        </li>   
+                        <!-- end Mega menu -->
+                        </ul>   
+                    </div>
+                    <div class="login-side">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item has-menu-item-submenu"><img src="{% static 'admin/images/profile.png' %}"></li>  
+                            <li><a class="btn btn-transparent ml-3" href="{% url 'index' %}">+ Add Listing</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <!-- End LC navbar -->
+
+                {% block content %}
+                <!-- default content text (typically empty) -->
+                {% endblock %}
+            </div>
+        </section>
+        <!-- main content end-->        
+
+        {% block footer %}
+        <!-- start footer-section -->
+        <footer class="lc-footer-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <!-- subscribtion -->
+                        <div class="col-12 col-md-10">
+                            <div class="lc-subscribtion text-center">
+                                <h4 class="title">Join Our Newsletter 
+                                    <i class="fa fa-paper-plane-o"></i>
+                                </h4> 
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <div class="row justify-content-center">
+                                    <div class="col-12 col-md-8 col-lg-6">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Your Email Address" >
+                                            <div class="input-group-append">
+                                                <button type="submit" class="input-group-text">Subscribe</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <!-- /.subscribtion -->
+    
+                    <!-- widget area -->                
+                    <div class="col-12">
+                        <div class="widget-area">
+                            <div class="row justify-content-center">
+                                <!-- single widget star -->
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <div class="widget widget_about">
+                                        <a href="{% url 'index' %}">
+                                            <img src="{% static 'images/icon/04.png' %}" alt="logo">
+                                            <span class="widget-title">Listera</span>
+                                        </a>
+                                        <p>Lorem ipsum dolor amet, conectetur the adipisicig elit, sed eiusmod tempor inciddunt labore dolore commodo consequat.</p>    
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <div class="widget widget_links">
+                                        <div class="widget-title">
+                                            <h4 class="title">Useful Links</h4>
+                                        </div>
+                                        <ul class="ul-link">
+                                            <li><a href="{% url 'index' %}">Sign in</a></li>
+                                            <li><a href="{% url 'index' %}">Sign Up</a></li>
+                                            <li><a href="{% url 'index' %}">My Account</a></li>
+                                            <li><a href="{% url 'index' %}">Add Listing</a></li>
+                                        </ul> 
+                                        <ul>
+                                            <li><a href="{% url 'index' %}">Privacy Policy</a></li>
+                                            <li><a href="{% url 'index' %}">F.A.Q</a></li>
+                                            <li><a href="{% url 'index' %}">Our Pertners</a></li>
+                                            <li><a href="{% url 'index' %}">Contact</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <div class="widget widget_links">
+                                        <div class="widget-title">
+                                            <h4 class="title">Useful Links</h4>
+                                        </div>
+                                        <ul class="ul-link">
+                                            <li><a href="{% url 'index' %}">Sign in</a></li>
+                                            <li><a href="{% url 'index' %}">Sign Up</a></li>
+                                            <li><a href="{% url 'index' %}">My Account</a></li>
+                                            <li><a href="{% url 'index' %}">Add Listing</a></li>
+                                        </ul> 
+                                        <ul>
+                                            <li><a href="{% url 'index' %}">Privacy Policy</a></li>
+                                            <li><a href="{% url 'index' %}">F.A.Q</a></li>
+                                            <li><a href="{% url 'index' %}">Our Pertners</a></li>
+                                            <li><a href="{% url 'index' %}">Contact</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div> <!-- /.row -->
+                        </div>
+                    </div>                
+                    <!-- /.widget area -->
+    
+                    <!-- widget info -->
+                    <div class="col-12">
+                        <div class="widget widget_info">
+                            <ul>
+                                <li><a href="{% url 'index' %}"><i class="fa fa-map-marker"></i>20 Maple Avenue, San Pedro, CA 90731</a></li>
+                                <li><a href="{% url 'index' %}"><i class="fa fa-envelope-o"></i>suport@listera.com</a></li>
+                                <li><a href="{% url 'index' %}"><i class="fa fa-whatsapp"></i>+1-212-9876543</a></li>
+                                <li><a href="{% url 'index' %}"><i class="fa fa-phone"></i>(526) 236-895-4732</a></li>
+                                <li><a href="{% url 'index' %}"><i class="fa fa-skype"></i>example.skype</a></li>
+                            </ul>
+                        </div> 
+                    </div>
+                    <!-- /.widget info -->
+                </div>
+            </div>
+            <div class="lc-copy-right">
+                <div class="container">
+                    <div class="row vertical-center-row">                    
+                        <div class="col-12 col-lg-5 col-md-12">
+                            <div class="copyright">
+                                <p>© Copyright 2019 SchoolsApp. All rights reserved</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-3 offset-lg-3">
+                            <ul class="social-area">
+                                <li><a href="{% url 'index' %}"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="{% url 'index' %}"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="{% url 'index' %}"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#" id="lc-toTop" class="lc-to-top"><i class="fa fa-angle-up"></i></a>
+        </footer>
+        <!-- end footer-section -->
+        {% endblock %}
+    
+        <!-- Include JavaScript -->
+        <script src="{% static 'admin/assets/js/jquery.min.js' %}"></script>
+        <script src="{% static 'admin/assets/js/popper.min.js' %}"></script>
+        <script src="{% static 'admin/assets/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'admin/assets/js/jquery.dbjqaccordion.2.7.js' %}"></script>
+        <script src="{% static 'admin/assets/js/jquery.inview.min.js' %}"></script>
+        <script src="{% static 'admin/assets/js/chart.bundle.min.js' %}"></script>
+        <script src="{% static 'admin/assets/js/chartjs-plugin-labels.min.js' %}"></script>
+        <script src="{% static 'admin/assets/js/lcmega.js' %}"></script>
+        
+        <!-- custom js -->
+        <script src="{% static 'admin/js/scripts.js' %}"></script>        
+    </body>
+</html>

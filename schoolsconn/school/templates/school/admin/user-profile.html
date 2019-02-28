@@ -1,0 +1,120 @@
+{% extends "admin_generic.html" %}
+    
+    {% load static %} 
+    
+    {% block content %}
+        <!-- start profile section-->
+        <div class="lcd-profile-notice-section">
+            <div class="row">
+                <div class="col-12">
+                    <div class="lcd-profile-notice-area">
+                        <p><i class="fa fa-bell-o"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- start profile section input field-->
+        <div class="lcd-profile-section">
+            <div class="row">
+                <div class="col-12">
+                    <div class="lcd-profile-basic-info-area">
+                        <h5><i class="fa fa-info"></i> Basic information</h5>
+                        <div class="row">
+                            <div class="col-md-6 col-12">
+                                <label class="lcd-profile-basic-info">
+                                    <span class="lcd-profile-basic-info-title">First Name</span>
+                                    <input class="lcd-profile-basic-info-input" placeholder="Jonathon" type="text">
+                                </label>
+                                <label class="lcd-profile-basic-info">
+                                    <span class="lcd-profile-basic-info-title">Email Address</span>
+                                    <input class="lcd-profile-basic-info-input" placeholder="example@email.com" type="email">
+                                </label>
+                                <label class="lcd-profile-basic-info">
+                                    <span class="lcd-profile-basic-info-title">Phone Number</span>
+                                    <input class="lcd-profile-basic-info-input" placeholder="+1 213 546 879" type="text">
+                                </label>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <label class="lcd-profile-basic-info">
+                                    <span class="lcd-profile-basic-info-title">Last Name</span>
+                                    <input class="lcd-profile-basic-info-input" placeholder="Cristy" type="text">
+                                </label>
+                                <label class="lcd-profile-basic-info">
+                                    <span class="lcd-profile-basic-info-title">User Name</span>
+                                    <input class="lcd-profile-basic-info-input" placeholder="jonathon01" type="text">
+                                </label>
+                                <label class="lcd-profile-basic-info">
+                                    <span class="lcd-profile-basic-info-title">Address</span>
+                                    <input class="lcd-profile-basic-info-input" placeholder="20 Maple Avenue, San Pedro, CA 90731" type="text">
+                                </label>
+                            </div>
+                            <div class="col-12">
+                                <label class="lcd-profile-basic-info">
+                                    <span class="lcd-profile-basic-info-title">Introduce your self</span>
+                                    <textarea class="lcd-profile-basic-info-textarea" placeholder="Lorem ipsum dolor..."rows="3"></textarea>
+                                </label>
+                                </div>   
+                        </div>
+                    </div>
+                    <div class="lcd-profile-basic-info-area">
+                        <h5><span class="fa fa-user-plus"></span> Social Follow Up</h5>
+                        <div class="row">
+                            <div class="col-md-6 col-12">
+                                <label class="lcd-profile-basic-info">
+                                    <span class="lcd-profile-basic-info-title">Facebook</span>
+                                    <input class="lcd-profile-basic-info-input" placeholder="facebook.com/username" type="text">
+                                </label>
+                                <label class="lcd-profile-basic-info">
+                                    <span class="lcd-profile-basic-info-title">Twitter</span>
+                                    <input class="lcd-profile-basic-info-input" placeholder="twitter.com/username" type="text">
+                                </label>
+                                <label class="lcd-profile-basic-info">
+                                    <span class="lcd-profile-basic-info-title">Google Plus</span>
+                                    <input class="lcd-profile-basic-info-input" placeholder="plus.google.com/username" type="text">
+                                </label>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <label class="lcd-profile-basic-info">
+                                    <span class="lcd-profile-basic-info-title">Instagram</span>
+                                    <input class="lcd-profile-basic-info-input" placeholder="instagram.com/username" type="text">
+                                </label>
+                                <label class="lcd-profile-basic-info">
+                                    <span class="lcd-profile-basic-info-title">Linkedin</span>
+                                    <input class="lcd-profile-basic-info-input" placeholder="linkedin.com/username" type="text">
+                                </label>
+                                <label class="lcd-profile-basic-info">
+                                    <span class="lcd-profile-basic-info-title">Pinterest</span>
+                                    <input class="lcd-profile-basic-info-input" placeholder="pinterest.com/username" type="text">
+                                </label>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="lcd-profile-basic-info-area">
+                        <h5><span class="fa fa-lock"></span> Change Password</h5>
+                        <div class="row">
+                            <div class="col-md-6 col-12">
+                                <label class="lcd-profile-basic-info">
+                                    <span class="lcd-profile-basic-info-title">New Password</span>
+                                    <input class="lcd-profile-basic-info-input" placeholder="Write New Password" type="password">
+                                </label>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <label class="lcd-profile-basic-info">
+                                    <span class="lcd-profile-basic-info-title">Repeat Password</span>
+                                    <input class="lcd-profile-basic-info-input" placeholder="Write Again Your New Password" type="password">
+                                </label>
+                            </div>
+                            <div class="col-12">
+                                <a class="lcd-profile-basic-info-btn" href="#">Save Change</a>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /End profile section-->
+    {% endblock %}

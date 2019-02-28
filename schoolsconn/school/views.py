@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
-from .models import School
+from .models import School, SchoolsConnBaseUser, BasicSchoolInfo, AdvancedSchoolInfo
 
 # Create your views here.
 # from catalog.models import Book, Author, BookInstance, Genre
@@ -26,3 +26,8 @@ class SchoolListView(generic.ListView):
     """Class based list view for School model."""
     model = School
     paginate_by = 30    
+
+def account_profile_view(request, email):
+    """Function based view for user profile model."""
+    user = get_object_or_404(SchoolsConnBaseUser, email=self.email)
+    return render(request, 'school/admin/profile-blue.html', context={'user': user})     

@@ -14,8 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path
-from . import views
 from django.views.generic.base import TemplateView
+from . import views
+#from .models import School, SchoolsConnBaseUser
 
 #admin.autodiscover()
 
@@ -26,6 +27,7 @@ urlpatterns = [
     #path('accounts/profile', views.account_profile_view, name='account-profile'),   # routes to the profile view
     #path('accounts/profile', TemplateView.as_view(template_name='school/admin/user-profile.html'), name='user-profile'),
     path('accounts/profile/', TemplateView.as_view(template_name='school/admin/user-profile.html'), name='user-profile'),
-    path('accounts/schools/', TemplateView.as_view(template_name='school/admin/school-listing.html'), name='school-listing'),
-
+    #path('accounts/schools/', TemplateView.as_view(template_name='school/admin/school-listing.html'), name='school-listing'),
+    #path('accounts/schools/', views.account_schools_view, name='school-listing'),
+    path('accounts/schools/', views.AccountsSchoolsListView.as_view(), name='school-listing'),
 ]

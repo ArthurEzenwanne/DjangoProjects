@@ -32,8 +32,17 @@ class SchoolListView(generic.ListView):
 #     user = get_object_or_404(SchoolsConnBaseUser, email=self.email)
 #     return render(request, 'school/admin/user-profile.html', context={'user': user})     
 
-def account_schools_view(request):
-    """Function based view for user's listed schools."""
-    user = get_object_or_404(SchoolsConnBaseUser, email=self.email)    
-    school = get_list_or_404(School, user=user)
-    return render(request, 'school/admin/school-listing.html', context={'user': user})     
+# def account_schools_view(request):
+#     """Function based view for user's listed schools."""
+#     #user = get_object_or_404(SchoolsConnBaseUser, username=username)    
+#     #school = get_list_or_404(School, request.user)
+#     school_set = School.objects.filter(user=request.user)
+#     return render(request, 'school/admin/school-listing.html', context={'school': school_set})     
+
+class AccountsSchoolsListView(generic.ListView):
+    model = School
+    template_name = 'school/admin/school-listing.html'
+    context_object_name = 'all_schools_by_user'
+
+    def get_queryset(self):
+        return School.objects.filter(user=self.request.user)    

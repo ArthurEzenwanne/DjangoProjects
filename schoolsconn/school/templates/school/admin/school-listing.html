@@ -32,10 +32,11 @@
                         <div class="lcd-pending-header lcd-border-b">
                             <h2>Schools List {{ user.schools }}</h2>
                         </div>
-                        <div class="lcd-pending-details">
-                            <div class="row">
-                                {% if object_list %}
-                                    {% for school in object_list %}
+                        
+                        {% if object_list %}
+                            {% for school in object_list %}
+                                <div class="lcd-pending-details">
+                                    <div class="row">
                                         <div class="col-xl-6 col-md-12 lcd-nopadding">
                                             <div class="lcd-pending-details-info d-flex align-items-center media">
                                                 <img src="{% static 'admin/images/pending_list/1.png' %}" alt="active image">
@@ -57,15 +58,13 @@
                                                     <li><a class="lcd-white-btn" href="#"><i class="fa fa-edit"></i> Edit</a></li>
                                                 </ul>
                                             </div>
-                                        </div>        
-                                    {% endfor %}
-                                {% else %}
-                                    <p>You have no schools listed yet. Add New School (TODO: Link).</p>  
-                                {% endif %}
-
-                                {{ school.name }}
-                            </div>
-                        </div>
+                                        </div>  
+                                    </div>
+                                </div>      
+                            {% endfor %}
+                        {% else %}
+                            <p>You have no schools listed yet. Add New School (TODO: Link).</p>  
+                        {% endif %}
                     </div>
                     <!-- listings content end -->
                     

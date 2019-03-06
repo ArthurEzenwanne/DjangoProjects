@@ -47,7 +47,7 @@
                                 <li class="text-center border-top-0">
                                     <div class="lcd-sidebar-profile">
                                         <img src="{% static 'admin/images/profile-photo.png' %}" alt="photo">
-                                        <h3 class="name">Jonathon Cristy</h3>
+                                        <h3 class="name">{{ user.get_full_name }}</h3>
                                         <div class="profile-details">
                                             <a class="followers">Followers <span>1023</span></a>
                                             <a class="following">Following <span>103</span></a>
@@ -55,13 +55,13 @@
                                     </div>
                                 </li>
                                 <li class="border-top-0">
-                                    <a class="active" href="{% url 'index' %}">
+                                    <a class="active" href="{% url 'user-profile' %}">
                                         <i class="fa fa-user-o"></i>
                                         <span class="menu-text">Profile</span>
                                     </a>
                                 </li>
                                 <li class="sub-menu">
-                                    <a class="active" href="{% url 'index' %}">
+                                    <a class="active" href="{% url 'school-listing' %}">
                                         <i class="fa fa-list-ul"></i>
                                         <span class="menu-text">Schools</span>
                                     </a>

@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, get_list_or_404
 from django.views import generic
 from .models import School, SchoolsConnBaseUser, BasicSchoolInfo, AdvancedSchoolInfo
 
@@ -27,7 +27,13 @@ class SchoolListView(generic.ListView):
     model = School
     paginate_by = 30    
 
-def account_profile_view(request, email):
-    """Function based view for user profile model."""
-    user = get_object_or_404(SchoolsConnBaseUser, email=self.email)
-    return render(request, 'school/admin/profile-blue.html', context={'user': user})     
+# def account_profile_view(request, email):
+#     """Function based view for user profile model."""
+#     user = get_object_or_404(SchoolsConnBaseUser, email=self.email)
+#     return render(request, 'school/admin/user-profile.html', context={'user': user})     
+
+def account_schools_view(request):
+    """Function based view for user's listed schools."""
+    user = get_object_or_404(SchoolsConnBaseUser, email=self.email)    
+    school = get_list_or_404(School, user=user)
+    return render(request, 'school/admin/school-listing.html', context={'user': user})     

@@ -4,6 +4,7 @@
     
     {% block content %}
         <!-- start profile section-->
+        <!-- start profile section message field -->
         <div class="lcd-profile-notice-section">
             <div class="row">
                 <div class="col-12">
@@ -13,51 +14,55 @@
                 </div>
             </div>
         </div>
+        <!-- end profile section message field -->
         <!-- start profile section input field-->
         <div class="lcd-profile-section">
             <div class="row">
                 <div class="col-12">
+                    <!-- basic info profile section start -->
                     <div class="lcd-profile-basic-info-area">
                         <h5><i class="fa fa-info"></i> Basic information</h5>
                         <div class="row">
                             <div class="col-md-6 col-12">
                                 <label class="lcd-profile-basic-info">
                                     <span class="lcd-profile-basic-info-title">First Name</span>
-                                    <input class="lcd-profile-basic-info-input" placeholder="Jonathon" type="text">
+                                    <input class="lcd-profile-basic-info-input" placeholder=" Ex: Tobi" type="text" value="{{ user.first_name }}">
                                 </label>
                                 <label class="lcd-profile-basic-info">
                                     <span class="lcd-profile-basic-info-title">Email Address</span>
-                                    <input class="lcd-profile-basic-info-input" placeholder="example@email.com" type="email">
+                                    <input class="lcd-profile-basic-info-input" placeholder=" Ex: example@email.com" type="email" value="{{ user.email }}" disabled>
                                 </label>
                                 <label class="lcd-profile-basic-info">
                                     <span class="lcd-profile-basic-info-title">Phone Number</span>
-                                    <input class="lcd-profile-basic-info-input" placeholder="+1 213 546 879" type="text">
+                                    <input class="lcd-profile-basic-info-input" placeholder="Ex: 09090587701" type="text" value="{{ user.phone }}">
                                 </label>
                             </div>
                             <div class="col-md-6 col-12">
                                 <label class="lcd-profile-basic-info">
                                     <span class="lcd-profile-basic-info-title">Last Name</span>
-                                    <input class="lcd-profile-basic-info-input" placeholder="Cristy" type="text">
+                                    <input class="lcd-profile-basic-info-input" placeholder=" Ex: Olotu" type="text" value="{{ user.last_name }}">
                                 </label>
                                 <label class="lcd-profile-basic-info">
                                     <span class="lcd-profile-basic-info-title">User Name</span>
-                                    <input class="lcd-profile-basic-info-input" placeholder="jonathon01" type="text">
+                                    <input class="lcd-profile-basic-info-input" placeholder="Ex: TobiOlotu" type="text" value="{{ user.username }}">
                                 </label>
                                 <label class="lcd-profile-basic-info">
                                     <span class="lcd-profile-basic-info-title">Address</span>
-                                    <input class="lcd-profile-basic-info-input" placeholder="20 Maple Avenue, San Pedro, CA 90731" type="text">
+                                    <input class="lcd-profile-basic-info-input" placeholder="Ex: 20, Maple Avenue, Ikeja, Lagos" type="text" value="{{ user.street }}, {{ user.state }}, {{ user.country }}">
                                 </label>
                             </div>
-                            <div class="col-12">
+                            <!-- <div class="col-12">
                                 <label class="lcd-profile-basic-info">
                                     <span class="lcd-profile-basic-info-title">Introduce your self</span>
                                     <textarea class="lcd-profile-basic-info-textarea" placeholder="Lorem ipsum dolor..."rows="3"></textarea>
                                 </label>
-                                </div>   
+                            </div>   --> 
                         </div>
                     </div>
+                    <!-- basic info profile section end -->
+                    <!-- social profile section start -->
                     <div class="lcd-profile-basic-info-area">
-                        <h5><span class="fa fa-user-plus"></span> Social Follow Up</h5>
+                        <h5><span class="fa fa-user-plus"></span> Social </h5>
                         <div class="row">
                             <div class="col-md-6 col-12">
                                 <label class="lcd-profile-basic-info">
@@ -67,10 +72,6 @@
                                 <label class="lcd-profile-basic-info">
                                     <span class="lcd-profile-basic-info-title">Twitter</span>
                                     <input class="lcd-profile-basic-info-input" placeholder="twitter.com/username" type="text">
-                                </label>
-                                <label class="lcd-profile-basic-info">
-                                    <span class="lcd-profile-basic-info-title">Google Plus</span>
-                                    <input class="lcd-profile-basic-info-input" placeholder="plus.google.com/username" type="text">
                                 </label>
                             </div>
                             <div class="col-md-6 col-12">
@@ -82,15 +83,13 @@
                                     <span class="lcd-profile-basic-info-title">Linkedin</span>
                                     <input class="lcd-profile-basic-info-input" placeholder="linkedin.com/username" type="text">
                                 </label>
-                                <label class="lcd-profile-basic-info">
-                                    <span class="lcd-profile-basic-info-title">Pinterest</span>
-                                    <input class="lcd-profile-basic-info-input" placeholder="pinterest.com/username" type="text">
-                                </label>
                             </div>  
                         </div>
                     </div>
+                    <!-- social profile section end -->
                 </div>
             </div>
+            <!-- password profile section start -->
             <div class="row">
                 <div class="col-12">
                     <div class="lcd-profile-basic-info-area">
@@ -115,6 +114,10 @@
                     </div>
                 </div>
             </div>
+            <!-- password profile section end -->
         </div>
         <!-- /End profile section-->
+    {% endblock %}
+
+    {% block footer %}
     {% endblock %}

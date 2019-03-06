@@ -22,7 +22,10 @@ from django.views.generic.base import TemplateView
 urlpatterns = [
     path('', views.index, name='index'),
     path('schools/', views.SchoolListView.as_view(), name='schools-list'),
-    path('schools/<str:slug>', views.SchoolDetailView.as_view(), name='school-detail'), # uses slug, could also use pk
+    path('schools/<str:slug>/', views.SchoolDetailView.as_view(), name='school-detail'), # uses slug, could also use pk
     #path('accounts/profile', views.account_profile_view, name='account-profile'),   # routes to the profile view
-    path('accounts/profile', TemplateView.as_view(template_name='school/admin/user-profile.html')),
+    #path('accounts/profile', TemplateView.as_view(template_name='school/admin/user-profile.html'), name='user-profile'),
+    path('accounts/profile/', TemplateView.as_view(template_name='school/admin/user-profile.html'), name='user-profile'),
+    path('accounts/schools/', TemplateView.as_view(template_name='school/admin/school-listing.html'), name='school-listing'),
+
 ]

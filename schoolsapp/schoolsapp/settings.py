@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'tutor.apps.TutorConfig',
+    # Postman app
+    'postman',
 ]
 
 MIDDLEWARE = [
@@ -63,6 +65,10 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
+                #If you want to make use of a postman_unread_count context variable in your templates, 
+                # add postman.context_processors.inbox to the TEMPLATE_CONTEXT_PROCESSORS setting of your project.
+                'postman.context_processors.inbox',
             ],
         },
     },
@@ -119,3 +125,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Postman settings
+POSTMAN_AUTO_MODERATE_AS = True

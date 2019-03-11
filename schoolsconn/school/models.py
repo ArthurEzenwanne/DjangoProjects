@@ -96,7 +96,7 @@ class BasicSchoolInfo(models.Model):
     admin = models.CharField(max_length=128, default='N/A')
     school_type = MultiSelectField(choices=SCHOOL_TYPE_CHOICE, default='n') # max_choices not needed - use multi
     approved_exams = MultiSelectField(choices=APPROVED_EXAM_CHOICE, default='ncce') # max_choices not needed - use multi
-    gender = models.CharField(max_length=2, choices=GENDER_CHOICE, default='mixed') # max_choices is 1 - use default
+    gender = models.CharField(max_length=2, choices=GENDER_CHOICE, default='mx') # max_choices is 1 - use default
     boarding = models.CharField(max_length=2, choices=BOARDING_CHOICE, default='bd') # max_choices is 1 - use default
     founded = models.DateField(default='N/A')
 

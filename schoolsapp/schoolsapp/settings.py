@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'tutor.apps.TutorConfig',
     # Postman app
     'postman',
+    'django_messages',
 ]
 
 MIDDLEWARE = [

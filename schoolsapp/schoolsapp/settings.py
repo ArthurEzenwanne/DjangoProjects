@@ -37,9 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Added sites
+    'django.contrib.sites',
+
+
     'tutor.apps.TutorConfig',
     # Postman app
-    'postman',
+    #'postman',
     'django_messages',
 ]
 

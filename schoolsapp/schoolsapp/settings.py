@@ -39,8 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Added sites
     'django.contrib.sites',
-
-
     'tutor.apps.TutorConfig',
     # Postman app
     #'postman',
@@ -73,7 +71,7 @@ TEMPLATES = [
 
                 #If you want to make use of a postman_unread_count context variable in your templates, 
                 # add postman.context_processors.inbox to the TEMPLATE_CONTEXT_PROCESSORS setting of your project.
-                'postman.context_processors.inbox',
+                #'postman.context_processors.inbox',
             ],
         },
     },

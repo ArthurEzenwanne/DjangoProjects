@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.urls import path
 from django.views.generic.base import TemplateView
+from django.contrib.auth.decorators import login_required, permission_required
 from . import views
+
 #from .models import School, SchoolsConnBaseUser
 
 #admin.autodiscover()
@@ -30,4 +32,5 @@ urlpatterns = [
     #path('accounts/schools/', TemplateView.as_view(template_name='school/admin/school-listing.html'), name='school-listing'),
     #path('accounts/schools/', views.account_schools_view, name='school-listing'),
     path('accounts/schools/', views.AccountsSchoolsListView.as_view(), name='school-listing'),
+    path('school/new/', views.create_school, name='create-school'), 
 ]

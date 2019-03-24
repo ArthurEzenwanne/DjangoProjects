@@ -42,7 +42,10 @@ INSTALLED_APPS = [
     'tutor.apps.TutorConfig',
     # Postman app
     #'postman',
-    'django_messages',
+    #'django_messages',
+    'pinax.messages',
+    'bootstrapform',
+    'pinax.templates',
 ]
 
 MIDDLEWARE = [
@@ -72,6 +75,7 @@ TEMPLATES = [
                 #If you want to make use of a postman_unread_count context variable in your templates, 
                 # add postman.context_processors.inbox to the TEMPLATE_CONTEXT_PROCESSORS setting of your project.
                 #'postman.context_processors.inbox',
+                'pinax.messages.context_processors.user_messages',
             ],
         },
     },

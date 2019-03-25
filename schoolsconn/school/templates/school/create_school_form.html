@@ -4,10 +4,10 @@
 
 {% block content %}
 
-<h1>CRUD Function Based View Example</h1>  
- <form method="post">  
-     {% csrf_token %}  
-     {{ form.as_p }}  
-     <input type="submit" value="Submit" />  
- </form> 
- {% endblock %}
+    <h1>CRUD Function Based View Example</h1>  
+    <form method="post">  
+        {% csrf_token %}  
+        {{ form.as_p }}  
+        <input type="submit" value="Submit" />  
+    </form> 
+{% endblock %}

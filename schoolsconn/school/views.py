@@ -1,4 +1,5 @@
-from django.shortcuts import render, get_object_or_404, get_list_or_404
+import re
+from django.shortcuts import render, get_object_or_404, get_list_or_404, redirect  
 from django.views import generic
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -53,6 +54,20 @@ class AccountsSchoolsListView(LoginRequiredMixin, generic.ListView):
     def get_queryset(self):
         return School.objects.filter(user=self.request.user)
 
+def slugify(s):
+    """
+    Simplifies ugly strings into something URL-friendly.
+    """
+    s = s.lower()
+    for c in [' ', '-', '.', '/']:
+        s = s.replace(c, '_')
+    s = re.sub('\W', '', s)
+    s = s.replace('_', ' ')
+    s = re.sub('\s+', ' ', s)
+    s = s.strip()
+    s = s.replace(' ', '-')
+    return s
+
 
 @login_required  
 def create_school(request):
@@ -63,8 +78,9 @@ def create_school(request):
     if form.is_valid():  
         school = form.save(commit=False)  
         school.user = request.user  
+        school.slug = slugify(school.name)
         school.save()
-        return redirect('CRUD_FBVs:movies_list')  
+        return redirect('school-listing')  
     return render(request, 'school/create_school_form.html', {'form': form})
 
     #create v2 javapoint

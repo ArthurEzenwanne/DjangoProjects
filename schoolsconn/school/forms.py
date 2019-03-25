@@ -6,4 +6,4 @@ class SchoolForm(forms.ModelForm):
     '''Form definition for the School Model.'''
     class Meta:  
         model = School  
-        fields = "__all__"
+        fields = ['email', 'name', 'phone', ]

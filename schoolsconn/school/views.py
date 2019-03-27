@@ -3,8 +3,9 @@ from django.shortcuts import render, get_object_or_404, get_list_or_404, redirec
 from django.views import generic
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import Http404, HttpResponseRedirect
 #from django.utils.decorators import method_decorator
-from .models import School, SchoolsConnBaseUser, BasicSchoolInfo, AdvancedSchoolInfo
+from .models import *
 from .forms import *
 
 # Create your views here.
@@ -119,3 +120,36 @@ def delete_school(request, id):
     employee = Employee.objects.get(id=id)  
     employee.delete()  
     return redirect("/show")          
+
+
+def thanks(request):  
+    """View function for deleting a School instance."""
+    
+    return render(request, 'school/thanks.html') 
+
+from django.core.mail import send_mail
+
+def send_mail_view(request):
+    # if this is a POST request we need to process the form data
+    if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+        form = ContactForm(request.POST)
+        # check whether it's valid:
+        if form.is_valid():
+            # process the data in form.cleaned_data as required
+            subject = form.cleaned_data['subject']
+            message = form.cleaned_data['message']
+            sender = form.cleaned_data['sender']
+            cc_myself = form.cleaned_data['cc_myself']
+
+            recipients = ['info@example.com']
+            if cc_myself:
+                recipients.append(sender)
+
+            send_mail(subject, message, sender, recipients)
+            # redirect to a new URL:
+            return HttpResponseRedirect('/thanks/')
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        form = ContactForm()
+    return render(request, 'school/send_mail_form_two.html', {'form': form})

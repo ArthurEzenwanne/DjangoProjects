@@ -1,13 +1,323 @@
 {% extends "base_generic.html" %}
 
-{% load static %}
-
 {% block content %}
+    {% load static %}
 
-    <h1>CRUD Function Based View Example</h1>  
-    <form method="post">  
-        {% csrf_token %}  
-        {{ form.as_p }}  
-        <input type="submit" value="Submit" />  
-    </form> 
+    <!-- start page title -->
+    <div class="lc-page-title-wrap">
+        <div class="lc-page-title text-center lc-page-title-addlisting-bg rellax" data-rellax-speed="-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 rellax" data-rellax-speed="3">
+                        <h2>Add Listing</h2>
+                        <nav>
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">Add Listing</a></li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end page title -->
+
+    <!-- start listing details section -->
+    <div class="bg-single">
+        <div class="lc-container">
+            <div class="lc-listing-detaits-section lc-single-page-top100 pb-5">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="lc-user-sign-in mt-5">
+                            <div class="media">
+                                <img src="{% static 'images/author/13.png' %}" alt="user">
+                                <div class="media-body">
+                                    <p>You are currently signed in as <span>{{user.first_name}} {{user.last_name}}</span>, <a href="#">Sign out</a> or continue below and start submission.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form action="/school/new/" method="post">  
+                    {% csrf_token %}  
+                    <!-- add basic details -->
+                    <div class="lc-add-listing-details">
+                        <div class="lc-section-title lc-section-title-2">
+                            <h4 class="entry-title"><i class="fa fa-pencil-square-o"></i>Basic Details</h4>
+                            <a class="btn btn-listing" href="#">How it Work</a>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label class="lc-add-listing-wrap">
+                                    <span class="lc-add-listing-input-title">{{ form.email.label }} <span>*</span></span>
+                                    {{ form.email}}
+                                </label>
+                                <label class="lc-add-listing-wrap">
+                                    <span class="lc-add-listing-input-title">{{ form.name.label }} <span>*</span></span>
+                                    {{ form.name}}
+                                </label>
+                                <label class="lc-add-listing-wrap">
+                                    <span class="lc-add-listing-input-title">{{ form.phone.label }} <span>*</span></span>
+                                    {{ form.phone }}
+                                </label>
+                                <label class="lc-add-listing-wrap">
+                                    <span class="lc-add-listing-input-title">{{ form.phone.label }} <span>*</span></span>
+                                    {{ form.phone }}
+                                </label>
+                                <label class="lc-add-listing-wrap">
+                                    <span class="lc-add-listing-input-title">Latitude <span>*</span></span>
+                                    <input type="text" name="latitude" value="" class="lc-add-listing-input form-control" id="lat" placeholder="38.612846590851696">
+                                </label>
+                            </div>
+                            <div class="col-lg-6">
+                                <label class="lc-add-listing-wrap">
+                                    <span class="lc-add-listing-input-title">City <span>*</span></span>
+                                    <input class="lc-add-listing-input" placeholder="Select Your City" type="text">
+                                </label>
+                                <label class="lc-add-listing-wrap">
+                                    <span class="lc-add-listing-input-title">{{ form.phone.label }} <span>*</span></span>
+                                    {{ form.phone }}
+                                </label>
+                                <label class="lc-add-listing-wrap">
+                                    <span class="lc-add-listing-input-title">Phone Number <span>*</span></span>
+                                    <input class="lc-add-listing-input" placeholder="Your Contact Number" type="text">
+                                </label>
+                                <label class="lc-add-listing-wrap">
+                                    <span class="lc-add-listing-input-title">Website <span>*</span></span>
+                                    <input class="lc-add-listing-input" placeholder="www.domainname.com" type="text">
+                                </label>
+                                <label class="lc-add-listing-wrap">
+                                    <span class="lc-add-listing-input-title">Langitude <span>*</span></span>
+                                    <input type="text" name="longitude" value="" class="lc-add-listing-input form-control" id="lng" placeholder="-90.6190851696">
+                                </label>
+                            </div>
+                            <div class="col-12">
+                                <!-- start google map -->
+                                <div class="lc-addlisting-page-map">
+                                    <div class="lc-addlisting-page-map-area lc-addlisting-page-gmmap" data-type="gm" data-marker="" id="cpdl-map"></div>
+                                </div>
+                                <!-- end google map -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- add basic details end -->
+                    
+                    <!-- add advanced information -->
+                    <div class="lc-business-info">
+                        <div class="lc-section-title lc-section-title-2">
+                            <h4 class="entry-title"><i class="fa fa-address-card-o"></i> Business Information</h4>
+                            <a class="btn btn-listing" href="#">How it Work</a>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 col-12">
+                                <div class="lc-select-input-field">
+                                    <span class="lc-add-listing-input-title">Price Range</span>
+                                    <select name="state">
+                                        <option >Restaurant</option>
+                                        <option >Hotels</option>
+                                        <option >Shopping</option>
+                                        <option >Coffee</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-12">
+                                <div class="lc-select-input-field">
+                                    <span class="lc-add-listing-input-title">Price From</span>
+                                    <select name="state">
+                                        <option >Restaurant</option>
+                                        <option >Hotels</option>
+                                        <option >Shopping</option>
+                                        <option >Coffee</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-12">
+                                <div class="lc-select-input-field">
+                                    <span class="lc-add-listing-input-title">Price To</span>
+                                    <select name="state">
+                                        <option >Restaurant</option>
+                                        <option >Hotels</option>
+                                        <option >Shopping</option>
+                                        <option >Coffee</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-12">
+                                <div class="lc-select-input-field">
+                                    <span class="lc-add-listing-input-title">Category</span>
+                                    <select name="state">
+                                        <option >Restaurant</option>
+                                        <option >Hotels</option>
+                                        <option >Shopping</option>
+                                        <option >Coffee</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12 mt-4">
+                                <div class="lc-additional-info mt-3 border-top">
+                                    <div class="lc-section-title lc-section-title-2">
+                                        <h4 class="entry-title">Clubs and Societies</h4>
+                                    </div>
+                                    <div class="lc-switch-btn-area">
+                                        <ul>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        <input type="checkbox" checked>
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">Accepts Bitcoin</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        <input type="checkbox">
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">Good for kids</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        <input type="checkbox" checked>
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">Delivery</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        <input type="checkbox">
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">Good for Dancing</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        <input type="checkbox" checked>
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">Has TV</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        <input type="checkbox">
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">Weater Service</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        <input type="checkbox" checked>
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">Smoking Allowed</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        <input type="checkbox" checked>
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">Has Pool Table</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        <input type="checkbox">
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">Alcohol</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+
+                                        <ul>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        <input type="checkbox" checked>
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">Accept Apple Pay</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        <input type="checkbox">
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">Accepts Bitcoin</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        <input type="checkbox" checked>
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">Has Pool Table</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        <input type="checkbox" checked>
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">Accept Apple Pay</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        <input type="checkbox" checked>
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">Bike Parking</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        <input type="checkbox">
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">Table Out</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- add advanced information end -->
+                    {{ form.as_p}}
+                    <div class="lc-add-listing-form-btn">
+                        <input class="btn btn-blue" type="submit" value="Add School" />
+                    </div>  
+                </form> 
+            </div>
+        </div>
+    </div>   
 {% endblock %}

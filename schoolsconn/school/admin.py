@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import SchoolsConnBaseUser, School, BasicSchoolInfo, AdvancedSchoolInfo
+from .models import *
 
 # Register your models here.
 
@@ -11,14 +11,14 @@ class SchoolsConnUserAdmin(admin.ModelAdmin):
 
 admin.site.register(SchoolsConnBaseUser, SchoolsConnUserAdmin)
 
-class BasicSchoolInfoInline(admin.StackedInline):
-    model = BasicSchoolInfo
-    extra = 0
-    # These could also accept same attributes such as fields and fieldsets etc
+# class BasicSchoolInfoInline(admin.StackedInline):
+#     model = BasicSchoolInfo
+#     extra = 0
+#     # These could also accept same attributes such as fields and fieldsets etc
 
-class AdvancedSchoolInfoInline(admin.StackedInline):
-    model = AdvancedSchoolInfo
-    extra = 0 
+# class AdvancedSchoolInfoInline(admin.StackedInline):
+#     model = AdvancedSchoolInfo
+#     extra = 0 
 
 # Register the Admin classes for School using the decorator
 @admin.register(School)
@@ -37,7 +37,7 @@ class SchoolAdmin(admin.ModelAdmin):
         }),
     ) """
 
-    inlines = [BasicSchoolInfoInline, AdvancedSchoolInfoInline]
+    #inlines = [BasicSchoolInfoInline, AdvancedSchoolInfoInline]
 
 # Register the Admin classes for BasicSchoolInfo using the decorator
 # @admin.register(BasicSchoolInfo)

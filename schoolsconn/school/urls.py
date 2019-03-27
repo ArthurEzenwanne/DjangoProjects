@@ -33,4 +33,6 @@ urlpatterns = [
     #path('accounts/schools/', views.account_schools_view, name='school-listing'),
     path('accounts/schools/', views.AccountsSchoolsListView.as_view(), name='school-listing'),
     path('school/new/', views.create_school, name='create-school'), 
+    path('contactus/', views.send_mail_view, name='contact-us'), 
+    path('thanks/', views.thanks, name='thanks'), 
 ]

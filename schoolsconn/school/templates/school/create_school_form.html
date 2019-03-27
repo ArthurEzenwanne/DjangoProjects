@@ -106,7 +106,7 @@
                     <!-- add advanced information -->
                     <div class="lc-business-info">
                         <div class="lc-section-title lc-section-title-2">
-                            <h4 class="entry-title"><i class="fa fa-address-card-o"></i> Business Information</h4>
+                            <h4 class="entry-title"><i class="fa fa-address-card-o"></i> Advanced Information</h4>
                             <a class="btn btn-listing" href="#">How it Work</a>
                         </div>
                         <div class="row">
@@ -154,38 +154,20 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-12 mt-4">
+                            <div class="col-12 mt-4">                                
                                 <div class="lc-additional-info mt-3 border-top">
                                     <div class="lc-section-title lc-section-title-2">
-                                        <h4 class="entry-title">Clubs and Societies</h4>
+                                        <h4 class="entry-title">Classes Section</h4>
                                     </div>
                                     <div class="lc-switch-btn-area">
                                         <ul>
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        <input type="checkbox" checked>
+                                                        {{ form.creche}}
                                                         <span class="slider round"></span>
                                                     </span>
-                                                    <span class="title">Accepts Bitcoin</span>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label class="lc-switch-btn">
-                                                    <span class="switch">
-                                                        <input type="checkbox">
-                                                        <span class="slider round"></span>
-                                                    </span>
-                                                    <span class="title">Good for kids</span>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label class="lc-switch-btn">
-                                                    <span class="switch">
-                                                        <input type="checkbox" checked>
-                                                        <span class="slider round"></span>
-                                                    </span>
-                                                    <span class="title">Delivery</span>
+                                                    <span class="title">{{ form.creche.label }}</span>
                                                 </label>
                                             </li>
                                         </ul>
@@ -193,28 +175,10 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        <input type="checkbox">
+                                                        {{ form.nursery}}
                                                         <span class="slider round"></span>
                                                     </span>
-                                                    <span class="title">Good for Dancing</span>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label class="lc-switch-btn">
-                                                    <span class="switch">
-                                                        <input type="checkbox" checked>
-                                                        <span class="slider round"></span>
-                                                    </span>
-                                                    <span class="title">Has TV</span>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label class="lc-switch-btn">
-                                                    <span class="switch">
-                                                        <input type="checkbox">
-                                                        <span class="slider round"></span>
-                                                    </span>
-                                                    <span class="title">Weater Service</span>
+                                                    <span class="title">{{ form.nursery.label }}</span>
                                                 </label>
                                             </li>
                                         </ul>
@@ -222,97 +186,518 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        <input type="checkbox" checked>
+                                                        {{ form.primary}}
                                                         <span class="slider round"></span>
                                                     </span>
-                                                    <span class="title">Smoking Allowed</span>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label class="lc-switch-btn">
-                                                    <span class="switch">
-                                                        <input type="checkbox" checked>
-                                                        <span class="slider round"></span>
-                                                    </span>
-                                                    <span class="title">Has Pool Table</span>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label class="lc-switch-btn">
-                                                    <span class="switch">
-                                                        <input type="checkbox">
-                                                        <span class="slider round"></span>
-                                                    </span>
-                                                    <span class="title">Alcohol</span>
+                                                    <span class="title">{{ form.primary.label }}</span>
                                                 </label>
                                             </li>
                                         </ul>
+                                        <ul>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        {{ form.secondary}}
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">{{ form.secondary.label }}</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        {{ form.aLevels}}
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">{{ form.aLevels.label }}</span>
+                                                </label>
+                                            </li>
+                                        </ul>                                       
+                                    </div>
+                                </div>
 
+                                <div class="lc-additional-info mt-3 border-top">
+                                    <div class="lc-section-title lc-section-title-2">
+                                        <h4 class="entry-title">Approved Exams Section</h4>
+                                    </div>
+                                    <div class="lc-switch-btn-area">
                                         <ul>
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        <input type="checkbox" checked>
+                                                        {{ form.ncce}}
                                                         <span class="slider round"></span>
                                                     </span>
-                                                    <span class="title">Accept Apple Pay</span>
+                                                    <span class="title">{{ form.ncce.label }}</span>
                                                 </label>
                                             </li>
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        <input type="checkbox">
+                                                        {{ form.scce}}
                                                         <span class="slider round"></span>
                                                     </span>
-                                                    <span class="title">Accepts Bitcoin</span>
+                                                    <span class="title">{{ form.scce.label }}</span>
                                                 </label>
                                             </li>
-                                            <li>
-                                                <label class="lc-switch-btn">
-                                                    <span class="switch">
-                                                        <input type="checkbox" checked>
-                                                        <span class="slider round"></span>
-                                                    </span>
-                                                    <span class="title">Has Pool Table</span>
-                                                </label>
-                                            </li>
-                                        </ul>
+                                        </ul>    
                                         <ul>
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        <input type="checkbox" checked>
+                                                        {{ form.waec}}
                                                         <span class="slider round"></span>
                                                     </span>
-                                                    <span class="title">Accept Apple Pay</span>
+                                                    <span class="title">{{ form.waec.label }}</span>
                                                 </label>
                                             </li>
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        <input type="checkbox" checked>
+                                                        {{ form.neco}}
                                                         <span class="slider round"></span>
                                                     </span>
-                                                    <span class="title">Bike Parking</span>
+                                                    <span class="title">{{ form.neco.label }}</span>
+                                                </label>
+                                            </li>
+                                        </ul> 
+                                        <ul>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        {{ form.jwaec}}
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">{{ form.jwaec.label }}</span>
                                                 </label>
                                             </li>
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        <input type="checkbox">
+                                                        {{ form.jneco}}
                                                         <span class="slider round"></span>
                                                     </span>
-                                                    <span class="title">Table Out</span>
+                                                    <span class="title">{{ form.jneco.label }}</span>
                                                 </label>
                                             </li>
-                                        </ul>
+                                        </ul> 
+                                        <ul>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        {{ form.toefl}}
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">{{ form.toefl.label }}</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        {{ form.ielts}}
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">{{ form.ielts.label }}</span>
+                                                </label>
+                                            </li>
+                                        </ul> 
+                                        <ul>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        {{ form.alevel}}
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">{{ form.alevel.label }}</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        {{ form.igcse}}
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">{{ form.igcse.label }}</span>
+                                                </label>
+                                            </li>
+                                        </ul>                                   
+                                    </div>
+                                </div>
+
+                                <div class="lc-additional-info mt-3 border-top">
+                                    <div class="lc-section-title lc-section-title-2">
+                                        <h4 class="entry-title">Activities Section</h4>
+                                    </div>
+                                    <div class="lc-switch-btn-area">
+                                        <ul>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        {{ form.carol}}
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">{{ form.carol.label }}</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        {{ form.interhousesports}}
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">{{ form.interhousesports.label }}</span>
+                                                </label>
+                                            </li>
+                                        </ul>    
+                                        <ul>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        {{ form.culturalday}}
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">{{ form.culturalday.label }}</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        {{ form.dance}}
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">{{ form.dance.label }}</span>
+                                                </label>
+                                            </li>
+                                        </ul> 
+                                        <ul>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        {{ form.spellingbees}}
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">{{ form.spellingbees.label }}</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        {{ form.debate}}
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">{{ form.debate.label }}</span>
+                                                </label>
+                                            </li>
+                                        </ul> 
+                                        <ul>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        {{ form.quiz}}
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">{{ form.quiz.label }}</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        {{ form.swimming}}
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">{{ form.swimming.label }}</span>
+                                                </label>
+                                            </li>
+                                        </ul> 
+                                        <ul>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        {{ form.karate}}
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">{{ form.karate.label }}</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        {{ form.costumeday}}
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">{{ form.costumeday.label }}</span>
+                                                </label>
+                                            </li>
+                                        </ul>                                   
+                                    </div>
+                                </div>
+
+                                <div class="lc-additional-info mt-3 border-top">
+                                    <div class="lc-section-title lc-section-title-2">
+                                        <h4 class="entry-title">Clubs and Societies Section</h4>
+                                    </div>
+                                    <div class="lc-switch-btn-area">
+                                        <ul>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        {{ form.gguide}}
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">{{ form.gguide.label }}</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        {{ form.bscout}}
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">{{ form.bscout.label }}</span>
+                                                </label>
+                                            </li>
+                                        </ul>    
+                                        <ul>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        {{ form.frsc}}
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">{{ form.frsc.label }}</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        {{ form.music}}
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">{{ form.music.label }}</span>
+                                                </label>
+                                            </li>
+                                        </ul> 
+                                        <ul>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        {{ form.drama}}
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">{{ form.drama.label }}</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        {{ form.press}}
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">{{ form.press.label }}</span>
+                                                </label>
+                                            </li>
+                                        </ul> 
+                                        <ul>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        {{ form.jets}}
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">{{ form.jets.label }}</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        {{ form.karate}}
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">{{ form.karate.label }}</span>
+                                                </label>
+                                            </li>
+                                        </ul> 
+                                        <ul>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        {{ form.rcross}}
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">{{ form.rcross.label }}</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        {{ form.artscraft}}
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">{{ form.artscraft.label }}</span>
+                                                </label>
+                                            </li>
+                                        </ul>                                   
+                                    </div>
+                                </div>
+
+                                <div class="lc-additional-info mt-3 border-top">
+                                    <div class="lc-section-title lc-section-title-2">
+                                        <h4 class="entry-title">Facilities Section</h4>
+                                    </div>
+                                    <div class="lc-switch-btn-area">
+                                        <ul>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        {{ form.sickbay}}
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">{{ form.sickbay.label }}</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        {{ form.multipurposehall}}
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">{{ form.multipurposehall.label }}</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        {{ form.sciencelab}}
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">{{ form.sciencelab.label }}</span>
+                                                </label>
+                                            </li>
+                                        </ul>    
+                                        <ul>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        {{ form.busservice}}
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">{{ form.busservice.label }}</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        {{ form.library}}
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">{{ form.library.label }}</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        {{ form.playground}}
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">{{ form.playground.label }}</span>
+                                                </label>
+                                            </li>
+                                        </ul> 
+                                        <ul>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        {{ form.sportscomplex}}
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">{{ form.sportscomplex.label }}</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        {{ form.ictcenter}}
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">{{ form.ictcenter.label }}</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        {{ form.artstudio}}
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">{{ form.artstudio.label }}</span>
+                                                </label>
+                                            </li>
+                                        </ul> 
+                                        <ul>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        {{ form.orchard}}
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">{{ form.orchard.label }}</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        {{ form.farmhouse}}
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">{{ form.farmhouse.label }}</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        {{ form.specialneeds}}
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">{{ form.specialneeds.label }}</span>
+                                                </label>
+                                            </li>
+                                        </ul> 
+                                        <ul>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        {{ form.musicstudio}}
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">{{ form.musicstudio.label }}</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        {{ form.homemanagementlab}}
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">{{ form.homemanagementlab.label }}</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="lc-switch-btn">
+                                                    <span class="switch">
+                                                        {{ form.languagestudio}}
+                                                        <span class="slider round"></span>
+                                                    </span>
+                                                    <span class="title">{{ form.languagestudio.label }}</span>
+                                                </label>
+                                            </li>
+                                        </ul>                                   
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- add advanced information end -->
-                    {{ form.as_p}}
                     <div class="lc-add-listing-form-btn">
                         <input class="btn btn-blue" type="submit" value="Add School" />
                     </div>  

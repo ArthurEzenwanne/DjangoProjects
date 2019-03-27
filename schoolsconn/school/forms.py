@@ -6,11 +6,23 @@ class SchoolForm(forms.ModelForm):
     class Meta:  
         model = School  
         #fields = '__all__' #['email', 'name', 'phone', ]
-        exclude = ['slug', 'user']
+        exclude = ['slug', 'user', 'city']
         widgets = {
-            'email': forms.EmailInput(attrs={'class':'lc-add-listing-input cpdl-map','placeholder':'Ex: admissions@adebanjohighschools.com'}),
-            'name': forms.TextInput(attrs={'class':'lc-add-listing-input cpdl-map', 'placeholder':'Ex: Adebanjo Int\'l High School'}),
-            'phone': forms.TextInput(attrs={'class':'lc-add-listing-input cpdl-map', 'placeholder':'Ex: 09090587701'}),
+            'email': forms.EmailInput(attrs={'class':'lc-add-listing-input','placeholder':'Ex: admissions@adebanjohighschools.com'}),
+            'name': forms.TextInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: Adebanjo Int\'l High School'}),
+            'phone': forms.TextInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: 09090587701'}),
+            'motto': forms.TextInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: Knowledge for Service'}),
+            'description': forms.Textarea(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: A short description of your school, includining its mission and vission if available'}),
+            'street': forms.TextInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: Knowledge for Service'}),
+            'town': forms.TextInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: Ogba'}),
+            #'city': forms.TextInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: Ogba'}),
+            'lga': forms.TextInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: Ikeja'}),
+            'state': forms.TextInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: Lagos'}),
+            'country': forms.TextInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: Knowledge for Service', 'value':'Nigeria'}),
+            'approval_number': forms.TextInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: LA/IKD/2321'}),
+            'admin': forms.TextInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: Adamu Okoye'}),
+            'website': forms.URLInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: www.adebanjohighschools.com'}),
+            'founded': forms.DateInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: dd/mm/yyyy --> 22/04/2009'}),
         }
 
 

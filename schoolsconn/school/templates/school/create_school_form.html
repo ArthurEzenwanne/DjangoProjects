@@ -39,7 +39,7 @@
                         </div>
                     </div>
                 </div>
-                <form action="/school/new/" method="post">  
+                <form method="post">  
                     {% csrf_token %}  
                     <!-- add basic details -->
                     <div class="lc-add-listing-details">
@@ -50,54 +50,89 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <label class="lc-add-listing-wrap">
-                                    <span class="lc-add-listing-input-title">{{ form.email.label }} <span>*</span></span>
-                                    {{ form.email}}
-                                </label>
-                                <label class="lc-add-listing-wrap">
                                     <span class="lc-add-listing-input-title">{{ form.name.label }} <span>*</span></span>
-                                    {{ form.name}}
+                                    {{ form.name }}
+                                </label>
+                                <label class="lc-add-listing-wrap">
+                                    <span class="lc-add-listing-input-title">{{ form.email.label }} <span>*</span></span>
+                                    {{ form.email }}
                                 </label>
                                 <label class="lc-add-listing-wrap">
                                     <span class="lc-add-listing-input-title">{{ form.phone.label }} <span>*</span></span>
                                     {{ form.phone }}
                                 </label>
                                 <label class="lc-add-listing-wrap">
-                                    <span class="lc-add-listing-input-title">{{ form.phone.label }} <span>*</span></span>
-                                    {{ form.phone }}
+                                    <span class="lc-add-listing-input-title">{{ form.website.label }} <span>*</span></span>
+                                    {{ form.website }}
                                 </label>
                                 <label class="lc-add-listing-wrap">
+                                    <span class="lc-add-listing-input-title">{{ form.motto.label }}  <span>*</span></span>
+                                    {{ form.motto }} 
+                                </label>
+                                <!-- <label class="lc-add-listing-wrap">
                                     <span class="lc-add-listing-input-title">Latitude <span>*</span></span>
                                     <input type="text" name="latitude" value="" class="lc-add-listing-input form-control" id="lat" placeholder="38.612846590851696">
-                                </label>
+                                </label> -->
                             </div>
                             <div class="col-lg-6">
                                 <label class="lc-add-listing-wrap">
-                                    <span class="lc-add-listing-input-title">City <span>*</span></span>
-                                    <input class="lc-add-listing-input" placeholder="Select Your City" type="text">
+                                    <span class="lc-add-listing-input-title">{{ form.street.label }}  <span>*</span></span>
+                                    {{ form.street }} 
                                 </label>
                                 <label class="lc-add-listing-wrap">
-                                    <span class="lc-add-listing-input-title">{{ form.phone.label }} <span>*</span></span>
-                                    {{ form.phone }}
+                                    <span class="lc-add-listing-input-title">{{ form.town.label }} <span>*</span></span>
+                                    {{ form.town }}
                                 </label>
                                 <label class="lc-add-listing-wrap">
-                                    <span class="lc-add-listing-input-title">Phone Number <span>*</span></span>
-                                    <input class="lc-add-listing-input" placeholder="Your Contact Number" type="text">
+                                    <span class="lc-add-listing-input-title">{{ form.lga.label }}  <span>*</span></span>
+                                    {{ form.lga }} 
                                 </label>
                                 <label class="lc-add-listing-wrap">
-                                    <span class="lc-add-listing-input-title">Website <span>*</span></span>
-                                    <input class="lc-add-listing-input" placeholder="www.domainname.com" type="text">
+                                    <span class="lc-add-listing-input-title">{{ form.state.label }} <span>*</span></span>
+                                    {{ form.state }}
                                 </label>
                                 <label class="lc-add-listing-wrap">
+                                    <span class="lc-add-listing-input-title">{{ form.country.label }}  <span>*</span></span>
+                                    {{ form.country }} 
+                                </label>
+                                <!-- <label class="lc-add-listing-wrap">
+                                    <span class="lc-add-listing-input-title">{{ form.town.label }} <span>*</span></span>
+                                    {{ form.town }}
+                                </label> -->
+                                <!-- <label class="lc-add-listing-wrap">
                                     <span class="lc-add-listing-input-title">Langitude <span>*</span></span>
                                     <input type="text" name="longitude" value="" class="lc-add-listing-input form-control" id="lng" placeholder="-90.6190851696">
-                                </label>
+                                </label> -->
+                            </div>
+                            <div class="col-12">
+                                <div class="col-lg-4">
+                                    <label class="lc-add-listing-wrap">
+                                        <span class="lc-add-listing-input-title">{{ form.admin.label }} <span>*</span></span>
+                                        {{ form.admin }}
+                                    </label>
+                                </div>
+                                <div class="col-lg-4">
+                                    <label class="lc-add-listing-wrap">
+                                        <span class="lc-add-listing-input-title">{{ form.approval_number.label }}</span>
+                                        {{ form.approval_number }} 
+                                    </label></div>
+                                <div class="col-lg-4">
+                                    <label class="lc-add-listing-wrap">
+                                        <span class="lc-add-listing-input-title">{{ form.founded.label }} <span>*</span></span>
+                                        {{ form.founded }}
+                                    </label>
+                                </div>
                             </div>
                             <div class="col-12">
                                 <!-- start google map -->
-                                <div class="lc-addlisting-page-map">
+                                <!-- <div class="lc-addlisting-page-map">
                                     <div class="lc-addlisting-page-map-area lc-addlisting-page-gmmap" data-type="gm" data-marker="" id="cpdl-map"></div>
-                                </div>
+                                </div> -->
                                 <!-- end google map -->
+                                <label class="lc-add-listing-wrap">
+                                    <span class="lc-add-listing-input-title">{{ form.description.label }} <span>*</span></span>
+                                    {{ form.description }}
+                                </label>
                             </div>
                         </div>
                     </div>
@@ -110,51 +145,20 @@
                             <a class="btn btn-listing" href="#">How it Work</a>
                         </div>
                         <div class="row">
-                            <div class="col-lg-4 col-12">
+                            <div class="col-lg-6 col-12">
                                 <div class="lc-select-input-field">
-                                    <span class="lc-add-listing-input-title">Price Range</span>
-                                    <select name="state">
-                                        <option >Restaurant</option>
-                                        <option >Hotels</option>
-                                        <option >Shopping</option>
-                                        <option >Coffee</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-12">
-                                <div class="lc-select-input-field">
-                                    <span class="lc-add-listing-input-title">Price From</span>
-                                    <select name="state">
-                                        <option >Restaurant</option>
-                                        <option >Hotels</option>
-                                        <option >Shopping</option>
-                                        <option >Coffee</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-12">
-                                <div class="lc-select-input-field">
-                                    <span class="lc-add-listing-input-title">Price To</span>
-                                    <select name="state">
-                                        <option >Restaurant</option>
-                                        <option >Hotels</option>
-                                        <option >Shopping</option>
-                                        <option >Coffee</option>
-                                    </select>
+                                    <span class="lc-add-listing-input-title">{{ form.boarding.label}}</span>
+                                    {{ form.boarding }}
                                 </div>
                             </div>
                             <div class="col-lg-6 col-12">
                                 <div class="lc-select-input-field">
-                                    <span class="lc-add-listing-input-title">Category</span>
-                                    <select name="state">
-                                        <option >Restaurant</option>
-                                        <option >Hotels</option>
-                                        <option >Shopping</option>
-                                        <option >Coffee</option>
-                                    </select>
+                                    <span class="lc-add-listing-input-title">{{ form.gender.label}}</span>
+                                    {{ form.gender }}
                                 </div>
                             </div>
-                            <div class="col-12 mt-4">                                
+                            <div class="col-12 mt-4">    
+                                <!-- add classes information section -->                            
                                 <div class="lc-additional-info mt-3 border-top">
                                     <div class="lc-section-title lc-section-title-2">
                                         <h4 class="entry-title">Classes Section</h4>
@@ -217,7 +221,9 @@
                                         </ul>                                       
                                     </div>
                                 </div>
+                                <!-- add classes information section end -->
 
+                                <!-- add approved exams information section -->
                                 <div class="lc-additional-info mt-3 border-top">
                                     <div class="lc-section-title lc-section-title-2">
                                         <h4 class="entry-title">Approved Exams Section</h4>
@@ -325,7 +331,9 @@
                                         </ul>                                   
                                     </div>
                                 </div>
+                                <!-- add approved exams information section end -->
 
+                                <!-- add activities information section -->
                                 <div class="lc-additional-info mt-3 border-top">
                                     <div class="lc-section-title lc-section-title-2">
                                         <h4 class="entry-title">Activities Section</h4>
@@ -433,7 +441,9 @@
                                         </ul>                                   
                                     </div>
                                 </div>
+                                <!-- add activities information section end -->
 
+                                <!-- add clubs and societies information section -->
                                 <div class="lc-additional-info mt-3 border-top">
                                     <div class="lc-section-title lc-section-title-2">
                                         <h4 class="entry-title">Clubs and Societies Section</h4>
@@ -541,7 +551,9 @@
                                         </ul>                                   
                                     </div>
                                 </div>
+                                <!-- add clubs and societies information section end -->
 
+                                <!-- add facilities information section -->
                                 <div class="lc-additional-info mt-3 border-top">
                                     <div class="lc-section-title lc-section-title-2">
                                         <h4 class="entry-title">Facilities Section</h4>
@@ -694,6 +706,7 @@
                                         </ul>                                   
                                     </div>
                                 </div>
+                                <!-- add facilities information section end -->
                             </div>
                         </div>
                     </div>

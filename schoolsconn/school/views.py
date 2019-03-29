@@ -81,6 +81,10 @@ def create_school(request):
         school.user = request.user  
         school.slug = slugify(school.name)
         school.save()
+        #num_schools = SchoolsConnBaseUser.schools
+        # Increament number of schools created by the user
+        SchoolsConnBaseUser.schools = (SchoolsConnBaseUser.schools + 1)
+        SchoolsConnBaseUser.save()
         return redirect('school-listing')  
     return render(request, 'school/create_school_form.html', {'form': form})
 

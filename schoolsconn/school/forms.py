@@ -12,19 +12,22 @@ class SchoolForm(forms.ModelForm):
             'name': forms.TextInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: Adebanjo Int\'l High School'}),
             'phone': forms.TextInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: 09090587701'}),
             'motto': forms.TextInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: Knowledge for Service'}),
-            'description': forms.Textarea(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: A short description of your school, includining its mission and vission if available', 'height':'70px'}),
+            'website': forms.URLInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: http://www.adebanjohighschools.com'}),
+            
             'street': forms.TextInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: 11, Osibanjo Avenue, Alaka Estate'}),
             'town': forms.TextInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: Ogba'}),
             #'city': forms.TextInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: Ogba'}),
             'lga': forms.TextInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: Ikeja'}),
             'state': forms.TextInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: Lagos'}),
             'country': forms.TextInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: Nigeria', 'value':'Nigeria'}),
+
             'approval_number': forms.TextInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: LA/IKD/2321'}),
             'admin': forms.TextInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: Adamu Okoye'}),
-            'website': forms.URLInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: http://www.adebanjohighschools.com'}),
             'founded': forms.DateInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: dd/mm/yyyy --> 22/04/2009'}),
+
             'boarding': forms.Select(attrs={'class':'lc-add-listing-input'}),
             'gender': forms.Select(attrs={'class':'lc-add-listing-input'}),
+            'description': forms.Textarea(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: A short description of your school, includining its mission and vission if available'}),
         }
 
 

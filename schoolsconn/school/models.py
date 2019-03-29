@@ -30,15 +30,16 @@ class School(models.Model):
     email = models.EmailField(_('School Email'), max_length=128)
     name = models.CharField(_('School Name'), max_length=128)
     phone = models.CharField(_('School Phone'), max_length=15)
+    motto = models.CharField(max_length=256)
+    website = models.URLField(max_length=100, null=True, blank=True)
+
+
     slug = models.SlugField(max_length=128)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     user = models.ForeignKey(SchoolsConnBaseUser, on_delete=models.CASCADE)
 
     # Basic Info 
-    motto = models.CharField(max_length=256)
-    description = models.CharField(max_length=1000)
-
     country = models.CharField(max_length=50, default='Nigeria')
     state = models.CharField(max_length=50) #, blank=True, null=True, default='Lagos')
     lga = models.CharField(_('LGA'), max_length=50) #, blank=True, null=True, default='N/A')
@@ -60,10 +61,11 @@ class School(models.Model):
 
     approval_number = models.CharField(_('Govt Approval Number'), max_length=11, default='Awaiting')
     admin = models.CharField(_('Admission Officer'), max_length=128)
+    founded = models.DateField(null=True, blank=True)
+
     gender = models.CharField(max_length=2, choices=GENDER_CHOICE, default='mx') # max_choices is 1 - use default
     boarding = models.CharField(max_length=2, choices=BOARDING_CHOICE, default='bd') # max_choices is 1 - use default
-    founded = models.DateField(null=True, blank=True)
-    website = models.URLField(max_length=100, null=True, blank=True)
+    description = models.CharField(max_length=1000)
 
     # School Choice Region
     creche = models.BooleanField(default=False)

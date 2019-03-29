@@ -62,7 +62,7 @@
                                     {{ form.phone }}
                                 </label>
                                 <label class="lc-add-listing-wrap">
-                                    <span class="lc-add-listing-input-title">{{ form.website.label }} <span>*</span></span>
+                                    <span class="lc-add-listing-input-title">{{ form.website.label }}</span>
                                     {{ form.website }}
                                 </label>
                                 <label class="lc-add-listing-wrap">
@@ -92,7 +92,7 @@
                                     {{ form.state }}
                                 </label>
                                 <label class="lc-add-listing-wrap">
-                                    <span class="lc-add-listing-input-title">{{ form.country.label }}  <span>*</span></span>
+                                    <span class="lc-add-listing-input-title">{{ form.country.label }}</span>
                                     {{ form.country }} 
                                 </label>
                                 <!-- <label class="lc-add-listing-wrap">
@@ -104,24 +104,22 @@
                                     <input type="text" name="longitude" value="" class="lc-add-listing-input form-control" id="lng" placeholder="-90.6190851696">
                                 </label> -->
                             </div>
-                            <div class="col-12">
-                                <div class="col-lg-4">
-                                    <label class="lc-add-listing-wrap">
-                                        <span class="lc-add-listing-input-title">{{ form.admin.label }} <span>*</span></span>
-                                        {{ form.admin }}
-                                    </label>
-                                </div>
-                                <div class="col-lg-4">
-                                    <label class="lc-add-listing-wrap">
-                                        <span class="lc-add-listing-input-title">{{ form.approval_number.label }}</span>
-                                        {{ form.approval_number }} 
-                                    </label></div>
-                                <div class="col-lg-4">
-                                    <label class="lc-add-listing-wrap">
-                                        <span class="lc-add-listing-input-title">{{ form.founded.label }} <span>*</span></span>
-                                        {{ form.founded }}
-                                    </label>
-                                </div>
+                            <div class="col-lg-4">
+                                <label class="lc-add-listing-wrap">
+                                    <span class="lc-add-listing-input-title">{{ form.admin.label }} <span>*</span></span>
+                                    {{ form.admin }}
+                                </label>
+                            </div>
+                            <div class="col-lg-4">
+                                <label class="lc-add-listing-wrap">
+                                    <span class="lc-add-listing-input-title">{{ form.approval_number.label }}</span>
+                                    {{ form.approval_number }} 
+                                </label></div>
+                            <div class="col-lg-4">
+                                <label class="lc-add-listing-wrap">
+                                    <span class="lc-add-listing-input-title">{{ form.founded.label }}</span>
+                                    {{ form.founded }}
+                                </label>
                             </div>
                             <div class="col-12">
                                 <!-- start google map -->

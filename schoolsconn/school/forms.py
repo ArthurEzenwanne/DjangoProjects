@@ -23,7 +23,7 @@ class SchoolForm(forms.ModelForm):
 
             'approval_number': forms.TextInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: LA/IKD/2321'}),
             'admin': forms.TextInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: Adamu Okoye'}),
-            'founded': forms.DateInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: dd/mm/yyyy --> 22/04/2009'}),
+            'founded': forms.DateInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: yyyy-mm-dd --> 2006-04-19'}),
 
             'boarding': forms.Select(attrs={'class':'lc-add-listing-input'}),
             'gender': forms.Select(attrs={'class':'lc-add-listing-input'}),

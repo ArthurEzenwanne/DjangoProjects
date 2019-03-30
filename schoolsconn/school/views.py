@@ -69,10 +69,9 @@ def slugify(s):
     s = s.replace(' ', '-')
     return s
 
-
 @login_required  
 def create_school(request):
-    """View function for creating a School instance."""
+    """View function for creating a School instance outside the admin."""
     #create v1 csharpconer
     form = SchoolForm(request.POST or None)  
    
@@ -81,12 +80,34 @@ def create_school(request):
         school.user = request.user  
         school.slug = slugify(school.name)
         school.save()
-        #num_schools = SchoolsConnBaseUser.schools
+        
         # Increament number of schools created by the user
-        SchoolsConnBaseUser.schools = (SchoolsConnBaseUser.schools + 1)
-        SchoolsConnBaseUser.save()
+        # num_schools = SchoolsConnBaseUser.schools.value_from_object()
+        # num_schools = num_schools + 1
+        # SchoolsConnBaseUser.schools = num_schools
+        # SchoolsConnBaseUser.save()
         return redirect('school-listing')  
-    return render(request, 'school/create_school_form.html', {'form': form})
+    return render(request, 'school/create_school.html', {'form': form})
+
+@login_required  
+def add_school(request):
+    """View function for creating a School instance on the admin."""
+    #create v1 csharpconer
+    form = SchoolForm(request.POST or None)  
+   
+    if form.is_valid():  
+        school = form.save(commit=False)  
+        school.user = request.user  
+        school.slug = slugify(school.name)
+        school.save()
+        
+        # Increament number of schools created by the user
+        # num_schools = SchoolsConnBaseUser.schools.value_from_object()
+        # num_schools = num_schools + 1
+        # SchoolsConnBaseUser.schools = num_schools
+        # SchoolsConnBaseUser.save()
+        return redirect('school-listing')  
+    return render(request, 'school/add_school.html', {'form': form})    
 
     #create v2 javapoint
     # if request.method == "POST":  
@@ -101,29 +122,30 @@ def create_school(request):
     #     form = EmployeeForm()  
     # return render(request,'index.html',{'form':form})  
 
-
 @login_required  
-def edit_school(request, id):
-    """View function for editing a School instance."""
-    employee = Employee.objects.get(id=id)  
-    return render(request,'edit.html', {'employee':employee})  
-
-@login_required  
-def update_school(request, id):  
+def update_school(request, slug):  
     """View function for updating a School instance."""
-    employee = Employee.objects.get(id=id)  
-    form = EmployeeForm(request.POST, instance = employee)  
+    if request.user.is_superuser:  
+        school = get_object_or_404(School, slug=slug)  
+    else:  
+        school = get_object_or_404(School, slug=slug, user=request.user)  
+    form = SchoolForm(request.POST or None, instance=school)  
     if form.is_valid():  
         form.save()  
-        return redirect("/show")  
-    return render(request, 'edit.html', {'employee': employee})  
-
+        return redirect('school-listing')  
+    return render(request, 'school/edit_school.html', {'form': form}) 
+  
 @login_required  
-def delete_school(request, id):  
+def delete_school(request, slug):  
     """View function for deleting a School instance."""
-    employee = Employee.objects.get(id=id)  
-    employee.delete()  
-    return redirect("/show")          
+    if request.user.is_superuser:  
+        school = get_object_or_404(School, slug=slug)  
+    else:  
+        school = get_object_or_404(School, slug=slug, user=request.user)  
+    if request.method == 'POST':  
+        school.delete()  
+        return redirect('school-listing')  
+    return render(request, 'school/admin/delete_school.html', {'object': school})        
 
 
 def thanks(request):  
@@ -157,3 +179,6 @@ def send_mail_view(request):
     else:
         form = ContactForm()
     return render(request, 'school/send_mail_form_two.html', {'form': form})
+
+ 
+ 

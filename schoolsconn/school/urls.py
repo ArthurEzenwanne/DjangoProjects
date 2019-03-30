@@ -32,7 +32,12 @@ urlpatterns = [
     #path('accounts/schools/', TemplateView.as_view(template_name='school/admin/school-listing.html'), name='school-listing'),
     #path('accounts/schools/', views.account_schools_view, name='school-listing'),
     path('accounts/schools/', views.AccountsSchoolsListView.as_view(), name='school-listing'),
-    path('school/new/', views.create_school, name='create-school'), 
+    path('accounts/schools/add', views.add_school, name='add-school'),
+
+    path('school/new/', views.create_school, name='create-school'),
+    path('school/edit/<str:slug>/', views.update_school, name='update-school'),
+    path('school/delete/<str:slug>/', views.delete_school, name='delete-school'),
+
     path('contactus/', views.send_mail_view, name='contact-us'), 
     path('thanks/', views.thanks, name='thanks'), 
 ]

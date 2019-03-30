@@ -28,43 +28,27 @@
             <div class="lcd-panel-review-section">
                 <div class="row">
                     <!-- listings content start -->
-                    <div class="col-xl-9 col-md-12 lcd-border-r lcd-nopadding-r">
+                    <div class="col-xl-9 col-md-12 lcd-border-r lcd-nopadding-r"> 
                         <div class="lcd-pending-header lcd-border-b">
-                            <h2>Schools List {{ user.schools }}</h2>
-                        </div>
-                        
-                        {% if object_list %}
-                            {% for school in object_list %}
-                                <div class="lcd-pending-details">
-                                    <div class="row">
-                                        <div class="col-xl-6 col-md-12 lcd-nopadding">
-                                            <div class="lcd-pending-details-info d-flex align-items-center media">
-                                                <img src="{% static 'admin/images/pending_list/1.png' %}" alt="active image">
-                                                <div class="lcd-pending-details-content media-body">
-                                                    <h4><a href="{{ school.get_absolute_url }}">{{ school.name }}</a></h4>
-                                                    <ul>
-                                                        <li><i class="fa fa-hotel"></i> Hotel</li>
-                                                        <li><i class="fa fa-calendar"></i> 04 January 2018</li>
-                                                        <li><i class="fa fa-clock-o"></i> 23 Days Left</li>
-                                                        <li><i class="fa fa-check"></i> Pending</li>
-                                                    </ul>
+                            <h2>Delete Schools</h2>
+                        </div>                       
+                        <div class="lcd-pending-details">
+                            <div class="row">
+                                <div class="col-md-12 lcd-nopadding">
+                                    <div class="lcd-pending-details-info d-flex align-items-center media">
+                                        <div class="lcd-pending-details-content media-body">
+                                            <form method="post">  
+                                                {% csrf_token %}  
+                                                <h4 style="text-align:center;">Are you sure you want to delete <a href="{{ object.get_absolute_url }}">{{ object }}</a>?</h4>
+                                                <div class="col-12">
+                                                    <input type="submit" class="lcd-profile-basic-info-btn" value="Yes, Delete" />
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-6 col-md-12 lcd-nopadding d-flex align-self-center">
-                                            <div class="lcd-pending-details-btn">
-                                                <ul>
-                                                    <li><a class="lcd-red-btn close" href="{% url 'delete-school' school.slug %}"><i class="fa fa-close"></i> Remove</a></li>
-                                                    <li><a class="lcd-white-btn" href="{% url 'update-school' school.slug %}"><i class="fa fa-edit"></i> Edit</a></li>
-                                                </ul>
-                                            </div>
+                                            </form>
                                         </div>
                                     </div>
-                                </div>      
-                            {% endfor %}
-                        {% else %}
-                            <p>You have no schools listed yet. Add New School (TODO: Link).</p>  
-                        {% endif %}
+                                </div>
+                            </div>
+                        </div>  
                     </div>
                     <!-- listings content end -->
                     

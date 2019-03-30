@@ -1,44 +1,18 @@
-{% extends "base_generic.html" %}
+{% extends "admin_generic.html" %}
+    <!-- HTML Template to create school by a user inside the admin template -->
+    <!-- TODO: Style it for the admin templates -->
 
-{% block content %}
+    {% load static %} 
+    
+    {% block content %}
     {% load static %}
-
-    <!-- start page title -->
-    <div class="lc-page-title-wrap">
-        <div class="lc-page-title text-center lc-page-title-addlisting-bg rellax" data-rellax-speed="-4">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 rellax" data-rellax-speed="3">
-                        <h2>Add Listing</h2>
-                        <nav>
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item"><a href="#">Add Listing</a></li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end page title -->
-
-    <!-- start listing details section -->
-    <div class="bg-single">
+        <!-- start profile section-->
+        <!-- start profile section message field -->
+        <!-- start listing details section -->
+    <!-- <div class="bg-single"> -->
         <div class="lc-container">
             <div class="lc-listing-detaits-section lc-single-page-top100 pb-5">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="lc-user-sign-in mt-5">
-                            <div class="media">
-                                <img src="{% static 'images/author/13.png' %}" alt="user">
-                                <div class="media-body">
-                                    <p>You are currently signed in as <span>{{user.first_name}} {{user.last_name}}</span>, <a href="#">Sign out</a> or continue below and start submission.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
                 <form method="post">  
                     {% csrf_token %}  
                     <!-- add basic details -->
@@ -166,7 +140,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.creche}}
+                                                        {{ form.creche }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.creche.label }}</span>
@@ -177,7 +151,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.nursery}}
+                                                        {{ form.nursery }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.nursery.label }}</span>
@@ -188,7 +162,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.primary}}
+                                                        {{ form.primary }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.primary.label }}</span>
@@ -199,7 +173,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.secondary}}
+                                                        {{ form.secondary }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.secondary.label }}</span>
@@ -210,7 +184,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.aLevels}}
+                                                        {{ form.aLevels }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.aLevels.label }}</span>
@@ -231,7 +205,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.ncce}}
+                                                        {{ form.ncce }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.ncce.label }}</span>
@@ -240,7 +214,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.scce}}
+                                                        {{ form.scce }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.scce.label }}</span>
@@ -251,7 +225,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.waec}}
+                                                        {{ form.waec }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.waec.label }}</span>
@@ -260,7 +234,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.neco}}
+                                                        {{ form.neco }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.neco.label }}</span>
@@ -271,7 +245,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.jwaec}}
+                                                        {{ form.jwaec }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.jwaec.label }}</span>
@@ -280,7 +254,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.jneco}}
+                                                        {{ form.jneco }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.jneco.label }}</span>
@@ -291,7 +265,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.toefl}}
+                                                        {{ form.toefl }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.toefl.label }}</span>
@@ -300,7 +274,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.ielts}}
+                                                        {{ form.ielts }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.ielts.label }}</span>
@@ -311,7 +285,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.alevel}}
+                                                        {{ form.alevel }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.alevel.label }}</span>
@@ -320,7 +294,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.igcse}}
+                                                        {{ form.igcse }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.igcse.label }}</span>
@@ -341,7 +315,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.carol}}
+                                                        {{ form.carol }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.carol.label }}</span>
@@ -350,7 +324,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.interhousesports}}
+                                                        {{ form.interhousesports }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.interhousesports.label }}</span>
@@ -361,7 +335,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.culturalday}}
+                                                        {{ form.culturalday }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.culturalday.label }}</span>
@@ -370,7 +344,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.dance}}
+                                                        {{ form.dance }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.dance.label }}</span>
@@ -381,7 +355,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.spellingbees}}
+                                                        {{ form.spellingbees }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.spellingbees.label }}</span>
@@ -390,7 +364,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.debate}}
+                                                        {{ form.debate }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.debate.label }}</span>
@@ -401,7 +375,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.quiz}}
+                                                        {{ form.quiz }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.quiz.label }}</span>
@@ -410,7 +384,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.swimming}}
+                                                        {{ form.swimming }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.swimming.label }}</span>
@@ -421,7 +395,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.karate}}
+                                                        {{ form.karate }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.karate.label }}</span>
@@ -430,7 +404,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.costumeday}}
+                                                        {{ form.costumeday }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.costumeday.label }}</span>
@@ -451,7 +425,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.gguide}}
+                                                        {{ form.gguide }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.gguide.label }}</span>
@@ -460,7 +434,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.bscout}}
+                                                        {{ form.bscout }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.bscout.label }}</span>
@@ -471,7 +445,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.frsc}}
+                                                        {{ form.frsc }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.frsc.label }}</span>
@@ -480,7 +454,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.music}}
+                                                        {{ form.music }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.music.label }}</span>
@@ -491,7 +465,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.drama}}
+                                                        {{ form.drama }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.drama.label }}</span>
@@ -500,7 +474,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.press}}
+                                                        {{ form.press }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.press.label }}</span>
@@ -511,7 +485,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.jets}}
+                                                        {{ form.jets }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.jets.label }}</span>
@@ -520,7 +494,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.karate}}
+                                                        {{ form.karate }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.karate.label }}</span>
@@ -531,7 +505,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.rcross}}
+                                                        {{ form.rcross }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.rcross.label }}</span>
@@ -540,7 +514,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.artscraft}}
+                                                        {{ form.artscraft }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.artscraft.label }}</span>
@@ -561,7 +535,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.sickbay}}
+                                                        {{ form.sickbay }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.sickbay.label }}</span>
@@ -570,7 +544,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.multipurposehall}}
+                                                        {{ form.multipurposehall }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.multipurposehall.label }}</span>
@@ -579,7 +553,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.sciencelab}}
+                                                        {{ form.sciencelab }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.sciencelab.label }}</span>
@@ -590,7 +564,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.busservice}}
+                                                        {{ form.busservice }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.busservice.label }}</span>
@@ -599,7 +573,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.library}}
+                                                        {{ form.library }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.library.label }}</span>
@@ -608,7 +582,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.playground}}
+                                                        {{ form.playground }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.playground.label }}</span>
@@ -619,7 +593,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.sportscomplex}}
+                                                        {{ form.sportscomplex }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.sportscomplex.label }}</span>
@@ -628,7 +602,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.ictcenter}}
+                                                        {{ form.ictcenter }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.ictcenter.label }}</span>
@@ -637,7 +611,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.artstudio}}
+                                                        {{ form.artstudio }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.artstudio.label }}</span>
@@ -648,7 +622,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.orchard}}
+                                                        {{ form.orchard }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.orchard.label }}</span>
@@ -657,7 +631,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.farmhouse}}
+                                                        {{ form.farmhouse }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.farmhouse.label }}</span>
@@ -666,7 +640,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.specialneeds}}
+                                                        {{ form.specialneeds }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.specialneeds.label }}</span>
@@ -677,7 +651,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.musicstudio}}
+                                                        {{ form.musicstudio }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.musicstudio.label }}</span>
@@ -686,7 +660,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.homemanagementlab}}
+                                                        {{ form.homemanagementlab }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.homemanagementlab.label }}</span>
@@ -695,7 +669,7 @@
                                             <li>
                                                 <label class="lc-switch-btn">
                                                     <span class="switch">
-                                                        {{ form.languagestudio}}
+                                                        {{ form.languagestudio }}
                                                         <span class="slider round"></span>
                                                     </span>
                                                     <span class="title">{{ form.languagestudio.label }}</span>
@@ -715,5 +689,12 @@
                 </form> 
             </div>
         </div>
-    </div>   
-{% endblock %}
+    <!-- </div> -->
+        <!-- end profile section message field -->
+        <!-- start profile section input field-->
+        
+        <!-- /End profile section-->
+    {% endblock %}
+
+    {% block footer %}
+    {% endblock %}

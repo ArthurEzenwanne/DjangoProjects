@@ -8,26 +8,29 @@ class SchoolForm(forms.ModelForm):
         #fields = '__all__' #['email', 'name', 'phone', ]
         exclude = ['slug', 'user', 'city']
         widgets = {
-            'email': forms.EmailInput(attrs={'class':'lc-add-listing-input','placeholder':'Ex: admissions@adebanjohighschools.com'}),
-            'name': forms.TextInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: Adebanjo Int\'l High School'}),
-            'phone': forms.TextInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: 09090587701'}),
-            'motto': forms.TextInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: Knowledge for Service'}),
-            'website': forms.URLInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: http://www.adebanjohighschools.com'}),
+            'email': forms.EmailInput(attrs={'class':'lc-add-listing-input form-control','placeholder':'Ex: admissions@adebanjohighschools.com'}),
+            'name': forms.TextInput(attrs={'class':'lc-add-listing-input form-control', 'placeholder':'Ex: Adebanjo Int\'l High School'}),
+            'phone': forms.TextInput(attrs={'class':'lc-add-listing-input form-control', 'placeholder':'Ex: 09090587701'}),
+            'motto': forms.TextInput(attrs={'class':'lc-add-listing-input form-control', 'placeholder':'Ex: Knowledge for Service'}),
+            'website': forms.URLInput(attrs={'class':'lc-add-listing-input form-control', 'placeholder':'Ex: http://www.adebanjohighschools.com'}),
             
-            'street': forms.TextInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: 11, Osibanjo Avenue, Alaka Estate'}),
-            'town': forms.TextInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: Ogba'}),
+            'street': forms.TextInput(attrs={'class':'lc-add-listing-input form-control', 'placeholder':'Ex: 11, Osibanjo Avenue, Alaka Estate'}),
+            'town': forms.TextInput(attrs={'class':'lc-add-listing-input form-control', 'placeholder':'Ex: Ogba'}),
             #'city': forms.TextInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: Ogba'}),
-            'lga': forms.TextInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: Ikeja'}),
-            'state': forms.TextInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: Lagos'}),
-            'country': forms.TextInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: Nigeria', 'value':'Nigeria'}),
+            'lga': forms.TextInput(attrs={'class':'lc-add-listing-input form-control', 'placeholder':'Ex: Ikeja'}),
+            'state': forms.TextInput(attrs={'class':'lc-add-listing-input form-control', 'placeholder':'Ex: Lagos'}),
+            'country': forms.TextInput(attrs={'class':'lc-add-listing-input form-control', 'placeholder':'Ex: Nigeria', 'value':'Nigeria'}),
 
-            'approval_number': forms.TextInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: LA/IKD/2321'}),
-            'admin': forms.TextInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: Adamu Okoye'}),
-            'founded': forms.DateInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: yyyy-mm-dd --> 2006-04-19'}),
+            'approval_number': forms.TextInput(attrs={'class':'lc-add-listing-input form-control', 'placeholder':'Ex: LA/IKD/2321'}),
+            'admin': forms.TextInput(attrs={'class':'lc-add-listing-input form-control', 'placeholder':'Ex: Adamu Okoye'}),
+            'founded': forms.DateInput(attrs={'class':'lc-add-listing-input form-control', 'placeholder':'Ex: yyyy-mm-dd --> 2006-04-19'}),
 
-            'boarding': forms.Select(attrs={'class':'lc-add-listing-input'}),
-            'gender': forms.Select(attrs={'class':'lc-add-listing-input'}),
-            'description': forms.Textarea(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: A short description of your school, includining its mission and vission if available'}),
+            'boarding': forms.Select(attrs={'class':'lc-add-listing-input form-control'}),
+            'gender': forms.Select(attrs={'class':'lc-add-listing-input form-control'}),
+            'description': forms.Textarea(attrs={'class':'lc-add-listing-input form-control', 'placeholder':'Ex: A short description of your school, includining its mission and vission if available'}),
+            
+            'latitude': forms.TextInput(attrs={'class':'lc-add-listing-input form-control', 'id':'lat', 'name':'latitude', 'placeholder':'Ex: -31.365486575872'}),
+            'longitude': forms.TextInput(attrs={'class':'lc-add-listing-input form-control', 'id':'lng', 'name':'longitude', 'placeholder':'Ex: 1.87676857332'}),
         }
 
 

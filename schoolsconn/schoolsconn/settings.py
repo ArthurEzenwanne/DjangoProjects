@@ -129,6 +129,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'school/media').replace('\\','/') # Absolute path to the media directory
 
 # Add the 'allauth' backend to AUTHENTICATION_BACKEND and keep default ModelBackend
 AUTHENTICATION_BACKENDS = [ 

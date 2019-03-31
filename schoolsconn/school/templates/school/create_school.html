@@ -96,14 +96,6 @@
                                     <span class="lc-add-listing-input-title">{{ form.country.label }}</span>
                                     {{ form.country }} 
                                 </label>
-                                <!-- <label class="lc-add-listing-wrap">
-                                    <span class="lc-add-listing-input-title">{{ form.town.label }} <span>*</span></span>
-                                    {{ form.town }}
-                                </label> -->
-                                <!-- <label class="lc-add-listing-wrap">
-                                    <span class="lc-add-listing-input-title">Langitude <span>*</span></span>
-                                    <input type="text" name="longitude" value="" class="lc-add-listing-input form-control" id="lng" placeholder="-90.6190851696">
-                                </label> -->
                             </div>
                             <div class="col-lg-4">
                                 <label class="lc-add-listing-wrap">
@@ -123,16 +115,37 @@
                                 </label>
                             </div>
                             <div class="col-12">
-                                <!-- start google map -->
-                                <!-- <div class="lc-addlisting-page-map">
-                                    <div class="lc-addlisting-page-map-area lc-addlisting-page-gmmap" data-type="gm" data-marker="" id="cpdl-map"></div>
-                                </div> -->
-                                <!-- end google map -->
                                 <label class="lc-add-listing-wrap">
                                     <span class="lc-add-listing-input-title">{{ form.description.label }} <span>*</span></span>
                                     {{ form.description }}
                                 </label>
                             </div>
+                            <div class="col-lg-6">
+                                <label class="lc-add-listing-wrap">
+                                    <span class="lc-add-listing-input-title">{{ form.latitude.label }}</span>
+                                    {{ form.latitude }}
+                                </label>
+                            </div>
+                            <div class="col-lg-6">
+                                <label class="lc-add-listing-wrap">
+                                    <span class="lc-add-listing-input-title">{{ form.longitude.label }}</span>
+                                    {{ form.longitude }}
+                                </label>                                
+                            </div>
+                            <div class="col-12">
+                                <!-- start google map -->
+                                <div class="lc-addlisting-page-map">
+                                    <div class="lc-addlisting-page-map-area lc-addlisting-page-gmmap" data-type="gm" data-marker="" id="cpdl-map"></div>
+                                </div>
+                                <!-- end google map -->                                
+                            </div>
+                            
+                                
+                                
+                                <!-- <label class="lc-add-listing-wrap">
+                                    <span class="lc-add-listing-input-title">Langitude <span>*</span></span>
+                                    <input type="text" name="longitude" value="" class="lc-add-listing-input form-control" id="lng" placeholder="-90.6190851696">
+                                </label> -->
                         </div>
                     </div>
                     <!-- add basic details end -->

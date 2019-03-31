@@ -67,6 +67,10 @@ class School(models.Model):
     boarding = models.CharField(max_length=2, choices=BOARDING_CHOICE, default='bd') # max_choices is 1 - use default
     description = models.CharField(max_length=1000)
 
+    latitude = models.FloatField(null=True, blank=True)
+    longitude = models.FloatField(null=True, blank=True)
+
+
     # School Choice Region
     creche = models.BooleanField(default=False)
     nursery = models.BooleanField(default=False)

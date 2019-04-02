@@ -27,7 +27,7 @@ class SchoolForm(forms.ModelForm):
 
             'boarding': forms.Select(attrs={'class':'lc-add-listing-input form-control'}),
             'gender': forms.Select(attrs={'class':'lc-add-listing-input form-control'}),
-            'description': forms.Textarea(attrs={'class':'lc-add-listing-input form-control', 'placeholder':'Ex: A short description of your school, includining its mission and vission if available'}),
+            'description': forms.Textarea(attrs={'class':'lc-add-listing-input form-control', 'placeholder':'Ex: A short description of your school, includining its mission and vission if available', 'cols': 80, 'rows': 20}),
             
             'latitude': forms.TextInput(attrs={'class':'lc-add-listing-input form-control', 'id':'lat', 'name':'latitude', 'placeholder':'Ex: -31.365486575872'}),
             'longitude': forms.TextInput(attrs={'class':'lc-add-listing-input form-control', 'id':'lng', 'name':'longitude', 'placeholder':'Ex: 1.87676857332'}),

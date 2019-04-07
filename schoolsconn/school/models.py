@@ -145,7 +145,25 @@ class School(models.Model):
         """String for representing the Model object."""
         return f'{self.name}'
         
-        
+def user_directory_path(instance, filename):
+    # file will be uploaded to MEDIA_ROOT/user_<id>/<filename>
+    return 'schools/user_{0}/{1}'.format(instance.user.id, filename)
+
+class Document(models.Model):
+    description = models.CharField(max_length=255, blank=True)
+    #name = models.CharField(max_length=255)
+    document = models.FileField(upload_to='schools/')
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.url
+
+    def path(self):
+        return self.url
+            
+
+
+
 # class School(models.Model):
 #     """Model representing a school."""
 #     email = models.EmailField(max_length=128)

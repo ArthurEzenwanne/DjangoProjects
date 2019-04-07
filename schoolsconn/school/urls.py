@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.urls import path
 from django.views.generic.base import TemplateView
-from django.contrib.auth.decorators import login_required, permission_required
+#from django.contrib.auth.decorators import login_required, permission_required
+
 from . import views
 
 #from .models import School, SchoolsConnBaseUser
@@ -40,4 +41,6 @@ urlpatterns = [
 
     path('contactus/', views.send_mail_view, name='contact-us'), 
     path('thanks/', views.thanks, name='thanks'), 
+    path('upload/', views.simple_upload, name='file-upload'),
+    path('model-upload/', views.model_form_upload, name='model-upload'),
 ]

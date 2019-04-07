@@ -65,12 +65,14 @@ ROOT_URLCONF = 'schoolsconn.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates', 'example'),],
+        #'DIRS': [os.path.join(BASE_DIR, 'templates', 'example'),],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
+                'django.template.context_processors.media',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
@@ -130,7 +132,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'school/media').replace('\\','/') # Absolute path to the media directory
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'school/media').replace('\\','/') # Absolute path to the media directory
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # Absolute path to the media directory
+
 
 # Add the 'allauth' backend to AUTHENTICATION_BACKEND and keep default ModelBackend
 AUTHENTICATION_BACKENDS = [ 

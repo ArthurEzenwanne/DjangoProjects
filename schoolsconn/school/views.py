@@ -4,6 +4,8 @@ from django.views import generic
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import Http404, HttpResponseRedirect
+from django.conf import settings
+from django.core.files.storage import FileSystemStorage
 #from django.utils.decorators import method_decorator
 from .models import *
 from .forms import *
@@ -16,7 +18,6 @@ def index(request):
 
 
     return render(request, 'index.html')
-
 
 
 # def school_detail_view(request, slug):
@@ -180,5 +181,25 @@ def send_mail_view(request):
         form = ContactForm()
     return render(request, 'school/send_mail_form_two.html', {'form': form})
 
- 
- 
+
+def simple_upload(request):
+    if request.method == 'POST' and request.FILES['myfile']:
+        myfile = request.FILES['myfile']
+        fs = FileSystemStorage()
+        filename = fs.save(myfile.name, myfile)
+        uploaded_file_url = fs.url(filename)
+        return render(request, 'school/simple_upload.html', {'uploaded_file_url': uploaded_file_url})
+    return render(request, 'school/simple_upload.html')
+
+def model_form_upload(request):
+    if request.method == 'POST':
+        form = DocumentForm(request.POST, request.FILES)
+        if form.is_valid():
+            uploaded_file = Document(document=request.FILES['document'])
+            uploaded_file_url = uploaded_file.document.url
+            uploaded_file.save()
+            return render(request, 'school/model_form_upload.html', {'uploaded_file_url': uploaded_file_url})   
+            #return redirect('index')
+    else:
+        form = DocumentForm()
+    return render(request, 'school/model_form_upload.html', {'form': form})    

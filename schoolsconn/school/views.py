@@ -7,6 +7,7 @@ from django.http import Http404, HttpResponseRedirect
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
 #from django.utils.decorators import method_decorator
+from django.views.generic.edit import FormView
 from .models import *
 from .forms import *
 
@@ -195,11 +196,31 @@ def model_form_upload(request):
     if request.method == 'POST':
         form = DocumentForm(request.POST, request.FILES)
         if form.is_valid():
-            uploaded_file = Document(document=request.FILES['document'])
-            uploaded_file_url = uploaded_file.document.url
-            uploaded_file.save()
-            return render(request, 'school/model_form_upload.html', {'uploaded_file_url': uploaded_file_url})   
-            #return redirect('index')
+            instance = Document(document=request.FILES['document'], description=request.POST.get('description'))
+            instance.save()
+            return render(request, 'school/model_form_upload.html', {'instance': instance})   
+            #return HttpResponseRedirect('index')
     else:
         form = DocumentForm()
     return render(request, 'school/model_form_upload.html', {'form': form})    
+
+
+class FileFieldView(FormView):
+    form_class = DocumentForm
+    template_name = 'school/model_form_upload.html'  # Replace with your template.
+    success_url = HttpResponseRedirect('index')  # Replace with your URL or reverse().
+
+    def post(self, request, *args, **kwargs):
+        form_class = self.get_form_class()
+        form = self.get_form(form_class)
+        files_multiple = request.FILES.getlist('doc_multiple')
+        files_single = request.FILES.get('document')
+        if form.is_valid():
+            for f in files_multiple:
+                #...  # Do something with each file.
+                f.save()
+            form.save()
+            return self.form_valid(form)
+
+        else:
+            return self.form_invalid(form)    

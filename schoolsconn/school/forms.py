@@ -44,4 +44,11 @@ class ContactForm(forms.Form):
 class DocumentForm(forms.ModelForm):
     class Meta:
         model = Document
-        fields = ('description', 'document', )    
+        exclude = ['uploaded_at']
+        widgets = {
+            'description': forms.TextInput(attrs={'class':'lc-add-listing-input form-control','placeholder':'Description of the image'}),
+            'document': forms.FileInput(attrs={'class':'lc-add-listing-input form-control'}),
+            'desc_multiple': forms.TextInput(attrs={'class':'lc-add-listing-input form-control','placeholder':'Description of the image'}),
+            'doc_multiple': forms.FileInput(attrs={'class':'lc-add-listing-input form-control', 'multiple': True})
+        }
+              

@@ -43,4 +43,5 @@ urlpatterns = [
     path('thanks/', views.thanks, name='thanks'), 
     path('upload/', views.simple_upload, name='file-upload'),
     path('model-upload/', views.model_form_upload, name='model-upload'),
+    path('model-upload-multiple/', views.FileFieldView.as_view(), name='model-upload-multiple'),
 ]

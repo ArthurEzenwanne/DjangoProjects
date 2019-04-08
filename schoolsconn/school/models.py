@@ -156,7 +156,7 @@ class Document(models.Model):
             
 class DocumentMultiple(models.Model):
     desc_multiple = models.CharField(max_length=255, blank=True)
-    doc_multiple = models.FileField(upload_to='schools/multiple/', blank=True)
+    doc_multiple = models.ImageField(upload_to='schools/multiple/', blank=True)
     uploaded_at = models.DateTimeField(auto_now_add=True)
 
 

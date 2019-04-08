@@ -228,9 +228,11 @@ def model_upload_multiple(request):
         if form.is_valid():
             desc_multiple = form.cleaned_data['desc_multiple']
 
+            # This If statement works
             for f in request.FILES.getlist('doc_multiple'):
                 DocumentMultiple.objects.create(desc_multiple=desc_multiple, doc_multiple=f)
              
+            # This If statement doesn't works
             # for f in request.FILES.getlist('desc_multiple'):
             #     instance = DocumentMultiple.objects.create(desc_multiple=desc_multiple, doc_multiple=f)
             #     instance.save()

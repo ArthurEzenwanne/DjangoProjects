@@ -196,7 +196,8 @@ def model_form_upload(request):
     if request.method == 'POST':
         form = DocumentForm(request.POST, request.FILES)
         if form.is_valid():
-            instance = Document(document=request.FILES['document'], description=request.POST.get('description'))
+            # description=request.POST.get('description')) or description=form.cleaned_data['description'] works
+            instance = Document(document=request.FILES['document'], description=form.cleaned_data['description'])
             instance.save()
             return render(request, 'school/model_form_upload.html', {'instance': instance})   
             #return HttpResponseRedirect('index')
@@ -205,22 +206,36 @@ def model_form_upload(request):
     return render(request, 'school/model_form_upload.html', {'form': form})    
 
 
-class FileFieldView(FormView):
-    form_class = DocumentForm
-    template_name = 'school/model_form_upload.html'  # Replace with your template.
-    success_url = HttpResponseRedirect('index')  # Replace with your URL or reverse().
+def model_form_upload_multiple(request):
+    # This works for multiple files
+    document = DocumentMultiple.objects.all()
+    if request.method == 'GET':
+        form = DocumentMultipleForm(None)
+    elif request.method == 'POST':
+        for _file in request.FILES.getlist('doc_multiple'):
+            request.FILES['doc_multiple'] = _file
+            form = DocumentMultipleForm(request.POST, request.FILES)
+            if form.is_valid():
+                _new = form.save(commit=False)
+                _new.save()
+                form.save_m2m()
+    return render(request, 'school/multiple_model_form_upload.html', {'form': form, 'document': document})          
 
-    def post(self, request, *args, **kwargs):
-        form_class = self.get_form_class()
-        form = self.get_form(form_class)
-        files_multiple = request.FILES.getlist('doc_multiple')
-        files_single = request.FILES.get('document')
+def model_upload_multiple(request):
+    # This works for multiple files
+    if request.method == 'POST':
+        form = DocumentMultipleForm(request.POST, request.FILES)
         if form.is_valid():
-            for f in files_multiple:
-                #...  # Do something with each file.
-                f.save()
-            form.save()
-            return self.form_valid(form)
+            desc_multiple = form.cleaned_data['desc_multiple']
 
-        else:
-            return self.form_invalid(form)    
+            for f in request.FILES.getlist('doc_multiple'):
+                DocumentMultiple.objects.create(desc_multiple=desc_multiple, doc_multiple=f)
+             
+            # for f in request.FILES.getlist('desc_multiple'):
+            #     instance = DocumentMultiple.objects.create(desc_multiple=desc_multiple, doc_multiple=f)
+            #     instance.save()
+                
+            return render(request, 'school/model_form_upload.html', {'form': form})                
+    else:
+        form = DocumentMultipleForm()
+    return render(request, 'school/multiple_model_form_upload.html', {'form': form})    

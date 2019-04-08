@@ -48,7 +48,13 @@ class DocumentForm(forms.ModelForm):
         widgets = {
             'description': forms.TextInput(attrs={'class':'lc-add-listing-input form-control','placeholder':'Description of the image'}),
             'document': forms.FileInput(attrs={'class':'lc-add-listing-input form-control'}),
+        }
+
+class DocumentMultipleForm(forms.ModelForm):
+    class Meta:
+        model = DocumentMultiple
+        exclude = ['uploaded_at']
+        widgets = {
             'desc_multiple': forms.TextInput(attrs={'class':'lc-add-listing-input form-control','placeholder':'Description of the image'}),
             'doc_multiple': forms.FileInput(attrs={'class':'lc-add-listing-input form-control', 'multiple': True})
-        }
-              
+        }              

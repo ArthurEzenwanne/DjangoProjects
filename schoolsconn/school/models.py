@@ -152,19 +152,12 @@ def user_directory_path(instance, filename):
 class Document(models.Model):
     description = models.CharField(max_length=255, blank=True)
     document = models.FileField(upload_to='schools/', blank=True)
-
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+            
+class DocumentMultiple(models.Model):
     desc_multiple = models.CharField(max_length=255, blank=True)
     doc_multiple = models.FileField(upload_to='schools/multiple/', blank=True)
-
     uploaded_at = models.DateTimeField(auto_now_add=True)
-
-    # def __str__(self):
-    #     return self.url
-
-    # def path(self):
-    #     return self.url
-            
-
 
 
 # class School(models.Model):

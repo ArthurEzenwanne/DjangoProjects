@@ -337,7 +337,7 @@ $( document ).ready(function() {
         if(mapType.type == 'osm'){
             openStreetGeoSearch();
         }else {
-         googleGeoSearch();
+            googleGeoSearch();
         }
     }
 
@@ -418,8 +418,9 @@ $( document ).ready(function() {
         var markers = [];
         var map = new google.maps.Map(document.getElementById('cpdl-map'), {
             mapTypeId: google.maps.MapTypeId.ROADMAP,
-            center: {lat: 40.674, lng: -73.945},
-            zoom: 12,
+            // center: {lat: 40.674, lng: -73.945},
+            center: {lat: 6.6039262, lng: 3.3327518},
+            zoom: 10,
             mapTypeControl: true,
             mapTypeControlOptions: {
                 style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
@@ -674,12 +675,9 @@ $( document ).ready(function() {
             }
           });
     
-            map.fitBounds(bounds);
+            // map.fitBounds(bounds);
 
             
         });
-    }
-
-
-    
+    }    
 });

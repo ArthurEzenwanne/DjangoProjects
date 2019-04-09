@@ -1,4 +1,7 @@
 import re
+from PIL import Image
+from io import StringIO, BytesIO
+from django.core.files.base import ContentFile
 from django.shortcuts import render, get_object_or_404, get_list_or_404, redirect  
 from django.views import generic
 from django.contrib.auth.decorators import login_required
@@ -8,6 +11,8 @@ from django.conf import settings
 from django.core.files.storage import FileSystemStorage
 #from django.utils.decorators import method_decorator
 from django.views.generic.edit import FormView
+from django.core.files import File
+
 from .models import *
 from .forms import *
 
@@ -73,34 +78,53 @@ def slugify(s):
 
 @login_required  
 def create_school(request):
-    """View function for creating a School instance outside the admin."""
-    #create v1 csharpconer
-    form = SchoolForm(request.POST or None)  
+    """View function for creating a School instance outside the user admin."""
+    # if this is a POST request we need to process the form data
+    if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+        form = SchoolForm(request.POST, request.FILES)  
    
-    if form.is_valid():  
-        school = form.save(commit=False)  
-        school.user = request.user  
-        school.slug = slugify(school.name)
-        school.save()
-        
-        # Increament number of schools created by the user
-        # num_schools = SchoolsConnBaseUser.schools.value_from_object()
-        # num_schools = num_schools + 1
-        # SchoolsConnBaseUser.schools = num_schools
-        # SchoolsConnBaseUser.save()
-        return redirect('school-listing')  
-    return render(request, 'school/create_school.html', {'form': form})
+        # check whether it's valid:
+        if form.is_valid():  
+            # process the data in form.cleaned_data as required
+            school = form.save(commit=False) 
+            school.user = request.user  
+            school.slug = slugify(school.name)
+
+            ##!!! DO NOT EDIT THE FILE, OR RESIZE THE FILE HERE, IT IS TOO MUCH WORK. TRY RESIZE THE FILES
+            ##!!! ON THE CLIENT USING JSCRIPT OR JQUERY, ANY IMAGE SENT HERE SHOULD BE THE FINALE IMAGE !!!###
+            
+            # if school.logo:
+            #     logo = request.FILES['logo']
+            #     fs = FileSystemStorage()            # Works when media is handled on local fileSystem
+            #     filename = fs.save(logo.name, logo)
+            #     uploaded_file_url = fs.url(filename)
+            school.save()
+
+
+        # redirect to a new URL:
+        return redirect('school-listing')    
+    # if a GET (or any other method) we'll create a blank form  
+    else:
+        form = SchoolForm()    
+        return render(request, 'school/create_school.html', {'form': form})
+
+
 
 @login_required  
 def add_school(request):
-    """View function for creating a School instance on the admin."""
+    """View function for creating a School instance on the user admin."""
     #create v1 csharpconer
     form = SchoolForm(request.POST or None)  
    
-    if form.is_valid():  
+    if form.is_valid():          
         school = form.save(commit=False)  
         school.user = request.user  
         school.slug = slugify(school.name)
+        school.logo = form.cleaned_data['logo']
+        #logo = School(logo=request.FILES['logo'])        
+        #school.logo = School(logo=request.FILES['logo'])
+        #logo.save()
         school.save()
         
         # Increament number of schools created by the user
@@ -182,7 +206,6 @@ def send_mail_view(request):
         form = ContactForm()
     return render(request, 'school/send_mail_form_two.html', {'form': form})
 
-
 def simple_upload(request):
     if request.method == 'POST' and request.FILES['myfile']:
         myfile = request.FILES['myfile']
@@ -204,7 +227,6 @@ def model_form_upload(request):
     else:
         form = DocumentForm()
     return render(request, 'school/model_form_upload.html', {'form': form})    
-
 
 def model_form_upload_multiple(request):
     # This works for multiple files

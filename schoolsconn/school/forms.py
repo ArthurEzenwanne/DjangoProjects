@@ -31,6 +31,8 @@ class SchoolForm(forms.ModelForm):
             
             'latitude': forms.TextInput(attrs={'class':'lc-add-listing-input form-control', 'id':'lat', 'name':'latitude', 'placeholder':'Ex: -31.365486575872'}),
             'longitude': forms.TextInput(attrs={'class':'lc-add-listing-input form-control', 'id':'lng', 'name':'longitude', 'placeholder':'Ex: 1.87676857332'}),
+
+            'logo': forms.ClearableFileInput(attrs={'class':'lc-add-listing-input form-control'}),
         }
 
 
@@ -47,7 +49,7 @@ class DocumentForm(forms.ModelForm):
         exclude = ['uploaded_at']
         widgets = {
             'description': forms.TextInput(attrs={'class':'lc-add-listing-input form-control','placeholder':'Description of the image'}),
-            'document': forms.FileInput(attrs={'class':'lc-add-listing-input form-control'}),
+            'document': forms.ClearableFileInput(attrs={'class':'lc-add-listing-input form-control'}),
         }
 
 class DocumentMultipleForm(forms.ModelForm):
@@ -56,5 +58,5 @@ class DocumentMultipleForm(forms.ModelForm):
         exclude = ['uploaded_at']
         widgets = {
             'desc_multiple': forms.TextInput(attrs={'class':'lc-add-listing-input form-control','placeholder':'Description of the image'}),
-            'doc_multiple': forms.FileInput(attrs={'class':'lc-add-listing-input form-control', 'multiple': True})
+            'doc_multiple': forms.ClearableFileInput(attrs={'class':'lc-add-listing-input form-control', 'multiple': True})
         }              

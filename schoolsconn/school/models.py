@@ -9,6 +9,10 @@ from django.utils.translation import gettext as _
 # https://docs.djangoproject.com/en/2.2/ref/contrib/postgres/fields/#django.contrib.postgres.fields.ArrayField
 # Note ArrayFields when using PostGress
 
+def user_directory(instance, filename):
+    # file will be uploaded to MEDIA_ROOT/user_<id>/<filename>
+    return 'schools/user_{0}/{1}'.format(instance.user.id, filename)
+
 # Create your models here.
 class SchoolsConnBaseUser(AbstractUser):
     '''Model for a custom user.'''
@@ -33,11 +37,11 @@ class School(models.Model):
     motto = models.CharField(max_length=256)
     website = models.URLField(max_length=100, null=True, blank=True)
 
-
     slug = models.SlugField(max_length=128)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     user = models.ForeignKey(SchoolsConnBaseUser, on_delete=models.CASCADE)
+    logo = models.ImageField(upload_to='schools/logo/', blank=True)
 
     # Basic Info 
     country = models.CharField(max_length=50, default='Nigeria')
@@ -151,7 +155,7 @@ def user_directory_path(instance, filename):
 
 class Document(models.Model):
     description = models.CharField(max_length=255, blank=True)
-    document = models.FileField(upload_to='schools/', blank=True)
+    document = models.ImageField(upload_to='schools/', blank=True)
     uploaded_at = models.DateTimeField(auto_now_add=True)
             
 class DocumentMultiple(models.Model):

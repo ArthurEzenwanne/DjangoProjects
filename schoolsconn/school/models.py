@@ -139,6 +139,8 @@ class School(models.Model):
     homemanagementlab = models.BooleanField(_('Home Management Labs'), default=False)
     languagestudio = models.BooleanField(_('Languages Studio'), default=False)
 
+    verified = models.BooleanField(default=False)
+
     def get_absolute_url(self):
         """Returns the url to access a particular school instance."""
         # return reverse('tutor-detail', args=[str(self.email_address)])

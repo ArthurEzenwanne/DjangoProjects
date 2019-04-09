@@ -6,7 +6,7 @@ class SchoolForm(forms.ModelForm):
     class Meta:  
         model = School  
         #fields = '__all__' #['email', 'name', 'phone', ]
-        exclude = ['slug', 'user', 'city']
+        exclude = ['slug', 'user', 'city', 'verified']
         widgets = {
             'email': forms.EmailInput(attrs={'class':'lc-add-listing-input form-control','placeholder':'Ex: admissions@adebanjohighschools.com'}),
             'name': forms.TextInput(attrs={'class':'lc-add-listing-input form-control', 'placeholder':'Ex: Adebanjo Int\'l High School'}),

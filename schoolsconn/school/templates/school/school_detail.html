@@ -55,11 +55,19 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="media lc-author-des-wrap">
-                            <img class="mr-4" src="{% static 'images/author/16.png' %}" alt="img">
-                            <div class="media-body mt-1">
-                                <h1 class="author-title"><span>{{ school }} <i class="fa fa-check-circle"></i></span></h1>
-                                <p>{{ school.motto }}</p>
-                            </div>
+                            {% if school.logo %}
+                                <img class="mr-4 img-logo" src="{{ school.logo.url }}" alt="img">
+                            {% else %}
+                                <img class="mr-4" src="{% static 'images/author/16.png' %}" alt="img">
+                            {% endif %}
+                                <div class="media-body mt-1">
+                                    {% if school.verified %}
+                                        <h1 class="author-title"><span>{{ school }} <i class="fa fa-check-circle"></i></span></h1>
+                                    {% else %}
+                                        <h1 class="author-title"><span>{{ school }} </span></h1>
+                                    {% endif %}
+                                    <p>{{ school.motto }}</p>
+                                </div>
                         </div>
                         <div class="lc-listing-details-list-meta">
                             <ul>

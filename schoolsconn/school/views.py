@@ -93,7 +93,7 @@ def create_school(request):
 
             ##!!! DO NOT EDIT THE FILE, OR RESIZE THE FILE HERE, IT IS TOO MUCH WORK. TRY RESIZE THE FILES
             ##!!! ON THE CLIENT USING JSCRIPT OR JQUERY, ANY IMAGE SENT HERE SHOULD BE THE FINALE IMAGE !!!###
-            
+
             # if school.logo:
             #     logo = request.FILES['logo']
             #     fs = FileSystemStorage()            # Works when media is handled on local fileSystem
@@ -157,7 +157,9 @@ def update_school(request, slug):
         school = get_object_or_404(School, slug=slug, user=request.user)  
     form = SchoolForm(request.POST or None, instance=school)  
     if form.is_valid():  
-        form.save()  
+        school = form.save(commit=False) 
+        school.slug = slugify(school.name)
+        school.save()
         return redirect('school-listing')  
     return render(request, 'school/edit_school.html', {'form': form}) 
   

@@ -7860,3 +7860,16 @@ border-radius: 50%;
 }
 .carousel-control {width: 7%;}
 /*<!-----------Testonomial section css-------------->*/
+
+/*<!-----------Logo Image section css-------------->*/
+.img-logo { 
+  width: 83px;
+  height: 83px;
+  border-radius: 50%;
+}
+
+.img-logo-search { 
+  width: 41px;
+  height: 41px;
+  border-radius: 50%;
+}

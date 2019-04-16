@@ -1,0 +1,362 @@
+{% extends "base_generic.html" %}
+<!-- HTML Template to list schools on the search page -->
+{% block navigation %}
+{% load static %}
+    <nav id="lcnavbar" class="navbar lc-navbar style-two fixed-top navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand main-logo" href="{% url 'index' %}"><img src="{% static 'images/logo.png' %}" alt="logo"></a>
+            <a class="navbar-brand mobile-logo" href="{% url 'index' %}"><img src="{% static 'images/logo.png' %}" alt="logo"> SchoolsApp</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
+            <div class="collapse navbar-collapse lc-menu" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <!-- dropdown search form start -->
+                        <form class="lc-main-search" style="float:left;" method="GET">
+                            <div class="lc-main-search-field">
+                                <input type="text" class="form-control" placeholder="What are you looking for">
+                            </div>
+                            <div class="lc-search-location">
+                                <input type="text" class="form-control" placeholder="Location">
+                            </div>
+                            <div class="lg-mulitsearch-cat">
+                                <div class="styled-input">            
+                                    <input id="category_search" class="form-control" placeholder="Category Eg: Tutors" type="text" value="Schools" />
+                                    <ul class="category-dropdown">
+                                        <li><a href="#schools">Schools</a></li>
+                                        <li><a href="#tutors">Tutors</a></li>
+                                        <li><a href="#vendors">Vendors</a></li>
+                                        <li><a href="#resources">Resources</a></li>
+                                    </ul> 
+                                </div>
+                            </div>
+                            <button class="btn btn-default"><i class="fa fa-search"></i> Search</button>
+                            <div class="fix"></div>
+                        </form>
+                        <!-- End dropdown search form -->
+                    </li>          
+                    <!-- end Mega menu -->
+                </ul>   
+            </div>
+            <div class="login-side">
+                <ul class="navbar-nav ml-auto">
+                    <li><a href="login-blue.html"><i class="fa fa-sign-in"></i>Log in</a></li>
+                    <li><a class="btn btn-transparent ml-3" href="gm-add-listing-blue.html">+ Add Listing</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+{% endblock %}
+{% block content %}
+{% load static %}
+    <div class="lc-search-map-section">            
+        <div class="lc-search-map-content">
+            <div class="lc-search-map-content-details">
+                <div class="lc-container">
+                    <div class="row">
+                        <div class="lc-single-page-top100 col-3">
+                            <p>Hello WOrld</p>
+                        </div>
+                        <div class="lc-single-page-top100 col-9">
+                            <ul class="lc-all-filter">
+                                <li><a class="lc-common-btn" href="#"><i class="fa fa-clock-o"></i>Open Now</a></li>
+                                <li><a class="lc-common-btn" href="#"><i class="fa fa-map-marker"></i>Near Me</a></li>
+                                <li><button class="lc-search-more-filter-btn lc-common-btn"><i class="fa fa-sliders"></i>More Filter</button></li>
+                                <li class="search-layout float-right">
+                                    <a class="lc-search-grid active" href="#"><i class="fa fa-th-large"></i></a>
+                                    <a class="lc-search-list" href="#"><i class="fa fa-list"></i></a>
+                                </li>
+                            </ul>
+                            <div class="lc-search-morefilter-area">
+                                <ul class="lc-all-filter">
+                                    <li class="">
+                                        <label class="radio-filter">
+                                            <input type="radio">
+                                            <span>Event Search</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="radio-filter">
+                                            <input type="radio">
+                                            <span>Place Search</span>
+                                        </label>
+                                    </li>
+                                    <li><a class="lc-common-btn" href="#"><i class="fa fa-clock-o"></i>Open Now</a></li>
+                                    <li>
+                                        <div class="lc-select-input-field">
+                                            <select name="state">
+                                                <option >Restaurant</option>
+                                                <option >Hotels</option>
+                                                <option >Shopping</option>
+                                                <option >Coffee</option>
+                                            </select>
+                                        </div>
+                                    </li>
+                                    <li><a class="lc-common-btn" href="#"><i class="fa fa-cc-mastercard"></i>Price</a></li>
+                                    <li>
+                                        <div class="lc-select-input-field">
+                                            <select name="state">
+                                                <option >By Kilometer</option>
+                                                <option >Hotels</option>
+                                                <option >Shopping</option>
+                                                <option >Coffee</option>
+                                            </select>
+                                        </div>
+                                    </li>
+                                    <li><a class="lc-search-more-filter  lc-common-btn" href="#"><i class="fa fa-map-marker"></i>Near Me</a></li>
+                                    <li class="lc-range-slider-wrap">
+                                        <div class="lc-range-slider">
+                                            <input type="range">
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="lc-advance-filter">
+                                    <ul>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox">
+                                                <span>Accepts Credit Cards</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox">
+                                                <span >Wheelchair Accessible</span> 
+                                            </label>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox">
+                                                <span>Smoking Allowed</span> 
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox">
+                                                <span>Parking Street</span> 
+                                            </label>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox">
+                                                <span>Bike Parking</span> 
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox">
+                                                <span>Wireless Internet</span> 
+                                            </label>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox">
+                                                <span>Hostels</span> 
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row mt-1">
+                                {% if school_list %}
+                                    {% for school in school_list %}
+                                        <!-- single listing -->
+                                        <div class="col-12 col-lg-4 col-md-4 wow animated fadeIn" data-wow-duration="0.1s" data-wow-delay="0.1s">
+                                            <div class="lc-listing-single" data-postid="14" data-lat="-37.8210922667" data-lng="175.2209316333" data-maptype="gm"  data-marker="images/marker/resturent.png">
+                                                <div class="entry-thumb">
+                                                    <img class="img-thumbnail" src="{% static 'images/features/07.png' %}"  alt="img">
+                                                    <span class="btn-close">{{ school.lga }}</span>
+                                                    <div class="entry-thumb-content">
+                                                        <span class="rating">
+                                                            <i class="fa fa-star"></i>4.9 
+                                                            <span class="count">(79)</span>
+                                                        </span>
+                                                        <span class="float-right">
+                                                            <i class="fa fa-bookmark-o"></i>
+                                                            <a class="btn btn-primary" data-toggle="modal" data-target=".lc-listing-modal">
+                                                                <span><i class="fa fa-eye"></i></span>
+                                                            </a>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="entry-content">
+                                                    <div class="media">
+                                                        {% if school.logo %}
+                                                            <img class="img-logo-search" src="{{ school.logo.url }}" alt="img">
+                                                        {% else %}
+                                                            <img src="{% static 'images/author/02.png' %}" alt="img">
+                                                        {% endif %}
+                                                        <div class="media-body">
+                                                            <h4><a class="title" href="{{ school.get_absolute_url }}">{{ school }}</a></h4>
+                                                            <span><i class="fa fa-cutlery"></i><a href="#">{{ school.motto }}</a></span>
+                                                            <span><i class="fa fa-map-marker"></i><a href="#">{{ school.state }}, {{ school.country }}</a></span>
+                                                        </div>
+                                                    </div>
+                                                    <p>{{ school.description|truncatechars:140 }}</p>                            
+                                                </div>
+                                                <div class="entry-footer">
+                                                    <span>$10 - $200</span>
+                                                    <span class="right">+44 20 7336</span>
+                                                </div>
+                                            </div>
+                                        </div>               
+                                        <!-- /. single listing -->
+                                    {% endfor %}        
+                                {% else %}
+                                    <p>There are no schools yet in this region.</p>
+                                {% endif %} 
+                            </div>  
+                        </div>
+                    </div>
+                </div>                
+            </div>             
+            {% endblock %}
+            {% block footer %}
+                <!-- start footer-section -->
+                <footer class="lc-footer-section">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <!-- subscribtion -->
+                                <div class="col-12 col-md-10">
+                                    <div class="lc-subscribtion text-center">
+                                        <h4 class="title">Join Our Newsletter 
+                                            <i class="fa fa-paper-plane-o"></i>
+                                        </h4> 
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                        <div class="row justify-content-center">
+                                            <div class="col-12 col-md-8 col-lg-6">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" placeholder="Your Email Address" >
+                                                    <div class="input-group-append">
+                                                        <button type="submit" class="input-group-text">Subscribe</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <!-- /.subscribtion -->
+            
+                            <!-- widget area -->                
+                            <div class="col-12">
+                                <div class="widget-area">
+                                    <div class="row justify-content-center">
+                                        <!-- single widget star -->
+                                        <div class="col-12 col-md-6 col-lg-4">
+                                            <div class="widget widget_about">
+                                                <a href="{% url 'index' %}">
+                                                    <img src="{% static 'images/icon/04.png' %}" alt="logo">
+                                                    <span class="widget-title">Listera</span>
+                                                </a>
+                                                <p>Lorem ipsum dolor amet, conectetur the adipisicig elit, sed eiusmod tempor inciddunt labore dolore commodo consequat.</p>
+                                                <!-- Find Us Map Modal -->
+                                                <!-- <div class="lc-launch-map">
+                                                <a href="#lc-widget-popup-location" data-lat="-37.8210819833" data-lng="175.2213903167" data-maptype="gm"  data-marker="{% static 'images/marker/footer.png' %}" class="map widget-about-launch-map" data-toggle="modal">Find Us on Map<i class="fa fa-map-marker"></i></a>
+                                                    
+                                                    <div id="lc-widget-popup-location" class="modal fade" tabindex="-1" role="dialog" data-backdrop="true">
+                                                        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                                                            <div class="modal-content">
+                                                                
+                                                                <button type="button" class="btn lc-button-close" data-dismiss="modal"><i class="la la-close"></i></button>
+                                                                <div class="modal-body">    
+                                                                    <div class="lc-popup-map-view"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div> -->
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-4">
+                                            <div class="widget widget_links">
+                                                <div class="widget-title">
+                                                    <h4 class="title">Useful Links</h4>
+                                                </div>
+                                                <ul class="ul-link">
+                                                    <li><a href="{% url 'index' %}">Sign in</a></li>
+                                                    <li><a href="{% url 'index' %}">Sign Up</a></li>
+                                                    <li><a href="{% url 'index' %}">My Account</a></li>
+                                                    <li><a href="{% url 'index' %}">Add Listing</a></li>
+                                                </ul> 
+                                                <ul>
+                                                    <li><a href="{% url 'index' %}">Privacy Policy</a></li>
+                                                    <li><a href="{% url 'index' %}">F.A.Q</a></li>
+                                                    <li><a href="{% url 'index' %}">Our Pertners</a></li>
+                                                    <li><a href="{% url 'index' %}">Contact</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-4">
+                                            <div class="widget widget_links">
+                                                <div class="widget-title">
+                                                    <h4 class="title">Useful Links</h4>
+                                                </div>
+                                                <ul class="ul-link">
+                                                    <li><a href="{% url 'index' %}">Sign in</a></li>
+                                                    <li><a href="{% url 'index' %}">Sign Up</a></li>
+                                                    <li><a href="{% url 'index' %}">My Account</a></li>
+                                                    <li><a href="{% url 'index' %}">Add Listing</a></li>
+                                                </ul> 
+                                                <ul>
+                                                    <li><a href="{% url 'index' %}">Privacy Policy</a></li>
+                                                    <li><a href="{% url 'index' %}">F.A.Q</a></li>
+                                                    <li><a href="{% url 'index' %}">Our Pertners</a></li>
+                                                    <li><a href="{% url 'index' %}">Contact</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div> <!-- /.row -->
+                                </div>
+                            </div>                
+                            <!-- /.widget area -->
+            
+                            <!-- widget info -->
+                            <div class="col-12">
+                                <div class="widget widget_info">
+                                    <ul>
+                                        <li><a href="{% url 'index' %}"><i class="fa fa-map-marker"></i>20 Maple Avenue, San Pedro, CA 90731</a></li>
+                                        <li><a href="{% url 'index' %}"><i class="fa fa-envelope-o"></i>suport@listera.com</a></li>
+                                        <li><a href="{% url 'index' %}"><i class="fa fa-whatsapp"></i>+1-212-9876543</a></li>
+                                        <li><a href="{% url 'index' %}"><i class="fa fa-phone"></i>(526) 236-895-4732</a></li>
+                                        <li><a href="{% url 'index' %}"><i class="fa fa-skype"></i>example.skype</a></li>
+                                    </ul>
+                                </div> 
+                            </div>
+                            <!-- /.widget info -->
+                        </div>
+                    </div>
+                    <div class="lc-copy-right">
+                        <div class="container">
+                            <div class="row vertical-center-row">                    
+                                <div class="col-12 col-lg-5 col-md-12">
+                                    <div class="copyright">
+                                        <p>© Copyright 2019 SchoolsApp. All rights reserved</p>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-12 col-lg-3 offset-lg-3">
+                                    <ul class="social-area">
+                                        <li><a href="{% url 'index' %}"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="{% url 'index' %}"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="{% url 'index' %}"><i class="fa fa-instagram"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" id="lc-toTop" class="lc-to-top"><i class="fa fa-angle-up"></i></a>
+                </footer>
+                <!-- end footer-section -->
+            {% endblock %}
+        </div>
+    </div>

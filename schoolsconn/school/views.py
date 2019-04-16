@@ -265,3 +265,15 @@ def model_upload_multiple(request):
     else:
         form = DocumentMultipleForm()
     return render(request, 'school/multiple_model_form_upload.html', {'form': form})    
+
+class SearchManager(models.Manager):
+    ''' Search class for searching schools instances '''
+    def search(self, **kwargs):
+        qs = self.get_query_set()
+        if kwargs.get('q', ''):
+            qs = qs.filter(name__icontains=kwargs['q'])
+        if kwargs.get('government_type', []):
+            qs = qs.filter(government_type=kwargs['government_type'])
+        if kwargs.get('industry', []):
+            qs = qs.filter(industry=kwargs['industry'])
+        return qs    

@@ -94,24 +94,29 @@
         //widget opening hour
         $('.widget-opening-hour > .title').on('click', function(){
            $('.widget-opening-hour > .hidden-time').slideToggle('slow');
-            $(this).toggleClass("actives");
+            $(this).toggleClass("active");
         });
         //additional info
         $('.widget-additional-info > .toggle-btn').on('click', function(){
             $('.widget-additional-info > .additional-details-hide').slideToggle("slow");
-            $(this).toggleClass("actives");
+            $(this).toggleClass("active");
         });
         //search more filter
         $('.lc-search-more-filter-btn.lc-common-btn').on('click', function(){
             $('.lc-search-morefilter-area').slideToggle("slow");
-            $(this).toggleClass("actives");
+            $(this).toggleClass("active");
         });
         //search map hide btn
         $('.search-layout .lc-search-map-hide').on('click', function(){
             $('.lc-search-map').slideToggle("slow");
-            $(this).toggleClass("actives");
+            $(this).toggleClass("active");
         });
 
+        //search map hide btn
+        // $('body').on('click', '.search-layout .lc-search-map-hide', function() {
+        //     $('.lc-search-map').slideToggle("slow");
+        //     $(this).toggleClass("active");       
+        // });
 
         /* -----------------------------------------------------
             Isotope

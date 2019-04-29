@@ -1,0 +1,631 @@
+
+/*main content*/
+#lcd-main-content {
+    @include transition(all, .3s, ease-in-out);
+    overflow: hidden;
+}
+.lcd-main-content-area {
+    display:inline-block;
+    margin-top: 90px;
+    padding:15px;
+    width:100%;
+}
+@media all and (min-width: 992px){
+	#lcd-main-content {
+	    margin-left:300px;
+	}
+}
+@media all and (max-width: 992px){
+	#lcd-main-content {
+	    margin-left: 85px;
+	}
+}
+.lcd-border-b{
+	border-bottom: 1px solid $color-gray3;
+}
+.lcd-border-r{
+	border-right: 1px solid $color-gray3;
+}
+.lcd-nopadding-r{
+	padding-right: 0px;
+}
+.lcd-nopadding{
+	padding: 0 0 0 0;
+}
+/*---------------------------------------------
+|	Dashboard panel review style 
+----------------------------------------------*/
+.lcd-pending-header{
+	padding: 20px 25px 20px 25px;
+    margin-bottom: 40px;
+	h2{
+		font-size: 20px;
+		line-height: 24px;
+		font-weight: 600;
+		font-family: $font-quicksand;
+	    color: $color-gray;	
+		margin: 0px;
+	}
+}
+
+
+/*---------------------------------------------
+|	Dashboard panel review style 
+----------------------------------------------*/
+/* panel review single common class */ 
+.lcd-panel-review-section{
+	border-radius: 5px;
+	background: $color-white;
+}
+.lcd-panel-review-single.style1{
+	.lcd-panel-review-body{
+		i {
+		    color: rgb( 255, 98, 98 );
+		}
+		span{
+		    background-color: rgba(0, 255, 0, 0.102);
+		}
+	}
+}
+.lcd-panel-review-single.style2{
+	.lcd-panel-review-body{
+		i {
+		    color: rgb( 164, 104, 255 );
+		}
+		span{
+		    background-color: rgba(255, 0, 0, 0.102);
+		}
+	}
+}
+.lcd-panel-review-single.style3{
+	.lcd-panel-review-body{
+		i {
+		    color: rgb( 104, 189, 255 );
+		}
+		span{
+		    background-color: rgba(234, 0, 255, 0.102);
+		}
+	}
+}
+.lcd-panel-review-single.style4{
+	.lcd-panel-review-body{
+		i {
+		    color: rgb( 251, 175, 93 );
+		}
+		span{
+		    background-color: rgba(21, 128, 199, 0.102);
+		}
+	}
+}
+.lcd-panel-review-single{
+	margin-bottom: 30px;
+	padding: 20px 25px;
+    background: $color-white;
+    border-radius: 4px;
+	.lcd-panel-review-head{
+		margin-bottom: 22px;
+		h6{
+			font-size: 16px;
+			line-height: 24px;
+			font-weight: 600;
+			font-family: $font-quicksand;
+			margin: 0px;
+		    color: $color-gray;
+		}
+		i{
+		    line-height: 24px;
+		    font-size: 15px;
+		    color: $color-blue;
+		}
+	}
+	.lcd-panel-review-body{
+		i{
+			line-height: 24px;
+    		font-size: 35px;
+		}
+		span{
+		    line-height: 24px;
+		    font-size: 14px;
+		    color: $color-gray;
+		    border-radius: 50px;
+		    font-family: $font-lato;
+		    height: 25px;
+		    padding: 0px 18px;
+		    letter-spacing: 1px;
+		}
+	}
+}
+
+.lcd-panel-review-single{
+	padding: 20px 25px;
+    background: $color-white;
+    border-radius: 4px;
+	.lcd-panel-review-head{
+		margin-bottom: 22px;
+		h6{
+			font-size: 16px;
+			line-height: 24px;
+			font-weight: 600;
+			font-family: $font-quicksand;
+			margin: 0px;
+		    color: $color-gray;
+		}
+		i{
+		    line-height: 24px;
+		    font-size: 15px;
+		    color: $color-blue;
+		}
+	}
+	.lcd-panel-review-body{
+		i{
+			line-height: 24px;
+    		font-size: 35px;
+		}
+		span{
+		    line-height: 24px;
+		    font-size: 14px;
+		    color: $color-gray;
+		    border-radius: 50px;
+		    font-family: $font-lato;
+		    height: 25px;
+		    padding: 0px 18px;
+		    letter-spacing: 1px;
+		}
+	}
+}
+@media all and (max-width:767px){
+	.lcd-panel-review-single .lcd-panel-review-head h6 {
+	    font-size: 14px;
+	    line-height: 24px;
+	}
+}
+
+/* Recent activities sidebar style */ 
+.lcd-recent-activities{
+	padding: 35px 40px 7px 25px;
+	.lcd-recent-activities-head{
+		margin-bottom: 22px;
+		h5{
+			font-size: 16px;
+			line-height: 24px;
+			font-weight: 600;
+			font-family: $font-quicksand;
+			margin: 0px;
+		    color: $color-gray;
+			i{
+				margin-right: 12px;
+				font-size: 16px;
+				color: $color-blue;
+			}
+		}
+	}
+	.lcd-recent-activities-body{
+		margin-bottom: 28px;
+		img{
+		    margin-right: 20px;
+		}
+		.media-body{
+			h6{
+				font-size: 16px;
+				line-height: 24px;
+				font-weight: 400;
+				font-family: $font-lato;
+			    color: $color-black;
+			    margin: 0;
+			    span{
+					font-size: 14px;
+					line-height: 24px;
+					font-family: $font-lato;
+				    color: $color-gray;
+			    }
+			}
+			p{
+				font-size: 12px;
+				line-height: 24px;
+				font-family: $font-lato;
+			    color: #a1a1a1;
+			    margin: 0;
+			}
+		}
+	}
+}
+
+/*---------------------------------------------
+|	Dashboard Panding list style 
+----------------------------------------------*/
+.lcd-pending-details{
+    padding: 10px 25px 10px 20px;
+    border: 1px solid $color-gray3;
+    margin: 0px 30px 20px 25px;
+	.lcd-pending-details-info{
+		padding:10px; 	
+		img{
+			margin-right: 20px;
+			border-radius: 3px;
+		}
+		.lcd-pending-details-content{
+			h4{
+				font-size: 18px;
+				line-height: 24px;
+				font-weight: 500;
+				font-family: $font-quicksand;
+			    color: $color-gray;
+			    margin: 0 0 5px 0;
+			}
+			ul{
+			    padding: 0;
+			    margin: 0;
+			    li{
+			    	list-style: none;
+			    	float: left;
+			    	margin-right: 15px;
+			    	font-size: 12px;
+			    	a{
+			    		text-decoration: none;
+			    		font-size: 12px;
+			    	}
+			    	i{
+			    		margin-right: 5px;
+			    		font-size: 12px;
+			    	}
+			    }
+			}
+		}
+	}
+	.lcd-pending-details-btn{
+		margin: 0 13px 0px 0;
+		ul{
+		    padding: 0;
+		    margin: 0;
+		    li{
+		    	list-style: none;
+		    	float: right;
+		    	margin: 0 0 10px 20px;
+		    	font-size: 12px;
+		    	&:first-child{
+		    		margin-right: 0;
+		    	}
+		    	a{
+					text-decoration: none;
+				    font-size: 14px;
+				    font-family: $font-lato;
+				    line-height: 32px;
+				    font-weight: 400;
+				    padding: 1px 15px;
+				    display: inline-block;
+					border-radius: 3px;
+		    	}
+		    	i{
+		    		margin-right: 5px;
+		    		font-size: 12px;
+		    	}
+		    }
+		}
+	}
+}
+.lcd-white-btn{
+	border: 1px solid rgb( 21, 128, 199 );
+	color: $color-blue;
+	background: none;
+	&:hover{
+		color: $color-blue;		
+	}
+}
+.lcd-green-btn{
+	border: 1px solid rgb( 21, 159, 110 );
+	color: $color-white;
+	background: rgb( 21, 159, 110 );
+	&:hover{
+		color: $color-white;		
+	}
+}
+.lcd-blue-btn{
+	border: 1px solid $color-blue;
+	color: $color-white;
+	background: $color-blue;
+	&:hover{
+		color: $color-white;		
+	}
+}
+.lcd-red-btn{
+	border: 1px solid rgb( 255, 76, 76 );
+	color: rgb( 255, 76, 76 );
+	background: none;
+	&:hover{
+		color: rgb( 255, 76, 76 );		
+	}
+}
+
+
+////////////////// Pending-list-responsive ////////////////////////
+@media all and (max-width:1600px) {
+	.lcd-pending-details {
+		.lcd-pending-details-btn {
+		    margin: 0 3px 0px 0;
+		    float: right;
+		    width: 100%;
+		}
+	}
+	.lcd-pending-details{
+		.lcd-pending-details-btn{
+			ul{
+				li {
+				    margin: 0 0 10px 7px;
+				}
+			}
+		} 
+	}
+}
+@media all and (max-width:1024px) {
+	.lcd-nopadding-r {
+	    padding-right: 15px;
+	}
+	.lcd-pending-details {
+		margin: 0px 25px 20px 25px;
+		.lcd-pending-details-btn{
+			margin: 0;
+		    float: left;
+		    width: auto;
+			ul{
+				li{
+					margin: 0 0 10px 7px;
+					 a {
+					    font-size: 13px;
+					    padding: 0px 10px;
+					}
+				}
+			}
+		}
+		.lcd-pending-details-info {
+			padding: 5px 0px 5px 10px;
+			margin-bottom: 10px;
+			.lcd-pending-details-content {
+				ul{
+					li {
+						margin-right: 11px;
+						i {
+						    margin-right: 2px;
+						}
+					}
+				}	
+			}
+		}
+	}
+	.lcd-recent-activities {
+	    padding: 35px 25px 7px 25px;
+		.lcd-recent-activities-head {
+		    border-bottom: 1px solid $color-gray3;
+		    padding: 0 0px 20px 0;
+		}
+	}
+}
+@media all and (max-width:767px) {
+	.lcd-pending-details {
+		margin: 0px 10px 20px 10px;
+		.lcd-pending-details-btn{
+			margin-top: 5px;
+			ul{
+				li{
+					float: left;
+					a {
+					    font-size: 11px;
+	    				padding: 0px 8px;
+					}
+				}
+			}
+		}
+		.lcd-pending-details-info {
+			display: inherit !important;
+			img {
+				margin-bottom: 10px;
+			}
+			h4 {
+				margin-bottom: 10px;
+				font-size: 14px !important;
+				line-height: 22px !important;
+			}
+			ul li {
+				margin-bottom: 8px;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+/*---------------------------------------------
+|	Profile style 
+----------------------------------------------*/
+.lcd-profile-section {
+    background: #fff;
+    padding: 18px 25px 35px 25px;
+    border-radius: 3px;
+}
+.lcd-profile-notice-area{
+	background: $color-white;
+	border-radius: 3px;
+	margin-bottom: 30px;
+	p{
+	    line-height: 24px;
+	    font-size: 14px;
+	    color: $color-gray;
+	    font-family: $font-lato;
+	    padding: 23px 30px;
+	    font-weight: 500;
+	    margin: 0;
+		i{
+		    margin-right: 20px;
+		    font-size: 17px;
+		    line-height: 24px;
+		    color: $color-blue;
+		}
+	}
+}
+.lcd-profile-basic-info-area{
+	h5{
+	    line-height: 24px;
+	    font-size: 16px;
+	    color: $color-gray;
+	    font-family: $font-quicksand;
+	    font-weight: 500;
+	    margin: 10px 0 20px 0;
+	    span{
+			margin-right: 10px;
+		    font-size: 19px;
+		    line-height: 20px;
+		    color: $color-blue;
+		    text-align: center;
+	    }
+		i{
+			margin-right: 10px;
+		    font-size: 13px;
+		    line-height: 20px;
+		    color: $color-blue;
+		    height: 20px;
+		    border: 1px solid $color-blue;
+		    text-align: center;
+		    border-radius: 50px;
+		    width: 20px;
+		}
+	}
+}
+.lcd-profile-basic-info-area{
+	.lcd-profile-basic-info{
+		display: block;
+		margin-bottom: 17px;
+		.lcd-profile-basic-info-title{
+		    display: block;
+		    color: $color-gray;
+		    font-size: 12px;
+		    line-height: 24px;
+		    font-weight: 500;
+		    font-family: $font-quicksand;
+		    margin-bottom: 8px;
+		    cursor: pointer;
+		}
+		.lcd-profile-basic-info-input{
+		    color: $color-gray;
+		    font-family: $font-lato;
+		    width: 100%;
+		    height: 45px;
+		    line-height: 24px;
+		    font-size: 14px;
+		    border-radius: 2px;
+		    border: 1px solid $color-blue-light;
+		    padding: 14px 20px;
+		    &:focus{
+		    	outline: none;
+		    }
+		}
+		.lcd-profile-basic-info-textarea{
+		    color: $color-gray;
+		    font-family: $font-lato;
+		    width: 100%;
+		    line-height: 24px;
+		    font-size: 14px;
+		    border-radius: 2px;
+		    border: 1px solid $color-blue-light;
+		    padding: 14px 20px;
+		    &:focus{
+		    	outline: none;
+		    }
+		}
+	}
+}
+.lcd-profile-basic-info-btn{
+    color: $color-white;
+    font-family: $font-lato;
+    width: 100%;
+    line-height: 24px;
+    font-size: 16px;
+    border-radius: 2px;
+    border: 1px solid $color-blue-light;
+    padding: 20px;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    background: $color-blue;
+    margin-top: 7px;
+    border: 1px solid $color-blue;
+	transition: 0.3s;
+    &:hover{
+    	background: $color-blue-light3;
+    	color: $color-white;
+    	text-decoration: none;
+    	border: 1px solid $color-blue-light3;
+    }
+}
+
+
+
+
+
+/*---------------------------------------------
+|	Profile style 
+----------------------------------------------*/
+.lcd-panel-review-section {
+	background: $color-white;
+	.lcd-chart-list-head{
+		padding: 35px 40px 40px 40px;
+		ul{
+			margin: 0;
+			padding: 0;
+			li{
+				list-style: none;
+				float: left;
+				margin-right: 40px;
+
+				a{
+					font-weight: 400;
+					font-family: $font-lato;
+					font-size: 14px;
+					line-height: 24px;
+					i{
+						margin-right: 10px;
+					}
+				}
+			}
+		}
+	}
+}
+.lcd-fcb{
+	color: $color-blue;
+	&:hover{
+		color: $color-blue;
+	}
+}
+.lcd-fcg{
+	color: $color-green;
+	&:hover{
+		color: $color-green;
+	}
+}
+.lcd-fcr{
+	color: $color-red;
+	&:hover{
+		color: $color-red;
+	}
+}
+.lcd-fch{
+	color: $color-helio;
+	&:hover{
+		color: $color-helio;
+	}
+}
+.lcd-fco{
+	color: $color-orng;
+	&:hover{
+		color: $color-orng;
+	}
+}
+
+
+
+#lcd-panel-review {
+	margin: 40px 0 0 40px;
+}

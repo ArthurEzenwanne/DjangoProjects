@@ -109,8 +109,6 @@ def create_school(request):
         form = SchoolForm()    
         return render(request, 'school/create_school.html', {'form': form})
 
-
-
 @login_required  
 def add_school(request):
     """View function for creating a School instance on the user admin."""

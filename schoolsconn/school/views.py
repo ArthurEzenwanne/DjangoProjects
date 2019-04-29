@@ -38,7 +38,21 @@ class SchoolDetailView(generic.DetailView):
 class SchoolListView(generic.ListView):
     """Class based list view for School model."""
     model = School
-    paginate_by = 30    
+    paginate_by = 30  
+
+    #Implement context
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get the context
+        context = super(SchoolListView, self).get_context_data(**kwargs)
+        # Create any data and add it to the context
+        #context['state'] = get_list_or_404(School.state) #all data pulled from the queryset of school.state
+        return context  
+
+# def school_detail_view(request, slug):
+#     """Function based detailed view for School model."""
+#     school = get_object_or_404(School, slug=slug)
+#     return render(request, 'school/school_detail.html', context={'school': school}) 
+
 
 # def account_profile_view(request, email):
 #     """Function based view for user profile model."""
@@ -172,7 +186,6 @@ def delete_school(request, slug):
         school.delete()  
         return redirect('school-listing')  
     return render(request, 'school/admin/delete_school.html', {'object': school})        
-
 
 def thanks(request):  
     """View function for deleting a School instance."""

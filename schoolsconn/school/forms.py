@@ -35,13 +35,29 @@ class SchoolForm(forms.ModelForm):
             'logo': forms.ClearableFileInput(attrs={'class':'lc-add-listing-input form-control'}),
         }
 
+class SearchForm(forms.Form): 
+    '''Form definition for the Search Form.'''
+    state = forms.ChoiceField()
+    lga = forms.ChoiceField()
+
+    # School Choice Region
+    creche = forms.BooleanField(required=False)
+    nursery = forms.BooleanField(required=False)
+    primary = forms.BooleanField(required=False)
+    secondary = forms.BooleanField(required=False)
+    aLevels = forms.BooleanField(label='A-Levels', required=False)
+
+    class Meta: 
+        widgets = {
+            'state': forms.Select(attrs={'class':'lc-add-listing-input form-control'}),
+            'lga': forms.Select(attrs={'class':'lc-add-listing-input form-control'}),
+        }
 
 class ContactForm(forms.Form):
     subject = forms.CharField(max_length=100)
     message = forms.CharField(widget=forms.Textarea)
     sender = forms.EmailField()
     cc_myself = forms.BooleanField(required=False)        
-
 
 class DocumentForm(forms.ModelForm):
     class Meta:

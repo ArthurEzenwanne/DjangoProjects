@@ -293,8 +293,8 @@ a {
 .lc-single-page-top100 {
   position: relative;
   margin-top: -100px;
-  padding-left: 50px !important;
-  padding-right: 50px !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
   border-radius: 5px;
   background: #ffffff; }
   .lc-single-page-top100:after {
@@ -317,8 +317,8 @@ a {
   .bg-single::before {
     top: 60px; }
   .lc-single-page-top100 {
-    padding-left: 20px !important;
-    padding-right: 20px !important; } }
+    padding-left: 10px !important;
+    padding-right: 10px !important; } }
 
 /*************/
 .border-bottom {
@@ -4274,8 +4274,10 @@ a {
     .lc-search-map-section .lc-search-map-content .lc-search-map-content-details {
       padding: 34px 30px 0 30px;
       background: #f7f9fb; }
+      /* .lc-search-map-section .lc-search-map-content .lc-search-map-content-details .lc-select-input-field .select2-container {
+        width: 133px !important; } */
       .lc-search-map-section .lc-search-map-content .lc-search-map-content-details .lc-select-input-field .select2-container {
-        width: 133px !important; }
+        width: 214px !important; }    
       .lc-search-map-section .lc-search-map-content .lc-search-map-content-details .lc-select-input-field .select2-selection .select2-selection__rendered {
         padding-left: 15px !important;
         padding-right: 15px !important; }
@@ -4385,8 +4387,12 @@ a {
   height: 440px; }
 
 .lc-search-map-section-top .lc-search-map-content .lc-single-page-top100 {
-  padding: 35px 50px 50px 50px;
+  padding: 35px 20px 50px 20px;
   margin: 0; }
+
+.lc-search-map-section-top .lc-search-map-content .search-form {
+  padding: 35px 15px 15px 5px;
+  margin: 0; }  
 
 .lc-search-map-section-top .lc-search-map-content .lc-search-map-content-details {
   padding: 0; }
@@ -7873,3 +7879,37 @@ border-radius: 50%;
   height: 41px;
   border-radius: 50%;
 }
+
+/*-------------------- Search Form ----------------*/
+
+.search-form {
+  position: relative;
+  margin-top: -100px;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  border-radius: 5px;
+  background: #ffffff; }
+  .search-form:after {
+    content: '';
+    display: block;
+    -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.02);
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.02);
+    border-radius: 5px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: -1; }
+
+@media all and (max-width: 767px) {
+  .search-form {
+    position: relative;
+    margin-top: -60px; 
+  }
+  .bg-single::before {
+    top: 60px; 
+  }
+  .search-form {
+    padding-left: 10px !important;
+    padding-right: 10px !important; } }

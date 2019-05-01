@@ -42,9 +42,13 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'school.apps.SchoolConfig',
     
+    # allauth for user account management
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+
+    # django-filters for filtering searches
+    'django_filters',
 ]
 
 # Ensure SITE_ID is set sites app 

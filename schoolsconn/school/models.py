@@ -82,119 +82,9 @@ class School(models.Model):
         (35, 'Taraba'),
         (36, 'Yobe'),
         (37, 'Zamfara'),
+        (None, 'Select a State'),
     )
 
-    email = models.EmailField(_('School Email'), max_length=128)
-    name = models.CharField(_('School Name'), max_length=128)
-    phone = models.CharField(_('School Phone'), max_length=15)
-    motto = models.CharField(max_length=256)
-    website = models.URLField(max_length=100, null=True, blank=True)
-
-    slug = models.SlugField(max_length=128)
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
-    user = models.ForeignKey(SchoolsConnBaseUser, on_delete=models.CASCADE)
-    logo = models.ImageField(upload_to='schools/logo/', blank=True)
-
-    # Basic Info 
-    country = models.CharField(max_length=50, default='Nigeria')
-    #state = models.CharField(max_length=50) #, blank=True, null=True, default='Lagos')
-    state = models.CharField(max_length=2, choices=STATE_CHOICE)
-    lga = models.CharField(_('LGA'), max_length=50) #, blank=True, null=True, default='N/A')
-    #city = models.CharField(max_length=50, null=True, blank=True)
-    town = models.CharField(max_length=50)
-    street = models.CharField(max_length=640)
-    
-    approval_number = models.CharField(_('Govt Approval Number'), max_length=11, default='Awaiting')
-    admin = models.CharField(_('Admission Officer'), max_length=128)
-    founded = models.DateField(null=True, blank=True)
-
-    gender = models.CharField(max_length=2, choices=GENDER_CHOICE, default='mx') # max_choices is 1 - use default
-    boarding = models.CharField(max_length=2, choices=BOARDING_CHOICE, default='bd') # max_choices is 1 - use default
-    description = models.CharField(max_length=1000)
-
-    latitude = models.FloatField(null=True, blank=True)
-    longitude = models.FloatField(null=True, blank=True)
-
-
-    # School Choice Region
-    creche = models.BooleanField(default=False)
-    nursery = models.BooleanField(default=False)
-    primary = models.BooleanField(default=False)
-    secondary = models.BooleanField(default=False)
-    aLevels = models.BooleanField(_('A-Levels'), default=False)
-
-    # Approved Exams Choice Region
-    ncce = models.BooleanField(_('National Common Entrance'), default=False)
-    scce = models.BooleanField(_('State Common Entrance'), default=False)
-    waec = models.BooleanField(_('Senior WAEC Exams'), default=False)
-    neco = models.BooleanField(_('Senior NECO Exams'), default=False)
-    jwaec = models.BooleanField(_('Junior WAEC Exams'), default=False)
-    jneco = models.BooleanField(_('Junior NECO Exams'), default=False)
-    toefl = models.BooleanField(_('TOEFL Exams'), default=False)
-    ielts = models.BooleanField(_('IELTS Exams'), default=False)
-    alevel = models.BooleanField(_('A-Levels Exams'), default=False)
-    igcse = models.BooleanField(_('IGCSE Exams'), default=False)
-
-    # Advanced Info 
-    # Activity Choice Region
-    carol = models.BooleanField(default=False)
-    interhousesports = models.BooleanField(_('Inter House Sports'), default=False)
-    culturalday = models.BooleanField(_('Cultural Day'), default=False)
-    dance = models.BooleanField(default=False)
-    spellingbees = models.BooleanField(_('Spelling Bees'), default=False)
-    debate = models.BooleanField(default=False)
-    quiz = models.BooleanField(default=False)
-    swimming = models.BooleanField(default=False)
-    karate = models.BooleanField(default=False)
-    costumeday = models.BooleanField(_('Costume Day'), default=False)
-
-    # Clubs Choice Region
-    gguide = models.BooleanField(_('Girl\'s Guide'), default=False)
-    bscout = models.BooleanField(_('Boy\'s Scout'), default=False)
-    frsc = models.BooleanField(_('FRSC'), default=False)
-    music = models.BooleanField(default=False)
-    drama = models.BooleanField(default=False)
-    #debate = models.BooleanField(default=False)
-    press = models.BooleanField(default=False)
-    jets = models.BooleanField(_('JETs'), default=False)
-    karate = models.BooleanField(default=False)
-    rcross = models.BooleanField(_('Red Cross'), default=False)
-    artscraft = models.BooleanField(_('Arts and Craft'), default=False)
-
-    # Facility Choice Region
-    sickbay = models.BooleanField(default=False)
-    multipurposehall = models.BooleanField(_('Multipurpose Hall'), default=False)
-    sciencelab = models.BooleanField(_('Science Lab'), default=False)
-    busservice = models.BooleanField(_('Bus Service'), default=False)
-    library = models.BooleanField(default=False)
-    playground = models.BooleanField(default=False)
-    sportscomplex = models.BooleanField(_('Sports Complex'), default=False)
-    ictcenter = models.BooleanField(_('ICT Center'), default=False)
-    artstudio = models.BooleanField(_('Art Studio'), default=False)
-    #elibrary = models.BooleanField(_('E-Library'), default=False)
-    orchard = models.BooleanField(_('Orchard'), default=False)
-    farmhouse = models.BooleanField(_('Farm House'), default=False)
-    specialneeds = models.BooleanField(_('Special Needs Care'), default=False)
-    musicstudio = models.BooleanField(_('Music Studio'), default=False)
-    #stem = models.BooleanField(_('STEM Labs'), default=False)
-    homemanagementlab = models.BooleanField(_('Home Management Labs'), default=False)
-    languagestudio = models.BooleanField(_('Languages Studio'), default=False)
-
-    verified = models.BooleanField(default=False)
-
-    def get_absolute_url(self):
-        """Returns the url to access a particular school instance."""
-        # return reverse('tutor-detail', args=[str(self.email_address)])
-        #return reverse('school-detail', args=[str(self.id)]) # school-detail is a view
-        return reverse('school-detail', args=[str(self.slug)]) # school-detail is a view
-
-    def __str__(self):
-        """String for representing the Model object."""
-        return f'{self.name}'
-
-class LGA(models.Model):
-    ''' Model list of LGAs' in Nigeria '''
     LGA_CHOICE = (
         ('Abia_LGA', (
             (1, 'Aba North'),
@@ -650,422 +540,516 @@ class LGA(models.Model):
             (413, 'Wudil'),
         )),
         ('Katsina_LGA', (
-
+            (414, 'Bakori'),
+            (415, 'Batagarawa'),
+            (416, 'Batsari'),
+            (417, 'Baure'),
+            (418, 'Bindawa'),
+            (419, 'Charanchi'),
+            (420, 'Dandume'),
+            (421, 'Danja'),
+            (422, 'Dan Musa'),
+            (423, 'Daura'),
+            (424, 'Dutsi'),
+            (425, 'Dutsin Ma'),
+            (426, 'Faskari'),
+            (427, 'Funtua'),
+            (428, 'Ingawa'),
+            (429, 'Jibia'),
+            (430, 'Kafur'),
+            (431, 'Kaita'),
+            (432, 'Kankara'),
+            (433, 'Kankia'),
+            (434, 'Katsina'),
+            (435, 'Kurfi'),
+            (436, 'Kusada'),
+            (437, 'Mai''Adua'),
+            (438, 'Malumfashi'),
+            (439, 'Mani'),
+            (440, 'Mashi'),
+            (441, 'Matazu'),
+            (442, 'Musawa'),
+            (443, 'Rimi'),
+            (444, 'Sabuwa'),
+            (445, 'Safana'),
+            (446, 'Sandamu'),
+            (447, 'Zango'),
         )),
         ('Kebbi_LGA', (
-
+            (448, 'Aleiro'),
+            (449, 'Arewa Dandi'),
+            (450, 'Argungu'),
+            (451, 'Augie'),
+            (452, 'Bagudo'),
+            (453, 'Birnin Kebbi'),
+            (454, 'Bunza'),
+            (455, 'Dandi'),
+            (456, 'Fakai'),
+            (457, 'Gwandu'),
+            (458, 'Jega'),
+            (459, 'Kalgo'),
+            (460, 'Koko/Besse'),
+            (461, 'Maiyama'),
+            (462, 'Ngaski'),
+            (463, 'Sakaba'),
+            (464, 'Shanga'),
+            (465, 'Suru'),
+            (466, 'Wasagu/Danko'),
+            (467, 'Yauri'),
+            (468, 'Zuru'),
         )),
         ('Kogi_LGA', (
-
+            (469, 'Adavi'),
+            (470, 'Ajaokuta'),
+            (471, 'Ankpa'),
+            (472, 'Bassa'),
+            (473, 'Dekina'),
+            (474, 'Ibaji'),
+            (475, 'Idah'),
+            (476, 'Igalamela Odolu'),
+            (477, 'Ijumu'),
+            (478, 'Kabba/Bunu'),
+            (479, 'Kogi'),
+            (480, 'Lokoja'),
+            (481, 'Mopa Muro'),
+            (482, 'Ofu'),
+            (483, 'Ogori/Magongo'),
+            (484, 'Okehi'),
+            (485, 'Okene'),
+            (486, 'Olamaboro'),
+            (487, 'Omala'),
+            (488, 'Yagba East'),
+            (489, 'Yagba West'),
         )),
         ('Kwara_LGA', (
-
+            (490, 'Asa'),
+            (491, 'Baruten'),
+            (492, 'Edu'),
+            (493, 'Ekiti, Kwara State'),
+            (494, 'Ifelodun'),
+            (495, 'Ilorin East'),
+            (496, 'Ilorin South'),
+            (497, 'Ilorin West'),
+            (498, 'Irepodun'),
+            (499, 'Isin'),
+            (500, 'Kaiama'),
+            (501, 'Moro'),
+            (502, 'Offa'),
+            (503, 'Oke Ero'),
+            (504, 'Oyun'),
+            (505, 'Pategi'),
         )),
         ('Lagos_LGA', (
-
+            (506, 'Agege'),
+            (507, 'Ajeromi-Ifelodun'),
+            (508, 'Alimosho'),
+            (509, 'Amuwo-Odofin'),
+            (510, 'Apapa'),
+            (511, 'Badagry'),
+            (512, 'Epe'),
+            (513, 'Eti Osa'),
+            (514, 'Ibeju-Lekki'),
+            (515, 'Ifako-Ijaiye'),
+            (516, 'Ikeja'),
+            (517, 'Ikorodu'),
+            (518, 'Kosofe'),
+            (519, 'Lagos Island'),
+            (520, 'Lagos Mainland'),
+            (521, 'Mushin'),
+            (522, 'Ojo'),
+            (523, 'Oshodi-Isolo'),
+            (524, 'Shomolu'),
+            (525, 'Surulere, Lagos State'),
         )),
         ('Nasarawa_LGA', (
-
+            (526, 'Akwanga'),
+            (527, 'Awe'),
+            (528, 'Doma'),
+            (529, 'Karu'),
+            (530, 'Keana'),
+            (531, 'Keffi'),
+            (532, 'Kokona'),
+            (533, 'Lafia'),
+            (534, 'Nasarawa'),
+            (535, 'Nasarawa Egon'),
+            (536, 'Obi'),
+            (537, 'Toto'),
+            (538, 'Wamba'),
         )),
         ('Niger_LGA', (
-
+            (539, 'Agaie'),
+            (540, 'Agwara'),
+            (541, 'Bida'),
+            (542, 'Borgu'),
+            (543, 'Bosso'),
+            (544, 'Chanchaga'),
+            (545, 'Edati'),
+            (546, 'Gbako'),
+            (547, 'Gurara'),
+            (548, 'Katcha'),
+            (549, 'Kontagora'),
+            (550, 'Lapai'),
+            (551, 'Lavun'),
+            (552, 'Magama'),
+            (553, 'Mariga'),
+            (554, 'Mashegu'),
+            (555, 'Mokwa'),
+            (556, 'Moya'),
+            (557, 'Paikoro'),
+            (558, 'Rafi'),
+            (559, 'Rijau'),
+            (560, 'Shiroro'),
+            (561, 'Suleja'),
+            (562, 'Tafa'),
+            (563, 'Wushishi'),
         )),
         ('Ogun_LGA', (
-
+            (564, 'Abeokuta North'),
+            (565, 'Abeokuta South'),
+            (566, 'Ado-Odo/Ota'),
+            (567, 'Egbado North'),
+            (568, 'Egbado South'),
+            (569, 'Ewekoro'),
+            (570, 'Ifo'),
+            (571, 'Ijebu East'),
+            (572, 'Ijebu North'),
+            (573, 'Ijebu North East'),
+            (574, 'Ijebu Ode'),
+            (575, 'Ikenne'),
+            (576, 'Imeko Afon'),
+            (577, 'Ipokia'),
+            (578, 'Obafemi Owode'),
+            (579, 'Odeda'),
+            (580, 'Odogbolu'),
+            (581, 'Ogun Waterside'),
+            (582, 'Remo North'),
+            (583, 'Shagamu'),
         )),
         ('Ondo_LGA', (
-
+            (584, 'Akoko North-East'),
+            (585, 'Akoko North-West'),
+            (586, 'Akoko South-West'),
+            (587, 'Akoko South-East'),
+            (588, 'Akure North'),
+            (589, 'Akure South'),
+            (590, 'Ese Odo'),
+            (591, 'Idanre'),
+            (592, 'Ifedore'),
+            (593, 'Ilaje'),
+            (594, 'Ile Oluji/Okeigbo'),
+            (595, 'Irele'),
+            (596, 'Odigbo'),
+            (597, 'Okitipupa'),
+            (598, 'Ondo East'),
+            (599, 'Ondo West'),
+            (600, 'Ose'),
+            (601, 'Owo'),
         )),
         ('Osun_LGA', (
-
+            (602, 'Atakunmosa East'),
+            (603, 'Atakunmosa West'),
+            (604, 'Aiyedaade'),
+            (605, 'Aiyedire'),
+            (606, 'Boluwaduro'),
+            (607, 'Boripe'),
+            (608, 'Ede North'),
+            (609, 'Ede South'),
+            (610, 'Ife Central'),
+            (611, 'Ife East'),
+            (612, 'Ife North'),
+            (613, 'Ife South'),
+            (614, 'Egbedore'),
+            (615, 'Ejigbo'),
+            (616, 'Ifedayo'),
+            (617, 'Ifelodun'),
+            (618, 'Ila'),
+            (619, 'Ilesa East'),
+            (620, 'Ilesa West'),
+            (621, 'Irepodun'),
+            (622, 'Irewole'),
+            (623, 'Isokan'),
+            (624, 'Iwo'),
+            (625, 'Obokun'),
+            (626, 'Odo Otin'),
+            (627, 'Ola Oluwa'),
+            (628, 'Olorunda'),
+            (629, 'Oriade'),
+            (630, 'Orolu'),
+            (631, 'Osogbo'),
         )),
         ('Oyo_LGA', (
-
+            (632, 'Afijio'),
+            (633, 'Akinyele'),
+            (634, 'Atiba'),
+            (635, 'Atisbo'),
+            (636, 'Egbeda'),
+            (637, 'Ibadan North'),
+            (638, 'Ibadan North-East'),
+            (639, 'Ibadan North-West'),
+            (640, 'Ibadan South-East'),
+            (641, 'Ibadan South-West'),
+            (642, 'Ibarapa Central'),
+            (643, 'Ibarapa East'),
+            (644, 'Ibarapa North'),
+            (645, 'Ido'),
+            (646, 'Irepo'),
+            (647, 'Iseyin'),
+            (648, 'Itesiwaju'),
+            (649, 'Iwajowa'),
+            (650, 'Kajola'),
+            (651, 'Lagelu'),
+            (652, 'Ogbomosho North'),
+            (653, 'Ogbomosho South'),
+            (654, 'Ogo Oluwa'),
+            (655, 'Olorunsogo'),
+            (656, 'Oluyole'),
+            (657, 'Ona Ara'),
+            (658, 'Orelope'),
+            (659, 'Ori Ire'),
+            (660, 'Oyo'),
+            (661, 'Oyo East'),
+            (662, 'Saki East'),
+            (663, 'Saki West'),
+            (664, 'Surulere, Oyo State'),
         )),
         ('Plateau_LGA', (
-
+            (665, 'Bokkos'),
+            (666, 'Barkin Ladi'),
+            (667, 'Bassa'),
+            (668, 'Jos East'),
+            (669, 'Jos North'),
+            (670, 'Jos South'),
+            (671, 'Kanam'),
+            (672, 'Kanke'),
+            (673, 'Langtang South'),
+            (674, 'Langtang North'),
+            (675, 'Mangu'),
+            (676, 'Mikang'),
+            (677, 'Pankshin'),
+            (678, 'Qua''an Pan'),
+            (679, 'Riyom'),
+            (680, 'Shendam'),
+            (681, 'Wase'),
         )),
         ('Rivers_LGA', (
-
+            (682, 'Abua/Odual'),
+            (683, 'Ahoada East'),
+            (684, 'Ahoada West'),
+            (685, 'Akuku-Toru'),
+            (686, 'Andoni'),
+            (687, 'Asari-Toru'),
+            (688, 'Bonny'),
+            (689, 'Degema'),
+            (690, 'Eleme'),
+            (691, 'Emuoha'),
+            (692, 'Etche'),
+            (693, 'Gokana'),
+            (694, 'Ikwerre'),
+            (695, 'Khana'),
+            (696, 'Obio/Akpor'),
+            (697, 'Ogba/Egbema/Ndoni'),
+            (698, 'Ogu/Bolo'),
+            (699, 'Okrika'),
+            (700, 'Omuma'),
+            (701, 'Opobo/Nkoro'),
+            (702, 'Oyigbo'),
+            (703, 'Port Harcourt'),
+            (704, 'Tai'),
         )),
         ('Sokoto_LGA', (
-
+            (705, 'Binji'),
+            (706, 'Bodinga'),
+            (707, 'Dange Shuni'),
+            (708, 'Gada'),
+            (709, 'Goronyo'),
+            (710, 'Gudu'),
+            (711, 'Gwadabawa'),
+            (712, 'Illela'),
+            (713, 'Isa'),
+            (714, 'Kebbe'),
+            (715, 'Kware'),
+            (716, 'Rabah'),
+            (717, 'Sabon Birni'),
+            (718, 'Shagari'),
+            (719, 'Silame'),
+            (720, 'Sokoto North'),
+            (721, 'Sokoto South'),
+            (722, 'Tambuwal'),
+            (723, 'Tangaza'),
+            (724, 'Tureta'),
+            (725, 'Wamako'),
+            (726, 'Wurno'),
+            (727, 'Yabo'),
         )),
         ('Taraba_LGA', (
-
+            (728, 'Ardo Kola'),
+            (729, 'Bali'),
+            (730, 'Donga'),
+            (731, 'Gashaka'),
+            (732, 'Gassol'),
+            (733, 'Ibi'),
+            (734, 'Jalingo'),
+            (735, 'Karim Lamido'),
+            (736, 'Kumi'),
+            (737, 'Lau'),
+            (738, 'Sardauna'),
+            (739, 'Takum'),
+            (740, 'Ussa'),
+            (741, 'Wukari'),
+            (742, 'Yorro'),
+            (743, 'Zing'),
         )),
         ('Yobe_LGA', (
-
+            (744, 'Bade'),
+            (745, 'Bursari'),
+            (746, 'Damaturu'),
+            (747, 'Fika'),
+            (748, 'Fune'),
+            (749, 'Geidam'),
+            (750, 'Gujba'),
+            (751, 'Gulani'),
+            (752, 'Jakusko'),
+            (753, 'Karasuwa'),
+            (754, 'Machina'),
+            (755, 'Nangere'),
+            (756, 'Nguru'),
+            (757, 'Potiskum'),
+            (758, 'Tarmuwa'),
+            (759, 'Yunusari'),
+            (760, 'Yusufari'),
         )),
         ('Zamfara_LGA', (
-
-        )),
-
-
-        (414, 'Bakori'),
-        (415, 'Batagarawa'),
-        (416, 'Batsari'),
-        (417, 'Baure'),
-        (418, 'Bindawa'),
-        (419, 'Charanchi'),
-        (420, 'Dandume'),
-        (421, 'Danja'),
-        (422, 'Dan Musa'),
-        (423, 'Daura'),
-        (424, 'Dutsi'),
-        (425, 'Dutsin Ma'),
-        (426, 'Faskari'),
-        (427, 'Funtua'),
-        (428, 'Ingawa'),
-        (429, 'Jibia'),
-        (430, 'Kafur'),
-        (431, 'Kaita'),
-        (432, 'Kankara'),
-        (433, 'Kankia'),
-        (434, 'Katsina'),
-        (435, 'Kurfi'),
-        (436, 'Kusada'),
-        (437, 'Mai''Adua'),
-        (438, 'Malumfashi'),
-        (439, 'Mani'),
-        (440, 'Mashi'),
-        (441, 'Matazu'),
-        (442, 'Musawa'),
-        (443, 'Rimi'),
-        (444, 'Sabuwa'),
-        (445, 'Safana'),
-        (446, 'Sandamu'),
-        (447, 'Zango'),
-        (448, 'Aleiro'),
-        (449, 'Arewa Dandi'),
-        (450, 'Argungu'),
-        (451, 'Augie'),
-        (452, 'Bagudo'),
-        (453, 'Birnin Kebbi'),
-        (454, 'Bunza'),
-        (455, 'Dandi'),
-        (456, 'Fakai'),
-        (457, 'Gwandu'),
-        (458, 'Jega'),
-        (459, 'Kalgo'),
-        (460, 'Koko/Besse'),
-        (461, 'Maiyama'),
-        (462, 'Ngaski'),
-        (463, 'Sakaba'),
-        (464, 'Shanga'),
-        (465, 'Suru'),
-        (466, 'Wasagu/Danko'),
-        (467, 'Yauri'),
-        (468, 'Zuru'),
-        (469, 'Adavi'),
-        (470, 'Ajaokuta'),
-        (471, 'Ankpa'),
-        (472, 'Bassa'),
-        (473, 'Dekina'),
-        (474, 'Ibaji'),
-        (475, 'Idah'),
-        (476, 'Igalamela Odolu'),
-        (477, 'Ijumu'),
-        (478, 'Kabba/Bunu'),
-        (479, 'Kogi'),
-        (480, 'Lokoja'),
-        (481, 'Mopa Muro'),
-        (482, 'Ofu'),
-        (483, 'Ogori/Magongo'),
-        (484, 'Okehi'),
-        (485, 'Okene'),
-        (486, 'Olamaboro'),
-        (487, 'Omala'),
-        (488, 'Yagba East'),
-        (489, 'Yagba West'),
-        (490, 'Asa'),
-        (491, 'Baruten'),
-        (492, 'Edu'),
-        (493, 'Ekiti, Kwara State'),
-        (494, 'Ifelodun'),
-        (495, 'Ilorin East'),
-        (496, 'Ilorin South'),
-        (497, 'Ilorin West'),
-        (498, 'Irepodun'),
-        (499, 'Isin'),
-        (500, 'Kaiama'),
-        (501, 'Moro'),
-        (502, 'Offa'),
-        (503, 'Oke Ero'),
-        (504, 'Oyun'),
-        (505, 'Pategi'),
-        (506, 'Agege'),
-        (507, 'Ajeromi-Ifelodun'),
-        (508, 'Alimosho'),
-        (509, 'Amuwo-Odofin'),
-        (510, 'Apapa'),
-        (511, 'Badagry'),
-        (512, 'Epe'),
-        (513, 'Eti Osa'),
-        (514, 'Ibeju-Lekki'),
-        (515, 'Ifako-Ijaiye'),
-        (516, 'Ikeja'),
-        (517, 'Ikorodu'),
-        (518, 'Kosofe'),
-        (519, 'Lagos Island'),
-        (520, 'Lagos Mainland'),
-        (521, 'Mushin'),
-        (522, 'Ojo'),
-        (523, 'Oshodi-Isolo'),
-        (524, 'Shomolu'),
-        (525, 'Surulere, Lagos State'),
-        (526, 'Akwanga'),
-        (527, 'Awe'),
-        (528, 'Doma'),
-        (529, 'Karu'),
-        (530, 'Keana'),
-        (531, 'Keffi'),
-        (532, 'Kokona'),
-        (533, 'Lafia'),
-        (534, 'Nasarawa'),
-        (535, 'Nasarawa Egon'),
-        (536, 'Obi'),
-        (537, 'Toto'),
-        (538, 'Wamba'),
-        (539, 'Agaie'),
-        (540, 'Agwara'),
-        (541, 'Bida'),
-        (542, 'Borgu'),
-        (543, 'Bosso'),
-        (544, 'Chanchaga'),
-        (545, 'Edati'),
-        (546, 'Gbako'),
-        (547, 'Gurara'),
-        (548, 'Katcha'),
-        (549, 'Kontagora'),
-        (550, 'Lapai'),
-        (551, 'Lavun'),
-        (552, 'Magama'),
-        (553, 'Mariga'),
-        (554, 'Mashegu'),
-        (555, 'Mokwa'),
-        (556, 'Moya'),
-        (557, 'Paikoro'),
-        (558, 'Rafi'),
-        (559, 'Rijau'),
-        (560, 'Shiroro'),
-        (561, 'Suleja'),
-        (562, 'Tafa'),
-        (563, 'Wushishi'),
-        (564, 'Abeokuta North'),
-        (565, 'Abeokuta South'),
-        (566, 'Ado-Odo/Ota'),
-        (567, 'Egbado North'),
-        (568, 'Egbado South'),
-        (569, 'Ewekoro'),
-        (570, 'Ifo'),
-        (571, 'Ijebu East'),
-        (572, 'Ijebu North'),
-        (573, 'Ijebu North East'),
-        (574, 'Ijebu Ode'),
-        (575, 'Ikenne'),
-        (576, 'Imeko Afon'),
-        (577, 'Ipokia'),
-        (578, 'Obafemi Owode'),
-        (579, 'Odeda'),
-        (580, 'Odogbolu'),
-        (581, 'Ogun Waterside'),
-        (582, 'Remo North'),
-        (583, 'Shagamu'),
-        (584, 'Akoko North-East'),
-        (585, 'Akoko North-West'),
-        (586, 'Akoko South-West'),
-        (587, 'Akoko South-East'),
-        (588, 'Akure North'),
-        (589, 'Akure South'),
-        (590, 'Ese Odo'),
-        (591, 'Idanre'),
-        (592, 'Ifedore'),
-        (593, 'Ilaje'),
-        (594, 'Ile Oluji/Okeigbo'),
-        (595, 'Irele'),
-        (596, 'Odigbo'),
-        (597, 'Okitipupa'),
-        (598, 'Ondo East'),
-        (599, 'Ondo West'),
-        (600, 'Ose'),
-        (601, 'Owo'),
-        (602, 'Atakunmosa East'),
-        (603, 'Atakunmosa West'),
-        (604, 'Aiyedaade'),
-        (605, 'Aiyedire'),
-        (606, 'Boluwaduro'),
-        (607, 'Boripe'),
-        (608, 'Ede North'),
-        (609, 'Ede South'),
-        (610, 'Ife Central'),
-        (611, 'Ife East'),
-        (612, 'Ife North'),
-        (613, 'Ife South'),
-        (614, 'Egbedore'),
-        (615, 'Ejigbo'),
-        (616, 'Ifedayo'),
-        (617, 'Ifelodun'),
-        (618, 'Ila'),
-        (619, 'Ilesa East'),
-        (620, 'Ilesa West'),
-        (621, 'Irepodun'),
-        (622, 'Irewole'),
-        (623, 'Isokan'),
-        (624, 'Iwo'),
-        (625, 'Obokun'),
-        (626, 'Odo Otin'),
-        (627, 'Ola Oluwa'),
-        (628, 'Olorunda'),
-        (629, 'Oriade'),
-        (630, 'Orolu'),
-        (631, 'Osogbo'),
-        (632, 'Afijio'),
-        (633, 'Akinyele'),
-        (634, 'Atiba'),
-        (635, 'Atisbo'),
-        (636, 'Egbeda'),
-        (637, 'Ibadan North'),
-        (638, 'Ibadan North-East'),
-        (639, 'Ibadan North-West'),
-        (640, 'Ibadan South-East'),
-        (641, 'Ibadan South-West'),
-        (642, 'Ibarapa Central'),
-        (643, 'Ibarapa East'),
-        (644, 'Ibarapa North'),
-        (645, 'Ido'),
-        (646, 'Irepo'),
-        (647, 'Iseyin'),
-        (648, 'Itesiwaju'),
-        (649, 'Iwajowa'),
-        (650, 'Kajola'),
-        (651, 'Lagelu'),
-        (652, 'Ogbomosho North'),
-        (653, 'Ogbomosho South'),
-        (654, 'Ogo Oluwa'),
-        (655, 'Olorunsogo'),
-        (656, 'Oluyole'),
-        (657, 'Ona Ara'),
-        (658, 'Orelope'),
-        (659, 'Ori Ire'),
-        (660, 'Oyo'),
-        (661, 'Oyo East'),
-        (662, 'Saki East'),
-        (663, 'Saki West'),
-        (664, 'Surulere, Oyo State'),
-        (665, 'Bokkos'),
-        (666, 'Barkin Ladi'),
-        (667, 'Bassa'),
-        (668, 'Jos East'),
-        (669, 'Jos North'),
-        (670, 'Jos South'),
-        (671, 'Kanam'),
-        (672, 'Kanke'),
-        (673, 'Langtang South'),
-        (674, 'Langtang North'),
-        (675, 'Mangu'),
-        (676, 'Mikang'),
-        (677, 'Pankshin'),
-        (678, 'Qua''an Pan'),
-        (679, 'Riyom'),
-        (680, 'Shendam'),
-        (681, 'Wase'),
-        (682, 'Abua/Odual'),
-        (683, 'Ahoada East'),
-        (684, 'Ahoada West'),
-        (685, 'Akuku-Toru'),
-        (686, 'Andoni'),
-        (687, 'Asari-Toru'),
-        (688, 'Bonny'),
-        (689, 'Degema'),
-        (690, 'Eleme'),
-        (691, 'Emuoha'),
-        (692, 'Etche'),
-        (693, 'Gokana'),
-        (694, 'Ikwerre'),
-        (695, 'Khana'),
-        (696, 'Obio/Akpor'),
-        (697, 'Ogba/Egbema/Ndoni'),
-        (698, 'Ogu/Bolo'),
-        (699, 'Okrika'),
-        (700, 'Omuma'),
-        (701, 'Opobo/Nkoro'),
-        (702, 'Oyigbo'),
-        (703, 'Port Harcourt'),
-        (704, 'Tai'),
-        (705, 'Binji'),
-        (706, 'Bodinga'),
-        (707, 'Dange Shuni'),
-        (708, 'Gada'),
-        (709, 'Goronyo'),
-        (710, 'Gudu'),
-        (711, 'Gwadabawa'),
-        (712, 'Illela'),
-        (713, 'Isa'),
-        (714, 'Kebbe'),
-        (715, 'Kware'),
-        (716, 'Rabah'),
-        (717, 'Sabon Birni'),
-        (718, 'Shagari'),
-        (719, 'Silame'),
-        (720, 'Sokoto North'),
-        (721, 'Sokoto South'),
-        (722, 'Tambuwal'),
-        (723, 'Tangaza'),
-        (724, 'Tureta'),
-        (725, 'Wamako'),
-        (726, 'Wurno'),
-        (727, 'Yabo'),
-        (728, 'Ardo Kola'),
-        (729, 'Bali'),
-        (730, 'Donga'),
-        (731, 'Gashaka'),
-        (732, 'Gassol'),
-        (733, 'Ibi'),
-        (734, 'Jalingo'),
-        (735, 'Karim Lamido'),
-        (736, 'Kumi'),
-        (737, 'Lau'),
-        (738, 'Sardauna'),
-        (739, 'Takum'),
-        (740, 'Ussa'),
-        (741, 'Wukari'),
-        (742, 'Yorro'),
-        (743, 'Zing'),
-        (744, 'Bade'),
-        (745, 'Bursari'),
-        (746, 'Damaturu'),
-        (747, 'Fika'),
-        (748, 'Fune'),
-        (749, 'Geidam'),
-        (750, 'Gujba'),
-        (751, 'Gulani'),
-        (752, 'Jakusko'),
-        (753, 'Karasuwa'),
-        (754, 'Machina'),
-        (755, 'Nangere'),
-        (756, 'Nguru'),
-        (757, 'Potiskum'),
-        (758, 'Tarmuwa'),
-        (759, 'Yunusari'),
-        (760, 'Yusufari'),
-        (761, 'Anka'),
-        (762, 'Bakura'),
-        (763, 'Birnin Magaji/Kiyaw'),
-        (764, 'Bukkuyum'),
-        (765, 'Bungudu'),
-        (766, 'Gummi'),
-        (767, 'Gusau'),
-        (768, 'Kaura Namoda'),
-        (769, 'Maradun'),
-        (770, 'Maru'),
-        (771, 'Shinkafi'),
-        (772, 'Talata Mafara'),
-        (773, 'Chafe'),
-        (774, 'Zurmi'),
+            (761, 'Anka'),
+            (762, 'Bakura'),
+            (763, 'Birnin Magaji/Kiyaw'),
+            (764, 'Bukkuyum'),
+            (765, 'Bungudu'),
+            (766, 'Gummi'),
+            (767, 'Gusau'),
+            (768, 'Kaura Namoda'),
+            (769, 'Maradun'),
+            (770, 'Maru'),
+            (771, 'Shinkafi'),
+            (772, 'Talata Mafara'),
+            (773, 'Chafe'),
+            (774, 'Zurmi'),
+        )), 
+        (None, 'Select a LGA')       
     )
-    lga = models.CharField(_('LGA'), max_length=3, choices=LGA_CHOICE)
-    state = models.ForeignKey(State, on_delete=models.CASCADE)
+    
+    email = models.EmailField(_('School Email'), max_length=128)
+    name = models.CharField(_('School Name'), max_length=128)
+    phone = models.CharField(_('School Phone'), max_length=15)
+    motto = models.CharField(max_length=256)
+    website = models.URLField(max_length=100, null=True, blank=True)
+
+    slug = models.SlugField(max_length=128)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+    user = models.ForeignKey(SchoolsConnBaseUser, on_delete=models.CASCADE)
+    logo = models.ImageField(upload_to='schools/logo/', blank=True)
+
+    # Basic Info 
+    country = models.CharField(max_length=50, default='Nigeria')
+    #state = models.CharField(max_length=50) #, blank=True, null=True, default='Lagos')
+    state = models.CharField(max_length=2, choices=STATE_CHOICE)
+    lga = models.CharField(_('LGA'), max_length=3, choices=LGA_CHOICE) #, blank=True, null=True, default='N/A')
+    #city = models.CharField(max_length=50, null=True, blank=True)
+    town = models.CharField(max_length=50)
+    street = models.CharField(max_length=640)
+    
+    approval_number = models.CharField(_('Govt Approval Number'), max_length=11, default='Awaiting')
+    admin = models.CharField(_('Admission Officer'), max_length=128)
+    founded = models.DateField(null=True, blank=True)
+
+    gender = models.CharField(max_length=2, choices=GENDER_CHOICE, default='mx') # max_choices is 1 - use default
+    boarding = models.CharField(max_length=2, choices=BOARDING_CHOICE, default='bd') # max_choices is 1 - use default
+    description = models.CharField(max_length=1000)
+
+    latitude = models.FloatField(null=True, blank=True)
+    longitude = models.FloatField(null=True, blank=True)
+
+
+    # School Choice Region
+    creche = models.BooleanField(default=False)
+    nursery = models.BooleanField(default=False)
+    primary = models.BooleanField(default=False)
+    secondary = models.BooleanField(default=False)
+    aLevels = models.BooleanField(_('A-Levels'), default=False)
+
+    # Approved Exams Choice Region
+    ncce = models.BooleanField(_('National Common Entrance'), default=False)
+    scce = models.BooleanField(_('State Common Entrance'), default=False)
+    waec = models.BooleanField(_('Senior WAEC Exams'), default=False)
+    neco = models.BooleanField(_('Senior NECO Exams'), default=False)
+    jwaec = models.BooleanField(_('Junior WAEC Exams'), default=False)
+    jneco = models.BooleanField(_('Junior NECO Exams'), default=False)
+    toefl = models.BooleanField(_('TOEFL Exams'), default=False)
+    ielts = models.BooleanField(_('IELTS Exams'), default=False)
+    alevel = models.BooleanField(_('A-Levels Exams'), default=False)
+    igcse = models.BooleanField(_('IGCSE Exams'), default=False)
+
+    # Advanced Info 
+    # Activity Choice Region
+    carol = models.BooleanField(default=False)
+    interhousesports = models.BooleanField(_('Inter House Sports'), default=False)
+    culturalday = models.BooleanField(_('Cultural Day'), default=False)
+    dance = models.BooleanField(default=False)
+    spellingbees = models.BooleanField(_('Spelling Bees'), default=False)
+    debate = models.BooleanField(default=False)
+    quiz = models.BooleanField(default=False)
+    swimming = models.BooleanField(default=False)
+    karate = models.BooleanField(default=False)
+    costumeday = models.BooleanField(_('Costume Day'), default=False)
+
+    # Clubs Choice Region
+    gguide = models.BooleanField(_('Girl\'s Guide'), default=False)
+    bscout = models.BooleanField(_('Boy\'s Scout'), default=False)
+    frsc = models.BooleanField(_('FRSC'), default=False)
+    music = models.BooleanField(default=False)
+    drama = models.BooleanField(default=False)
+    #debate = models.BooleanField(default=False)
+    press = models.BooleanField(default=False)
+    jets = models.BooleanField(_('JETs'), default=False)
+    karate = models.BooleanField(default=False)
+    rcross = models.BooleanField(_('Red Cross'), default=False)
+    artscraft = models.BooleanField(_('Arts and Craft'), default=False)
+
+    # Facility Choice Region
+    sickbay = models.BooleanField(default=False)
+    multipurposehall = models.BooleanField(_('Multipurpose Hall'), default=False)
+    sciencelab = models.BooleanField(_('Science Lab'), default=False)
+    busservice = models.BooleanField(_('Bus Service'), default=False)
+    library = models.BooleanField(default=False)
+    playground = models.BooleanField(default=False)
+    sportscomplex = models.BooleanField(_('Sports Complex'), default=False)
+    ictcenter = models.BooleanField(_('ICT Center'), default=False)
+    artstudio = models.BooleanField(_('Art Studio'), default=False)
+    #elibrary = models.BooleanField(_('E-Library'), default=False)
+    orchard = models.BooleanField(_('Orchard'), default=False)
+    farmhouse = models.BooleanField(_('Farm House'), default=False)
+    specialneeds = models.BooleanField(_('Special Needs Care'), default=False)
+    musicstudio = models.BooleanField(_('Music Studio'), default=False)
+    #stem = models.BooleanField(_('STEM Labs'), default=False)
+    homemanagementlab = models.BooleanField(_('Home Management Labs'), default=False)
+    languagestudio = models.BooleanField(_('Languages Studio'), default=False)
+
+    verified = models.BooleanField(default=False)
+
+    def get_absolute_url(self):
+        """Returns the url to access a particular school instance."""
+        # return reverse('tutor-detail', args=[str(self.email_address)])
+        #return reverse('school-detail', args=[str(self.id)]) # school-detail is a view
+        return reverse('school-detail', args=[str(self.slug)]) # school-detail is a view
+
+    def __str__(self):
+        """String for representing the Model object."""
+        return f'{self.name}'
+
+# class LGA(models.Model):
+#     ''' Model list of LGAs' in Nigeria '''
+#     lga = models.CharField(_('LGA'), max_length=3, choices=LGA_CHOICE)
+#     state = models.ForeignKey(State, on_delete=models.CASCADE)
 
 def user_directory_path(instance, filename):
     # file will be uploaded to MEDIA_ROOT/user_<id>/<filename>

@@ -17,8 +17,10 @@ class SchoolForm(forms.ModelForm):
             'street': forms.TextInput(attrs={'class':'lc-add-listing-input form-control', 'placeholder':'Ex: 11, Osibanjo Avenue, Alaka Estate'}),
             'town': forms.TextInput(attrs={'class':'lc-add-listing-input form-control', 'placeholder':'Ex: Ogba'}),
             #'city': forms.TextInput(attrs={'class':'lc-add-listing-input', 'placeholder':'Ex: Ogba'}),
-            'lga': forms.TextInput(attrs={'class':'lc-add-listing-input form-control', 'placeholder':'Ex: Ikeja'}),
-            'state': forms.TextInput(attrs={'class':'lc-add-listing-input form-control', 'placeholder':'Ex: Lagos'}),
+            # 'lga': forms.TextInput(attrs={'class':'lc-add-listing-input form-control', 'placeholder':'Ex: Ikeja'}),
+            # 'state': forms.TextInput(attrs={'class':'lc-add-listing-input form-control', 'placeholder':'Ex: Lagos'}),
+            'lga': forms.Select(attrs={'class':'lc-add-listing-input form-control'}),
+            'state': forms.Select(attrs={'class':'lc-add-listing-input form-control'}),
             'country': forms.TextInput(attrs={'class':'lc-add-listing-input form-control', 'placeholder':'Ex: Nigeria', 'value':'Nigeria'}),
 
             'approval_number': forms.TextInput(attrs={'class':'lc-add-listing-input form-control', 'placeholder':'Ex: LA/IKD/2321'}),

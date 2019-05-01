@@ -41,12 +41,13 @@ class SchoolListView(generic.ListView):
     paginate_by = 30  
 
     #Implement context
-    def get_context_data(self, **kwargs):
-        # Call the base implementation first to get the context
-        context = super(SchoolListView, self).get_context_data(**kwargs)
-        # Create any data and add it to the context
-        #context['state'] = get_list_or_404(School.state) #all data pulled from the queryset of school.state
-        return context  
+    # def get_context_data(self, **kwargs):
+    #     # Call the base implementation first to get the context
+    #     context = super(SchoolListView, self).get_context_data(**kwargs)
+    #     # Create any data and add it to the context
+    #     #context['state'] = get_list_or_404(School.state) #all data pulled from the queryset of school.state
+    #     return context  
+
 
 # def school_detail_view(request, slug):
 #     """Function based detailed view for School model."""
@@ -288,3 +289,26 @@ class SearchManager(models.Manager):
         if kwargs.get('industry', []):
             qs = qs.filter(industry=kwargs['industry'])
         return qs    
+
+class FiterSchoolsByStatesListView(generic.ListView):
+    ''' Fiter Schools By States ListView '''
+    model = School
+    template_name = 'school/fiter_schools_states.html'
+    context_object_name = 'school_list'
+    schools = []
+
+    def get_queryset(self):
+        self.state = get_list_or_404(School, name=self.kwargs['state'])
+        return School.objects.filter(state=self.state)        
+
+        #school_set = School.objects.filter(user=request.user)
+#     return render(request, 'school/admin/school-listing.html', context={'school': school_set})  
+
+def search_filter_view():    
+    queryset = School.objects.all()        
+
+def search_filter_state_view(request, state):
+    ''' Fiter Schools By State Function based view '''
+    state_filter = get_object_or_404(School, state=self.state)
+    return render(request, 'school/fiter_schools_states.html', context={'user': user})  
+

@@ -158,7 +158,7 @@ class School(models.Model):
             ('Udung-Uko', 'Udung-Uko'),
             ('Ukanafun', 'Ukanafun'),
             ('Uruan', 'Uruan'),
-            ('Urue-Offong/Oruko', 'Urue-Offong/Oruko'),
+            ('Urue-Offong-Oruko', 'Urue-Offong-Oruko'),
             ('Uyo', 'Uyo'),
         )),
         ('Anambra LGA', (
@@ -194,7 +194,7 @@ class School(models.Model):
             ('Gamawa', 'Gamawa'),
             ('Ganjuwa', 'Ganjuwa'),
             ('Giade', 'Giade'),
-            ('Itas/Gadau', 'Itas/Gadau'),
+            ('Itas-Gadau', 'Itas-Gadau'),
             ('Jamaare', 'Jamaare'),
             ('Katagum', 'Katagum'),
             ('Kirfi', 'Kirfi'),
@@ -952,8 +952,8 @@ class School(models.Model):
     # Basic Info 
     country = models.CharField(max_length=50, default='Nigeria')
     #state = models.CharField(max_length=50) #, blank=True, null=True, default='Lagos')
-    state = models.CharField(max_length=2, choices=STATE_CHOICE)
-    lga = models.CharField(_('LGA'), max_length=3, choices=LGA_CHOICE) #, blank=True, null=True, default='N/A')
+    state = models.CharField(max_length=50, choices=STATE_CHOICE)
+    lga = models.CharField(_('LGA'), max_length=50, choices=LGA_CHOICE) #, blank=True, null=True, default='N/A')
     #city = models.CharField(max_length=50, null=True, blank=True)
     town = models.CharField(max_length=50)
     street = models.CharField(max_length=640)

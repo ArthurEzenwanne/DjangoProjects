@@ -93,7 +93,7 @@ def slugify(s):
     return s
 
 @login_required  
-def create_school(request):
+def create_school_view(request):
     """View function for creating a School instance outside the user admin."""
     # if this is a POST request we need to process the form data
     if request.method == 'POST':

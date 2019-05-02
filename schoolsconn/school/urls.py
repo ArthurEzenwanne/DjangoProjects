@@ -37,7 +37,7 @@ urlpatterns = [
     path('accounts/schools/', views.AccountsSchoolsListView.as_view(), name='school-listing'),
     path('accounts/schools/add', views.add_school, name='add-school'),
 
-    path('school/new/', views.create_school, name='create-school'),
+    path('school/new/', views.create_school_view, name='create-school'),
     path('school/edit/<str:slug>/', views.update_school, name='update-school'),
     path('school/delete/<str:slug>/', views.delete_school, name='delete-school'),
 

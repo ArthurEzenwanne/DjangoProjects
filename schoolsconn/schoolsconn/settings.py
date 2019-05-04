@@ -143,7 +143,7 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 #MEDIA_ROOT = os.path.join(BASE_DIR, 'school/media').replace('\\','/') # Absolute path to the media directory
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # Absolute path to the media directory
-
+AUTH_USER_MODEL = 'school.SchoolsConnBaseUser'
 
 # Add the 'allauth' backend to AUTHENTICATION_BACKEND and keep default ModelBackend
 AUTHENTICATION_BACKENDS = [ 
@@ -155,14 +155,10 @@ AUTHENTICATION_BACKENDS = [
 EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
 
 # Custom allauth settings
-# Use email as the primary identifier
-ACCOUNT_AUTHENTICATION_METHOD = 'email' 
+ACCOUNT_AUTHENTICATION_METHOD = 'email'     # Use email as the primary identifier
 ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'    # Make email verification mandatory
+ACCOUNT_USERNAME_REQUIRED = False       # Eliminate need to provide username
 
-# Make email verification mandatory to avoid junk email accounts
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory' 
-
-# Eliminate need to provide username, as it's a very old practice
-ACCOUNT_USERNAME_REQUIRED = False
-
-AUTH_USER_MODEL = 'school.SchoolsConnBaseUser'
+####### --------- django_filter settings --------- ##############
+FILTERS_EMPTY_CHOICE_LABEL = None       # Removes the default ChoiceField '-----'

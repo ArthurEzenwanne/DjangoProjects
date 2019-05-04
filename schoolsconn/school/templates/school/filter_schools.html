@@ -34,71 +34,70 @@
                                                                         {{ filter.form.lga }}
                                                                     </div>
                                                                 </li>
-                                                            </ul>                                                   
+                                                            </ul>
+                                                            <h5>Boarding Type</h5>
+                                                            <ul class="lc-all-filter">
+                                                                <li>
+                                                                    <div class="lc-select-input-field">
+                                                                        {{ filter.form.gender }}
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="lc-select-input-field">
+                                                                        {{ filter.form.boarding }}
+                                                                    </div>
+                                                                </li>
+                                                            </ul>  
+                                                            <!-- <h5>Classes Type</h5>
+                                                            <ul>
+                                                                <li>
+                                                                    <label class="lc-switch-btn">
+                                                                        <span class="switch">
+                                                                            {{ filter.form.creche }}
+                                                                            <span class="slider round"></span>
+                                                                        </span>
+                                                                        <span class="title">{{ filter.form.creche.label }}</span>
+                                                                    </label>
+                                                                </li>
+                                                                <li>
+                                                                    <label class="lc-switch-btn">
+                                                                        <span class="switch">
+                                                                            {{ filter.form.nursery }}
+                                                                            <span class="slider round"></span>
+                                                                        </span>
+                                                                        <span class="title">{{ filter.form.nursery.label }}</span>
+                                                                    </label>
+                                                                </li>
+                                                                <li>
+                                                                    <label class="lc-switch-btn">
+                                                                        <span class="switch">
+                                                                            {{ filter.form.primary }}
+                                                                            <span class="slider round"></span>
+                                                                        </span>
+                                                                        <span class="title">{{ filter.form.primary.label }}</span>
+                                                                    </label>
+                                                                </li>
+                                                                <li>
+                                                                    <label class="lc-switch-btn">
+                                                                        <span class="switch">
+                                                                            {{ filter.form.secondary }}
+                                                                            <span class="slider round"></span>
+                                                                        </span>
+                                                                        <span class="title">{{ filter.form.secondary.label }}</span>
+                                                                    </label>
+                                                                </li>
+                                                                <li>
+                                                                    <label class="lc-switch-btn">
+                                                                        <span class="switch">
+                                                                            {{ filter.form.aLevels }}
+                                                                            <span class="slider round"></span>
+                                                                        </span>
+                                                                        <span class="title">{{ filter.form.aLevels.label }}</span>
+                                                                    </label>
+                                                                </li>
+                                                            </ul> -->
                                                         </div>
                                                     </div>
-                                                    <!-- <div class="col-12">
-                                                        <div class="form-group">
-                                                            <div>
-                                                                <h5>Classes</h5>
-                                                                <ul>
-                                                                    <li>
-                                                                        <label class="lc-switch-btn">
-                                                                            <span class="switch">
-                                                                            <input type="checkbox">
-                                                                            <span class="slider round"></span>
-                                                                            </span>
-                                                                            <span class="title">Accepts Bitcoin 1</span>
-                                                                        </label>
-                                                                    </li>
-                                                                </ul>
-                                                                <ul>
-                                                                    <li>
-                                                                        <label class="lc-switch-btn">
-                                                                            <span class="switch">
-                                                                            <input type="checkbox">
-                                                                            <span class="slider round"></span>
-                                                                            </span>
-                                                                            <span class="title">Accepts Bitcoin 2</span>
-                                                                        </label>
-                                                                    </li>
-                                                                </ul>
-                                                                <ul>
-                                                                    <li>
-                                                                        <label class="lc-switch-btn">
-                                                                            <span class="switch">
-                                                                            <input type="checkbox">
-                                                                            <span class="slider round"></span>
-                                                                            </span>
-                                                                            <span class="title">Accepts Bitcoin 3</span>
-                                                                        </label>
-                                                                    </li>
-                                                                </ul>
-                                                                <ul>
-                                                                    <li>
-                                                                        <label class="lc-switch-btn">
-                                                                            <span class="switch">
-                                                                            <input type="checkbox">
-                                                                            <span class="slider round"></span>
-                                                                            </span>
-                                                                            <span class="title">Accepts Bitcoin 4</span>
-                                                                        </label>
-                                                                    </li>
-                                                                </ul>
-                                                                <ul>
-                                                                    <li>
-                                                                        <label class="lc-switch-btn">
-                                                                            <span class="switch">
-                                                                            <input type="checkbox">
-                                                                            <span class="slider round"></span>
-                                                                            </span>
-                                                                            <span class="title">Accepts Bitcoin 5</span>
-                                                                        </label>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div> -->
                                                 </div>
                                             </div>
                                                 <button class="btn btn-blue-2 ripple" type="submit">Refine Search</button>
@@ -170,7 +169,11 @@
                                         <!-- /. single listing -->
                                     {% endfor %}        
                                 {% else %}
-                                    <p>There are no schools yet in this region.</p>
+                                    <div class="col-12">
+                                        <div class="lc-listing-single">
+                                            <h4>There are no schools yet in this region.</h4>
+                                        </div>
+                                    </div>
                                 {% endif %} 
                             </div>
                         </div>

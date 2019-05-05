@@ -25,9 +25,9 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('test/search', views.search_filter_view, name='search-filter'),
-    path('search/schools', views.SchoolListView.as_view(), name='schools-list'),
-    path('search/schools/<state>', views.FilterSchoolsByStatesListView.as_view(), name='filter-schools-state-list'),
+    path('test/search/', views.search_filter_view, name='search-filter'),
+    path('search/schools/', views.SchoolListView.as_view(), name='schools-list'),
+    path('search/schools/<state>/', views.FilterSchoolsByStatesListView.as_view(), name='filter-schools-state-list'),
     path('schools/<str:slug>/', views.SchoolDetailView.as_view(), name='school-detail'), # uses slug, could also use pk
     #path('accounts/profile', views.account_profile_view, name='account-profile'),   # routes to the profile view
     #path('accounts/profile', TemplateView.as_view(template_name='school/admin/user-profile.html'), name='user-profile'),
@@ -35,7 +35,7 @@ urlpatterns = [
     #path('accounts/schools/', TemplateView.as_view(template_name='school/admin/school-listing.html'), name='school-listing'),
     #path('accounts/schools/', views.account_schools_view, name='school-listing'),
     path('accounts/schools/', views.AccountsSchoolsListView.as_view(), name='school-listing'),
-    path('accounts/schools/add', views.add_school, name='add-school'),
+    path('accounts/schools/add/', views.add_school, name='add-school'),
 
     path('school/new/', views.create_school_view, name='create-school'),
     path('school/edit/<str:slug>/', views.update_school, name='update-school'),

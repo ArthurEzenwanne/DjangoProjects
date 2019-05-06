@@ -9,6 +9,7 @@
 
         <!-- Add additional CSS in static file -->
         {% load static %}
+        {% load i18n %}
         <!-- <link rel="stylesheet" href="{% static 'css/styles.css' %}"> -->
         
         <!-- Bootstrap CSS -->
@@ -68,8 +69,8 @@
                                         <span class="menu-text">Schools</span>
                                     </a>
                                 </li>
-                                <li class="sub-menu">
-                                    <a class="active" href="{% url 'index' %}">
+                                <li class="sub-menu">                                    
+                                    <a class="active" href="{% url 'pinax_messages:inbox' %}">
                                         <i class="fa fa-envelope-o"></i>
                                         <span class="menu-text">Messages</span>
                                     </a>
@@ -128,124 +129,7 @@
 
         {% block footer %}
         <!-- start footer-section -->
-        <footer class="lc-footer-section">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <!-- subscribtion -->
-                        <div class="col-12 col-md-10">
-                            <div class="lc-subscribtion text-center">
-                                <h4 class="title">Join Our Newsletter 
-                                    <i class="fa fa-paper-plane-o"></i>
-                                </h4> 
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                <div class="row justify-content-center">
-                                    <div class="col-12 col-md-8 col-lg-6">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Your Email Address" >
-                                            <div class="input-group-append">
-                                                <button type="submit" class="input-group-text">Subscribe</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <!-- /.subscribtion -->
-    
-                    <!-- widget area -->                
-                    <div class="col-12">
-                        <div class="widget-area">
-                            <div class="row justify-content-center">
-                                <!-- single widget star -->
-                                <div class="col-12 col-md-6 col-lg-4">
-                                    <div class="widget widget_about">
-                                        <a href="{% url 'index' %}">
-                                            <img src="{% static 'images/icon/04.png' %}" alt="logo">
-                                            <span class="widget-title">Listera</span>
-                                        </a>
-                                        <p>Lorem ipsum dolor amet, conectetur the adipisicig elit, sed eiusmod tempor inciddunt labore dolore commodo consequat.</p>    
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6 col-lg-4">
-                                    <div class="widget widget_links">
-                                        <div class="widget-title">
-                                            <h4 class="title">Useful Links</h4>
-                                        </div>
-                                        <ul class="ul-link">
-                                            <li><a href="{% url 'index' %}">Sign in</a></li>
-                                            <li><a href="{% url 'index' %}">Sign Up</a></li>
-                                            <li><a href="{% url 'index' %}">My Account</a></li>
-                                            <li><a href="{% url 'index' %}">Add Listing</a></li>
-                                        </ul> 
-                                        <ul>
-                                            <li><a href="{% url 'index' %}">Privacy Policy</a></li>
-                                            <li><a href="{% url 'index' %}">F.A.Q</a></li>
-                                            <li><a href="{% url 'index' %}">Our Pertners</a></li>
-                                            <li><a href="{% url 'index' %}">Contact</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6 col-lg-4">
-                                    <div class="widget widget_links">
-                                        <div class="widget-title">
-                                            <h4 class="title">Useful Links</h4>
-                                        </div>
-                                        <ul class="ul-link">
-                                            <li><a href="{% url 'index' %}">Sign in</a></li>
-                                            <li><a href="{% url 'index' %}">Sign Up</a></li>
-                                            <li><a href="{% url 'index' %}">My Account</a></li>
-                                            <li><a href="{% url 'index' %}">Add Listing</a></li>
-                                        </ul> 
-                                        <ul>
-                                            <li><a href="{% url 'index' %}">Privacy Policy</a></li>
-                                            <li><a href="{% url 'index' %}">F.A.Q</a></li>
-                                            <li><a href="{% url 'index' %}">Our Pertners</a></li>
-                                            <li><a href="{% url 'index' %}">Contact</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div> <!-- /.row -->
-                        </div>
-                    </div>                
-                    <!-- /.widget area -->
-    
-                    <!-- widget info -->
-                    <div class="col-12">
-                        <div class="widget widget_info">
-                            <ul>
-                                <li><a href="{% url 'index' %}"><i class="fa fa-map-marker"></i>20 Maple Avenue, San Pedro, CA 90731</a></li>
-                                <li><a href="{% url 'index' %}"><i class="fa fa-envelope-o"></i>suport@listera.com</a></li>
-                                <li><a href="{% url 'index' %}"><i class="fa fa-whatsapp"></i>+1-212-9876543</a></li>
-                                <li><a href="{% url 'index' %}"><i class="fa fa-phone"></i>(526) 236-895-4732</a></li>
-                                <li><a href="{% url 'index' %}"><i class="fa fa-skype"></i>example.skype</a></li>
-                            </ul>
-                        </div> 
-                    </div>
-                    <!-- /.widget info -->
-                </div>
-            </div>
-            <div class="lc-copy-right">
-                <div class="container">
-                    <div class="row vertical-center-row">                    
-                        <div class="col-12 col-lg-5 col-md-12">
-                            <div class="copyright">
-                                <p>© Copyright 2019 SchoolsApp. All rights reserved</p>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-12 col-lg-3 offset-lg-3">
-                            <ul class="social-area">
-                                <li><a href="{% url 'index' %}"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="{% url 'index' %}"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="{% url 'index' %}"><i class="fa fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <a href="#" id="lc-toTop" class="lc-to-top"><i class="fa fa-angle-up"></i></a>
-        </footer>
+        
         <!-- end footer-section -->
         {% endblock %}
     

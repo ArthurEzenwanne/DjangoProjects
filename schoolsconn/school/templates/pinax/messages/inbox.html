@@ -1,0 +1,119 @@
+{% extends "pinax/messages/base.html" %}
+​
+{% load i18n %}
+{% load pinax_messages_tags %}
+​
+{% block title %}<title>Schools App - Messages</title>{% endblock %}
+​
+{% block body_class %}{{ block.super }} pinax-messages-inbox{% endblock %}
+​
+{% load static %} 
+
+{% block content %}
+    <!-- End LC navbar -->
+    <!-- lcd-panel-review section-->
+    <div class="lcd-panel-review-top-section">
+        <div class="row">
+            <div class="col-xl-3 col-md-6">
+                <div class="lcd-panel-review-single style1">
+                    <div class="lcd-panel-review-head d-flex justify-content-between">
+                        <h6>Total Unread Messages</h6>
+                        <i class="fa fa-eye"></i>
+                    </div>
+                    <div class="lcd-panel-review-body d-flex justify-content-between">
+                        <i class="fa fa-signal"></i>
+                        <span>165</span>
+                    </div>
+                </div>
+            </div>                    
+        </div>
+    </div>
+    <!-- /End lcd-panel-review section-->
+    
+    <!-- lcd-panel-review section-->
+    <div class="lcd-panel-review-section">
+        <div class="row">
+            <!-- listings content start -->
+            <div class="col-xl-9 col-md-12 lcd-border-r lcd-nopadding-r">
+                <div class="lcd-pending-header lcd-border-b">
+                    <h2>Message Inbox</h2>
+                    <a class="button" href="{% url 'pinax_messages:message_create' %}">
+                        <i class="fas fa-envelope"></i>
+                        New Message
+                    </a>
+                </div>
+
+                {% for thread in threads %}
+                    <div class="lcd-pending-details">
+                        <div class="row">
+                            <div class="col-xl-6 col-md-12 lcd-nopadding">
+                                <div class="lcd-pending-details-info d-flex align-items-center media">
+                                    <div class="participants">{{ thread.users.all|join:", " }}</div>
+                                    <div class="lcd-pending-details-content media-body">
+                                        <h4><a href="{{ thread.get_absolute_url }}">{{ thread.subject }}</a></h4>
+                                        <div class="latest-message">
+                                            <p class="content">{{ thread.latest_message.content }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                {% empty %}
+                    <div class="">You have no messages.</div>
+                {% endfor %}
+            </div>
+            <!-- listings content end -->
+            
+            <!-- recent content activities start -->
+            <div class="col-xl-3 col-md-12">
+                <div class="lcd-recent-activities">
+                    <div class="lcd-recent-activities-head">
+                        <h5><i class="fa fa-bell-o"></i>Recent Activities</h5>
+                    </div>
+                    <div class="d-flex align-items-center media lcd-recent-activities-body">
+                        <img src="{% static 'admin/images/recent_active/1.png' %}" alt="active image">
+                        <div class="media-body">
+                            <h6>Mark Juck <span>Liked Your Post.</span></h6>
+                            <p>7 Minute Ago</p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center media lcd-recent-activities-body">
+                        <img src="{% static 'admin/images/recent_active/2.png' %}" alt="active image">
+                        <div class="media-body">
+                            <h6>Chis Maartin  <span>Left 5/5 Star Rating.</span></h6>
+                            <p>13 Minute Ago</p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center media lcd-recent-activities-body">
+                        <img src="{% static 'admin/images/recent_active/3.png' %}" alt="active image">
+                        <div class="media-body">
+                            <h6>Simon Chan <span>Send You Message.</span></h6>
+                            <p>19 Minute Ago</p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center media lcd-recent-activities-body">
+                        <img src="{% static 'admin/images/recent_active/4.png' %}" alt="active image">
+                        <div class="media-body">
+                            <h6>Cristi jeni <span>Added New Listing.</span></h6>
+                            <p>26 Minute Ago</p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center media lcd-recent-activities-body">
+                        <img src="{% static 'admin/images/recent_active/5.png' %}" alt="active image">
+                        <div class="media-body">
+                            <h6>Jenifer Lucas <span>Write a New Review.</span></h6>
+                            <p>31 Minute Ago</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- recent content activities end -->
+        </div>
+    </div>
+<!--main content end-->
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

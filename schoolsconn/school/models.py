@@ -6,6 +6,8 @@ from django.urls import reverse
 #from multiselectfield import MultiSelectField
 from django.utils.translation import gettext as _
 
+from pinax.messages.models import *
+
 # https://docs.djangoproject.com/en/2.2/ref/contrib/postgres/fields/#django.contrib.postgres.fields.ArrayField
 # Note ArrayFields when using PostGress
 
@@ -28,6 +30,9 @@ class SchoolsConnBaseUser(AbstractUser):
         """String for representing the Model object."""
         #return f'{self.first_name} {self.last_name} {self.username} {self.email}'  # this works
         return f'{self.username}'
+
+class UserMessage(models.Model):
+    pass
 
 class School(models.Model):
     """Model representing a school."""

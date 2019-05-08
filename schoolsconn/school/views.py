@@ -13,6 +13,8 @@ from django.core.files.storage import FileSystemStorage
 from django.views.generic.edit import FormView
 from django.core.files import File
 
+from pinax.messages.models import Message
+
 from .models import *
 from .forms import *
 from .filters import *

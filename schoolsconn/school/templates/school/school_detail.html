@@ -449,27 +449,31 @@
                                     <img src="{% static 'images/author/16.png' %}" alt="img">
                                 </div>
                                 <div class="lc-comments-form">
-                                    <form>
+                                    <form class="comment-form" action="{% url 'pinax_messages:message_create' %}" method="post">
+                                        {% csrf_token %}
                                         <div class="contact-form">
                                             <div class="row">
                                                 <div class="col-12">
                                                     <div class="form-group">
-                                                        <input class="input name-email left" placeholder="Full Name" type="text" name="name">
+                                                        <!-- <input class="input name-email left" placeholder="Full Name" type="text" name="name"> -->
+                                                        {{ form.to_users }}
                                                     </div>
                                                 </div>
-                                                <div class="col-12">
+                                                <!-- <div class="col-12">
                                                     <div class="form-group">
                                                         <input class="input name-email right" placeholder="Email Address" type="email" name="email">
                                                     </div>
-                                                </div>
+                                                </div> -->
                                                 <div class="col-12">
                                                     <div class="form-group">
-                                                        <input class="input name-email right" placeholder="Mobile Number" type="email" name="email">
+                                                        <!-- <input class="input name-email right" placeholder="Mobile Number" type="email" name="email"> -->
+                                                        {{ form.subject }}
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <textarea class="form-control message" placeholder="Message" rows="3" required data-error="Your message"></textarea>
+                                                {{ form.content }}
+                                                <!-- <textarea class="form-control message" placeholder="Message" rows="3" required data-error="Your message"></textarea> -->
                                             </div>
                                             <button type="submit" class="btn btn-blue-2 ripple">Send Message</button>
                                         </div>

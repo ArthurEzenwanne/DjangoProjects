@@ -48,8 +48,8 @@
                         <div class="row">
                             <div class="col-xl-6 col-md-12 lcd-nopadding">
                                 <div class="lcd-pending-details-info d-flex align-items-center media">
-                                    <div class="participants">{{ thread.users.all|join:", " }}</div>
                                     <div class="lcd-pending-details-content media-body">
+                                        <div class="participants">{{ thread.users.all|join:", " }}</div>
                                         <h4><a href="{{ thread.get_absolute_url }}">{{ thread.subject }}</a></h4>
                                         <div class="latest-message">
                                             <p class="content">{{ thread.latest_message.content }}</p>
@@ -57,10 +57,22 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div> 
-                {% empty %}
-                    <div class="">You have no messages.</div>
+                        </div> 
+                    </div>
+                    {% empty %}
+                    <div class="lcd-pending-details">
+                        <div class="row">
+                            <div class="col-xl-6 col-md-12 lcd-nopadding">
+                                <div class="lcd-pending-details-info d-flex align-items-center media">
+                                    <div class="lcd-pending-details-content media-body">
+                                        <div class="latest-message">
+                                            <h4>You have no messages</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
                 {% endfor %}
             </div>
             <!-- listings content end -->

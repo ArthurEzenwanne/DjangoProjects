@@ -1,4 +1,5 @@
 import re
+import requests
 from PIL import Image
 from io import StringIO, BytesIO
 from django.core.files.base import ContentFile
@@ -317,3 +318,22 @@ def search_filter_state_view(request, state):
     ''' Fiter Schools By State Function based view '''
     state_filter = get_object_or_404(School, state=self.state)
     return render(request, 'school/filter_schools_states.html', context={'user': user})  
+
+def send_sms_message():
+    learner_name = form.learner_name
+    learner_phone = form.learner_phone
+    school_name = form.school_name
+    school_phone = form.school_phone
+    sms_message = 'Hi {school_name}, a parent {learner_name}, has indicated interest in your school on schoolsconn.com. Kindly connect with parent on {learner_phone}. Questions? SMS/WhatsApp +234 909 058 7701'
+    sender_name = 'SchoolsConn'
+    url = 'http://www.80kobosms.com/tools/geturl/Sms.php'
+    params = {
+        'username': '1994Chang',
+        'password': 'enquire@schoolsconn.com',
+        'sender': sender_name,
+        'message': sms_message,
+        'flash': 1,
+        'recipients': school_phone,
+        'forcednd': 1
+    }
+    r = requests.get(url=url, params=params)

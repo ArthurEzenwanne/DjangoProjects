@@ -161,6 +161,7 @@ ACCOUNT_AUTHENTICATION_METHOD = 'email'     # Use email as the primary identifie
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'    # Make email verification mandatory
 ACCOUNT_USERNAME_REQUIRED = False       # Eliminate need to provide username
+ACCOUNT_LOGOUT_ON_GET = True #TODO: Implement a JS logout using POST#
 
 ####### --------- django_filter settings --------- ##############
 FILTERS_EMPTY_CHOICE_LABEL = None       # Removes the default ChoiceField '-----'

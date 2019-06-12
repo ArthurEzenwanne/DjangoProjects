@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.urls import path
 from django.views.generic.base import TemplateView
-#from django.contrib.auth.decorators import login_required, permission_required
+from django.contrib.auth.decorators import login_required, permission_required
 
 from . import views
 
@@ -31,8 +31,10 @@ urlpatterns = [
     path('schools/<str:slug>/', views.SchoolDetailView.as_view(), name='school-detail'), # uses slug, could also use pk
     #path('accounts/profile', views.account_profile_view, name='account-profile'),   # routes to the profile view
     #path('accounts/profile', TemplateView.as_view(template_name='school/admin/user-profile.html'), name='user-profile'),
-    path('accounts/profile/', TemplateView.as_view(template_name='school/admin/user-profile.html'), name='user-profile'),
+    #path('accounts/profile/', login_required(TemplateView.as_view(template_name='school/admin/user-profile.html')), name='user-profile'),
     #path('accounts/schools/', TemplateView.as_view(template_name='school/admin/school-listing.html'), name='school-listing'),
+    #path('accounts/profile/', TemplateView.as_view(template_name='school/admin/user-profile.html'), name='user-profile'),
+    path('accounts/profile/', views.ProfileView.as_view(), name='user-profile'),
     #path('accounts/schools/', views.account_schools_view, name='school-listing'),
     path('accounts/schools/', views.AccountsSchoolsListView.as_view(), name='school-listing'),
     path('accounts/schools/add/', views.add_school, name='add-school'),

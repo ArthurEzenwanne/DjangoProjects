@@ -20,10 +20,10 @@ from django.conf.urls.static import static
 #from django.views.static import serve
 
 urlpatterns = [
+    path('', include('school.urls')),
     path('admin/', admin.site.urls),
-    path('accounts/', include('allauth.urls')),
-    path('', include('school.urls')), 
-    path('messages/', include('pinax.messages.urls', namespace='pinax_messages')),
+    path('accounts/', include('allauth.urls')), 
+    #path('messages/', include('pinax.messages.urls', namespace='pinax_messages')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:

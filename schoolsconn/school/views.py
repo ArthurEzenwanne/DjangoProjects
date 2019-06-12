@@ -1,24 +1,26 @@
 import re
 import requests
-from PIL import Image
-from io import StringIO, BytesIO
-from django.core.files.base import ContentFile
-from django.shortcuts import render, get_object_or_404, get_list_or_404, redirect  
-from django.views import generic
+
+from io import BytesIO, StringIO
+
+from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.http import Http404, HttpResponseRedirect
-from django.conf import settings
-from django.core.files.storage import FileSystemStorage
-#from django.utils.decorators import method_decorator
-from django.views.generic.edit import FormView
 from django.core.files import File
+from django.core.files.base import ContentFile
+from django.core.files.storage import FileSystemStorage
+from django.core.mail import send_mail
+from django.http import Http404, HttpResponseRedirect
+from django.shortcuts import get_list_or_404, get_object_or_404, redirect, render
+from django.utils.decorators import method_decorator
+from django.views import generic
+from django.views.generic.edit import FormView
 
-from pinax.messages.models import Message
+from PIL import Image
 
-from .models import *
-from .forms import *
 from .filters import *
+from .forms import *
+from .models import *
 
 # Create your views here.
 # from catalog.models import Book, Author, BookInstance, Genre
@@ -26,9 +28,11 @@ from .filters import *
 def index(request):
     """View function for home page of site."""
 
-
     return render(request, 'index.html')
 
+@method_decorator(login_required, name='dispatch')
+class ProfileView(generic.TemplateView):
+    template_name='school/admin/user-profile.html'
 
 # def school_detail_view(request, slug):
 #     """Function based detailed view for School model."""
@@ -197,7 +201,6 @@ def thanks(request):
     
     return render(request, 'school/thanks.html') 
 
-from django.core.mail import send_mail
 
 def send_mail_view(request):
     # if this is a POST request we need to process the form data

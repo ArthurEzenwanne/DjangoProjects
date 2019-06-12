@@ -48,11 +48,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
 
     # django-filters for filtering searches
-    'django_filters',
-    
-    # pinax.messages for sending user messages
-    'pinax.messages',
-    'pinax.templates',
+    'django_filters'
 ]
 
 # Ensure SITE_ID is set sites app 
@@ -85,7 +81,6 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
 
                 # App based context processors
-                'pinax.messages.context_processors.user_messages',
             ],
         },
     },

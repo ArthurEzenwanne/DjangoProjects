@@ -960,6 +960,7 @@ class School(models.Model):
     #city = models.CharField(max_length=50, null=True, blank=True)
     town = models.CharField(max_length=50)
     street = models.CharField(max_length=640)
+    address = models.CharField(max_length=1000)
     
     approval_number = models.CharField(_('Govt Approval Number'), max_length=11, default='Awaiting')
     admin = models.CharField(_('Admission Officer'), max_length=128)

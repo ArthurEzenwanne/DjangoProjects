@@ -32,8 +32,8 @@
                     <div class="col-md-12 lc-no-padding">
                         <nav>
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item"><a href="#">The Burger House</a></li>
+                                <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+                                <li class="breadcrumb-item"><a href="">{{ school.name }}</a></li>
                             </ol>
                             <ol class="breadcrumb-btn">
                                 <li class="active"><a href="#">Add Review</a></li>
@@ -73,7 +73,7 @@
                             <ul>
                                 <li><i class="fa fa-home"></i><a class="js-scroll-trigger" href="#lc-details-home">Home</a></li>
                                 <li><i class="fa fa-picture-o"></i><a class="js-scroll-trigger" href="#lc-details-gallery">Gallery</a></li>
-                                <li><i class="fa fa-money"></i><a class="js-scroll-trigger" href="#lc-details-video">Video</a></li>
+                                <li><i class="fa fa-video-camera"></i><a class="js-scroll-trigger" href="#lc-details-video">Video</a></li>
                                 <li><i class="fa fa-star-o"></i><a class="js-scroll-trigger" href="#lc-details-reviews">Reviews</a></li>
                             </ul>
                         </div>
@@ -97,12 +97,12 @@
                             </ul>
                         </div>
                         <!-- listing-details gallery and video -->
-                        <div  id="lc-details-gallery" class="lc-listing-details-gallery">
-                            <div class="lc-section-title lc-section-title-2">
+                        <!-- <div  id="lc-details-gallery" class="lc-listing-details-gallery"> -->
+                            <!-- <div class="lc-section-title lc-section-title-2">
                                 <h4 class="entry-title"><i class="fa fa-picture-o"></i>Gallery</h4>
-                            </div>
+                            </div> -->
                             <!-- listing-details gallery -->
-                            <div class="lc-gallery-slider border-bottom owl-carousel">
+                            <!-- <div class="lc-gallery-slider border-bottom owl-carousel">
                                 <div class="item">
                                     <a href="{% static 'images/gallery/1.png' %}" data-fancybox="gallery">
                                         <img src="{% static 'images/gallery/1.png' %}" alt="gallery">
@@ -133,9 +133,9 @@
                                         <img src="{% static 'images/gallery/2.png' %}" alt="gallery">
                                     </a>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- listing-details video -->
-                            <div id="lc-details-video" class="lc-listing-details-video">
+                            <!-- <div id="lc-details-video" class="lc-listing-details-video">
                                 <div class="lc-section-title lc-section-title-2">
                                     <h4 class="entry-title"><i class="fa fa-video-camera"></i>Video</h4>
                                 </div>
@@ -177,13 +177,15 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                            </div> -->
+                        <!-- </div> -->
                         <!-- End listing-details gallery -->
+                        <!-- Review Section -->
                         <div id="lc-details-reviews" class="lc-review-section">
-                            <div class="lc-section-title lc-section-title-2 border-bottom">
+                            <!-- <div class="lc-section-title lc-section-title-2 border-bottom">
                                 <h4 class="entry-title">01 Review for The Burger House</h4>
-                            </div>
+                            </div> -->
+                            <!-- <div class="single-review border-bottom"> -->
                             <div class="single-review border-bottom">
                                 <!-- popup content for all listing -->
                                 <div class="modal lc-listing-modal lc-report-model-wrap" tabindex="-1" role="dialog" data-backdrop="true">
@@ -210,7 +212,7 @@
                                     </div>
                                 </div>
                                 <!-- /.popup content -->
-                                <div class="media">
+                                <!-- <div class="media">
                                     <img src="{% static 'images/author/15.png' %}" alt="img">
                                     <div class="media-body">
                                         <div class="details">
@@ -228,8 +230,8 @@
                                             </span>
                                         </span>
                                     </div>
-                                </div>
-                                <h5>Awesome Burger, Great Food</h5>
+                                </div> -->
+                                <!-- <h5>Awesome Burger, Great Food</h5>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt veritatis, excepturi eos animi praesentium recusandae, id cupiditate ut consequatur fuga ea doloremque quos, nisi cum autem ipsum. Natus, porro ex.</p>
                                 <div class="review-img">
                                     <div class="row">
@@ -252,7 +254,7 @@
                                 </div>
                                 <a class="btn btn-blue"><i class="fa fa-thumbs-o-up"></i>2</a>
                                 <a class="btn btn-green"><i class="fa fa-comments-o"></i>3</a>
-                                <a class="btn btn-yellow"><i class="fa fa-share-alt"></i>5</a>
+                                <a class="btn btn-yellow"><i class="fa fa-share-alt"></i>5</a> -->
                             </div>
                         </div>
                         <div class="lc-add-review-form">
@@ -311,7 +313,7 @@
                             <div class="widget widget-average-rating">
                                 <p>Average Rating <i class="fa fa-star"></i> 4.8 (35)</p>
                             </div>
-                            <div class="widget widget-opening-hour">
+                            <!-- <div class="widget widget-opening-hour">
                                 <div class="title">
                                     <span class="icon"><i class="fa fa-clock-o"></i><span>Open</span></span>
                                     <span class="time">09:00 AM - 05:00 PM</span>
@@ -327,7 +329,7 @@
                                         <li>Sunday <span>09:00 AM - 05:00 PM</span></li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- <div class="widget lc-widget-map">
                                 <div id="lc-listing-details-map"  data-lat="6.4384716" data-zoom="17" data-lng="3.4289400000000114" data-maptype="gm" data-marker="{% static 'images/marker/resturent.png' %}"></div>
                             </div> -->
@@ -341,8 +343,8 @@
                                 </div>
                                 <div class="lc-listing-details-map-details">
                                     <ul>
-                                        <li><a href="#"><i class="fa fa-map-marker"></i> 20 Maple Avenue, San Pedro, CA 90731</a></li>
-                                        <li><a href="#"><i class="fa fa-phone"></i> +1-202-555-0132</a></li>
+                                        <li><a href="#"><i class="fa fa-map-marker"></i> {{ school.street | add:', ' | add:school.town | add:', ' | add:school.lga | add:', ' | add:school.state }}</a></li>
+                                        <li><a href="#"><i class="fa fa-phone"></i> {{ school.phone }}</a></li>
                                         <li><a href="#"><i class="fa fa-globe"></i> burgerhouse.com</a></li>
                                     </ul>
                                 </div>
@@ -352,14 +354,14 @@
                                             <ul>
                                                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-snapchat-ghost"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-skype"></i></a></li>
                                             </ul>
                                         </li>
                                     </ul>
                                 </div> 
                             </div>
-                            <div class="widget widget-price-range">                            
+                            <!-- <div class="widget widget-price-range">                            
                                 <div class="widget-title">
                                     <h3 class="title">Cost Information</h3>
                                 </div>
@@ -373,15 +375,14 @@
                                         $10 - $30 
                                     </span>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="widget widget-report">                            
                                 <div class="claim">
-                                    <span><i class="fa fa-id-card-o"></i>Own work here?</span>
+                                    <span><i class="fa fa-id-card-o"></i>Own this School?</span>
                                     <a aria-labelledby="dropdownMenuButton" data-toggle="modal" data-target=".lc-listing-modal22"  href="#">Claim Now !</a>
                                 </div>
                                 <div class="report">
-                                    <span><i class="fa fa-chain-broken"></i>something wrong?</span>
-
+                                    <span><i class="fa fa-chain-broken"></i>File a report?</span>
                                     <a aria-labelledby="dropdownMenuButton" data-toggle="modal" data-target=".lc-listing-modal" href="#">Report Now !</a>
                                 </div>
 
@@ -398,11 +399,11 @@
                                                                 <img src="{% static 'images/claim.png' %}" alt="img">
                                                             </div>
                                                             <div class="lc-claim-details">
-                                                                <h3>Claim Your Business</h3>
+                                                                <h3>Claim Your School</h3>
                                                                 <ul>
-                                                                    <li><i class="fa fa-check-circle-o"></i>Edit listing Information</li>
-                                                                    <li><i class="fa fa-check-circle-o"></i>Promote your listing with ads</li>
-                                                                    <li><i class="fa fa-check-circle-o"></i>Receiving messages from lead.</li>
+                                                                    <li><i class="fa fa-check-circle-o"></i>Edit School Information</li>
+                                                                    <li><i class="fa fa-check-circle-o"></i>Promote your School with Ads</li>
+                                                                    <li><i class="fa fa-check-circle-o"></i>Receiving messages from Parents</li>
                                                                 </ul>
                                                                 <div class="lc-comments-form">
                                                                     <form>
@@ -424,7 +425,7 @@
                                                                             </div>
                                                                             <label class="agree-checkbox">
                                                                                 <input type="checkbox">
-                                                                                <span>Agree About </span>
+                                                                                <span>I Agree to </span>
                                                                                 <span><a href="#">Terms & Condition</a></span>
                                                                             </label>
                                                                             <button type="submit" class="btn btn-blue-2 ripple">Send Message</button>
@@ -444,36 +445,38 @@
                                 <div class="media">
                                     <div class="media-body">
                                         <span>Hosted by</span>
-                                        <h5><a href="#">Pascal Beckmann</a></h5>
+                                        <h5>{{ school.user.first_name | add:' ' | add:school.user.last_name }}</h5>
                                     </div>
-                                    <img src="{% static 'images/author/16.png' %}" alt="img">
+                                    {% if school.logo %}
+                                        <img class="mr-4 img-logo" src="{{ school.logo.url }}" alt="img">
+                                    {% else %}
+                                        <img class="mr-4" src="{% static 'images/author/16.png' %}" alt="img">
+                                    {% endif %}
                                 </div>
                                 <div class="lc-comments-form">
-                                    <form class="comment-form" action="{% url 'pinax_messages:message_create' %}" method="post">
+                                    <form class="comment-form" action="#" method="post">
                                         {% csrf_token %}
                                         <div class="contact-form">
                                             <div class="row">
                                                 <div class="col-12">
                                                     <div class="form-group">
-                                                        <!-- <input class="input name-email left" placeholder="Full Name" type="text" name="name"> -->
-                                                        {{ form.to_users }}
+                                                        <input class="input name-email left" placeholder="Full Name" type="text" name="name">
+                                                        
                                                     </div>
                                                 </div>
-                                                <!-- <div class="col-12">
+                                                <div class="col-12">
                                                     <div class="form-group">
                                                         <input class="input name-email right" placeholder="Email Address" type="email" name="email">
                                                     </div>
-                                                </div> -->
+                                                </div>
                                                 <div class="col-12">
                                                     <div class="form-group">
-                                                        <!-- <input class="input name-email right" placeholder="Mobile Number" type="email" name="email"> -->
-                                                        {{ form.subject }}
+                                                        <input class="input name-email right" placeholder="Mobile Number" type="email" name="email">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                {{ form.content }}
-                                                <!-- <textarea class="form-control message" placeholder="Message" rows="3" required data-error="Your message"></textarea> -->
+                                                <textarea class="form-control message" placeholder="Message" rows="3" required data-error="Your message"></textarea>
                                             </div>
                                             <button type="submit" class="btn btn-blue-2 ripple">Send Message</button>
                                         </div>
@@ -482,7 +485,7 @@
                             </div>
                             <div class="widget widget-statistic">
                                 <div class="widget-title">
-                                    <h3 class="title">Staistic</h3>
+                                    <h3 class="title">Statistics</h3>
                                 </div>
                                 <span><i class="fa fa-eye"></i>3016 Views</span>
                                 <span><i class="fa fa-bookmark-o "></i>108 Saved</span>
@@ -552,7 +555,7 @@
                                     </li>
                                 </ul>
                             </div>    
-                            <div class="widget widget-tags">
+                            <!-- <div class="widget widget-tags">
                                 <div class="widget-title">
                                     <h3 class="title">Tags</h3>
                                 </div>
@@ -568,8 +571,8 @@
                                     <a href="#">Business</a>
                                     <a href="#">Portal</a>
                                 </div>
-                            </div>
-                            <div class="widget widget-additional-info">
+                            </div> -->
+                            <!-- <div class="widget widget-additional-info">
                                 <div class="widget-title">
                                     <h3 class="title">Additional Information</h3>
                                 </div>
@@ -618,7 +621,7 @@
                                         <span>Yes</span>
                                     </li>
                                 </ul>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div> 

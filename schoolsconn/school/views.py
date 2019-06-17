@@ -21,6 +21,7 @@ from PIL import Image
 from .filters import *
 from .forms import *
 from .models import *
+from . import functions
 
 # Create your views here.
 # from catalog.models import Book, Author, BookInstance, Genre
@@ -32,6 +33,7 @@ def index(request):
 
 @method_decorator(login_required, name='dispatch')
 class ProfileView(generic.TemplateView):
+    """Class based detailed view for School owner."""
     template_name='school/admin/user-profile.html'
 
 # def school_detail_view(request, slug):
@@ -41,7 +43,7 @@ class ProfileView(generic.TemplateView):
 
 class SchoolDetailView(generic.DetailView):
     """Class based detailed view for School model."""
-    model = School    
+    model = School
 
 class SchoolListView(generic.ListView):
     """Class based list view for School model."""
@@ -85,20 +87,6 @@ class AccountsSchoolsListView(LoginRequiredMixin, generic.ListView):
     def get_queryset(self):
         return School.objects.filter(user=self.request.user)
 
-def slugify(s):
-    """
-    Simplifies ugly strings into something URL-friendly.
-    """
-    s = s.lower()
-    for c in [' ', '-', '.', '/']:
-        s = s.replace(c, '_')
-    s = re.sub('\W', '', s)
-    s = s.replace('_', ' ')
-    s = re.sub('\s+', ' ', s)
-    s = s.strip()
-    s = s.replace(' ', '-')
-    return s
-
 @login_required  
 def create_school_view(request):
     """View function for creating a School instance outside the user admin."""
@@ -113,6 +101,7 @@ def create_school_view(request):
             school = form.save(commit=False) 
             school.user = request.user  
             school.slug = slugify(school.name)
+            # school.address = models.Concat() school.street | add:', ' | add:school.town | add:', ' | add:school.lga | add:', ' | add:school.state
 
             ##!!! DO NOT EDIT THE FILE, OR RESIZE THE FILE HERE, IT IS TOO MUCH WORK. TRY RESIZE THE FILES
             ##!!! ON THE CLIENT USING JSCRIPT OR JQUERY, ANY IMAGE SENT HERE SHOULD BE THE FINALE IMAGE !!!###
@@ -200,7 +189,6 @@ def thanks(request):
     """View function for deleting a School instance."""
     
     return render(request, 'school/thanks.html') 
-
 
 def send_mail_view(request):
     # if this is a POST request we need to process the form data
@@ -322,21 +310,3 @@ def search_filter_state_view(request, state):
     state_filter = get_object_or_404(School, state=self.state)
     return render(request, 'school/filter_schools_states.html', context={'user': user})  
 
-def send_sms_message():
-    learner_name = form.learner_name
-    learner_phone = form.learner_phone
-    school_name = form.school_name
-    school_phone = form.school_phone
-    sms_message = 'Hi {school_name}, a parent {learner_name}, has indicated interest in your school on schoolsconn.com. Kindly connect with parent on {learner_phone}. Questions? SMS/WhatsApp +234 909 058 7701'
-    sender_name = 'SchoolsConn'
-    url = 'http://www.80kobosms.com/tools/geturl/Sms.php'
-    params = {
-        'username': '1994Chang',
-        'password': 'enquire@schoolsconn.com',
-        'sender': sender_name,
-        'message': sms_message,
-        'flash': 1,
-        'recipients': school_phone,
-        'forcednd': 1
-    }
-    r = requests.get(url=url, params=params)

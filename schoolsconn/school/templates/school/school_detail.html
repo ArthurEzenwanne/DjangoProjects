@@ -77,7 +77,10 @@
                                 <li><i class="fa fa-star-o"></i><a class="js-scroll-trigger" href="#lc-details-reviews">Reviews</a></li>
                             </ul>
                         </div>
-                        <p>{{ school.description }}</p>
+                        <div class="lc-special-things border-bottom pt-2">
+                            <p>{{ school.description }}</p>
+                        </div>
+
                         <div class="lc-special-things border-bottom pt-2">
                             <ul>
                                 <li>
@@ -186,32 +189,8 @@
                                 <h4 class="entry-title">01 Review for The Burger House</h4>
                             </div> -->
                             <!-- <div class="single-review border-bottom"> -->
-                            <div class="single-review border-bottom">
-                                <!-- popup content for all listing -->
-                                <div class="modal lc-listing-modal lc-report-model-wrap" tabindex="-1" role="dialog" data-backdrop="true">
-                                    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                                        <div class="modal-content">
-                                            <!-- close button -->
-                                            <div class="modal-body lc-report-model">    
-                                               <div class="row no-gutters">
-                                                    <div class="col-12">
-                                                        <div class="title border-bottom">
-                                                            REPORT ABUSE
-                                                            <button type="button" class="btn" data-dismiss="modal"><span class="ti ti-close"></span></button>
-                                                        </div>
-                                                        <form action="d">
-                                                            <input type="text" placeholder="Report Subject">
-                                                            <textarea rows="6" placeholder="Report"></textarea>  
-                                                            <button class="submit">Submit</button>  
-                                                            <button data-dismiss="modal">Cancel</button>    
-                                                        </form>
-                                                    </div>
-                                               </div>
-                                           </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- /.popup content -->
+                            <!-- <div class="single-review border-bottom"> -->
+                                
                                 <!-- <div class="media">
                                     <img src="{% static 'images/author/15.png' %}" alt="img">
                                     <div class="media-body">
@@ -255,7 +234,32 @@
                                 <a class="btn btn-blue"><i class="fa fa-thumbs-o-up"></i>2</a>
                                 <a class="btn btn-green"><i class="fa fa-comments-o"></i>3</a>
                                 <a class="btn btn-yellow"><i class="fa fa-share-alt"></i>5</a> -->
+                            <!-- </div> -->
+                            <!-- popup content for all listing -->
+                            <div class="modal lc-listing-modal lc-report-model-wrap" tabindex="-1" role="dialog" data-backdrop="true">
+                                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <!-- close button -->
+                                        <div class="modal-body lc-report-model">    
+                                            <div class="row no-gutters">
+                                                <div class="col-12">
+                                                    <div class="title border-bottom">
+                                                        REPORT ABUSE
+                                                        <button type="button" class="btn" data-dismiss="modal"><span class="ti ti-close"></span></button>
+                                                    </div>
+                                                    <form action="d">
+                                                        <input type="text" placeholder="Report Subject">
+                                                        <textarea rows="6" placeholder="Report"></textarea>  
+                                                        <button class="submit">Submit</button>  
+                                                        <button data-dismiss="modal">Cancel</button>    
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+                            <!-- /.popup content -->
                         </div>
                         <div class="lc-add-review-form">
                             <div class="lc-section-title lc-section-title-2 mb-2">

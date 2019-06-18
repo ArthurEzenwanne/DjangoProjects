@@ -14,7 +14,6 @@ def slugify(s):
     s = s.replace(' ', '-')
     return s
 
-
 def send_sms_message():
     '''Function to send sms message to School owner'''
     learner_name = form.learner_name

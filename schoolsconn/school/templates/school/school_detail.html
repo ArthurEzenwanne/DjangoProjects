@@ -5,6 +5,7 @@
     <!-- Add additional CSS in static file -->
         
     {% load static %}
+    {% load verbose_names %}
     
     <!-- start page title -->
     <div class="lc-page-title-listing-details">
@@ -78,10 +79,57 @@
                             </ul>
                         </div>
                         <div class="lc-special-things border-bottom pt-2">
+                            <h3>About Us</h3>
                             <p>{{ school.description }}</p>
                         </div>
-
                         <div class="lc-special-things border-bottom pt-2">
+                            <h3>Facilities</h3>
+                            <ul>
+                                <li>
+                                    {% if school.nursery %}
+                                        <p><i class="fa fa-motorcycle "></i>{% get_verbose_field_name school 'nursery' %}</p>
+                                    {% endif %}
+                                </li>
+                                <li>
+                                    {% if school.nursery %}
+                                        <p><i class="fa fa-motorcycle "></i>{% get_verbose_field_name school 'nursery' %}</p>
+                                    {% endif %}
+                                </li>
+                                <li>
+                                    {% if school.nursery %}
+                                        <p><i class="fa fa-motorcycle "></i>{% get_verbose_field_name school 'nursery' %}</p>
+                                    {% endif %}
+                                </li>
+                                <li>
+                                    {% if school.nursery %}
+                                        <p><i class="fa fa-motorcycle "></i>{% get_verbose_field_name school 'nursery' %}</p>
+                                    {% endif %}
+                                </li>
+                                <li>
+                                    {% if school.nursery %}
+                                        <p><i class="fa fa-motorcycle "></i>{% get_verbose_field_name school 'nursery' %}</p>
+                                    {% endif %}
+                                </li>
+                                <li>
+                                    {% if school.nursery %}
+                                        <p><i class="fa fa-motorcycle "></i>{% get_verbose_field_name school 'nursery' %}</p>
+                                    {% endif %}
+                                </li>
+                                <li>
+                                    {% if school.nursery %}
+                                        <p><i class="fa fa-motorcycle "></i>{% get_verbose_field_name school 'nursery' %}</p>
+                                    {% endif %}
+                                </li>
+                                <li>
+                                    {% if school.nursery %}
+                                        <p><i class="fa fa-motorcycle "></i>{% get_verbose_field_name school 'nursery' %}</p>
+                                    {% endif %}
+                                </li>                          
+                            </ul>
+                        </div>
+                        
+                        <div class="lc-special-things border-bottom pt-2">
+                            #TODO: Include IFs here
                             <ul>
                                 <li>
                                     <p><i class="fa fa-credit-card"></i>Accepts Credit Cards</p>

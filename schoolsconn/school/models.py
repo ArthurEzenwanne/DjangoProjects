@@ -975,10 +975,10 @@ class School(models.Model):
 
 
     # School Choice Region
-    creche = models.BooleanField(default=False)
-    nursery = models.BooleanField(default=False)
-    primary = models.BooleanField(default=False)
-    secondary = models.BooleanField(default=False)
+    creche = models.BooleanField(_('Creche'), default=False)
+    nursery = models.BooleanField(_('Nursery'), default=False)
+    primary = models.BooleanField(_('Primary'), default=False)
+    secondary = models.BooleanField(_('Secondary'), default=False)
     aLevels = models.BooleanField(_('A-Levels'), default=False)
 
     # Approved Exams Choice Region
@@ -995,36 +995,36 @@ class School(models.Model):
 
     # Advanced Info 
     # Activity Choice Region
-    carol = models.BooleanField(default=False)
+    carol = models.BooleanField(_('Carol'), default=False)
     interhousesports = models.BooleanField(_('Inter House Sports'), default=False)
     culturalday = models.BooleanField(_('Cultural Day'), default=False)
-    dance = models.BooleanField(default=False)
+    dance = models.BooleanField(_('Dance'), default=False)
     spellingbees = models.BooleanField(_('Spelling Bees'), default=False)
-    debate = models.BooleanField(default=False)
-    quiz = models.BooleanField(default=False)
-    swimming = models.BooleanField(default=False)
-    karate = models.BooleanField(default=False)
+    debate = models.BooleanField(_('Debate'), default=False)
+    quiz = models.BooleanField(_('Quiz'), default=False)
+    swimming = models.BooleanField(_('Swimming'), default=False)
+    karate = models.BooleanField(_('Karate'), default=False)
     costumeday = models.BooleanField(_('Costume Day'), default=False)
 
     # Clubs Choice Region
     gguide = models.BooleanField(_('Girl\'s Guide'), default=False)
     bscout = models.BooleanField(_('Boy\'s Scout'), default=False)
     frsc = models.BooleanField(_('FRSC'), default=False)
-    music = models.BooleanField(default=False)
-    drama = models.BooleanField(default=False)
+    music = models.BooleanField(_('Music'), default=False)
+    drama = models.BooleanField(_('Drama'), default=False)
     #debate = models.BooleanField(default=False)
-    press = models.BooleanField(default=False)
+    press = models.BooleanField(_('Press'), default=False)
     jets = models.BooleanField(_('JETs'), default=False)
-    karate = models.BooleanField(default=False)
+    karate = models.BooleanField(_('Karate'), default=False)
     rcross = models.BooleanField(_('Red Cross'), default=False)
     artscraft = models.BooleanField(_('Arts and Craft'), default=False)
 
     # Facility Choice Region
-    sickbay = models.BooleanField(default=False)
+    sickbay = models.BooleanField(_('Sickbay'), default=False)
     multipurposehall = models.BooleanField(_('Multipurpose Hall'), default=False)
     sciencelab = models.BooleanField(_('Science Lab'), default=False)
     busservice = models.BooleanField(_('Bus Service'), default=False)
-    library = models.BooleanField(default=False)
+    library = models.BooleanField(_('Library'), default=False)
     playground = models.BooleanField(default=False)
     sportscomplex = models.BooleanField(_('Sports Complex'), default=False)
     ictcenter = models.BooleanField(_('ICT Center'), default=False)
@@ -1038,7 +1038,7 @@ class School(models.Model):
     homemanagementlab = models.BooleanField(_('Home Management Labs'), default=False)
     languagestudio = models.BooleanField(_('Languages Studio'), default=False)
 
-    verified = models.BooleanField(default=False)
+    verified = models.BooleanField(_('Verified'), default=False)
 
     def get_absolute_url(self):
         """Returns the url to access a particular school instance."""

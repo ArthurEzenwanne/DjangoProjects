@@ -83,70 +83,91 @@
                             <p>{{ school.description }}</p>
                         </div>
                         <div class="lc-special-things border-bottom pt-2">
-                            <h3>Facilities</h3>
+                            <h3>Classes</h3>
                             <ul>
-                                <li>
-                                    {% if school.nursery %}
-                                        <p><i class="fa fa-motorcycle "></i>{% get_verbose_field_name school 'nursery' %}</p>
-                                    {% endif %}
-                                </li>
-                                <li>
-                                    {% if school.nursery %}
-                                        <p><i class="fa fa-motorcycle "></i>{% get_verbose_field_name school 'nursery' %}</p>
-                                    {% endif %}
-                                </li>
-                                <li>
-                                    {% if school.nursery %}
-                                        <p><i class="fa fa-motorcycle "></i>{% get_verbose_field_name school 'nursery' %}</p>
-                                    {% endif %}
-                                </li>
-                                <li>
-                                    {% if school.nursery %}
-                                        <p><i class="fa fa-motorcycle "></i>{% get_verbose_field_name school 'nursery' %}</p>
-                                    {% endif %}
-                                </li>
-                                <li>
-                                    {% if school.nursery %}
-                                        <p><i class="fa fa-motorcycle "></i>{% get_verbose_field_name school 'nursery' %}</p>
-                                    {% endif %}
-                                </li>
-                                <li>
-                                    {% if school.nursery %}
-                                        <p><i class="fa fa-motorcycle "></i>{% get_verbose_field_name school 'nursery' %}</p>
-                                    {% endif %}
-                                </li>
-                                <li>
-                                    {% if school.nursery %}
-                                        <p><i class="fa fa-motorcycle "></i>{% get_verbose_field_name school 'nursery' %}</p>
-                                    {% endif %}
-                                </li>
-                                <li>
-                                    {% if school.nursery %}
-                                        <p><i class="fa fa-motorcycle "></i>{% get_verbose_field_name school 'nursery' %}</p>
-                                    {% endif %}
-                                </li>                          
+                                {% if school.creche %}
+                                    <li>
+                                        <p><i class="fa fa-bookmark "></i>{% get_verbose_field_name school 'creche' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.nursery %}
+                                    <li>
+                                        <p><i class="fa fa-bookmark "></i>{% get_verbose_field_name school 'nursery' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.primary %}
+                                    <li>
+                                        <p><i class="fa fa-bookmark "></i>{% get_verbose_field_name school 'primary' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.secondary %}
+                                    <li>
+                                        <p><i class="fa fa-bookmark "></i>{% get_verbose_field_name school 'secondary' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.aLevels %}
+                                    <li>
+                                        <p><i class="fa fa-bookmark "></i>{% get_verbose_field_name school 'aLevels' %}</p>
+                                    </li>
+                                {% endif %}                 
+                            </ul>
+                        </div>
+                        <div class="lc-special-things border-bottom pt-2">
+                            <h3>Approved Exams</h3>
+                            <ul>
+                                {% if school.ncee %}
+                                    <li>
+                                        <p><i class="fa fa-bookmark "></i>{% get_verbose_field_name school 'ncee' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.scee %}
+                                    <li>
+                                        <p><i class="fa fa-bookmark "></i>{% get_verbose_field_name school 'scee' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.waec %}
+                                    <li>
+                                        <p><i class="fa fa-bookmark "></i>{% get_verbose_field_name school 'waec' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.neco %}
+                                    <li>
+                                        <p><i class="fa fa-bookmark "></i>{% get_verbose_field_name school 'neco' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.jwaec %}
+                                    <li>
+                                        <p><i class="fa fa-bookmark "></i>{% get_verbose_field_name school 'jwaec' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.jneco %}
+                                    <li>
+                                        <p><i class="fa fa-bookmark "></i>{% get_verbose_field_name school 'jneco' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.toefl %}
+                                    <li>
+                                        <p><i class="fa fa-bookmark "></i>{% get_verbose_field_name school 'toefl' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.ielts %}
+                                    <li>
+                                        <p><i class="fa fa-bookmark "></i>{% get_verbose_field_name school 'ielts' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.alevel %}
+                                    <li>
+                                        <p><i class="fa fa-bookmark "></i>{% get_verbose_field_name school 'alevel' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.igcse %}
+                                    <li>
+                                        <p><i class="fa fa-bookmark "></i>{% get_verbose_field_name school 'igcse' %}</p>
+                                    </li>
+                                {% endif %}                
                             </ul>
                         </div>
                         
-                        <div class="lc-special-things border-bottom pt-2">
-                            #TODO: Include IFs here
-                            <ul>
-                                <li>
-                                    <p><i class="fa fa-credit-card"></i>Accepts Credit Cards</p>
-                                    <p><i class="fa fa-motorcycle "></i>Smoking Allowed</p>
-                                </li>
-                                <li>
-                                    <p><i class="fa fa-podcast"></i>Wireless Internet</p>
-                                    <p><i class="fa fa-wheelchair"></i>Wheelchair Accesible</p>
-                                </li>
-                                <li>
-                                    <p><i class="fa fa-car"></i>Parking Sreet</p>
-                                </li>
-                                <li>
-                                    <p><i class="fa fa-magic"></i>Smoking Allowed</p>
-                                </li>
-                            </ul>
-                        </div>
                         <!-- listing-details gallery and video -->
                         <!-- <div  id="lc-details-gallery" class="lc-listing-details-gallery"> -->
                             <!-- <div class="lc-section-title lc-section-title-2">

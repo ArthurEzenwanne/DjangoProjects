@@ -982,8 +982,8 @@ class School(models.Model):
     aLevels = models.BooleanField(_('A-Levels'), default=False)
 
     # Approved Exams Choice Region
-    ncce = models.BooleanField(_('National Common Entrance'), default=False)
-    scce = models.BooleanField(_('State Common Entrance'), default=False)
+    ncee = models.BooleanField(_('National Common Entrance'), default=False)
+    scee = models.BooleanField(_('State Common Entrance'), default=False)
     waec = models.BooleanField(_('Senior WAEC Exams'), default=False)
     neco = models.BooleanField(_('Senior NECO Exams'), default=False)
     jwaec = models.BooleanField(_('Junior WAEC Exams'), default=False)

@@ -34,6 +34,7 @@
                         <nav>
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+                                <li class="breadcrumb-item"><a href="{% url 'schools-list' %}">Schools</a></li>
                                 <li class="breadcrumb-item"><a href="">{{ school.name }}</a></li>
                             </ol>
                             <ol class="breadcrumb-btn">
@@ -82,92 +83,287 @@
                             <h3>About Us</h3>
                             <p>{{ school.description }}</p>
                         </div>
+                        <!-- Classes Listings -->
                         <div class="lc-special-things border-bottom pt-2">
                             <h3>Classes</h3>
                             <ul>
                                 {% if school.creche %}
                                     <li>
-                                        <p><i class="fa fa-bookmark "></i>{% get_verbose_field_name school 'creche' %}</p>
+                                        <p><i class="fa fa-graduation-cap"></i>{% get_verbose_field_name school 'creche' %}</p>
                                     </li>
                                 {% endif %}
                                 {% if school.nursery %}
                                     <li>
-                                        <p><i class="fa fa-bookmark "></i>{% get_verbose_field_name school 'nursery' %}</p>
+                                        <p><i class="fa fa-graduation-cap"></i>{% get_verbose_field_name school 'nursery' %}</p>
                                     </li>
                                 {% endif %}
                                 {% if school.primary %}
                                     <li>
-                                        <p><i class="fa fa-bookmark "></i>{% get_verbose_field_name school 'primary' %}</p>
+                                        <p><i class="fa fa-graduation-cap"></i>{% get_verbose_field_name school 'primary' %}</p>
                                     </li>
                                 {% endif %}
                                 {% if school.secondary %}
                                     <li>
-                                        <p><i class="fa fa-bookmark "></i>{% get_verbose_field_name school 'secondary' %}</p>
+                                        <p><i class="fa fa-graduation-cap"></i>{% get_verbose_field_name school 'secondary' %}</p>
                                     </li>
                                 {% endif %}
                                 {% if school.aLevels %}
                                     <li>
-                                        <p><i class="fa fa-bookmark "></i>{% get_verbose_field_name school 'aLevels' %}</p>
+                                        <p><i class="fa fa-graduation-cap"></i>{% get_verbose_field_name school 'aLevels' %}</p>
                                     </li>
                                 {% endif %}                 
                             </ul>
                         </div>
+                        <!-- Exams Listings -->
                         <div class="lc-special-things border-bottom pt-2">
                             <h3>Approved Exams</h3>
                             <ul>
                                 {% if school.ncee %}
                                     <li>
-                                        <p><i class="fa fa-bookmark "></i>{% get_verbose_field_name school 'ncee' %}</p>
+                                        <p><i class="fa fa-university"></i>{% get_verbose_field_name school 'ncee' %}</p>
                                     </li>
                                 {% endif %}
                                 {% if school.scee %}
                                     <li>
-                                        <p><i class="fa fa-bookmark "></i>{% get_verbose_field_name school 'scee' %}</p>
+                                        <p><i class="fa fa-university"></i>{% get_verbose_field_name school 'scee' %}</p>
                                     </li>
                                 {% endif %}
                                 {% if school.waec %}
                                     <li>
-                                        <p><i class="fa fa-bookmark "></i>{% get_verbose_field_name school 'waec' %}</p>
+                                        <p><i class="fa fa-university"></i>{% get_verbose_field_name school 'waec' %}</p>
                                     </li>
                                 {% endif %}
                                 {% if school.neco %}
                                     <li>
-                                        <p><i class="fa fa-bookmark "></i>{% get_verbose_field_name school 'neco' %}</p>
+                                        <p><i class="fa fa-university"></i>{% get_verbose_field_name school 'neco' %}</p>
                                     </li>
                                 {% endif %}
                                 {% if school.jwaec %}
                                     <li>
-                                        <p><i class="fa fa-bookmark "></i>{% get_verbose_field_name school 'jwaec' %}</p>
+                                        <p><i class="fa fa-university"></i>{% get_verbose_field_name school 'jwaec' %}</p>
                                     </li>
                                 {% endif %}
                                 {% if school.jneco %}
                                     <li>
-                                        <p><i class="fa fa-bookmark "></i>{% get_verbose_field_name school 'jneco' %}</p>
+                                        <p><i class="fa fa-university"></i>{% get_verbose_field_name school 'jneco' %}</p>
                                     </li>
                                 {% endif %}
                                 {% if school.toefl %}
                                     <li>
-                                        <p><i class="fa fa-bookmark "></i>{% get_verbose_field_name school 'toefl' %}</p>
+                                        <p><i class="fa fa-university"></i>{% get_verbose_field_name school 'toefl' %}</p>
                                     </li>
                                 {% endif %}
                                 {% if school.ielts %}
                                     <li>
-                                        <p><i class="fa fa-bookmark "></i>{% get_verbose_field_name school 'ielts' %}</p>
+                                        <p><i class="fa fa-university"></i>{% get_verbose_field_name school 'ielts' %}</p>
                                     </li>
                                 {% endif %}
                                 {% if school.alevel %}
                                     <li>
-                                        <p><i class="fa fa-bookmark "></i>{% get_verbose_field_name school 'alevel' %}</p>
+                                        <p><i class="fa fa-university"></i>{% get_verbose_field_name school 'alevel' %}</p>
                                     </li>
                                 {% endif %}
                                 {% if school.igcse %}
                                     <li>
-                                        <p><i class="fa fa-bookmark "></i>{% get_verbose_field_name school 'igcse' %}</p>
+                                        <p><i class="fa fa-university"></i>{% get_verbose_field_name school 'igcse' %}</p>
                                     </li>
                                 {% endif %}                
                             </ul>
                         </div>
-                        
+                        <!-- Activities Listings -->
+                        <div class="lc-special-things border-bottom pt-2">
+                            <h3>Activities</h3>
+                            <ul>
+                                {% if school.carol %}
+                                    <li>
+                                        <p><i class="fa fa-bolt"></i>{% get_verbose_field_name school 'carol' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.interhousesports %}
+                                    <li>
+                                        <p><i class="fa fa-bolt"></i>{% get_verbose_field_name school 'interhousesports' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.culturalday %}
+                                    <li>
+                                        <p><i class="fa fa-bolt"></i>{% get_verbose_field_name school 'culturalday' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.dance %}
+                                    <li>
+                                        <p><i class="fa fa-bolt"></i>{% get_verbose_field_name school 'dance' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.spellingbees %}
+                                    <li>
+                                        <p><i class="fa fa-bolt"></i>{% get_verbose_field_name school 'spellingbees' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.debate %}
+                                    <li>
+                                        <p><i class="fa fa-bolt"></i>{% get_verbose_field_name school 'debate' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.quiz %}
+                                    <li>
+                                        <p><i class="fa fa-bolt"></i>{% get_verbose_field_name school 'quiz' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.swimming %}
+                                    <li>
+                                        <p><i class="fa fa-bolt"></i>{% get_verbose_field_name school 'swimming' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.karate %}
+                                    <li>
+                                        <p><i class="fa fa-bolt"></i>{% get_verbose_field_name school 'karate' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.costumeday %}
+                                    <li>
+                                        <p><i class="fa fa-bolt"></i>{% get_verbose_field_name school 'costumeday' %}</p>
+                                    </li>
+                                {% endif %}                
+                            </ul>
+                        </div>
+                        <!-- Clubs Listings -->
+                        <div class="lc-special-things border-bottom pt-2">
+                            <h3>Clubs</h3>
+                            <ul>
+                                {% if school.gguide %}
+                                    <li>
+                                        <p><i class="fa fa-handshake-o"></i>{% get_verbose_field_name school 'gguide' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.bscout %}
+                                    <li>
+                                        <p><i class="fa fa-handshake-o"></i>{% get_verbose_field_name school 'bscout' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.frsc %}
+                                    <li>
+                                        <p><i class="fa fa-handshake-o"></i>{% get_verbose_field_name school 'frsc' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.music %}
+                                    <li>
+                                        <p><i class="fa fa-handshake-o"></i>{% get_verbose_field_name school 'music' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.drama %}
+                                    <li>
+                                        <p><i class="fa fa-handshake-o"></i>{% get_verbose_field_name school 'drama' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.press %}
+                                    <li>
+                                        <p><i class="fa fa-handshake-o"></i>{% get_verbose_field_name school 'press' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.jets %}
+                                    <li>
+                                        <p><i class="fa fa-handshake-o"></i>{% get_verbose_field_name school 'jets' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.rcross %}
+                                    <li>
+                                        <p><i class="fa fa-handshake-o"></i>{% get_verbose_field_name school 'rcross' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.karate %}
+                                    <li>
+                                        <p><i class="fa fa-handshake-o"></i>{% get_verbose_field_name school 'karate' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.artscraft %}
+                                    <li>
+                                        <p><i class="fa fa-handshake-o"></i>{% get_verbose_field_name school 'artscraft' %}</p>
+                                    </li>
+                                {% endif %}                
+                            </ul>
+                        </div>
+                        <!-- Facilities Listings -->
+                        <div class="lc-special-things border-bottom pt-2">
+                            <h3>Facilities</h3>
+                            <ul>
+                                {% if school.sickbay %}
+                                    <li>
+                                        <p><i class="fa fa-hospital-o"></i>{% get_verbose_field_name school 'sickbay' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.multipurposehall %}
+                                    <li>
+                                        <p><i class="fa fa-university"></i>{% get_verbose_field_name school 'multipurposehall' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.sciencelab %}
+                                    <li>
+                                        <p><i class="fa fa-flask"></i>{% get_verbose_field_name school 'sciencelab' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.busservice %}
+                                    <li>
+                                        <p><i class="fa fa-bus"></i>{% get_verbose_field_name school 'busservice' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.library %}
+                                    <li>
+                                        <p><i class="fa fa-book"></i>{% get_verbose_field_name school 'library' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.playground %}
+                                    <li>
+                                        <p><i class="fa fa-paper-plane"></i>{% get_verbose_field_name school 'playground' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.sportscomplex %}
+                                    <li>
+                                        <p><i class="fa fa-futbol-o"></i>{% get_verbose_field_name school 'sportscomplex' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.ictcenter %}
+                                    <li>
+                                        <p><i class="fa fa-laptop"></i>{% get_verbose_field_name school 'ictcenter' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.artstudio %}
+                                    <li>
+                                        <p><i class="fa fa-picture-o"></i>{% get_verbose_field_name school 'artstudio' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.orchard %}
+                                    <li>
+                                        <p><i class="fa fa-pagelines"></i>{% get_verbose_field_name school 'orchard' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.farmhouse %}
+                                    <li>
+                                        <p><i class="fa fa-pagelines"></i>{% get_verbose_field_name school 'farmhouse' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.specialneeds %}
+                                    <li>
+                                        <p><i class="fa fa-medkit"></i>{% get_verbose_field_name school 'specialneeds' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.musicstudio %}
+                                    <li>
+                                        <p><i class="fa fa-bolt"></i>{% get_verbose_field_name school 'musicstudio' %}</p>
+                                    </li>
+                                {% endif %}
+                                {% if school.homemanagementlab %}
+                                    <li>
+                                        <p><i class="fa fa-bolt"></i>{% get_verbose_field_name school 'homemanagementlab' %}</p>
+                                    </li>
+                                {% endif %}   
+                                {% if school.languagestudio %}
+                                    <li>
+                                        <p><i class="fa fa-bolt"></i>{% get_verbose_field_name school 'languagestudio' %}</p>
+                                    </li>
+                                {% endif %}              
+                            </ul>
+                        </div>
+                    
                         <!-- listing-details gallery and video -->
                         <!-- <div  id="lc-details-gallery" class="lc-listing-details-gallery"> -->
                             <!-- <div class="lc-section-title lc-section-title-2">

@@ -25,8 +25,8 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('test/search/', views.search_filter_view, name='search-filter'),
-    path('search/schools/', views.SchoolListView.as_view(), name='schools-list'),
+    path('test/search/', views.search_filter_view, name='search-filter'), # works
+    path('search/schools/', views.SchoolListView.as_view(), name='schools-list'), # works but no filter
     path('search/schools/<state>/', views.FilterSchoolsByStatesListView.as_view(), name='filter-schools-state-list'),
     path('schools/<str:slug>/', views.SchoolDetailView.as_view(), name='school-detail'), # uses slug, could also use pk
     #path('accounts/profile', views.account_profile_view, name='account-profile'),   # routes to the profile view
@@ -42,6 +42,7 @@ urlpatterns = [
     path('school/new/', views.create_school_view, name='create-school'),
     path('school/edit/<str:slug>/', views.update_school, name='update-school'),
     path('school/delete/<str:slug>/', views.delete_school, name='delete-school'),
+    # path('school/gallery/add/', views.add_gallery, name='add-gallery'),     # add gallery images
 
     path('contactus/', views.send_mail_view, name='contact-us'), 
     path('thanks/', views.thanks, name='thanks'), 

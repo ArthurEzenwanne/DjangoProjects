@@ -77,4 +77,25 @@ class DocumentMultipleForm(forms.ModelForm):
         widgets = {
             'desc_multiple': forms.TextInput(attrs={'class':'lc-add-listing-input form-control','placeholder':'Description of the image'}),
             'doc_multiple': forms.ClearableFileInput(attrs={'class':'lc-add-listing-input form-control', 'multiple': True})
-        }              
+        }
+
+class SchoolGalleryForm(forms.ModelForm):
+    '''Form definition for the SchoolGalleryImage Model.'''
+
+    class Meta:
+        model = SchoolGalleryImage
+        exclude = ['uploaded_at']
+        widgets = {
+            'img_1': forms.ClearableFileInput(attrs={'class':'lc-add-listing-input form-control'}),
+            'img_2': forms.ClearableFileInput(attrs={'class':'lc-add-listing-input form-control'}),
+            'img_3': forms.ClearableFileInput(attrs={'class':'lc-add-listing-input form-control'}),
+            'img_4': forms.ClearableFileInput(attrs={'class':'lc-add-listing-input form-control'}),
+            'img_5': forms.ClearableFileInput(attrs={'class':'lc-add-listing-input form-control'}),
+            'img_6': forms.ClearableFileInput(attrs={'class':'lc-add-listing-input form-control'}),
+            'img_7': forms.ClearableFileInput(attrs={'class':'lc-add-listing-input form-control'}),
+            'img_8': forms.ClearableFileInput(attrs={'class':'lc-add-listing-input form-control'}),
+            'img_9': forms.ClearableFileInput(attrs={'class':'lc-add-listing-input form-control'}),
+            'img_9': forms.ClearableFileInput(attrs={'class':'lc-add-listing-input form-control'}),
+            'img_10': forms.ClearableFileInput(attrs={'class':'lc-add-listing-input form-control'}),
+            'banner_img': forms.ClearableFileInput(attrs={'class':'lc-add-listing-input form-control'}),
+        }        

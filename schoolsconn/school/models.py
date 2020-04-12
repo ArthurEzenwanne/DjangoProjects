@@ -1042,18 +1042,13 @@ class School(models.Model):
 
     def get_absolute_url(self):
         """Returns the url to access a particular school instance."""
-        # return reverse('tutor-detail', args=[str(self.email_address)])
-        #return reverse('school-detail', args=[str(self.id)]) # school-detail is a view
+        
         return reverse('school-detail', args=[str(self.slug)]) # school-detail is a view
 
     def __str__(self):
         """String for representing the Model object."""
         return f'{self.name}'
 
-# class LGA(models.Model):
-#     ''' Model list of LGAs' in Nigeria '''
-#     lga = models.CharField(_('LGA'), max_length=3, choices=LGA_CHOICE)
-#     state = models.ForeignKey(State, on_delete=models.CASCADE)
 
 def user_directory_path(instance, filename):
     # file will be uploaded to MEDIA_ROOT/user_<id>/<filename>
@@ -1068,4 +1063,20 @@ class DocumentMultiple(models.Model):
     desc_multiple = models.CharField(max_length=255, blank=True)
     doc_multiple = models.ImageField(upload_to='schools/multiple/', blank=True)
     uploaded_at = models.DateTimeField(auto_now_add=True)
+
+class SchoolGalleryImage(models.Model):
+    '''Model for a School Gallery Images.'''
+    img_1 = models.ImageField(upload_to='schools/<school_name>/gallery', blank=True)
+    img_2 = models.ImageField(upload_to='schools/<school_name>/gallery', blank=True)
+    img_3 = models.ImageField(upload_to='schools/<school_name>/gallery', blank=True)
+    img_4 = models.ImageField(upload_to='schools/<school_name>/gallery', blank=True)
+    img_5 = models.ImageField(upload_to='schools/<school_name>/gallery', blank=True)
+    img_6 = models.ImageField(upload_to='schools/<school_name>/gallery', blank=True)
+    img_7 = models.ImageField(upload_to='schools/<school_name>/gallery', blank=True)
+    img_8 = models.ImageField(upload_to='schools/<school_name>/gallery', blank=True)
+    img_9 = models.ImageField(upload_to='schools/<school_name>/gallery', blank=True)
+    img_10 = models.ImageField(upload_to='schools/<school_name>/gallery', blank=True)
+    banner_img = models.ImageField(upload_to="schools/School.slug/gallery", blank=True)
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+    school = models.ForeignKey(School, on_delete=models.CASCADE)
 
